@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroCalcul - Apprendre le calcul mental en s'amusant dans l'espace !</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        space: {
+                            900: '#0B0B1E',
+                            800: '#141432',
+                            700: '#1D1D4A',
+                        },
+                        cosmic: {
+                            pink: '#FF2E93',
+                            purple: '#A12EFF',
+                            blue: '#2E93FF',
+                            cyan: '#00F0FF',
+                            green: '#00FF87'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght=400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #0B0B1E;
+            overflow-x: hidden;
+        }
+
+        /* Animations de flottaison */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1.5deg); }
+        }
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(-2deg); }
+        }
+        .animate-float-slow {
+            animation: float-slow 7s ease-in-out infinite;
+        }
+
+        /* Lueur cosmique en arrière-plan */
+        .cosmic-glow {
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        /* Style Glassmorphism pour les cartes */
+        .glass-panel {
+            background: rgba(20, 20, 50, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Masquage de la scrollbar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Animation de secousse pour les erreurs */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
+        }
+        .animate-shake {
+            animation: shake 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-white relative min-h-screen">
+
+    <canvas id="stars-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+
+    <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10"></div>
+
+    <header class="w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <!-- LOGO DE L'APPLICATION AVEC FALLBACK VECTORIEL -->
+                <div class="w-10 h-10 bg-gradient-to-tr from-cosmic-pink to-cosmic-blue rounded-xl flex items-center justify-center shadow-lg shadow-cosmic-pink/20 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+                    <img src="assets/logo.svg" alt="AstroCalcul Logo" class="w-full h-full object-contain p-1" onerror="this.style.display='none'; document.getElementById('header-logo-fallback').style.display='block';">
+                    <svg id="header-logo-fallback" class="hidden w-6 h-6 text-white m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">ASTROCALCUL</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide">
+                <a href="#simulator" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Décoller (Démo)</a>
+                <a href="#parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+                <a href="#preview" class="text-gray-300 hover:text-cosmic-purple transition-colors">Aperçu du Jeu</a>
+            </nav>
+            <a href="#simulator" class="bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-6 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:shadow-cosmic-cyan/45 hover:scale-105 active:scale-95 transition-all duration-300">
+                ESSAYER LA DÉMO
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 md:px-12 py-8 space-y-32">
+
+        <section id="hero" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8 md:pt-16">
+            
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                <!-- Badge d'accroche avec tête d'astronaute -->
+                <div class="inline-flex items-center space-x-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+                    <div class="w-6 h-6 rounded-full overflow-hidden bg-cosmic-cyan/20 flex items-center justify-center">
+                        <img src="assets/astronaute-tete.svg" alt="Co-pilote" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('hero-mini-astrosvg').style.display='block';">
+                        <svg id="hero-mini-astrosvg" class="w-4 h-4 text-cosmic-cyan" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 3a4 4 0 110 8 4 4 0 010-8zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-extrabold tracking-widest text-cosmic-cyan">MISSION APPRENDRE EN S'AMUSANT</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight">
+                    Le calcul mental devient une <br class="hidden sm:inline">
+                    <span class="bg-gradient-to-r from-cosmic-cyan via-cosmic-pink to-cosmic-purple bg-clip-text text-transparent">
+                        aventure spatiale !
+                    </span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                    AstroCalcul transforme les mathématiques en un voyage d'exploration passionnant. Conçu pour les enfants de 4 à 10 ans, sans publicité ni collecte de données.
+                </p>
+
+                <!-- Boutons de téléchargement réels pour iOS et Android -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    
+                    <!-- App Store (Lien réel injecté) -->
+                    <a href="https://apps.apple.com/us/app/astrocalcul/id6760236661" target="_blank" rel="noopener noreferrer" class="w-48 h-14 bg-black border border-white/15 rounded-xl flex items-center justify-center px-4 hover:border-cosmic-cyan/50 hover:bg-space-800 transition-all duration-300 shadow-md hover:shadow-cosmic-cyan/10">
+                        <svg class="w-7 h-7 text-white mr-3" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.1 16.67C20.08 16.74 19.67 18.11 18.71 19.5ZM15.97 4.17C16.63 3.37 17.07 2.28 16.95 1C15.96 1.04 14.76 1.66 14.05 2.49C13.44 3.19 12.91 4.29 13.06 5.54C14.16 5.63 15.3 4.98 15.97 4.17Z"/>
+                        </svg>
+                        <div class="text-left">
+                            <p class="text-[9px] text-gray-400 uppercase font-bold leading-tight">Télécharger sur l'</p>
+                            <p class="text-sm font-black text-white leading-tight">App Store</p>
+                        </div>
+                    </a>
+
+                    <!-- Google Play (Lien réel injecté) -->
+                    <a href="https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul" target="_blank" rel="noopener noreferrer" class="w-48 h-14 bg-black border border-white/15 rounded-xl flex items-center justify-center px-4 hover:border-cosmic-pink/50 hover:bg-space-800 transition-all duration-300 shadow-md hover:shadow-cosmic-pink/10">
+                        <svg class="w-7 h-7 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.25301 2.59367C3.06649 2.78443 2.96289 3.09033 2.96289 3.47701V20.523C2.96289 20.9097 3.06649 21.2156 3.25301 21.4063L3.32701 21.469L12.836 11.96V11.751L3.32701 2.24L3.25301 2.59367Z" fill="url(#gp_grad1)"/>
+                            <path d="M16.002 15.131L12.836 11.96V11.751L16.003 8.58398L16.082 8.62998L19.828 10.758C20.9 11.366 20.9 12.356 19.828 12.966L16.082 15.093L16.002 15.131Z" fill="url(#gp_grad2)"/>
+                            <path d="M16.083 15.094L12.836 11.847L3.25391 21.429C3.60691 21.783 4.18491 21.825 4.84891 21.448L16.083 15.094Z" fill="url(#gp_grad3)"/>
+                            <path d="M16.083 8.62891L4.84891 2.27491C4.18491 1.89791 3.60691 1.93991 3.25391 2.29391L12.836 11.876L16.083 8.62891Z" fill="url(#gp_grad4)"/>
+                            <defs>
+                                <linearGradient id="gp_grad1" x1="12.0125" y1="2.96289" x2="2.96289" y2="12.0125" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00A0FF"/><stop offset="1" stop-color="#00EAFF"/></linearGradient>
+                                <linearGradient id="gp_grad2" x1="20.7324" y1="12" x2="10.8359" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFBB00"/><stop offset="1" stop-color="#FFEC00"/></linearGradient>
+                                <linearGradient id="gp_grad3" x1="13.1118" y1="14.8213" x2="2.96289" y2="24.9702" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF007F"/><stop offset="1" stop-color="#FF003B"/></linearGradient>
+                                <linearGradient id="gp_grad4" x1="13.1118" y1="9.17871" x2="2.96289" y2="-0.970215" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00F076"/><stop offset="1" stop-color="#04B24B"/></linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="text-left">
+                            <p class="text-[9px] text-gray-400 uppercase font-bold leading-tight">DISPONIBLE SUR</p>
+                            <p class="text-sm font-black text-white leading-tight">Google Play</p>
+                        </div>
+                    </a>
+
+                </div>
+                
+                <div class="flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-400 font-bold">
+                    <span>★ ★ ★ ★ ★ (4.9/5)</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+                    <span>4-10 Ans</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+                    <span>Conforme RGPD</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex justify-center relative">
+                <div class="absolute w-72 h-72 rounded-full bg-cosmic-pink/20 blur-3xl -z-10 animate-pulse"></div>
+                
+                <div class="relative w-full max-w-[400px] h-[400px]">
+                    
+                    <!-- FUSÉE PRINCIPALE DE L'APPLICATION -->
+                    <div class="absolute inset-0 flex items-center justify-center animate-float-slow">
+                        <img src="assets/fusee-main.svg" alt="Fusée AstroCalcul" class="w-4/5 h-4/5 object-contain" onerror="this.style.display='none'; document.getElementById('hero-fallback-rocket').style.display='block';">
+                        
+                        <div id="hero-fallback-rocket" class="hidden w-full h-full">
+                            <svg class="w-full h-full" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="320" cy="80" r="35" fill="url(#planetGrad)"/>
+                                <g transform="translate(180, 100)">
+                                    <path d="M60,190 Q70,240 70,210 Q70,240 80,190 Z" fill="url(#flameGrad)">
+                                        <animate attributeName="d" values="M60,190 Q70,240 70,210 Q70,240 80,190 Z;M58,190 Q70,260 70,220 Q72,260 82,190 Z;M60,190 Q70,240 70,210 Q70,240 80,190 Z" dur="0.2s" repeatCount="indefinite"/>
+                                    </path>
+                                    <path d="M35,160 L20,190 L50,180 Z" fill="#A12EFF"/>
+                                    <path d="M105,160 L120,190 L90,180 Z" fill="#A12EFF"/>
+                                    <path d="M45,180 L45,90 Q45,20 70,20 Q95,20 95,90 L95,180 Z" fill="white"/>
+                                    <path d="M45,90 Q70,20 95,90 Z" fill="#FF2E93"/>
+                                    <circle cx="70" cy="95" r="20" fill="#0B0B1E" stroke="#00F0FF" stroke-width="3"/>
+                                </g>
+                                <defs>
+                                    <radialGradient id="planetGrad" cx="30%" cy="30%" r="70%">
+                                        <stop offset="0%" stop-color="#00F0FF"/><stop offset="100%" stop-color="#1D1D4A"/>
+                                    </radialGradient>
+                                    <linearGradient id="flameGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#FFD700"/><stop offset="100%" stop-color="#A12EFF" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- ASTRONAUTE FLOTTANT -->
+                    <div class="absolute -bottom-4 -left-4 w-36 h-36 animate-float z-10">
+                        <img src="assets/astronaute-hero.svg" alt="Astronaute AstroCalcul" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('hero-fallback-astro').style.display='block';">
+                        
+                        <div id="hero-fallback-astro" class="w-full h-full">
+                            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="28" fill="#FFFFFF" stroke="#00F0FF" stroke-width="2"/>
+                                <rect x="32" y="34" width="36" height="26" rx="10" fill="#0B0B1E" stroke="#FF2E93" stroke-width="2"/>
+                                <circle cx="43" cy="45" r="3" fill="#00FF87"/>
+                                <circle cx="57" cy="45" r="3" fill="#00FF87"/>
+                                <path d="M46,51 Q50,54 54,51" stroke="#00FF87" stroke-width="1.5" fill="none"/>
+                                <circle cx="18" cy="45" r="7" fill="#FFFFFF" stroke="#00F0FF" stroke-width="1.5"/>
+                                <circle cx="82" cy="55" r="7" fill="#FFFFFF" stroke="#00F0FF" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="simulator" class="scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <div class="inline-block bg-cosmic-pink/10 border border-cosmic-pink/20 px-4 py-1.5 rounded-full">
+                    <span class="text-xs font-black tracking-widest text-cosmic-pink uppercase">Testez l'application</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black">Préparez le décollage !</h2>
+                <p class="text-gray-300">
+                    Choisissez votre niveau, répondez correctement et observez votre compagnon et la fusée s'envoler !
+                </p>
+            </div>
+
+            <!-- Structure du simulateur de jeu -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-5xl mx-auto">
+                
+                <!-- Zone de gauche : La Fusée sur sa rampe de lancement -->
+                <div class="lg:col-span-5 glass-panel rounded-3xl p-6 flex flex-col items-center justify-between min-h-[400px] relative overflow-hidden">
+                    
+                    <div class="absolute left-4 top-4 bottom-4 w-1 bg-white/5 rounded-full flex flex-col justify-end">
+                        <div id="altitude-bar" class="w-full bg-cosmic-cyan rounded-full transition-all duration-1000" style="height: 10%;"></div>
+                    </div>
+                    
+                    <span class="text-xs text-gray-400 font-extrabold uppercase tracking-widest self-end">RAMPE DE LANCEMENT</span>
+                    
+                    <!-- Fusée animée sur sa rampe -->
+                    <div id="sim-rocket-container" class="relative w-36 h-64 flex items-end justify-center transition-all duration-1000 ease-out transform">
+                        
+                        <div id="sim-smoke" class="absolute bottom-0 w-24 h-8 bg-white/20 rounded-full blur-md opacity-0 scale-50 transition-all duration-300"></div>
+                        
+                        <img src="assets/fusee-sim.svg" id="sim-rocket-image" alt="Fusée" class="w-24 h-48 object-contain" onerror="this.style.display='none'; document.getElementById('sim-fallback-rocket').style.display='block';">
+                        
+                        <svg id="sim-fallback-rocket" class="hidden w-24 h-48" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="sim-flame" d="M40,160 Q50,200 50,180 Q50,200 60,160 Z" fill="url(#flameGradSim)" class="hidden">
+                                <animate attributeName="d" values="M40,160 Q50,200 50,180 Q50,200 60,160 Z;M38,160 Q50,220 50,190 Q52,220 62,160 Z;M40,160 Q50,200 50,180 Q50,200 60,160 Z" dur="0.15s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M25,150 L10,180 L35,170 Z" fill="#FF2E93"/>
+                            <path d="M75,150 L90,180 L65,170 Z" fill="#FF2E93"/>
+                            <path d="M30,160 L30,60 Q30,10 50,10 Q70,10 70,60 L70,160 Z" fill="white"/>
+                            <path d="M30,60 Q50,10 70,60 Z" fill="#A12EFF"/>
+                            <defs>
+                                <linearGradient id="flameGradSim" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#FFD700"/><stop offset="100%" stop-color="#A12EFF" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <!-- Statut du décollage -->
+                    <div class="text-center z-10 w-full bg-space-900/60 py-2 rounded-xl border border-white/5">
+                        <p id="rocket-status" class="text-xs font-black text-cosmic-cyan tracking-widest uppercase">SYSTÈME PRÊT</p>
+                        <p id="rocket-altitude" class="text-sm font-bold text-gray-300">Altitude : 0 km</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 glass-panel rounded-3xl p-6 md:p-8 flex flex-col justify-between space-y-6">
+                    
+                    <!-- Compagnon Réactif Astronaute -->
+                    <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-2xl border border-white/10">
+                        <div class="relative w-16 h-16 flex-shrink-0">
+                            <img id="astro-companion-img" src="assets/astronaute-penseur.svg" alt="Compagnon" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('astro-companion-fallback').style.display='block';">
+                            
+                            <svg id="astro-companion-fallback" class="w-full h-full" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="35" fill="#1D1D4A" stroke="#00F0FF" stroke-width="2"/>
+                                <rect x="25" y="25" width="50" height="40" rx="12" fill="#0B0B1E" stroke="#FF2E93" stroke-width="2"/>
+                                <path id="astro-eyes" d="M38,45 L44,45 M56,45 L62,45" stroke="#00FF87" stroke-width="3" stroke-linecap="round"/>
+                                <path id="astro-mouth" d="M45,55 Q50,55 55,55" stroke="#00FF87" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-black text-cosmic-cyan">VOTRE CO-PILOTE</h4>
+                            <p id="astro-speech" class="text-xs text-gray-300">"Prêt pour le calcul mental ? Choisis ta difficulté !"</p>
+                        </div>
+                    </div>
+
+                    <!-- Sélecteur de niveau -->
+                    <div class="space-y-3">
+                        <label class="text-xs font-black tracking-widest text-gray-400 uppercase">1. Niveau de l'enfant :</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button onclick="setDifficulty('easy')" id="btn-easy" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 bg-space-800 border-cosmic-cyan text-cosmic-cyan shadow-sm">
+                                Recrue<br><span class="text-[10px] font-bold text-gray-400">4-6 ans</span>
+                            </button>
+                            <button onclick="setDifficulty('medium')" id="btn-medium" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 border-white/10 hover:border-white/25">
+                                Cadet<br><span class="text-[10px] font-bold text-gray-400">7-8 ans</span>
+                            </button>
+                            <button onclick="setDifficulty('hard')" id="btn-hard" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 border-white/10 hover:border-white/25">
+                                Commandant<br><span class="text-[10px] font-bold text-gray-400">9-10 ans</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Écran de calcul -->
+                    <div class="bg-space-900/90 border border-white/5 rounded-2xl p-6 text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+                        
+                        <div class="absolute right-4 top-2 w-12 h-12 opacity-20">
+                            <img id="planet-bg-asset" src="assets/planete-easy.svg" alt="" class="w-full h-full object-contain" onerror="this.style.display='none';">
+                        </div>
+
+                        <div class="relative z-10 space-y-2">
+                            <span class="text-[11px] font-bold tracking-widest text-cosmic-pink uppercase">Équation Spatiale</span>
+                            <div id="calculation-display" class="text-4xl md:text-5xl font-black tracking-wider text-white py-2">
+                                4 + 3
+                            </div>
+                            <p class="text-xs text-gray-400">Trouvez la bonne planète réponse pour propulser la fusée !</p>
+                        </div>
+                    </div>
+
+                    <!-- Choix de réponses -->
+                    <div class="space-y-3">
+                        <label class="text-xs font-black tracking-widest text-gray-400 uppercase">2. Sélectionnez la réponse correcte :</label>
+                        <div id="choices-container" class="grid grid-cols-3 gap-4">
+                            <!-- Généré dynamiquement en JS -->
+                        </div>
+                    </div>
+
+                    <!-- Feedback -->
+                    <div class="flex items-center justify-between border-t border-white/10 pt-4 text-sm font-bold">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-gray-400">Score de mission :</span>
+                            <span id="simulator-score" class="text-cosmic-green font-black text-lg">0</span>
+                        </div>
+                        <div id="simulator-feedback" class="text-cosmic-cyan font-black tracking-wide animate-pulse">
+                            Sélectionnez une réponse !
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="parents" class="scroll-mt-24 space-y-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <div class="inline-block bg-cosmic-cyan/10 border border-cosmic-cyan/20 px-4 py-1.5 rounded-full">
+                    <span class="text-xs font-black tracking-widest text-cosmic-cyan uppercase">Zéro stress pour la famille</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black">L'apprentissage intelligent en toute sérénité</h2>
+                <p class="text-gray-300">
+                    AstroCalcul a été pensé avec des parents et des enseignants pour offrir un cadre d'apprentissage parfaitement sain et stimulant.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Carte 1 : Sécurité et Confidentialité -->
+                <div class="glass-panel rounded-3xl p-8 hover:border-cosmic-cyan/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 bg-cosmic-cyan/10 rounded-2xl flex items-center justify-center text-cosmic-cyan group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+                            <img src="assets/icone-securite.svg" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('shield-svg').style.display='block';">
+                            <svg id="shield-svg" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold">100% Sécurisé</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Aucune donnée personnelle n'est collectée ou stockée. Votre enfant s'entraîne en local de manière totalement privée et sécurisée.
+                        </p>
+                    </div>
+                    <span class="text-xs text-cosmic-cyan font-bold tracking-widest uppercase pt-6">AUCUN ENREGISTREMENT</span>
+                </div>
+
+                <!-- Carte 2 : Publicités -->
+                <div class="glass-panel rounded-3xl p-8 hover:border-cosmic-pink/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 bg-cosmic-pink/10 rounded-2xl flex items-center justify-center text-cosmic-pink group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+                            <img src="assets/icone-pub.svg" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('ban-svg').style.display='block';">
+                            <svg id="ban-svg" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold">0% Publicité intrusive</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Aucune interruption intempestive. L'enfant reste concentré sur son défi mathématique dans un espace de jeu calme et propice à l'attention.
+                        </p>
+                    </div>
+                    <span class="text-xs text-cosmic-pink font-bold tracking-widest uppercase pt-6">CONCENTRATION TOTALE</span>
+                </div>
+
+                <!-- Carte 3 : Temps d'écran -->
+                <div class="glass-panel rounded-3xl p-8 hover:border-cosmic-purple/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 bg-cosmic-purple/10 rounded-2xl flex items-center justify-center text-cosmic-purple group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+                            <img src="assets/icone-chrono.svg" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('timer-svg').style.display='block';">
+                            <svg id="timer-svg" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold">3 à 5 minutes par jour</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Une méthode par sessions courtes hautement efficaces. Parfait pour ancrer la régularité et le goût du calcul sans surcharger le temps d'écran de l'enfant.
+                        </p>
+                    </div>
+                    <span class="text-xs text-cosmic-purple font-bold tracking-widest uppercase pt-6">TEMPS D'ÉCRAN MAÎTRISÉ</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="preview" class="scroll-mt-24 space-y-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="space-y-4 max-w-2xl">
+                    <div class="inline-block bg-cosmic-purple/10 border border-cosmic-purple/20 px-4 py-1.5 rounded-full">
+                        <span class="text-xs font-black tracking-widest text-cosmic-purple uppercase">Un univers merveilleux</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black">Embarquez dans l'aventure AstroCalcul</h2>
+                    <p class="text-gray-300">
+                        Glissez pour découvrir de vraies captures d'écran de l'application et de ses univers colorés.
+                    </p>
+                </div>
+                <!-- Contrôles du carrousel -->
+                <div class="flex items-center space-x-3">
+                    <button onclick="prevSlide()" class="w-12 h-12 rounded-full border border-white/10 hover:border-cosmic-cyan flex items-center justify-center bg-space-800 hover:text-cosmic-cyan transition-all duration-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button onclick="nextSlide()" class="w-12 h-12 rounded-full border border-white/10 hover:border-cosmic-cyan flex items-center justify-center bg-space-800 hover:text-cosmic-cyan transition-all duration-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-3xl p-1">
+                <div id="carousel-track" class="flex transition-transform duration-500 ease-out gap-6 cursor-grab select-none">
+                    
+                    <!-- Slide 1 -->
+                    <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5 flex items-center justify-center">
+                            <img src="assets/screen-planetes.png" alt="Sélection des planètes" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide1-fallback').style.display='block';">
+                            <div id="slide1-fallback" class="hidden w-full h-full p-4">
+                                <svg class="w-full h-full" viewBox="0 0 300 225">
+                                    <rect width="280" height="205" x="10" y="10" rx="15" fill="#141432" stroke="#FF2E93" stroke-width="2"/>
+                                    <text x="150" y="45" fill="white" font-size="14" font-weight="900" text-anchor="middle">SÉLECTION DE LA PLANÈTE</text>
+                                    <circle cx="150" cy="115" r="30" fill="#00F0FF"/>
+                                    <text x="150" y="180" fill="white" font-size="10" text-anchor="middle">Addition • Soustraction • Table</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-lg font-black text-white">Cartographie Céleste</h3>
+                            <p class="text-gray-400 text-xs">Un tableau de bord intuitif permettant aux enfants de sélectionner leur destination d'entraînement sous forme de planètes à débloquer.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5 flex items-center justify-center">
+                            <img src="assets/screen-jeu.png" alt="Calcul en cours" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide2-fallback').style.display='block';">
+                            <div id="slide2-fallback" class="hidden w-full h-full p-4">
+                                <svg class="w-full h-full" viewBox="0 0 300 225">
+                                    <rect width="280" height="205" x="10" y="10" rx="15" fill="#141432" stroke="#00F0FF" stroke-width="2"/>
+                                    <text x="150" y="105" fill="white" font-size="28" font-weight="900" text-anchor="middle">8 + 7 = 15</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-lg font-black text-white">Mission de Calcul</h3>
+                            <p class="text-gray-400 text-xs">Une mécanique de réponse claire et colorée, optimisée pour éviter la frustration avec des feedbacks visuels positifs instantanés.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5 flex items-center justify-center">
+                            <img src="assets/screen-badges.png" alt="Badges de réussite" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide3-fallback').style.display='block';">
+                            <div id="slide3-fallback" class="hidden w-full h-full p-4">
+                                <svg class="w-full h-full" viewBox="0 0 300 225">
+                                    <rect width="280" height="205" x="10" y="10" rx="15" fill="#141432" stroke="#A12EFF" stroke-width="2"/>
+                                    <text x="150" y="45" fill="white" font-size="14" font-weight="900" text-anchor="middle">SALLE DES BADGES</text>
+                                    <circle cx="150" cy="115" r="25" fill="#FFD700"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-lg font-black text-white">Galerie des Trophées</h3>
+                            <p class="text-gray-400 text-xs">Un catalogue de badges et de constellations à compléter pour motiver l'autonomie et stimuler la persévérance de l'enfant.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="border-t border-white/5 pt-12 pb-16 text-center space-y-6">
+            <div class="flex items-center justify-center space-x-3">
+                <div class="w-8 h-8 bg-gradient-to-tr from-cosmic-pink to-cosmic-blue rounded-lg flex items-center justify-center overflow-hidden">
+                    <img src="assets/logo.svg" alt="AstroCalcul Logo" class="w-full h-full object-contain p-1" onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='block';">
+                    <svg id="footer-logo-fallback" class="hidden w-4 h-4 text-white m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <span class="text-lg font-black tracking-wider text-white">ASTROCALCUL</span>
+            </div>
+            
+            <p class="text-sm text-gray-400 max-w-md mx-auto">
+                L'apprentissage ludique, sécurisé et amusant du calcul mental pour la nouvelle génération d'explorateurs spatiaux.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-6 text-xs font-bold text-gray-500">
+                <!-- Liens légaux réels -->
+                <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" class="hover:text-cosmic-cyan transition-colors">Politique de Confidentialité</a>
+                <span>•</span>
+                <a href="https://jejelefou23.github.io/astrocalcul-privacy/delete-account.html" target="_blank" rel="noopener noreferrer" class="hover:text-cosmic-cyan transition-colors">Supprimer mon compte</a>
+                <span>•</span>
+                <a href="mailto:contact.astrolabs.be@gmail.com" class="hover:text-cosmic-cyan transition-colors">Contact Support</a>
+            </div>
+
+            <p class="text-xs text-gray-600">
+                &copy; 2026 AstroCalcul. Tous droits réservés.
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        // ==========================================
+        // 1. ÉTOILES SCINTILLANTES
+        // ==========================================
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        let mouseX = 0;
+        let mouseY = 0;
+        const starCount = 100;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initStars();
+        }
+
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < starCount; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 1.5 + 0.5,
+                    alpha: Math.random(),
+                    speed: Math.random() * 0.02 + 0.005,
+                    color: Math.random() > 0.8 ? '#00F0FF' : (Math.random() > 0.8 ? '#FF2E93' : '#FFFFFF')
+                });
+            }
+        }
+
+        function animateStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                star.alpha += star.speed;
+                if (star.alpha > 1 || star.alpha < 0) star.speed = -star.speed;
+                const offset_x = (mouseX - window.innerWidth / 2) * (star.radius * 0.02);
+                const offset_y = (mouseY - window.innerHeight / 2) * (star.radius * 0.02);
+
+                ctx.save();
+                ctx.globalAlpha = Math.max(0.1, star.alpha);
+                ctx.beginPath();
+                ctx.arc(star.x + offset_x, star.y + offset_y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = star.color;
+                ctx.fill();
+                ctx.restore();
+            });
+            requestAnimationFrame(animateStars);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        resizeCanvas();
+        animateStars();
+
+
+        // ==========================================
+        // 2. SIMULATEUR MATHÉMATIQUE & COMPAGNON
+        // ==========================================
+        let currentDifficulty = 'easy';
+        let currentQuestion = { question: '', answer: 0, choices: [] };
+        let score = 0;
+        let isLaunching = false;
+
+        // Configuration des assets planètes selon la difficulté
+        const planetAssets = {
+            easy: 'assets/planete-easy.svg',
+            medium: 'assets/planete-medium.svg',
+            hard: 'assets/planete-hard.svg'
+        };
+
+        // Textes de l'astronaute
+        const thinkingPhrases = [
+            "Hmm... Une nouvelle équation s'affiche !",
+            "Aide-moi à trouver la bonne planète-réponse !",
+            "Tu as trouvé la solution ? Clique dessus !",
+            "La fusée attend tes calculs pour décoller !"
+        ];
+
+        const successPhrases = [
+            "SUPERBE ! On s'envole !",
+            "Excellent calcul ! Moteurs allumés !",
+            "La réponse était parfaite !",
+            "Direction les étoiles !"
+        ];
+
+        const errorPhrases = [
+            "Pas tout à fait... réessaye !",
+            "Oups ! Ajustons nos coordonnées !",
+            "Fais une autre tentative, tu vas y arriver !",
+            "Erreur de trajectoire, réessaye !"
+        ];
+
+        // Modification de l'expression faciale SVG de secours
+        function updateFallbackAstroFace(state) {
+            const eyes = document.getElementById('astro-eyes');
+            const mouth = document.getElementById('astro-mouth');
+            if (!eyes || !mouth) return;
+
+            if (state === 'happy') {
+                eyes.setAttribute('d', 'M35,43 Q40,38 43,43 M57,43 Q60,38 65,43'); // yeux rieurs
+                mouth.setAttribute('d', 'M40,52 Q50,62 60,52'); // grand sourire
+            } else if (state === 'sad') {
+                eyes.setAttribute('d', 'M36,46 L42,42 M58,42 L64,46'); // sourcils froncés
+                mouth.setAttribute('d', 'M43,57 Q50,50 57,57'); // moue triste
+            } else {
+                eyes.setAttribute('d', 'M38,45 L44,45 M56,45 L62,45'); // yeux neutres
+                mouth.setAttribute('d', 'M45,55 Q50,55 55,55'); // ligne neutre
+            }
+        }
+
+        // Modification de l'image de l'astronaute
+        function updateAstroCompanion(state) {
+            const companionImg = document.getElementById('astro-companion-img');
+            const speechText = document.getElementById('astro-speech');
+
+            if (state === 'happy') {
+                companionImg.src = 'assets/astronaute-content.svg';
+                speechText.innerText = `"${successPhrases[Math.floor(Math.random() * successPhrases.length)]}"`;
+                updateFallbackAstroFace('happy');
+            } else if (state === 'sad') {
+                companionImg.src = 'assets/astronaute-erreur.svg';
+                speechText.innerText = `"${errorPhrases[Math.floor(Math.random() * errorPhrases.length)]}"`;
+                updateFallbackAstroFace('sad');
+            } else {
+                companionImg.src = 'assets/astronaute-penseur.svg';
+                speechText.innerText = `"${thinkingPhrases[Math.floor(Math.random() * thinkingPhrases.length)]}"`;
+                updateFallbackAstroFace('neutral');
+            }
+        }
+
+        function setDifficulty(diff) {
+            if (isLaunching) return;
+            currentDifficulty = diff;
+            
+            document.querySelectorAll('.difficulty-btn').forEach(btn => {
+                btn.className = "difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 border-white/10 hover:border-white/25";
+            });
+
+            const activeBtn = document.getElementById(`btn-${diff}`);
+            let accentColor = 'cosmic-cyan';
+            if (diff === 'medium') accentColor = 'cosmic-pink';
+            if (diff === 'hard') accentColor = 'cosmic-purple';
+            
+            activeBtn.className = `difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 bg-space-800 border-${accentColor} text-${accentColor} shadow-sm`;
+
+            // Mise à jour de l'image de fond de la planète active
+            const planetImg = document.getElementById('planet-bg-asset');
+            planetImg.src = planetAssets[diff];
+            planetImg.style.display = 'block';
+
+            generateQuestion();
+        }
+
+        function generateQuestion() {
+            let num1, num2, questionText, answer;
+            
+            if (currentDifficulty === 'easy') {
+                num1 = Math.floor(Math.random() * 8) + 2;
+                num2 = Math.floor(Math.random() * 7) + 1;
+                questionText = `${num1} + ${num2}`;
+                answer = num1 + num2;
+            } else if (currentDifficulty === 'medium') {
+                num1 = Math.floor(Math.random() * 15) + 5;
+                num2 = Math.floor(Math.random() * 10) + 2;
+                if (Math.random() > 0.5) {
+                    questionText = `${num1} + ${num2}`;
+                    answer = num1 + num2;
+                } else {
+                    questionText = `${num1 + num2} - ${num2}`;
+                    answer = num1;
+                }
+            } else {
+                num1 = Math.floor(Math.random() * 8) + 2;
+                num2 = Math.floor(Math.random() * 8) + 2;
+                questionText = `${num1} × ${num2}`;
+                answer = num1 * num2;
+            }
+
+            let fake1 = answer + (Math.random() > 0.5 ? 2 : -2);
+            let fake2 = answer + (Math.random() > 0.5 ? 5 : -3);
+            if (fake1 === answer || fake1 <= 0) fake1 = answer + 1;
+            if (fake2 === answer || fake2 === fake1 || fake2 <= 0) fake2 = answer + 3;
+
+            const choices = [answer, fake1, fake2].sort(() => Math.random() - 0.5);
+            currentQuestion = { question: questionText, answer: answer, choices: choices };
+            
+            document.getElementById('calculation-display').innerText = questionText;
+            
+            const container = document.getElementById('choices-container');
+            container.innerHTML = '';
+            
+            choices.forEach(choice => {
+                const button = document.createElement('button');
+                button.className = "choice-btn py-4 rounded-2xl bg-space-800 hover:bg-space-700 border border-white/10 text-xl font-extrabold hover:border-cosmic-cyan hover:scale-105 active:scale-95 transition-all duration-200";
+                button.innerText = choice;
+                button.onclick = () => verifyAnswer(choice, button);
+                container.appendChild(button);
+            });
+
+            updateAstroCompanion('neutral');
+        }
+
+        function verifyAnswer(selected, buttonElement) {
+            if (isLaunching) return;
+
+            const feedback = document.getElementById('simulator-feedback');
+            
+            if (selected === currentQuestion.answer) {
+                score++;
+                document.getElementById('simulator-score').innerText = score;
+                feedback.innerText = "EXCELLENT ! DÉCOLLAGE EN COURS !";
+                feedback.className = "text-cosmic-green font-black tracking-wide animate-pulse";
+                
+                buttonElement.className = "choice-btn py-4 rounded-2xl bg-cosmic-green/20 border-2 border-cosmic-green text-cosmic-green text-xl font-extrabold transition-all duration-200";
+                
+                updateAstroCompanion('happy');
+                triggerRocketLaunch();
+            } else {
+                feedback.innerText = "OUPS ! RÉESSEZ POUR PROPULSER !";
+                feedback.className = "text-cosmic-pink font-black tracking-wide animate-shake";
+                
+                buttonElement.className = "choice-btn py-4 rounded-2xl bg-cosmic-pink/20 border-2 border-cosmic-pink text-cosmic-pink text-xl font-extrabold transition-all duration-200";
+                
+                updateAstroCompanion('sad');
+
+                // Secousse
+                const container = document.getElementById('sim-rocket-container');
+                container.classList.add('animate-shake');
+                setTimeout(() => container.classList.remove('animate-shake'), 300);
+            }
+        }
+
+        function triggerRocketLaunch() {
+            isLaunching = true;
+            const rocket = document.getElementById('sim-rocket-container');
+            const fallbackFlame = document.getElementById('sim-flame');
+            const smoke = document.getElementById('sim-smoke');
+            const status = document.getElementById('rocket-status');
+            const altitude = document.getElementById('rocket-altitude');
+            const altitudeBar = document.getElementById('altitude-bar');
+
+            // Allumage moteur (montre la flamme sur le SVG de secours)
+            fallbackFlame.classList.remove('hidden');
+            smoke.classList.add('opacity-100', 'scale-150');
+            status.innerText = "MOTEURS ALLUMÉS !";
+            status.className = "text-xs font-black text-cosmic-pink tracking-widest uppercase";
+
+            let currentAlt = 0;
+            const altInterval = setInterval(() => {
+                currentAlt += 12;
+                altitude.innerText = `Altitude : ${currentAlt} km`;
+            }, 50);
+
+            // Décollage
+            setTimeout(() => {
+                rocket.style.transform = "translateY(-220px) scale(0.7)";
+                status.innerText = "MISE EN ORBITE RÉUSSIE !";
+                status.className = "text-xs font-black text-cosmic-green tracking-widest uppercase";
+                altitudeBar.style.height = "100%";
+            }, 300);
+
+            // Retour
+            setTimeout(() => {
+                clearInterval(altInterval);
+                rocket.style.transition = "none";
+                rocket.style.transform = "translateY(220px) scale(0.1)";
+                fallbackFlame.classList.add('hidden');
+                smoke.classList.remove('opacity-100', 'scale-150');
+                
+                setTimeout(() => {
+                    rocket.style.transition = "all 1s ease-out";
+                    rocket.style.transform = "translateY(0px) scale(1)";
+                    status.innerText = "SYSTÈME PRÊT";
+                    status.className = "text-xs font-black text-cosmic-cyan tracking-widest uppercase";
+                    altitude.innerText = "Altitude : 0 km";
+                    altitudeBar.style.height = "10%";
+                    isLaunching = false;
+                    generateQuestion();
+                }, 50);
+            }, 2500);
+        }
+
+        setDifficulty('easy');
+
+
+        // ==========================================
+        // 3. CARROUSEL DE CAPTURES D'ÉCRAN
+        // ==========================================
+        const track = document.getElementById('carousel-track');
+        let currentSlideIndex = 0;
+
+        function getVisibleSlides() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        }
+
+        function updateCarouselPosition() {
+            const slideWidth = track.children[0].offsetWidth;
+            const gap = 24;
+            const offset = currentSlideIndex * (slideWidth + gap);
+            track.style.transform = `translateX(-${offset}px)`;
+        }
+
+        function nextSlide() {
+            const totalSlides = track.children.length;
+            const visible = getVisibleSlides();
+            const maxIndex = totalSlides - visible;
+
+            if (currentSlideIndex < maxIndex) {
+                currentSlideIndex++;
+            } else {
+                currentSlideIndex = 0;
+            }
+            updateCarouselPosition();
+        }
+
+        function prevSlide() {
+            const totalSlides = track.children.length;
+            const visible = getVisibleSlides();
+            const maxIndex = totalSlides - visible;
+
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+            } else {
+                currentSlideIndex = maxIndex;
+            }
+            updateCarouselPosition();
+        }
+
+        window.addEventListener('resize', () => {
+            currentSlideIndex = 0;
+            updateCarouselPosition();
+        });
+    </script>
+</body>
+</html>
