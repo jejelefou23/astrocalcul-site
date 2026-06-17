@@ -113,7 +113,6 @@
                 <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">ASTROCALCUL</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide">
-                <a href="#simulator" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Décoller (Démo)</a>
                 <a href="#parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
                 <a href="#preview" class="text-gray-300 hover:text-cosmic-purple transition-colors">Aperçu du Jeu</a>
             </nav>
@@ -187,7 +186,7 @@
                 </div>
                 
                 <div class="flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-400 font-bold">
-                    <span>★ ★ ★ ★ ★ (4.9/5)</span>
+                    <span>★ ★ ★ ★ ★ (5.0/5)</span>
                     <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
                     <span>4-10 Ans</span>
                     <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
@@ -406,7 +405,7 @@
                         </div>
                         <h3 class="text-xl font-extrabold">100% Sécurisé</h3>
                         <p class="text-gray-300 text-sm leading-relaxed">
-                            Aucune donnée personnelle n'est collectée ou stockée. Votre enfant s'entraîne en local de manière totalement privée et sécurisée.
+                            Aucune donnée personnelle n'est collectée ou stored. Votre enfant s'entraîne en local de manière totalement privée et sécurisée.
                         </p>
                     </div>
                     <span class="text-xs text-cosmic-cyan font-bold tracking-widest uppercase pt-6">AUCUN ENREGISTREMENT</span>
@@ -477,9 +476,11 @@
                     
                     <!-- Slide 1 -->
                     <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
-                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5 flex items-center justify-center">
-                            <img src="assets/screen-planetes.png" alt="Sélection des planètes" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide1-fallback').style.display='block';">
-                            <div id="slide1-fallback" class="hidden w-full h-full p-4">
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5">
+                            <!-- Image absolute blockée au format 4:3 pour éviter de casser le carrousel -->
+                            <img src="assets/screen-planetes.png" alt="Sélection des planètes" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide1-fallback').style.display='flex';">
+                            <!-- Fallback vectoriel absolute et auto-centré -->
+                            <div id="slide1-fallback" class="hidden absolute inset-0 w-full h-full p-4 flex items-center justify-center">
                                 <svg class="w-full h-full" viewBox="0 0 300 225">
                                     <rect width="280" height="205" x="10" y="10" rx="15" fill="#141432" stroke="#FF2E93" stroke-width="2"/>
                                     <text x="150" y="45" fill="white" font-size="14" font-weight="900" text-anchor="middle">SÉLECTION DE LA PLANÈTE</text>
@@ -496,9 +497,9 @@
 
                     <!-- Slide 2 -->
                     <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
-                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5 flex items-center justify-center">
-                            <img src="assets/screen-jeu.png" alt="Calcul en cours" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide2-fallback').style.display='block';">
-                            <div id="slide2-fallback" class="hidden w-full h-full p-4">
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5">
+                            <img src="assets/screen-jeu.png" alt="Calcul en cours" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide2-fallback').style.display='flex';">
+                            <div id="slide2-fallback" class="hidden absolute inset-0 w-full h-full p-4 flex items-center justify-center">
                                 <svg class="w-full h-full" viewBox="0 0 300 225">
                                     <rect width="280" height="205" x="10" y="10" rx="15" fill="#141432" stroke="#00F0FF" stroke-width="2"/>
                                     <text x="150" y="105" fill="white" font-size="28" font-weight="900" text-anchor="middle">8 + 7 = 15</text>
@@ -513,9 +514,9 @@
 
                     <!-- Slide 3 -->
                     <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
-                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5 flex items-center justify-center">
-                            <img src="assets/screen-badges.png" alt="Badges de réussite" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide3-fallback').style.display='block';">
-                            <div id="slide3-fallback" class="hidden w-full h-full p-4">
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5">
+                            <img src="assets/screen-badges.png" alt="Badges de réussite" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide3-fallback').style.display='flex';">
+                            <div id="slide3-fallback" class="hidden absolute inset-0 w-full h-full p-4 flex items-center justify-center">
                                 <svg class="w-full h-full" viewBox="0 0 300 225">
                                     <rect width="280" height="205" x="10" y="10" rx="15" fill="#141432" stroke="#A12EFF" stroke-width="2"/>
                                     <text x="150" y="45" fill="white" font-size="14" font-weight="900" text-anchor="middle">SALLE DES BADGES</text>
@@ -550,7 +551,6 @@
             </p>
 
             <div class="flex flex-wrap items-center justify-center gap-6 text-xs font-bold text-gray-500">
-                <!-- Liens légaux réels -->
                 <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" class="hover:text-cosmic-cyan transition-colors">Politique de Confidentialité</a>
                 <span>•</span>
                 <a href="https://jejelefou23.github.io/astrocalcul-privacy/delete-account.html" target="_blank" rel="noopener noreferrer" class="hover:text-cosmic-cyan transition-colors">Supprimer mon compte</a>
