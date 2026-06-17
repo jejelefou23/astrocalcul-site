@@ -103,7 +103,7 @@
     <header class="w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center space-x-3 group">
-                <!-- LOGO DE L'APPLICATION AVEC FALLBACK VECTORIEL -->
+                <!-- LOGO DE L'APPLICATION (PNG) AVEC FALLBACK VECTORIEL -->
                 <div class="w-10 h-10 bg-gradient-to-tr from-cosmic-pink to-cosmic-blue rounded-xl flex items-center justify-center shadow-lg shadow-cosmic-pink/20 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
                     <img src="assets/logo.png" alt="AstroCalcul Logo" class="w-full h-full object-contain p-1" onerror="this.style.display='none'; document.getElementById('header-logo-fallback').style.display='block';">
                     <svg id="header-logo-fallback" class="hidden w-6 h-6 text-white m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -128,11 +128,11 @@
         <section id="hero" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8 md:pt-16">
             
             <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
-                <!-- Badge d'accroche avec tête d'astronaute -->
+                <!-- Badge d'accroche avec tête d'astronaute (PNG) -->
                 <div class="inline-flex items-center space-x-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
                     <div class="w-6 h-6 rounded-full overflow-hidden bg-cosmic-cyan/20 flex items-center justify-center">
-                        <img src="assets/astronaute-tete.svg" alt="Co-pilote" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('hero-mini-astrosvg').style.display='block';">
-                        <svg id="hero-mini-astrosvg" class="w-4 h-4 text-cosmic-cyan" viewBox="0 0 24 24" fill="currentColor">
+                        <img src="assets/astronaute-tete.png" alt="Co-pilote" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('hero-mini-astrosvg').style.display='block';">
+                        <svg id="hero-mini-astrosvg" class="hidden w-4 h-4 text-cosmic-cyan" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 3a4 4 0 110 8 4 4 0 010-8zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                         </svg>
                     </div>
@@ -153,7 +153,7 @@
                 <!-- Boutons de téléchargement réels pour iOS et Android -->
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
                     
-                    <!-- App Store (Lien réel injecté) -->
+                    <!-- App Store -->
                     <a href="https://apps.apple.com/us/app/astrocalcul/id6760236661" target="_blank" rel="noopener noreferrer" class="w-48 h-14 bg-black border border-white/15 rounded-xl flex items-center justify-center px-4 hover:border-cosmic-cyan/50 hover:bg-space-800 transition-all duration-300 shadow-md hover:shadow-cosmic-cyan/10">
                         <svg class="w-7 h-7 text-white mr-3" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.1 16.67C20.08 16.74 19.67 18.11 18.71 19.5ZM15.97 4.17C16.63 3.37 17.07 2.28 16.95 1C15.96 1.04 14.76 1.66 14.05 2.49C13.44 3.19 12.91 4.29 13.06 5.54C14.16 5.63 15.3 4.98 15.97 4.17Z"/>
@@ -164,7 +164,7 @@
                         </div>
                     </a>
 
-                    <!-- Google Play (Lien réel injecté) -->
+                    <!-- Google Play -->
                     <a href="https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul" target="_blank" rel="noopener noreferrer" class="w-48 h-14 bg-black border border-white/15 rounded-xl flex items-center justify-center px-4 hover:border-cosmic-pink/50 hover:bg-space-800 transition-all duration-300 shadow-md hover:shadow-cosmic-pink/10">
                         <svg class="w-7 h-7 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.25301 2.59367C3.06649 2.78443 2.96289 3.09033 2.96289 3.47701V20.523C2.96289 20.9097 3.06649 21.2156 3.25301 21.4063L3.32701 21.469L12.836 11.96V11.751L3.32701 2.24L3.25301 2.59367Z" fill="url(#gp_grad1)"/>
@@ -200,9 +200,9 @@
                 
                 <div class="relative w-full max-w-[400px] h-[400px]">
                     
-                    <!-- FUSÉE PRINCIPALE DE L'APPLICATION -->
+                    <!-- FUSÉE PRINCIPALE DE L'APPLICATION (PNG) -->
                     <div class="absolute inset-0 flex items-center justify-center animate-float-slow">
-                        <img src="assets/fusee-main.svg" alt="Fusée AstroCalcul" class="w-4/5 h-4/5 object-contain" onerror="this.style.display='none'; document.getElementById('hero-fallback-rocket').style.display='block';">
+                        <img src="assets/fusee-main.png" alt="Fusée AstroCalcul" class="w-4/5 h-4/5 object-contain" onerror="this.style.display='none'; document.getElementById('hero-fallback-rocket').style.display='block';">
                         
                         <div id="hero-fallback-rocket" class="hidden w-full h-full">
                             <svg class="w-full h-full" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -229,11 +229,11 @@
                         </div>
                     </div>
 
-                    <!-- ASTRONAUTE FLOTTANT -->
+                    <!-- ASTRONAUTE FLOTTANT (PNG) -->
                     <div class="absolute -bottom-4 -left-4 w-36 h-36 animate-float z-10">
-                        <img src="assets/astronaute-hero.svg" alt="Astronaute AstroCalcul" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('hero-fallback-astro').style.display='block';">
+                        <img src="assets/astronaute-hero.png" alt="Astronaute AstroCalcul" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('hero-fallback-astro').style.display='block';">
                         
-                        <div id="hero-fallback-astro" class="w-full h-full">
+                        <div id="hero-fallback-astro" class="hidden w-full h-full">
                             <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="50" cy="50" r="28" fill="#FFFFFF" stroke="#00F0FF" stroke-width="2"/>
                                 <rect x="32" y="34" width="36" height="26" rx="10" fill="#0B0B1E" stroke="#FF2E93" stroke-width="2"/>
@@ -274,12 +274,12 @@
                     
                     <span class="text-xs text-gray-400 font-extrabold uppercase tracking-widest self-end">RAMPE DE LANCEMENT</span>
                     
-                    <!-- Fusée animée sur sa rampe -->
+                    <!-- Fusée animée sur sa rampe (PNG) -->
                     <div id="sim-rocket-container" class="relative w-36 h-64 flex items-end justify-center transition-all duration-1000 ease-out transform">
                         
                         <div id="sim-smoke" class="absolute bottom-0 w-24 h-8 bg-white/20 rounded-full blur-md opacity-0 scale-50 transition-all duration-300"></div>
                         
-                        <img src="assets/fusee-sim.svg" id="sim-rocket-image" alt="Fusée" class="w-24 h-48 object-contain" onerror="this.style.display='none'; document.getElementById('sim-fallback-rocket').style.display='block';">
+                        <img src="assets/fusee-sim.png" id="sim-rocket-image" alt="Fusée" class="w-24 h-48 object-contain" onerror="this.style.display='none'; document.getElementById('sim-fallback-rocket').style.display='block';">
                         
                         <svg id="sim-fallback-rocket" class="hidden w-24 h-48" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path id="sim-flame" d="M40,160 Q50,200 50,180 Q50,200 60,160 Z" fill="url(#flameGradSim)" class="hidden">
@@ -306,12 +306,12 @@
 
                 <div class="lg:col-span-7 glass-panel rounded-3xl p-6 md:p-8 flex flex-col justify-between space-y-6">
                     
-                    <!-- Compagnon Réactif Astronaute -->
+                    <!-- Compagnon Réactif Astronaute (PNG) -->
                     <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-2xl border border-white/10">
                         <div class="relative w-16 h-16 flex-shrink-0">
-                            <img id="astro-companion-img" src="assets/astronaute-penseur.svg" alt="Compagnon" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('astro-companion-fallback').style.display='block';">
+                            <img id="astro-companion-img" src="assets/astronaute-penseur.png" alt="Compagnon" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('astro-companion-fallback').style.display='block';">
                             
-                            <svg id="astro-companion-fallback" class="w-full h-full" viewBox="0 0 100 100">
+                            <svg id="astro-companion-fallback" class="hidden w-full h-full" viewBox="0 0 100 100">
                                 <circle cx="50" cy="50" r="35" fill="#1D1D4A" stroke="#00F0FF" stroke-width="2"/>
                                 <rect x="25" y="25" width="50" height="40" rx="12" fill="#0B0B1E" stroke="#FF2E93" stroke-width="2"/>
                                 <path id="astro-eyes" d="M38,45 L44,45 M56,45 L62,45" stroke="#00FF87" stroke-width="3" stroke-linecap="round"/>
@@ -344,8 +344,9 @@
                     <div class="bg-space-900/90 border border-white/5 rounded-2xl p-6 text-center relative overflow-hidden">
                         <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
                         
+                        <!-- Image de la planète (PNG) -->
                         <div class="absolute right-4 top-2 w-12 h-12 opacity-20">
-                            <img id="planet-bg-asset" src="assets/planete-easy.svg" alt="" class="w-full h-full object-contain" onerror="this.style.display='none';">
+                            <img id="planet-bg-asset" src="assets/planete-easy.png" alt="" class="w-full h-full object-contain" onerror="this.style.display='none';">
                         </div>
 
                         <div class="relative z-10 space-y-2">
@@ -394,12 +395,12 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Carte 1 : Sécurité et Confidentialité -->
+                <!-- Carte 1 : Sécurité et Confidentialité (PNG) -->
                 <div class="glass-panel rounded-3xl p-8 hover:border-cosmic-cyan/30 transition-all duration-300 flex flex-col justify-between group">
                     <div class="space-y-6">
                         <div class="w-14 h-14 bg-cosmic-cyan/10 rounded-2xl flex items-center justify-center text-cosmic-cyan group-hover:scale-110 transition-transform duration-300 overflow-hidden">
-                            <img src="assets/icone-securite.svg" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('shield-svg').style.display='block';">
-                            <svg id="shield-svg" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <img src="assets/icone-securite.png" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('shield-svg').style.display='block';">
+                            <svg id="shield-svg" class="hidden w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                             </svg>
                         </div>
@@ -411,12 +412,12 @@
                     <span class="text-xs text-cosmic-cyan font-bold tracking-widest uppercase pt-6">AUCUN ENREGISTREMENT</span>
                 </div>
 
-                <!-- Carte 2 : Publicités -->
+                <!-- Carte 2 : Publicités (PNG) -->
                 <div class="glass-panel rounded-3xl p-8 hover:border-cosmic-pink/30 transition-all duration-300 flex flex-col justify-between group">
                     <div class="space-y-6">
                         <div class="w-14 h-14 bg-cosmic-pink/10 rounded-2xl flex items-center justify-center text-cosmic-pink group-hover:scale-110 transition-transform duration-300 overflow-hidden">
-                            <img src="assets/icone-pub.svg" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('ban-svg').style.display='block';">
-                            <svg id="ban-svg" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <img src="assets/icone-pub.png" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('ban-svg').style.display='block';">
+                            <svg id="ban-svg" class="hidden w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
                             </svg>
                         </div>
@@ -428,12 +429,12 @@
                     <span class="text-xs text-cosmic-pink font-bold tracking-widest uppercase pt-6">CONCENTRATION TOTALE</span>
                 </div>
 
-                <!-- Carte 3 : Temps d'écran -->
+                <!-- Carte 3 : Temps d'écran (PNG) -->
                 <div class="glass-panel rounded-3xl p-8 hover:border-cosmic-purple/30 transition-all duration-300 flex flex-col justify-between group">
                     <div class="space-y-6">
                         <div class="w-14 h-14 bg-cosmic-purple/10 rounded-2xl flex items-center justify-center text-cosmic-purple group-hover:scale-110 transition-transform duration-300 overflow-hidden">
-                            <img src="assets/icone-chrono.svg" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('timer-svg').style.display='block';">
-                            <svg id="timer-svg" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <img src="assets/icone-chrono.png" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('timer-svg').style.display='block';">
+                            <svg id="timer-svg" class="hidden w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
@@ -631,11 +632,11 @@
         let score = 0;
         let isLaunching = false;
 
-        // Configuration des assets planètes selon la difficulté
+        // Configuration des assets planètes selon la difficulté (PNG)
         const planetAssets = {
-            easy: 'assets/planete-easy.svg',
-            medium: 'assets/planete-medium.svg',
-            hard: 'assets/planete-hard.svg'
+            easy: 'assets/planete-easy.png',
+            medium: 'assets/planete-medium.png',
+            hard: 'assets/planete-hard.png'
         };
 
         // Textes de l'astronaute
@@ -678,21 +679,21 @@
             }
         }
 
-        // Modification de l'image de l'astronaute
+        // Modification de l'image de l'astronaute (PNG)
         function updateAstroCompanion(state) {
             const companionImg = document.getElementById('astro-companion-img');
             const speechText = document.getElementById('astro-speech');
 
             if (state === 'happy') {
-                companionImg.src = 'assets/astronaute-content.svg';
+                companionImg.src = 'assets/astronaute-content.png';
                 speechText.innerText = `"${successPhrases[Math.floor(Math.random() * successPhrases.length)]}"`;
                 updateFallbackAstroFace('happy');
             } else if (state === 'sad') {
-                companionImg.src = 'assets/astronaute-erreur.svg';
+                companionImg.src = 'assets/astronaute-erreur.png';
                 speechText.innerText = `"${errorPhrases[Math.floor(Math.random() * errorPhrases.length)]}"`;
                 updateFallbackAstroFace('sad');
             } else {
-                companionImg.src = 'assets/astronaute-penseur.svg';
+                companionImg.src = 'assets/astronaute-penseur.png';
                 speechText.innerText = `"${thinkingPhrases[Math.floor(Math.random() * thinkingPhrases.length)]}"`;
                 updateFallbackAstroFace('neutral');
             }
@@ -713,7 +714,7 @@
             
             activeBtn.className = `difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 bg-space-800 border-${accentColor} text-${accentColor} shadow-sm`;
 
-            // Mise à jour de l'image de fond de la planète active
+            // Mise à jour de l'image de fond de la planète active (PNG)
             const planetImg = document.getElementById('planet-bg-asset');
             planetImg.src = planetAssets[diff];
             planetImg.style.display = 'block';
