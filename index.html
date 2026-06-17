@@ -504,7 +504,6 @@
             </div>
         </section>
 
-
         <section id="preview" class="scroll-mt-24 space-y-12">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div class="space-y-4 max-w-2xl">
@@ -513,7 +512,7 @@
                     </div>
                     <h2 data-i18n="preview_title" class="text-3xl md:text-4xl font-black">Embarquez dans l'aventure AstroCalcul</h2>
                     <p data-i18n="preview_description" class="text-gray-300">
-                        Glissez pour découvrir de vraies captures d'écran de l'application et de ses univers colorés.
+                        Glissez ou utilisez les boutons pour découvrir l'application et ses univers colorés.
                     </p>
                 </div>
                 <!-- Contrôles du carrousel -->
@@ -528,14 +527,13 @@
             </div>
 
             <div class="relative overflow-hidden rounded-3xl p-1">
-                <div id="carousel-track" class="flex transition-transform duration-500 ease-out gap-6 cursor-grab select-none">
+                <!-- Utilisation de scroll-snap pour un balayage mobile natif et hyper fluide -->
+                <div id="carousel-track" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-6 cursor-grab select-none pb-4">
                     
                     <!-- Slide 1 -->
-                    <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
+                    <div class="snap-start min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
                         <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5">
-                            <!-- Image absolute blockée au format 4:3 pour éviter de casser le carrousel -->
                             <img src="assets/screen-planetes.png" alt="Sélection des planètes" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide1-fallback').style.display='flex';">
-                            <!-- Fallback vectoriel absolute et auto-centré -->
                             <div id="slide1-fallback" style="display: none;" class="absolute inset-0 w-full h-full p-4 flex items-center justify-center">
                                 <svg class="w-full h-full" viewBox="0 0 300 225">
                                     <rect width="280" height="205" x="10" y="10" rx="15" fill="#141432" stroke="#FF2E93" stroke-width="2"/>
@@ -552,7 +550,7 @@
                     </div>
 
                     <!-- Slide 2 -->
-                    <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
+                    <div class="snap-start min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
                         <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5">
                             <img src="assets/screen-jeu.png" alt="Calcul en cours" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide2-fallback').style.display='flex';">
                             <div id="slide2-fallback" style="display: none;" class="absolute inset-0 w-full h-full p-4 flex items-center justify-center">
@@ -569,7 +567,7 @@
                     </div>
 
                     <!-- Slide 3 -->
-                    <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
+                    <div class="snap-start min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
                         <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5">
                             <img src="assets/screen-badges.png" alt="Badges de réussite" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide3-fallback').style.display='flex';">
                             <div id="slide3-fallback" style="display: none;" class="absolute inset-0 w-full h-full p-4 flex items-center justify-center">
@@ -586,10 +584,48 @@
                         </div>
                     </div>
 
+                    <!-- Slide 4 -->
+                    <div class="snap-start min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5">
+                            <img src="assets/screen-parents.png" alt="Tableau de bord parents" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide4-fallback').style.display='flex';">
+                            <div id="slide4-fallback" style="display: none;" class="absolute inset-0 w-full h-full p-4 flex items-center justify-center">
+                                <svg class="w-full h-full" viewBox="0 0 300 225">
+                                    <rect width="280" height="205" x="10" y="10" rx="15" fill="#141432" stroke="#00FF87" stroke-width="2"/>
+                                    <text id="fallback_slide4_title" x="150" y="45" fill="white" font-size="14" font-weight="900" text-anchor="middle">SUIVI PARENTAL</text>
+                                    <rect x="50" y="80" width="200" height="15" rx="5" fill="#00FF87" opacity="0.3"/>
+                                    <rect x="50" y="110" width="150" height="15" rx="5" fill="#00F0FF" opacity="0.3"/>
+                                    <rect x="50" y="140" width="180" height="15" rx="5" fill="#FF2E93" opacity="0.3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 data-i18n="preview_slide4_title" class="text-lg font-black text-white">Espace de Suivi</h3>
+                            <p data-i18n="preview_slide4_text" class="text-gray-400 text-xs">Un tableau de bord simple et épuré pour suivre au jour le jour les progrès et les taux de réussite de votre petit astronaute.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="snap-start min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0">
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/5">
+                            <img src="assets/screen-custom.png" alt="Personnalisation" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('slide5-fallback').style.display='flex';">
+                            <div id="slide5-fallback" style="display: none;" class="absolute inset-0 w-full h-full p-4 flex items-center justify-center">
+                                <svg class="w-full h-full" viewBox="0 0 300 225">
+                                    <rect width="280" height="205" x="10" y="10" rx="15" fill="#141432" stroke="#FFF500" stroke-width="2"/>
+                                    <text id="fallback_slide5_title" x="150" y="45" fill="white" font-size="14" font-weight="900" text-anchor="middle">PERSONNALISATION</text>
+                                    <circle cx="150" cy="120" r="35" fill="none" stroke="#FFF500" stroke-dasharray="5 5" stroke-width="2"/>
+                                    <path d="M150,100 L160,115 L175,115 L163,125 L168,140 L150,130 L132,140 L137,125 L125,115 L140,115 Z" fill="#FFF500"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 data-i18n="preview_slide5_title" class="text-lg font-black text-white">Cabine Cosmique</h3>
+                            <p data-i18n="preview_slide5_text" class="text-gray-400 text-xs">Débloquez de nouveaux designs de casques, des couleurs de combinaisons et de fusées pour récompenser chaque série d'exercices réussie.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
-
 
         <footer class="border-t border-white/5 pt-12 pb-16 text-center space-y-6">
             <div class="flex items-center justify-center space-x-3">
@@ -676,13 +712,17 @@
                 parents_card3_footer: "TEMPS D'ÉCRAN MAÎTRISÉ",
                 preview_badge: "Un univers merveilleux",
                 preview_title: "Embarquez dans l'aventure AstroCalcul",
-                preview_description: "Glissez pour découvrir de vraies captures d'écran de l'application et de ses univers colorés.",
+                preview_description: "Glissez ou utilisez les boutons pour découvrir l'application et ses univers colorés.",
                 preview_slide1_title: "Cartographie Céleste",
                 preview_slide1_text: "Un tableau de bord intuitif permettant aux enfants de sélectionner leur destination d'entraînement sous forme de planètes à débloquer.",
                 preview_slide2_title: "Mission de Calcul",
                 preview_slide2_text: "Une mécanique de réponse claire et colorée, optimisée pour éviter la frustration avec des feedbacks visuels positifs instantanés.",
                 preview_slide3_title: "Galerie des Trophées",
                 preview_slide3_text: "Un catalogue de badges et de constellations à compléter pour motiver l'autonomie et stimuler la persévérance de l'enfant.",
+                preview_slide4_title: "Espace de Suivi",
+                preview_slide4_text: "Un tableau de bord simple et épuré pour suivre au jour le jour les progrès et les taux de réussite de votre petit astronaute.",
+                preview_slide5_title: "Cabine Cosmique",
+                preview_slide5_text: "Débloquez de nouveaux designs de casques, des couleurs de combinaisons et de fusées pour récompenser chaque série d'exercices réussie.",
                 footer_desc: "L'apprentissage ludique, sécurisé et amusant du calcul mental pour la nouvelle génération d'explorateurs spatiaux.",
                 footer_privacy_link: "Politique de Confidentialité",
                 footer_delete_link: "Supprimer mon compte",
@@ -692,6 +732,8 @@
                 fallback_slide1_title: "SÉLECTION DE LA PLANÈTE",
                 fallback_slide1_subtitle: "Addition • Soustraction • Table",
                 fallback_slide3_title: "SALLE DES BADGES",
+                fallback_slide4_title: "SUIVI PARENTAL",
+                fallback_slide5_title: "PERSONNALISATION",
                 // Simulateur phrases de l'astronaute
                 sim_alt: "Altitude",
                 sim_ready_status: "MOTEURS ALLUMÉS !",
@@ -751,13 +793,17 @@
                 parents_card3_footer: "CONTROLLED SCREEN TIME",
                 preview_badge: "A wonderful universe",
                 preview_title: "Embark on the AstroCalcul adventure",
-                preview_description: "Swipe to discover real screenshots of the app and its colorful universes.",
+                preview_description: "Swipe or use the buttons to discover the app and its colorful universes.",
                 preview_slide1_title: "Celestial Mapping",
                 preview_slide1_text: "An intuitive dashboard allowing children to select their training destination in the form of unlockable planets.",
                 preview_slide2_title: "Math Mission",
                 preview_slide2_text: "A clear and colorful answer mechanic, optimized to prevent frustration with instant positive visual feedback.",
                 preview_slide3_title: "Trophy Gallery",
                 preview_slide3_text: "A catalog of badges and constellations to complete to encourage autonomy and stimulate the child's perseverance.",
+                preview_slide4_title: "Parent Portal",
+                preview_slide4_text: "A clean, simple dashboard to track the daily progress and success rate of your little astronaut.",
+                preview_slide5_title: "Cosmic Cabin",
+                preview_slide5_text: "Unlock new helmet designs, space suit colors, and rocket badges to reward every successful practice streak.",
                 footer_desc: "Playful, secure, and fun mental math learning for the new generation of space explorers.",
                 footer_privacy_link: "Privacy Policy",
                 footer_delete_link: "Delete my account",
@@ -766,6 +812,8 @@
                 fallback_slide1_title: "PLANET SELECTION",
                 fallback_slide1_subtitle: "Addition • Subtraction • Multiplication",
                 fallback_slide3_title: "TROPHY ROOM",
+                fallback_slide4_title: "PARENT STATS",
+                fallback_slide5_title: "CUSTOMIZATION",
                 sim_alt: "Altitude",
                 sim_ready_status: "ENGINES IGNITED!",
                 sim_success_status: "ORBIT REACHED SUCCESSFULLY!",
@@ -824,13 +872,17 @@
                 parents_card3_footer: "BEHEERSTE SCHERMTIJD",
                 preview_badge: "Een wonderbaarlijk universum",
                 preview_title: "Stap in het AstroCalcul-avontuur",
-                preview_description: "Sleep om echte screenshots van de app en zijn kleurrijke werelden te ontdekken.",
+                preview_description: "Sleep of gebruik de knoppen om de app en zijn kleurrijke werelden te ontdekken.",
                 preview_slide1_title: "Hemelkaart",
                 preview_slide1_text: "Een intuïtief dashboard waarmee kinderen hun trainingsbestemming kunnen selecteren in de vorm van te ontgrendelen planeten.",
                 preview_slide2_title: "Rekenmissie",
                 preview_slide2_text: "Een duidelijk en kleurrijk antwoordmechanisme, geoptimaliseerd om frustratie te voorkomen met direct positieve visuele feedback.",
                 preview_slide3_title: "Trofeeëngalerij",
                 preview_slide3_text: "Een catalogus van badges en sterrenbeelden om te voltooien om autonomie aan te moedigen en het doorzettingsvermogen te stimuleren.",
+                preview_slide4_title: "Ouderportaal",
+                preview_slide4_text: "Een overzichtelijk, eenvoudig dashboard om de dagelijkse voortgang en het slagingspercentage van uw kleine astronaut te volgen.",
+                preview_slide5_title: "Kosmische Cabine",
+                preview_slide5_text: "Ontgrendel nieuwe helmontwerpen, kleuren van ruimtepakken en raketbadges om elke succesvolle reeks te belonen.",
                 footer_desc: "Speels, veilig en leuk hoofdrekenen voor de nieuwe generatie ruimtevaarders.",
                 footer_privacy_link: "Privacybeleid",
                 footer_delete_link: "Mijn account verwijderen",
@@ -839,6 +891,8 @@
                 fallback_slide1_title: "PLANEETSELECTIE",
                 fallback_slide1_subtitle: "Optellen • Aftrekken • Tafels",
                 fallback_slide3_title: "BADGESKAMER",
+                fallback_slide4_title: "OUDER PORTAAL",
+                fallback_slide5_title: "AANPASSINGEN",
                 sim_alt: "Hoogte",
                 sim_ready_status: "MOTOREN GESTART!",
                 sim_success_status: "SUCCESVOL IN EEN BAAN GEBRACHT!",
@@ -877,6 +931,8 @@
             document.getElementById('fallback_slide1_title').textContent = translations[lang].fallback_slide1_title;
             document.getElementById('fallback_slide1_subtitle').textContent = translations[lang].fallback_slide1_subtitle;
             document.getElementById('fallback_slide3_title').textContent = translations[lang].fallback_slide3_title;
+            document.getElementById('fallback_slide4_title').textContent = translations[lang].fallback_slide4_title;
+            document.getElementById('fallback_slide5_title').textContent = translations[lang].fallback_slide5_title;
 
             // Rafraîchir les textes de la démo
             const currentAltKm = document.getElementById('rocket-altitude').innerText.replace(/[^0-9]/g, '');
@@ -1178,120 +1234,67 @@
 
 
         // ==========================================
-        // 4. CARROUSEL DE CAPTURES D'ÉCRAN (TACTILE & GRAB)
+        // 4. CARROUSEL DE CAPTURES D'ÉCRAN (DEFILEMENT FLUIDE & SNAP NATIVE)
         // ==========================================
         const track = document.getElementById('carousel-track');
-        let currentSlideIndex = 0;
-        let isDragging = false;
-        let startX = 0;
-        let currentTranslate = 0;
-        let prevTranslate = 0;
-
-        function getVisibleSlides() {
-            if (window.innerWidth >= 1024) return 3;
-            if (window.innerWidth >= 768) return 2;
-            return 1;
-        }
-
-        function updateCarouselPosition() {
-            const slideWidth = track.children[0].offsetWidth;
-            const gap = 24;
-            const offset = currentSlideIndex * (slideWidth + gap);
-            track.style.transition = 'transform 0.5s ease-out';
-            track.style.transform = `translateX(-${offset}px)`;
-            prevTranslate = -offset;
-        }
 
         function nextSlide() {
-            const totalSlides = track.children.length;
-            const visible = getVisibleSlides();
-            const maxIndex = totalSlides - visible;
-
-            if (currentSlideIndex < maxIndex) {
-                currentSlideIndex++;
+            const slide = track.querySelector('.glass-panel');
+            if (!slide) return;
+            const slideWidth = slide.offsetWidth;
+            const gap = 24;
+            
+            // Retourne au début si on arrive au bout du défilement
+            if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 10) {
+                track.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
-                currentSlideIndex = 0;
+                track.scrollBy({ left: slideWidth + gap, behavior: 'smooth' });
             }
-            updateCarouselPosition();
         }
 
         function prevSlide() {
-            const totalSlides = track.children.length;
-            const visible = getVisibleSlides();
-            const maxIndex = totalSlides - visible;
+            const slide = track.querySelector('.glass-panel');
+            if (!slide) return;
+            const slideWidth = slide.offsetWidth;
+            const gap = 24;
 
-            if (currentSlideIndex > 0) {
-                currentSlideIndex--;
+            // Retourne à la fin si on clique sur précédent au début
+            if (track.scrollLeft <= 10) {
+                track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
             } else {
-                currentSlideIndex = maxIndex;
+                track.scrollBy({ left: -(slideWidth + gap), behavior: 'smooth' });
             }
-            updateCarouselPosition();
         }
 
-        // --- GESTION DU SWIPE / MOUVEMENT ---
-        function getPositionX(event) {
-            return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-        }
+        // Ajout du comportement d'agrippement à la souris (Grab to Scroll) pour ordinateurs
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-        function dragStart(event) {
-            isDragging = true;
-            startX = getPositionX(event);
+        track.addEventListener('mousedown', (e) => {
+            isDown = true;
+            track.classList.add('active');
             track.style.cursor = 'grabbing';
-            track.style.transition = 'none';
-        }
+            startX = e.pageX - track.offsetLeft;
+            scrollLeft = track.scrollLeft;
+        });
 
-        function dragAction(event) {
-            if (!isDragging) return;
-            const currentX = getPositionX(event);
-            const diffX = currentX - startX;
-            const slideWidth = track.children[0].offsetWidth;
-            const gap = 24;
-            const baseTranslate = -currentSlideIndex * (slideWidth + gap);
-            currentTranslate = baseTranslate + diffX;
-
-            const maxOffset = -((track.children.length - getVisibleSlides()) * (slideWidth + gap));
-            if (currentTranslate > 50) currentTranslate = 50;
-            if (currentTranslate < maxOffset - 50) currentTranslate = maxOffset - 50;
-
-            track.style.transform = `translateX(${currentTranslate}px)`;
-        }
-
-        function dragEnd() {
-            if (!isDragging) return;
-            isDragging = false;
+        track.addEventListener('mouseleave', () => {
+            isDown = false;
             track.style.cursor = 'grab';
+        });
 
-            const slideWidth = track.children[0].offsetWidth;
-            const gap = 24;
-            const threshold = slideWidth / 4;
-            const baseTranslate = -currentSlideIndex * (slideWidth + gap);
-            const diff = currentTranslate - baseTranslate;
+        track.addEventListener('mouseup', () => {
+            isDown = false;
+            track.style.cursor = 'grab';
+        });
 
-            const totalSlides = track.children.length;
-            const visible = getVisibleSlides();
-            const maxIndex = totalSlides - visible;
-
-            if (diff < -threshold && currentSlideIndex < maxIndex) {
-                currentSlideIndex++;
-            } else if (diff > threshold && currentSlideIndex > 0) {
-                currentSlideIndex--;
-            }
-
-            updateCarouselPosition();
-        }
-
-        track.addEventListener('mousedown', dragStart);
-        track.addEventListener('mouseup', dragEnd);
-        track.addEventListener('mouseleave', dragEnd);
-        track.addEventListener('mousemove', dragAction);
-
-        track.addEventListener('touchstart', dragStart);
-        track.addEventListener('touchend', dragEnd);
-        track.addEventListener('touchmove', dragAction);
-
-        window.addEventListener('resize', () => {
-            currentSlideIndex = 0;
-            updateCarouselPosition();
+        track.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            const walk = (x - startX) * 1.5; // Multiplicateur de vitesse de drag
+            track.scrollLeft = scrollLeft - walk;
         });
 
         // Lancement et application de la langue préférée à l'initialisation
