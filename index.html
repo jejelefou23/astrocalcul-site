@@ -113,12 +113,22 @@
                 <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">ASTROCALCUL</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide">
-                <a href="#parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
-                <a href="#preview" class="text-gray-300 hover:text-cosmic-purple transition-colors">Aperçu du Jeu</a>
+                <a href="#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+                <a href="#preview" data-i18n="nav_preview" class="text-gray-300 hover:text-cosmic-purple transition-colors">Aperçu du Jeu</a>
             </nav>
-            <a href="#simulator" class="bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-6 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:shadow-cosmic-cyan/45 hover:scale-105 active:scale-95 transition-all duration-300">
-                ESSAYER LA DÉMO
-            </a>
+            
+            <div class="flex items-center space-x-4">
+                <!-- SÉLECTEUR DE LANGUE MULTILINGUE -->
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black">
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow">FR</button>
+                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all">EN</button>
+                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all">NL</button>
+                </div>
+
+                <a href="#simulator" data-i18n="nav_demo" class="bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-6 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:shadow-cosmic-cyan/45 hover:scale-105 active:scale-95 transition-all duration-300">
+                    ESSAYER LA DÉMO
+                </a>
+            </div>
         </div>
     </header>
 
@@ -135,17 +145,17 @@
                             <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 3a4 4 0 110 8 4 4 0 010-8zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                         </svg>
                     </div>
-                    <span class="text-xs font-extrabold tracking-widest text-cosmic-cyan">MISSION APPRENDRE EN S'AMUSANT</span>
+                    <span data-i18n="hero_tagline" class="text-xs font-extrabold tracking-widest text-cosmic-cyan">MISSION APPRENDRE EN S'AMUSANT</span>
                 </div>
 
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight">
+                <h1 data-i18n="hero_title" class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight">
                     Le calcul mental devient une <br class="hidden sm:inline">
                     <span class="bg-gradient-to-r from-cosmic-cyan via-cosmic-pink to-cosmic-purple bg-clip-text text-transparent">
                         aventure spatiale !
                     </span>
                 </h1>
 
-                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                <p data-i18n="hero_description" class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
                     AstroCalcul transforme les mathématiques en un voyage d'exploration passionnant. Conçu pour les enfants de 4 à 10 ans, sans publicité ni collecte de données.
                 </p>
 
@@ -158,7 +168,7 @@
                             <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.1 16.67C20.08 16.74 19.67 18.11 18.71 19.5ZM15.97 4.17C16.63 3.37 17.07 2.28 16.95 1C15.96 1.04 14.76 1.66 14.05 2.49C13.44 3.19 12.91 4.29 13.06 5.54C14.16 5.63 15.3 4.98 15.97 4.17Z"/>
                         </svg>
                         <div class="text-left">
-                            <p class="text-[9px] text-gray-400 uppercase font-bold leading-tight">Télécharger sur l'</p>
+                            <p data-i18n="appstore_sub" class="text-[9px] text-gray-400 uppercase font-bold leading-tight">Télécharger sur l'</p>
                             <p class="text-sm font-black text-white leading-tight">App Store</p>
                         </div>
                     </a>
@@ -178,7 +188,7 @@
                             </defs>
                         </svg>
                         <div class="text-left">
-                            <p class="text-[9px] text-gray-400 uppercase font-bold leading-tight">DISPONIBLE SUR</p>
+                            <p data-i18n="playstore_sub" class="text-[9px] text-gray-400 uppercase font-bold leading-tight">DISPONIBLE SUR</p>
                             <p class="text-sm font-black text-white leading-tight">Google Play</p>
                         </div>
                     </a>
@@ -188,9 +198,9 @@
                 <div class="flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-400 font-bold">
                     <span>★ ★ ★ ★ ★ (5.0/5)</span>
                     <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
-                    <span>4-10 Ans</span>
+                    <span data-i18n="hero_age">4-10 Ans</span>
                     <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
-                    <span>Conforme RGPD</span>
+                    <span data-i18n="hero_privacy">Conforme RGPD</span>
                 </div>
             </div>
 
@@ -250,13 +260,59 @@
         </section>
 
 
+        <!-- SECTION : REVUE DE PRESSE / ON PARLE DE NOUS -->
+        <section id="press" class="scroll-mt-24 space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <div class="inline-block bg-cosmic-pink/10 border border-cosmic-pink/20 px-4 py-1.5 rounded-full">
+                    <span data-i18n="press_badge" class="text-xs font-black tracking-widest text-cosmic-pink uppercase">REVUE DE PRESSE</span>
+                </div>
+                <h2 data-i18n="press_title" class="text-3xl md:text-4xl font-black">On parle de nous !</h2>
+                <p data-i18n="press_subtitle" class="text-gray-300">
+                    Découvrez l'histoire derrière AstroCalcul et pourquoi les parents et médias partagent notre aventure.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="glass-panel rounded-3xl p-6 md:p-8 hover:border-[#FFF500]/40 transition-all duration-300 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-cosmic-cyan/10 rounded-full blur-2xl -z-10 group-hover:scale-150 transition-transform duration-500"></div>
+                    
+                    <!-- Badge Visuel Maison Slash -->
+                    <div class="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 bg-[#FFF500] text-black rounded-2xl flex flex-col items-center justify-center p-4 font-black text-center shadow-lg shadow-[#FFF500]/10 transform group-hover:rotate-2 transition-transform duration-300">
+                        <span class="text-2xl tracking-tighter">MAISON</span>
+                        <div class="w-12 h-1 bg-black my-1"></div>
+                        <span class="text-2xl tracking-tighter">SLASH</span>
+                        <span class="text-[9px] font-bold text-gray-800 tracking-widest mt-1 uppercase">#parentfriendly</span>
+                    </div>
+
+                    <!-- Contenu de l'article -->
+                    <div class="space-y-4 text-center md:text-left flex-1">
+                        <h3 data-i18n="press_article_title" class="text-xl md:text-2xl font-black text-white leading-tight">
+                            "T'as déjà rencontré un papa qui code une app pour aider sa fille en maths ? Nous oui !"
+                        </h3>
+                        <p data-i18n="press_article_desc" class="text-gray-300 text-sm leading-relaxed">
+                            Maison Slash raconte comment l'aventure AstroCalcul a démarré : l'histoire d'un papa qui a décidé de créer une application ludique et saine pour aider sa propre fille avec ses devoirs de calcul mental.
+                        </p>
+                        <div class="pt-2">
+                            <a href="https://maisonslash.be/fr/geek/app/papa-invente-app-pour-devoir-de-sa-fille" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-cosmic-cyan hover:text-[#FFF500] font-black text-sm transition-all duration-200 group/link">
+                                <span data-i18n="press_read_more">Lire l'article complet</span>
+                                <svg class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <section id="simulator" class="scroll-mt-24">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
                 <div class="inline-block bg-cosmic-pink/10 border border-cosmic-pink/20 px-4 py-1.5 rounded-full">
-                    <span class="text-xs font-black tracking-widest text-cosmic-pink uppercase">Testez l'application</span>
+                    <span data-i18n="sim_badge" class="text-xs font-black tracking-widest text-cosmic-pink uppercase">Testez l'application</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-black">Préparez le décollage !</h2>
-                <p class="text-gray-300">
+                <h2 data-i18n="sim_title" class="text-3xl md:text-4xl font-black">Préparez le décollage !</h2>
+                <p data-i18n="sim_description" class="text-gray-300">
                     Choisissez votre niveau, répondez correctement et observez votre compagnon et la fusée s'envoler !
                 </p>
             </div>
@@ -271,7 +327,7 @@
                         <div id="altitude-bar" class="w-full bg-cosmic-cyan rounded-full transition-all duration-1000" style="height: 10%;"></div>
                     </div>
                     
-                    <span class="text-xs text-gray-400 font-extrabold uppercase tracking-widest self-end">RAMPE DE LANCEMENT</span>
+                    <span data-i18n="sim_launchpad" class="text-xs text-gray-400 font-extrabold uppercase tracking-widest self-end">RAMPE DE LANCEMENT</span>
                     
                     <!-- Fusée animée sur sa rampe (PNG) -->
                     <div id="sim-rocket-container" class="relative w-36 h-64 flex items-end justify-center transition-all duration-1000 ease-out transform">
@@ -298,8 +354,8 @@
 
                     <!-- Statut du décollage -->
                     <div class="text-center z-10 w-full bg-space-900/60 py-2 rounded-xl border border-white/5">
-                        <p id="rocket-status" class="text-xs font-black text-cosmic-cyan tracking-widest uppercase">SYSTÈME PRÊT</p>
-                        <p id="rocket-altitude" class="text-sm font-bold text-gray-300">Altitude : 0 km</p>
+                        <p id="rocket-status" data-i18n="sim_status_ready" class="text-xs font-black text-cosmic-cyan tracking-widest uppercase">SYSTÈME PRÊT</p>
+                        <p id="rocket-altitude" data-i18n="sim_altitude_val" class="text-sm font-bold text-gray-300">Altitude : 0 km</p>
                     </div>
                 </div>
 
@@ -318,23 +374,23 @@
                             </svg>
                         </div>
                         <div>
-                            <h4 class="text-sm font-black text-cosmic-cyan">VOTRE CO-PILOTE</h4>
+                            <h4 data-i18n="sim_companion_title" class="text-sm font-black text-cosmic-cyan">VOTRE CO-PILOTE</h4>
                             <p id="astro-speech" class="text-xs text-gray-300">"Prêt pour le calcul mental ? Choisis ta difficulté !"</p>
                         </div>
                     </div>
 
                     <!-- Sélecteur de niveau -->
                     <div class="space-y-3">
-                        <label class="text-xs font-black tracking-widest text-gray-400 uppercase">1. Niveau de l'enfant :</label>
+                        <label data-i18n="sim_label_level" class="text-xs font-black tracking-widest text-gray-400 uppercase">1. Niveau de l'enfant :</label>
                         <div class="grid grid-cols-3 gap-3">
                             <button onclick="setDifficulty('easy')" id="btn-easy" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 bg-space-800 border-cosmic-cyan text-cosmic-cyan shadow-sm">
-                                Recrue<br><span class="text-[10px] font-bold text-gray-400">4-6 ans</span>
+                                <span data-i18n="sim_level_easy_title">Recrue</span><br><span data-i18n="sim_level_easy_age" class="text-[10px] font-bold text-gray-400">4-6 ans</span>
                             </button>
                             <button onclick="setDifficulty('medium')" id="btn-medium" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 border-white/10 hover:border-white/25">
-                                Cadet<br><span class="text-[10px] font-bold text-gray-400">7-8 ans</span>
+                                <span data-i18n="sim_level_medium_title">Cadet</span><br><span data-i18n="sim_level_medium_age" class="text-[10px] font-bold text-gray-400">7-8 ans</span>
                             </button>
                             <button onclick="setDifficulty('hard')" id="btn-hard" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 border-white/10 hover:border-white/25">
-                                Commandant<br><span class="text-[10px] font-bold text-gray-400">9-10 ans</span>
+                                <span data-i18n="sim_level_hard_title">Commandant</span><br><span data-i18n="sim_level_hard_age" class="text-[10px] font-bold text-gray-400">9-10 ans</span>
                             </button>
                         </div>
                     </div>
@@ -349,17 +405,17 @@
                         </div>
 
                         <div class="relative z-10 space-y-2">
-                            <span class="text-[11px] font-bold tracking-widest text-cosmic-pink uppercase">Équation Spatiale</span>
+                            <span data-i18n="sim_eq_title" class="text-[11px] font-bold tracking-widest text-cosmic-pink uppercase">Équation Spatiale</span>
                             <div id="calculation-display" class="text-4xl md:text-5xl font-black tracking-wider text-white py-2">
                                 4 + 3
                             </div>
-                            <p class="text-xs text-gray-400">Trouvez la bonne planète réponse pour propulser la fusée !</p>
+                            <p data-i18n="sim_eq_desc" class="text-xs text-gray-400">Trouvez la bonne planète réponse pour propulser la fusée !</p>
                         </div>
                     </div>
 
                     <!-- Choix de réponses -->
                     <div class="space-y-3">
-                        <label class="text-xs font-black tracking-widest text-gray-400 uppercase">2. Sélectionnez la réponse correcte :</label>
+                        <label data-i18n="sim_label_select" class="text-xs font-black tracking-widest text-gray-400 uppercase">2. Sélectionnez la réponse correcte :</label>
                         <div id="choices-container" class="grid grid-cols-3 gap-4">
                             <!-- Généré dynamiquement en JS -->
                         </div>
@@ -368,10 +424,10 @@
                     <!-- Feedback -->
                     <div class="flex items-center justify-between border-t border-white/10 pt-4 text-sm font-bold">
                         <div class="flex items-center space-x-2">
-                            <span class="text-gray-400">Score de mission :</span>
+                            <span data-i18n="sim_score_label" class="text-gray-400">Score de mission :</span>
                             <span id="simulator-score" class="text-cosmic-green font-black text-lg">0</span>
                         </div>
-                        <div id="simulator-feedback" class="text-cosmic-cyan font-black tracking-wide animate-pulse">
+                        <div id="simulator-feedback" data-i18n="sim_feedback_placeholder" class="text-cosmic-cyan font-black tracking-wide animate-pulse">
                             Sélectionnez une réponse !
                         </div>
                     </div>
@@ -384,10 +440,10 @@
         <section id="parents" class="scroll-mt-24 space-y-16">
             <div class="text-center max-w-3xl mx-auto space-y-4">
                 <div class="inline-block bg-cosmic-cyan/10 border border-cosmic-cyan/20 px-4 py-1.5 rounded-full">
-                    <span class="text-xs font-black tracking-widest text-cosmic-cyan uppercase">Zéro stress pour la famille</span>
+                    <span data-i18n="parents_badge" class="text-xs font-black tracking-widest text-cosmic-cyan uppercase">Zéro stress pour la famille</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-black">L'apprentissage intelligent en toute sérénité</h2>
-                <p class="text-gray-300">
+                <h2 data-i18n="parents_title" class="text-3xl md:text-4xl font-black">L'apprentissage intelligent en toute sérénité</h2>
+                <p data-i18n="parents_description" class="text-gray-300">
                     AstroCalcul a été pensé avec des parents et des enseignants pour offrir un cadre d'apprentissage parfaitement sain et stimulant.
                 </p>
             </div>
@@ -403,12 +459,12 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-extrabold">100% Sécurisé</h3>
-                        <p class="text-gray-300 text-sm leading-relaxed">
+                        <h3 data-i18n="parents_card1_title" class="text-xl font-extrabold">100% Sécurisé</h3>
+                        <p data-i18n="parents_card1_text" class="text-gray-300 text-sm leading-relaxed">
                             Aucune donnée personnelle n'est collectée ou stockée. Votre enfant s'entraîne en local de manière totalement privée et sécurisée.
                         </p>
                     </div>
-                    <span class="text-xs text-cosmic-cyan font-bold tracking-widest uppercase pt-6">AUCUN ENREGISTREMENT</span>
+                    <span data-i18n="parents_card1_footer" class="text-xs text-cosmic-cyan font-bold tracking-widest uppercase pt-6">AUCUN ENREGISTREMENT</span>
                 </div>
 
                 <!-- Carte 2 : Publicités (PNG) -->
@@ -420,12 +476,12 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-extrabold">0% Publicité intrusive</h3>
-                        <p class="text-gray-300 text-sm leading-relaxed">
+                        <h3 data-i18n="parents_card2_title" class="text-xl font-extrabold">0% Publicité intrusive</h3>
+                        <p data-i18n="parents_card2_text" class="text-gray-300 text-sm leading-relaxed">
                             Aucune interruption intempestive. L'enfant reste concentré sur son défi mathématique dans un espace de jeu calme et propice à l'attention.
                         </p>
                     </div>
-                    <span class="text-xs text-cosmic-pink font-bold tracking-widest uppercase pt-6">CONCENTRATION TOTALE</span>
+                    <span data-i18n="parents_card2_footer" class="text-xs text-cosmic-pink font-bold tracking-widest uppercase pt-6">CONCENTRATION TOTALE</span>
                 </div>
 
                 <!-- Carte 3 : Temps d'écran (PNG) -->
@@ -437,12 +493,12 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-extrabold">3 à 5 minutes par jour</h3>
-                        <p class="text-gray-300 text-sm leading-relaxed">
+                        <h3 data-i18n="parents_card3_title" class="text-xl font-extrabold">3 à 5 minutes par jour</h3>
+                        <p data-i18n="parents_card3_text" class="text-gray-300 text-sm leading-relaxed">
                             Une méthode par sessions courtes hautement efficaces. Parfait pour ancrer la régularité et le goût du calcul sans surcharger le temps d'écran de l'enfant.
                         </p>
                     </div>
-                    <span class="text-xs text-cosmic-purple font-bold tracking-widest uppercase pt-6">TEMPS D'ÉCRAN MAÎTRISÉ</span>
+                    <span data-i18n="parents_card3_footer" class="text-xs text-cosmic-purple font-bold tracking-widest uppercase pt-6">TEMPS D'ÉCRAN MAÎTRISÉ</span>
                 </div>
 
             </div>
@@ -453,10 +509,10 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div class="space-y-4 max-w-2xl">
                     <div class="inline-block bg-cosmic-purple/10 border border-cosmic-purple/20 px-4 py-1.5 rounded-full">
-                        <span class="text-xs font-black tracking-widest text-cosmic-purple uppercase">Un univers merveilleux</span>
+                        <span data-i18n="preview_badge" class="text-xs font-black tracking-widest text-cosmic-purple uppercase">Un univers merveilleux</span>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-black">Embarquez dans l'aventure AstroCalcul</h2>
-                    <p class="text-gray-300">
+                    <h2 data-i18n="preview_title" class="text-3xl md:text-4xl font-black">Embarquez dans l'aventure AstroCalcul</h2>
+                    <p data-i18n="preview_description" class="text-gray-300">
                         Glissez pour découvrir de vraies captures d'écran de l'application et de ses univers colorés.
                     </p>
                 </div>
@@ -483,15 +539,15 @@
                             <div id="slide1-fallback" style="display: none;" class="absolute inset-0 w-full h-full p-4 flex items-center justify-center">
                                 <svg class="w-full h-full" viewBox="0 0 300 225">
                                     <rect width="280" height="205" x="10" y="10" rx="15" fill="#141432" stroke="#FF2E93" stroke-width="2"/>
-                                    <text x="150" y="45" fill="white" font-size="14" font-weight="900" text-anchor="middle">SÉLECTION DE LA PLANÈTE</text>
+                                    <text id="fallback_slide1_title" x="150" y="45" fill="white" font-size="14" font-weight="900" text-anchor="middle">SÉLECTION DE LA PLANÈTE</text>
                                     <circle cx="150" cy="115" r="30" fill="#00F0FF"/>
-                                    <text x="150" y="180" fill="white" font-size="10" text-anchor="middle">Addition • Soustraction • Table</text>
+                                    <text id="fallback_slide1_subtitle" x="150" y="180" fill="white" font-size="10" text-anchor="middle">Addition • Soustraction • Table</text>
                                 </svg>
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <h3 class="text-lg font-black text-white">Cartographie Céleste</h3>
-                            <p class="text-gray-400 text-xs">Un tableau de bord intuitif permettant aux enfants de sélectionner leur destination d'entraînement sous forme de planètes à débloquer.</p>
+                            <h3 data-i18n="preview_slide1_title" class="text-lg font-black text-white">Cartographie Céleste</h3>
+                            <p data-i18n="preview_slide1_text" class="text-gray-400 text-xs">Un tableau de bord intuitif permettant aux enfants de sélectionner leur destination d'entraînement sous forme de planètes à débloquer.</p>
                         </div>
                     </div>
 
@@ -507,8 +563,8 @@
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <h3 class="text-lg font-black text-white">Mission de Calcul</h3>
-                            <p class="text-gray-400 text-xs">Une mécanique de réponse claire et colorée, optimisée pour éviter la frustration avec des feedbacks visuels positifs instantanés.</p>
+                            <h3 data-i18n="preview_slide2_title" class="text-lg font-black text-white">Mission de Calcul</h3>
+                            <p data-i18n="preview_slide2_text" class="text-gray-400 text-xs">Une mécanique de réponse claire et colorée, optimisée pour éviter la frustration avec des feedbacks visuels positifs instantanés.</p>
                         </div>
                     </div>
 
@@ -519,14 +575,14 @@
                             <div id="slide3-fallback" style="display: none;" class="absolute inset-0 w-full h-full p-4 flex items-center justify-center">
                                 <svg class="w-full h-full" viewBox="0 0 300 225">
                                     <rect width="280" height="205" x="10" y="10" rx="15" fill="#141432" stroke="#A12EFF" stroke-width="2"/>
-                                    <text x="150" y="45" fill="white" font-size="14" font-weight="900" text-anchor="middle">SALLE DES BADGES</text>
+                                    <text id="fallback_slide3_title" x="150" y="45" fill="white" font-size="14" font-weight="900" text-anchor="middle">SALLE DES BADGES</text>
                                     <circle cx="150" cy="115" r="25" fill="#FFD700"/>
                                 </svg>
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <h3 class="text-lg font-black text-white">Galerie des Trophées</h3>
-                            <p class="text-gray-400 text-xs">Un catalogue de badges et de constellations à compléter pour motiver l'autonomie et stimuler la persévérance de l'enfant.</p>
+                            <h3 data-i18n="preview_slide3_title" class="text-lg font-black text-white">Galerie des Trophées</h3>
+                            <p data-i18n="preview_slide3_text" class="text-gray-400 text-xs">Un catalogue de badges et de constellations à compléter pour motiver l'autonomie et stimuler la persévérance de l'enfant.</p>
                         </div>
                     </div>
 
@@ -546,20 +602,20 @@
                 <span class="text-lg font-black tracking-wider text-white">ASTROCALCUL</span>
             </div>
             
-            <p class="text-sm text-gray-400 max-w-md mx-auto">
+            <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">
                 L'apprentissage ludique, sécurisé et amusant du calcul mental pour la nouvelle génération d'explorateurs spatiaux.
             </p>
 
             <div class="flex flex-wrap items-center justify-center gap-6 text-xs font-bold text-gray-500">
-                <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" class="hover:text-cosmic-cyan transition-colors">Politique de Confidentialité</a>
+                <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="footer_privacy_link" class="hover:text-cosmic-cyan transition-colors">Politique de Confidentialité</a>
                 <span>•</span>
-                <a href="https://jejelefou23.github.io/astrocalcul-privacy/delete-account.html" target="_blank" rel="noopener noreferrer" class="hover:text-cosmic-cyan transition-colors">Supprimer mon compte</a>
+                <a href="https://jejelefou23.github.io/astrocalcul-privacy/delete-account.html" target="_blank" rel="noopener noreferrer" data-i18n="footer_delete_link" class="hover:text-cosmic-cyan transition-colors">Supprimer mon compte</a>
                 <span>•</span>
-                <a href="mailto:contact.astrolabs.be@gmail.com" class="hover:text-cosmic-cyan transition-colors">Contact Support</a>
+                <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact_link" class="hover:text-cosmic-cyan transition-colors">Contact Support</a>
             </div>
 
             <p class="text-xs text-gray-600">
-                &copy; 2026 AstroCalcul. Tous droits réservés.
+                &copy; 2026 AstroCalcul. <span data-i18n="footer_rights">Tous droits réservés.</span>
             </p>
         </footer>
 
@@ -567,7 +623,278 @@
 
     <script>
         // ==========================================
-        // 1. ÉTOILES SCINTILLANTES
+        // 1. GESTION DES LANGUES (i18n)
+        // ==========================================
+        const translations = {
+            fr: {
+                nav_parents: "Espace Parents",
+                nav_preview: "Aperçu du Jeu",
+                nav_demo: "ESSAYER LA DÉMO",
+                hero_tagline: "MISSION APPRENDRE EN S'AMUSANT",
+                hero_title: "Le calcul mental devient une <br class=\"hidden sm:inline\"><span class=\"bg-gradient-to-r from-cosmic-cyan via-cosmic-pink to-cosmic-purple bg-clip-text text-transparent\">aventure spatiale !</span>",
+                hero_description: "AstroCalcul transforme les mathématiques en un voyage d'exploration passionnant. Conçu pour les enfants de 4 à 10 ans, sans publicité ni collecte de données.",
+                appstore_sub: "Télécharger sur l'",
+                playstore_sub: "DISPONIBLE SUR",
+                hero_age: "4-10 Ans",
+                hero_privacy: "Conforme RGPD",
+                press_badge: "REVUE DE PRESSE",
+                press_title: "On parle de nous !",
+                press_subtitle: "Découvrez l'histoire derrière AstroCalcul et pourquoi les parents et médias partagent notre aventure.",
+                press_article_title: "\"T'as déjà rencontré un papa qui code une app pour aider sa fille en maths ? Nous oui !\"",
+                press_article_desc: "Maison Slash raconte comment l'aventure AstroCalcul a démarré : l'histoire d'un papa qui a décidé de créer une application ludique et saine pour aider sa propre fille avec ses devoirs de calcul mental.",
+                press_read_more: "Lire l'article complet",
+                sim_badge: "Testez l'application",
+                sim_title: "Préparez le décollage !",
+                sim_description: "Choisissez votre niveau, répondez correctement et observez votre compagnon et la fusée s'envoler !",
+                sim_launchpad: "RAMPE DE LANCEMENT",
+                sim_status_ready: "SYSTÈME PRÊT",
+                sim_altitude_val: "Altitude : 0 km",
+                sim_companion_title: "VOTRE CO-PILOTE",
+                sim_label_level: "1. Niveau de l'enfant :",
+                sim_level_easy_title: "Recrue",
+                sim_level_easy_age: "4-6 ans",
+                sim_level_medium_title: "Cadet",
+                sim_level_medium_age: "7-8 ans",
+                sim_level_hard_title: "Commandant",
+                sim_level_hard_age: "9-10 ans",
+                sim_eq_title: "Équation Spatiale",
+                sim_eq_desc: "Trouvez la bonne planète réponse pour propulser la fusée !",
+                sim_label_select: "2. Sélectionnez la réponse correcte :",
+                sim_score_label: "Score de mission :",
+                sim_feedback_placeholder: "Sélectionnez une réponse !",
+                parents_badge: "Zéro stress pour la famille",
+                parents_title: "L'apprentissage intelligent en toute sérénité",
+                parents_description: "AstroCalcul a été pensé avec des parents et des enseignants pour offrir un cadre d'apprentissage parfaitement sain et stimulant.",
+                parents_card1_title: "100% Sécurisé",
+                parents_card1_text: "Aucune donnée personnelle n'est collectée ou stockée. Votre enfant s'entraîne en local de manière totalement privée et sécurisée.",
+                parents_card1_footer: "AUCUN ENREGISTREMENT",
+                parents_card2_title: "0% Publicité intrusive",
+                parents_card2_text: "Aucune interruption intempestive. L'enfant reste concentré sur son défi mathématique dans un espace de jeu calme et propice à l'attention.",
+                parents_card2_footer: "CONCENTRATION TOTALE",
+                parents_card3_title: "3 à 5 minutes par jour",
+                parents_card3_text: "Une méthode par sessions courtes hautement efficaces. Parfait pour ancrer la régularité et le goût du calcul sans surcharger le temps d'écran de l'enfant.",
+                parents_card3_footer: "TEMPS D'ÉCRAN MAÎTRISÉ",
+                preview_badge: "Un univers merveilleux",
+                preview_title: "Embarquez dans l'aventure AstroCalcul",
+                preview_description: "Glissez pour découvrir de vraies captures d'écran de l'application et de ses univers colorés.",
+                preview_slide1_title: "Cartographie Céleste",
+                preview_slide1_text: "Un tableau de bord intuitif permettant aux enfants de sélectionner leur destination d'entraînement sous forme de planètes à débloquer.",
+                preview_slide2_title: "Mission de Calcul",
+                preview_slide2_text: "Une mécanique de réponse claire et colorée, optimisée pour éviter la frustration avec des feedbacks visuels positifs instantanés.",
+                preview_slide3_title: "Galerie des Trophées",
+                preview_slide3_text: "Un catalogue de badges et de constellations à compléter pour motiver l'autonomie et stimuler la persévérance de l'enfant.",
+                footer_desc: "L'apprentissage ludique, sécurisé et amusant du calcul mental pour la nouvelle génération d'explorateurs spatiaux.",
+                footer_privacy_link: "Politique de Confidentialité",
+                footer_delete_link: "Supprimer mon compte",
+                footer_contact_link: "Contact Support",
+                footer_rights: "Tous droits réservés.",
+                // Tralala pour les fallbacks SVG
+                fallback_slide1_title: "SÉLECTION DE LA PLANÈTE",
+                fallback_slide1_subtitle: "Addition • Soustraction • Table",
+                fallback_slide3_title: "SALLE DES BADGES",
+                // Simulateur phrases de l'astronaute
+                sim_alt: "Altitude",
+                sim_ready_status: "MOTEURS ALLUMÉS !",
+                sim_success_status: "MISE EN ORBITE RÉUSSIE !",
+                sim_ready_system: "SYSTÈME PRÊT",
+                sim_companion_placeholder: "\"Prêt pour le calcul mental ? Choisis ta difficulté !\"",
+                sim_feedback_excellent: "EXCELLENT ! DÉCOLLAGE EN COURS !",
+                sim_feedback_error: "OUPS ! RÉESSAYE POUR PROPULSER !"
+            },
+            en: {
+                nav_parents: "Parents' Space",
+                nav_preview: "Game Preview",
+                nav_demo: "TRY THE DEMO",
+                hero_tagline: "MISSION LEARN WHILE HAVING FUN",
+                hero_title: "Mental math becomes a <br class=\"hidden sm:inline\"><span class=\"bg-gradient-to-r from-cosmic-cyan via-cosmic-pink to-cosmic-purple bg-clip-text text-transparent\">space adventure!</span>",
+                hero_description: "AstroCalcul transforms mathematics into an exciting journey of exploration. Designed for children aged 4 to 10, with no ads or data collection.",
+                appstore_sub: "Download on the",
+                playstore_sub: "AVAILABLE ON",
+                hero_age: "Ages 4-10",
+                hero_privacy: "GDPR Compliant",
+                press_badge: "PRESS COVERAGE",
+                press_title: "In the Media!",
+                press_subtitle: "Discover the story behind AstroCalcul and why parents and media are sharing our adventure.",
+                press_article_title: "\"Have you ever met a dad who codes an app to help his daughter with math? We have!\"",
+                press_article_desc: "Maison Slash tells the story of how the AstroCalcul adventure started: a father who decided to create a fun, healthy app to help his own daughter with her mental math homework.",
+                press_read_more: "Read the full article",
+                sim_badge: "Test the app",
+                sim_title: "Prepare for launch!",
+                sim_description: "Choose your level, answer correctly, and watch your companion and the rocket blast off!",
+                sim_launchpad: "LAUNCHPAD",
+                sim_status_ready: "SYSTEM READY",
+                sim_altitude_val: "Altitude: 0 km",
+                sim_companion_title: "YOUR CO-PILOT",
+                sim_label_level: "1. Child's Level:",
+                sim_level_easy_title: "Recruit",
+                sim_level_easy_age: "Ages 4-6",
+                sim_level_medium_title: "Cadet",
+                sim_level_medium_age: "Ages 7-8",
+                sim_level_hard_title: "Commander",
+                sim_level_hard_age: "Ages 9-10",
+                sim_eq_title: "Space Equation",
+                sim_eq_desc: "Find the right answer planet to propel the rocket!",
+                sim_label_select: "2. Select the correct answer:",
+                sim_score_label: "Mission score:",
+                sim_feedback_placeholder: "Select an answer!",
+                parents_badge: "Zero stress for the family",
+                parents_title: "Smart learning with complete peace of mind",
+                parents_description: "AstroCalcul was designed with parents and teachers to provide a perfectly healthy and stimulating learning environment.",
+                parents_card1_title: "100% Secure",
+                parents_card1_text: "No personal data is collected or stored. Your child practices locally in a completely private and secure manner.",
+                parents_card1_footer: "NO REGISTRATION REQUIRED",
+                parents_card2_title: "0% Intrusive Ads",
+                parents_card2_text: "No unexpected interruptions. The child remains focused on their math challenge in a quiet space conducive to attention.",
+                parents_card2_footer: "TOTAL FOCUS",
+                parents_card3_title: "3 to 5 minutes a day",
+                parents_card3_text: "A highly effective short session method. Perfect for building consistency and a love for math without overloading screen time.",
+                parents_card3_footer: "CONTROLLED SCREEN TIME",
+                preview_badge: "A wonderful universe",
+                preview_title: "Embark on the AstroCalcul adventure",
+                preview_description: "Swipe to discover real screenshots of the app and its colorful universes.",
+                preview_slide1_title: "Celestial Mapping",
+                preview_slide1_text: "An intuitive dashboard allowing children to select their training destination in the form of unlockable planets.",
+                preview_slide2_title: "Math Mission",
+                preview_slide2_text: "A clear and colorful answer mechanic, optimized to prevent frustration with instant positive visual feedback.",
+                preview_slide3_title: "Trophy Gallery",
+                preview_slide3_text: "A catalog of badges and constellations to complete to encourage autonomy and stimulate the child's perseverance.",
+                footer_desc: "Playful, secure, and fun mental math learning for the new generation of space explorers.",
+                footer_privacy_link: "Privacy Policy",
+                footer_delete_link: "Delete my account",
+                footer_contact_link: "Contact Support",
+                footer_rights: "All rights reserved.",
+                fallback_slide1_title: "PLANET SELECTION",
+                fallback_slide1_subtitle: "Addition • Subtraction • Multiplication",
+                fallback_slide3_title: "TROPHY ROOM",
+                sim_alt: "Altitude",
+                sim_ready_status: "ENGINES IGNITED!",
+                sim_success_status: "ORBIT REACHED SUCCESSFULLY!",
+                sim_ready_system: "SYSTEM READY",
+                sim_companion_placeholder: "\"Ready for mental math? Choose your difficulty!\"",
+                sim_feedback_excellent: "EXCELLENT! LAUNCH IN PROGRESS!",
+                sim_feedback_error: "OOPS! TRY AGAIN TO LAUNCH!"
+            },
+            nl: {
+                nav_parents: "Oudersruimte",
+                nav_preview: "Spelvoorbeeld",
+                nav_demo: "PROBEER DE DEMO",
+                hero_tagline: "MISSIE SPELEND LEREN",
+                hero_title: "Hoofdrekenen wordt een <br class=\"hidden sm:inline\"><span class=\"bg-gradient-to-r from-cosmic-cyan via-cosmic-pink to-cosmic-purple bg-clip-text text-transparent\">ruimte-avontuur!</span>",
+                hero_description: "AstroCalcul verandert wiskunde in een spannende ontdekkingsreis. Ontworpen voor kinderen van 4 tot 10 jaar, zonder reclame of gegevensverzameling.",
+                appstore_sub: "Download in de",
+                playstore_sub: "BESCHIKBAAR OP",
+                hero_age: "4-10 Jaar",
+                hero_privacy: "AVG-conform",
+                press_badge: "IN DE MEDIA",
+                press_title: "In de pers!",
+                press_subtitle: "Ontdek het verhaal achter AstroCalcul en waarom ouders en media ons avontuur delen.",
+                press_article_title: "\"Heb je ooit een vader ontmoet die een app codeert om zijn dochter te helpen met wiskunde? Wij wel!\"",
+                press_article_desc: "Maison Slash vertelt het verhaal van hoe het AstroCalcul-avontuur begon: een vader die besloot een leuke, gezonde app te maken om zijn eigen dochter te helpen met haar huiswerk hoofdrekenen.",
+                press_read_more: "Lees het volledige artikel",
+                sim_badge: "Test de app",
+                sim_title: "Bereid de lancering voor!",
+                sim_description: "Kies je niveau, antwoord correct en zie je metgezel en de raket wegvliegen!",
+                sim_launchpad: "LANCERINGSPLATFORM",
+                sim_status_ready: "SYSTEEM GEREED",
+                sim_altitude_val: "Hoogte: 0 km",
+                sim_companion_title: "JE CO-PILOOT",
+                sim_label_level: "1. Niveau van het kind:",
+                sim_level_easy_title: "Rekruut",
+                sim_level_easy_age: "4-6 jaar",
+                sim_level_medium_title: "Cadet",
+                sim_level_medium_age: "7-8 jaar",
+                sim_level_hard_title: "Commandant",
+                sim_level_hard_age: "9-10 jaar",
+                sim_eq_title: "Ruimtevergelijking",
+                sim_eq_desc: "Vind de juiste antwoordplaneet om de raket aan te drijven!",
+                sim_label_select: "2. Selecteer het juiste antwoord:",
+                sim_score_label: "Missiescore:",
+                sim_feedback_placeholder: "Selecteer een antwoord!",
+                parents_badge: "Geen stress voor het gezin",
+                parents_title: "Slim leren in alle rust",
+                parents_description: "AstroCalcul is ontworpen in samenwerking met ouders en leraren om een volkomen gezonde en stimulerende leeromgeving te bieden.",
+                parents_card1_title: "100% Veilig",
+                parents_card1_text: "Er worden geen persoonlijke gegevens verzameld of opgeslagen. Je kind oefent lokaal op een volledig privé en veilige manier.",
+                parents_card1_footer: "GEEN REGISTRATIE VEREIST",
+                parents_card2_title: "0% Storende reclame",
+                parents_card2_text: "Geen ongewenste onderbrekingen. Het kind blijft gefocust op de wiskundige uitdaging in een rustige ruimte die de concentratie bevordert.",
+                parents_card2_footer: "VOLLEDIGE CONCENTRATIE",
+                parents_card3_title: "3 tot 5 minutes per dag",
+                parents_card3_text: "Een zeer effectieve methode met korte sessies. Perfect om regelmaat en plezier in rekenen op te bouwen zonder de schermtijd te overbelasten.",
+                parents_card3_footer: "BEHEERSTE SCHERMTIJD",
+                preview_badge: "Een wonderbaarlijk universum",
+                preview_title: "Stap in het AstroCalcul-avontuur",
+                preview_description: "Sleep om echte screenshots van de app en zijn kleurrijke werelden te ontdekken.",
+                preview_slide1_title: "Hemelkaart",
+                preview_slide1_text: "Een intuïtief dashboard waarmee kinderen hun trainingsbestemming kunnen selecteren in de vorm van te ontgrendelen planeten.",
+                preview_slide2_title: "Rekenmissie",
+                preview_slide2_text: "Een duidelijk en kleurrijk antwoordmechanisme, geoptimaliseerd om frustratie te voorkomen met direct positieve visuele feedback.",
+                preview_slide3_title: "Trofeeëngalerij",
+                preview_slide3_text: "Een catalogus van badges en sterrenbeelden om te voltooien om autonomie aan te moedigen en het doorzettingsvermogen te stimuleren.",
+                footer_desc: "Speels, veilig en leuk hoofdrekenen voor de nieuwe generatie ruimtevaarders.",
+                footer_privacy_link: "Privacybeleid",
+                footer_delete_link: "Mijn account verwijderen",
+                footer_contact_link: "Support Contact",
+                footer_rights: "Alle rechten voorbehouden.",
+                fallback_slide1_title: "PLANEETSELECTIE",
+                fallback_slide1_subtitle: "Optellen • Aftrekken • Tafels",
+                fallback_slide3_title: "BADGESKAMER",
+                sim_alt: "Hoogte",
+                sim_ready_status: "MOTOREN GESTART!",
+                sim_success_status: "SUCCESVOL IN EEN BAAN GEBRACHT!",
+                sim_ready_system: "SYSTEEM GEREED",
+                sim_companion_placeholder: "\"Klaar voor hoofdrekenen? Kies je moeilijkheidsgraad!\"",
+                sim_feedback_excellent: "UITSTEKEND! LANCERING GESTART!",
+                sim_feedback_error: "OEI! PROBEER HET OPNIEUW!"
+            }
+        };
+
+        let currentLang = localStorage.getItem('astrocalcul_lang') || 'fr';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('astrocalcul_lang', lang);
+
+            // Mise à jour de l'état actif des boutons
+            ['fr', 'en', 'nl'].forEach(l => {
+                const btn = document.getElementById(`lang-${l}`);
+                if (l === lang) {
+                    btn.className = "px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow";
+                } else {
+                    btn.className = "px-2.5 py-1 rounded-full text-gray-400 transition-all";
+                }
+            });
+
+            // Application des traductions
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Fallbacks graphiques (SVG)
+            document.getElementById('fallback_slide1_title').textContent = translations[lang].fallback_slide1_title;
+            document.getElementById('fallback_slide1_subtitle').textContent = translations[lang].fallback_slide1_subtitle;
+            document.getElementById('fallback_slide3_title').textContent = translations[lang].fallback_slide3_title;
+
+            // Rafraîchir les textes de la démo
+            const currentAltKm = document.getElementById('rocket-altitude').innerText.replace(/[^0-9]/g, '');
+            document.getElementById('rocket-altitude').innerText = `${translations[currentLang].sim_alt} : ${currentAltKm || 0} km`;
+            
+            // Si la fusée ne décolle pas, remettre à jour le statut
+            if (!isLaunching) {
+                document.getElementById('rocket-status').innerText = translations[currentLang].sim_ready_system;
+                document.getElementById('astro-speech').innerText = translations[currentLang].sim_companion_placeholder;
+                document.getElementById('simulator-feedback').innerText = translations[currentLang].sim_feedback_placeholder;
+            }
+
+            generateQuestion();
+        }
+
+
+        // ==========================================
+        // 2. ÉTOILES SCINTILLANTES
         // ==========================================
         const canvas = document.getElementById('stars-canvas');
         const ctx = canvas.getContext('2d');
@@ -625,7 +952,7 @@
 
 
         // ==========================================
-        // 2. SIMULATEUR MATHÉMATIQUE & COMPAGNON
+        // 3. SIMULATEUR MATHÉMATIQUE & COMPAGNON
         // ==========================================
         let currentDifficulty = 'easy';
         let currentQuestion = { question: '', answer: 0, choices: [] };
@@ -639,27 +966,24 @@
             hard: 'assets/planete-hard.png'
         };
 
-        // Textes de l'astronaute
-        const thinkingPhrases = [
-            "Hmm... Une nouvelle équation s'affiche !",
-            "Aide-moi à trouver la bonne planète-réponse !",
-            "Tu as trouvé la solution ? Clique dessus !",
-            "La fusée attend tes calculs pour décoller !"
-        ];
+        // Textes de l'astronaute traduits dynamiquement
+        const thinkingPhrases = {
+            fr: ["Hmm... Une nouvelle équation s'affiche !", "Aide-moi à trouver la bonne planète-réponse !", "Tu as trouvé la solution ? Clique dessus !", "La fusée attend tes calculs pour décoller !"],
+            en: ["Hmm... A new equation appears!", "Help me find the right answer-planet!", "Found the solution? Click on it!", "The rocket is waiting for your math to launch!"],
+            nl: ["Hmm... Er verschijnt een nieuwe som!", "Help me de juiste antwoordplaneet te vinden!", "Heb je de oplossing gevonden? Klik erop!", "De raket wacht op jouw berekening om te vertrekken!"]
+        };
 
-        const successPhrases = [
-            "SUPERBE ! On s'envole !",
-            "Excellent calcul ! Moteurs allumés !",
-            "La réponse était parfaite !",
-            "Direction les étoiles !"
-        ];
+        const successPhrases = {
+            fr: ["SUPERBE ! On s'envole !", "Excellent calcul ! Moteurs allumés !", "La réponse était parfaite !", "Direction les étoiles !"],
+            en: ["SUPERB! We are taking off!", "Excellent math! Engines on!", "The answer was perfect!", "Heading for the stars!"],
+            nl: ["GEWELDIG! We vliegen weg!", "Uitstekende berekening! Motoren gestart!", "Het antwoord was perfect!", "Richting de sterren!"]
+        };
 
-        const errorPhrases = [
-            "Pas tout à fait... réessaye !",
-            "Oups ! Ajustons nos coordonnées !",
-            "Fais une autre tentative, tu vas y arriver !",
-            "Erreur de trajectoire, réessaye !"
-        ];
+        const errorPhrases = {
+            fr: ["Pas tout à fait... réessaye !", "Oups ! Ajustons nos coordonnées !", "Fais une autre tentative, tu vas y arriver !", "Erreur de trajectoire, réessaye !"],
+            en: ["Not quite... try again!", "Oops! Let's adjust our coordinates!", "Give it another shot, you can do it!", "Trajectory error, try again!"],
+            nl: ["Niet helemaal... probeer het opnieuw!", "Oeps! Laten we onze coördinaten aanpassen!", "Doe nog een poging, je kunt het!", "Trajectfout, probeer het opnieuw!"]
+        };
 
         // Modification de l'expression faciale SVG de secours
         function updateFallbackAstroFace(state) {
@@ -684,17 +1008,18 @@
             const companionImg = document.getElementById('astro-companion-img');
             const speechText = document.getElementById('astro-speech');
 
+            const lang = currentLang;
             if (state === 'happy') {
                 companionImg.src = 'assets/astronaute-content.png';
-                speechText.innerText = `"${successPhrases[Math.floor(Math.random() * successPhrases.length)]}"`;
+                speechText.innerText = `"${successPhrases[lang][Math.floor(Math.random() * successPhrases[lang].length)]}"`;
                 updateFallbackAstroFace('happy');
             } else if (state === 'sad') {
                 companionImg.src = 'assets/astronaute-erreur.png';
-                speechText.innerText = `"${errorPhrases[Math.floor(Math.random() * errorPhrases.length)]}"`;
+                speechText.innerText = `"${errorPhrases[lang][Math.floor(Math.random() * errorPhrases[lang].length)]}"`;
                 updateFallbackAstroFace('sad');
             } else {
                 companionImg.src = 'assets/astronaute-penseur.png';
-                speechText.innerText = `"${thinkingPhrases[Math.floor(Math.random() * thinkingPhrases.length)]}"`;
+                speechText.innerText = `"${thinkingPhrases[lang][Math.floor(Math.random() * thinkingPhrases[lang].length)]}"`;
                 updateFallbackAstroFace('neutral');
             }
         }
@@ -779,7 +1104,7 @@
             if (selected === currentQuestion.answer) {
                 score++;
                 document.getElementById('simulator-score').innerText = score;
-                feedback.innerText = "EXCELLENT ! DÉCOLLAGE EN COURS !";
+                feedback.innerText = translations[currentLang].sim_feedback_excellent;
                 feedback.className = "text-cosmic-green font-black tracking-wide animate-pulse";
                 
                 buttonElement.className = "choice-btn py-4 rounded-2xl bg-cosmic-green/20 border-2 border-cosmic-green text-cosmic-green text-xl font-extrabold transition-all duration-200";
@@ -787,7 +1112,7 @@
                 updateAstroCompanion('happy');
                 triggerRocketLaunch();
             } else {
-                feedback.innerText = "OUPS ! RÉESSEZ POUR PROPULSER !";
+                feedback.innerText = translations[currentLang].sim_feedback_error;
                 feedback.className = "text-cosmic-pink font-black tracking-wide animate-shake";
                 
                 buttonElement.className = "choice-btn py-4 rounded-2xl bg-cosmic-pink/20 border-2 border-cosmic-pink text-cosmic-pink text-xl font-extrabold transition-all duration-200";
@@ -810,22 +1135,22 @@
             const altitude = document.getElementById('rocket-altitude');
             const altitudeBar = document.getElementById('altitude-bar');
 
-            // Allumage moteur (montre la flamme sur le SVG de secours)
+            // Allumage moteur
             fallbackFlame.classList.remove('hidden');
             smoke.classList.add('opacity-100', 'scale-150');
-            status.innerText = "MOTEURS ALLUMÉS !";
+            status.innerText = translations[currentLang].sim_ready_status;
             status.className = "text-xs font-black text-cosmic-pink tracking-widest uppercase";
 
             let currentAlt = 0;
             const altInterval = setInterval(() => {
                 currentAlt += 12;
-                altitude.innerText = `Altitude : ${currentAlt} km`;
+                altitude.innerText = `${translations[currentLang].sim_alt} : ${currentAlt} km`;
             }, 50);
 
             // Décollage
             setTimeout(() => {
                 rocket.style.transform = "translateY(-220px) scale(0.7)";
-                status.innerText = "MISE EN ORBITE RÉUSSIE !";
+                status.innerText = translations[currentLang].sim_success_status;
                 status.className = "text-xs font-black text-cosmic-green tracking-widest uppercase";
                 altitudeBar.style.height = "100%";
             }, 300);
@@ -841,9 +1166,9 @@
                 setTimeout(() => {
                     rocket.style.transition = "all 1s ease-out";
                     rocket.style.transform = "translateY(0px) scale(1)";
-                    status.innerText = "SYSTÈME PRÊT";
+                    status.innerText = translations[currentLang].sim_ready_system;
                     status.className = "text-xs font-black text-cosmic-cyan tracking-widest uppercase";
-                    altitude.innerText = "Altitude : 0 km";
+                    altitude.innerText = `${translations[currentLang].sim_alt} : 0 km`;
                     altitudeBar.style.height = "10%";
                     isLaunching = false;
                     generateQuestion();
@@ -851,11 +1176,9 @@
             }, 2500);
         }
 
-        setDifficulty('easy');
-
 
         // ==========================================
-        // 3. CARROUSEL DE CAPTURES D'ÉCRAN (TACTILE & GRAB)
+        // 4. CARROUSEL DE CAPTURES D'ÉCRAN (TACTILE & GRAB)
         // ==========================================
         const track = document.getElementById('carousel-track');
         let currentSlideIndex = 0;
@@ -914,7 +1237,7 @@
             isDragging = true;
             startX = getPositionX(event);
             track.style.cursor = 'grabbing';
-            track.style.transition = 'none'; // Désactive la transition pour suivre le doigt
+            track.style.transition = 'none';
         }
 
         function dragAction(event) {
@@ -926,7 +1249,6 @@
             const baseTranslate = -currentSlideIndex * (slideWidth + gap);
             currentTranslate = baseTranslate + diffX;
 
-            // Effet élastique sur les bords
             const maxOffset = -((track.children.length - getVisibleSlides()) * (slideWidth + gap));
             if (currentTranslate > 50) currentTranslate = 50;
             if (currentTranslate < maxOffset - 50) currentTranslate = maxOffset - 50;
@@ -941,7 +1263,7 @@
 
             const slideWidth = track.children[0].offsetWidth;
             const gap = 24;
-            const threshold = slideWidth / 4; // Seuil de 25% de la largeur du slide pour changer
+            const threshold = slideWidth / 4;
             const baseTranslate = -currentSlideIndex * (slideWidth + gap);
             const diff = currentTranslate - baseTranslate;
 
@@ -958,7 +1280,6 @@
             updateCarouselPosition();
         }
 
-        // Ecouteurs d'événements tactiles et souris
         track.addEventListener('mousedown', dragStart);
         track.addEventListener('mouseup', dragEnd);
         track.addEventListener('mouseleave', dragEnd);
@@ -972,6 +1293,12 @@
             currentSlideIndex = 0;
             updateCarouselPosition();
         });
+
+        // Lancement et application de la langue préférée à l'initialisation
+        window.onload = function() {
+            changeLanguage(currentLang);
+            setDifficulty('easy');
+        };
     </script>
 </body>
 </html>
