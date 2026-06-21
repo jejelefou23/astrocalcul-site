@@ -3,7 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AstroCalcul - Apprendre le calcul mental en s'amusant dans l'espace !</title>
+    
+    <!-- Titre optimisé pour les moteurs de recherche (SEO) -->
+    <title>AstroCalcul | Jeu de calcul mental et tables de multiplication pour enfants</title>
+    
+    <!-- Meta description pour le référencement Google -->
+    <meta name="description" content="Découvrez AstroCalcul, l'aventure spatiale éducative sans publicité pour apprendre le calcul mental et réviser les tables de multiplication du CP au CM2 en s'amusant.">
+    
+    <!-- Balises de langue (hreflang) pour éviter le contenu dupliqué et cibler le bon pays -->
+    <link rel="alternate" hreflang="fr" href="https://jejelefou23.github.io/astrocalcul-site/" />
+    <link rel="alternate" hreflang="en" href="https://jejelefou23.github.io/astrocalcul-site/?lang=en" />
+    <link rel="alternate" hreflang="nl" href="https://jejelefou23.github.io/astrocalcul-site/?lang=nl" />
+    <link rel="alternate" hreflang="x-default" href="https://jejelefou23.github.io/astrocalcul-site/" />
+
+    <!-- Balises Open Graph pour optimiser le rendu lors d'un partage sur Facebook ou LinkedIn -->
+    <meta property="og:title" content="AstroCalcul | Jeu de calcul mental pour enfants" />
+    <meta property="og:description" content="Découvrez AstroCalcul, l'aventure spatiale éducative sans publicité pour apprendre le calcul mental en s'amusant." />
+    <meta property="og:image" content="https://jejelefou23.github.io/astrocalcul-site/assets/logo.png" />
+    <meta property="og:url" content="https://jejelefou23.github.io/astrocalcul-site/" />
+    <meta property="og:type" content="website" />
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,6 +45,7 @@
                     },
                     fontFamily: {
                         sans: ['Nunito', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        display: ['Fredoka', 'Nunito', 'sans-serif'],
                     }
                 }
             }
@@ -33,7 +53,8 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght=400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Importation de Fredoka (pour les titres) et Nunito (pour le texte) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Nunito', sans-serif;
@@ -109,7 +130,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                     </svg>
                 </div>
-                <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">ASTROCALCUL</span>
+                <!-- Utilisation de la police Fredoka pour le nom de marque -->
+                <span class="text-2xl font-display font-bold tracking-wide bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">ASTROCALCUL</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide">
                 <a href="#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
@@ -118,13 +140,13 @@
             </nav>
             
             <div class="flex items-center space-x-4">
-                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black">
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display">
                     <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow">FR</button>
                     <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all">EN</button>
                     <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all">NL</button>
                 </div>
 
-                <a href="#simulator" data-i18n="nav_demo" class="bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-6 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:shadow-cosmic-cyan/45 hover:scale-105 active:scale-95 transition-all duration-300">
+                <a href="#simulator" data-i18n="nav_demo" class="bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-6 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:shadow-cosmic-cyan/45 hover:scale-105 active:scale-95 transition-all duration-300 font-display">
                     ESSAYER LA DÉMO
                 </a>
             </div>
@@ -146,7 +168,8 @@
                     <span data-i18n="hero_tagline" class="text-xs font-extrabold tracking-widest text-cosmic-cyan">MISSION APPRENDRE EN S'AMUSANT</span>
                 </div>
 
-                <h1 data-i18n="hero_title" class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight">
+                <!-- Titre H1 avec la police Fredoka -->
+                <h1 data-i18n="hero_title" class="text-4xl sm:text-5xl md:text-6xl font-display font-bold leading-tight tracking-normal">
                     Le calcul mental devient une <br class="hidden sm:inline">
                     <span class="bg-gradient-to-r from-cosmic-cyan via-cosmic-pink to-cosmic-purple bg-clip-text text-transparent">
                         aventure spatiale !
@@ -251,12 +274,14 @@
             </div>
         </section>
 
+        <!-- REVUE DE PRESSE -->
         <section id="press" class="scroll-mt-24 space-y-8">
             <div class="text-center max-w-3xl mx-auto space-y-4">
                 <div class="inline-block bg-cosmic-pink/10 border border-cosmic-pink/20 px-4 py-1.5 rounded-full">
-                    <span data-i18n="press_badge" class="text-xs font-black tracking-widest text-cosmic-pink uppercase">REVUE DE PRESSE</span>
+                    <span data-i18n="press_badge" class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase">REVUE DE PRESSE</span>
                 </div>
-                <h2 data-i18n="press_title" class="text-3xl md:text-4xl font-black">On parle de nous !</h2>
+                <!-- Titre H2 avec la police Fredoka -->
+                <h2 data-i18n="press_title" class="text-3xl md:text-4xl font-display font-bold">On parle de nous !</h2>
                 <p data-i18n="press_subtitle" class="text-gray-300">
                     Découvrez l'histoire derrière AstroCalcul et pourquoi les parents et médias partagent notre aventure.
                 </p>
@@ -266,22 +291,23 @@
                 <div class="glass-panel rounded-3xl p-6 md:p-8 hover:border-[#FFF500]/40 transition-all duration-300 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-cosmic-cyan/10 rounded-full blur-2xl -z-10 group-hover:scale-150 transition-transform duration-500"></div>
                     
-                    <div class="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 bg-[#FFF500] text-black rounded-2xl flex flex-col items-center justify-center p-4 font-black text-center shadow-lg shadow-[#FFF500]/10 transform group-hover:rotate-2 transition-transform duration-300">
+                    <div class="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 bg-[#FFF500] text-black rounded-2xl flex flex-col items-center justify-center p-4 font-display font-bold text-center shadow-lg shadow-[#FFF500]/10 transform group-hover:rotate-2 transition-transform duration-300">
                         <span class="text-2xl tracking-tighter">MAISON</span>
                         <div class="w-12 h-1 bg-black my-1"></div>
                         <span class="text-2xl tracking-tighter">SLASH</span>
-                        <span class="text-[9px] font-bold text-gray-800 tracking-widest mt-1 uppercase">#parentfriendly</span>
+                        <span class="text-[9px] font-bold text-gray-800 tracking-widest mt-1 uppercase font-sans">#parentfriendly</span>
                     </div>
 
                     <div class="space-y-4 text-center md:text-left flex-1">
-                        <h3 data-i18n="press_article_title" class="text-xl md:text-2xl font-black text-white leading-tight">
+                        <!-- Titre d'article avec Fredoka -->
+                        <h3 data-i18n="press_article_title" class="text-xl md:text-2xl font-display font-bold text-white leading-tight">
                             "T'as déjà rencontré un papa qui code une app pour aider sa fille en maths ? Nous oui !"
                         </h3>
                         <p data-i18n="press_article_desc" class="text-gray-300 text-sm leading-relaxed">
                             Maison Slash raconte comment l'aventure AstroCalcul a démarré : l'histoire d'un papa qui a décidé de créer une application ludique et saine pour aider sa propre fille avec ses devoirs de calcul mental.
                         </p>
                         <div class="pt-2">
-                            <a href="https://maisonslash.be/fr/geek/app/papa-invente-app-pour-devoir-de-sa-fille" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-cosmic-cyan hover:text-[#FFF500] font-black text-sm transition-all duration-200 group/link">
+                            <a href="https://maisonslash.be/fr/geek/app/papa-invente-app-pour-devoir-de-sa-fille" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-cosmic-cyan hover:text-[#FFF500] font-display font-bold text-sm transition-all duration-200 group/link">
                                 <span data-i18n="press_read_more">Lire l'article complet</span>
                                 <svg class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -293,13 +319,15 @@
             </div>
         </section>
 
+        <!-- CARROUSEL DES FONCTIONNALITÉS DE L'APPLICATION (7 SLIDES DANS L'ORDRE DÉFINI) -->
         <section id="preview" class="scroll-mt-24 space-y-12">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div class="space-y-4 max-w-2xl">
                     <div class="inline-block bg-cosmic-purple/10 border border-cosmic-purple/20 px-4 py-1.5 rounded-full">
-                        <span data-i18n="preview_badge" class="text-xs font-black tracking-widest text-cosmic-purple uppercase">Un univers merveilleux</span>
+                        <span data-i18n="preview_badge" class="text-xs font-extrabold tracking-widest text-cosmic-purple uppercase font-display">Un univers merveilleux</span>
                     </div>
-                    <h2 data-i18n="preview_title" class="text-3xl md:text-4xl font-black">Dans le cockpit d'AstroCalcul</h2>
+                    <!-- Titre H2 avec la police Fredoka -->
+                    <h2 data-i18n="preview_title" class="text-3xl md:text-4xl font-display font-bold">Dans le cockpit d'AstroCalcul</h2>
                     <p data-i18n="preview_description" class="text-gray-300">
                         Glissez ou utilisez les boutons pour explorer les fonctionnalités phares issues du jeu.
                     </p>
@@ -317,153 +345,109 @@
             <div class="relative overflow-hidden rounded-3xl p-1">
                 <div id="carousel-track" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-6 cursor-grab select-none pb-4">
                     
-                    <!-- Slide 1 : Mode Révision Intelligent -->
+                    <!-- Slide 1 : Écran de sélection planète + - x : -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
-                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10 flex flex-col justify-between p-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cosmic-pink/10 via-space-900 to-space-900">
-                            <div class="flex items-center justify-between">
-                                <span class="bg-cosmic-pink/20 text-cosmic-pink border border-cosmic-pink/30 text-[10px] font-bold px-2 py-0.5 rounded-full">ANALYSIS ACTIVE</span>
-                                <span class="text-white/40 text-xs">Table de 7 & 8</span>
-                            </div>
-                            <!-- Simulation de graphique de révision -->
-                            <div class="space-y-2 my-auto">
-                                <div class="flex justify-between items-center text-[11px] text-gray-400">
-                                    <span>Taux de réussite global</span>
-                                    <span class="text-cosmic-pink font-extrabold">64%</span>
-                                </div>
-                                <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                                    <div class="h-full bg-cosmic-pink rounded-full w-[64%] animate-pulse"></div>
-                                </div>
-                                <div class="grid grid-cols-4 gap-1 pt-1">
-                                    <div class="bg-cosmic-pink/20 border border-cosmic-pink/40 rounded-lg p-1 text-center text-[9px] text-cosmic-pink font-black">×6 ❌</div>
-                                    <div class="bg-cosmic-green/20 border border-cosmic-green/40 rounded-lg p-1 text-center text-[9px] text-cosmic-green font-black">×7 ✅</div>
-                                    <div class="bg-cosmic-pink/20 border border-cosmic-pink/40 rounded-lg p-1 text-center text-[9px] text-cosmic-pink font-black">×8 ❌</div>
-                                    <div class="bg-cosmic-green/20 border border-cosmic-green/40 rounded-lg p-1 text-center text-[9px] text-cosmic-green font-black">×9 ✅</div>
-                                </div>
-                            </div>
-                            <div class="text-[10px] text-gray-400 border-t border-white/5 pt-2 flex justify-between">
-                                <span>🎯 Mode Révision Ciblé</span>
-                                <span class="text-white font-bold">12 Badges à collectionner</span>
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
+                            <img src="assets/screen-planetes.png" alt="Sélection planète et exercices" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-planetes').style.display='flex';">
+                            <div id="fallback-screen-planetes" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-cyan/10 to-space-900">
+                                <svg class="w-12 h-12 text-cosmic-cyan opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707-.707m12.728 0l-.707.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                <span class="text-xs font-bold text-white/50 tracking-wider">assets/screen-planetes.png</span>
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <h3 data-i18n="preview_slide1_title" class="text-lg font-black text-white">Mode Révision Intelligent</h3>
-                            <p data-i18n="preview_slide1_text" class="text-gray-300 text-xs">AstroCalcul analyse les réponses de l'enfant et identifie automatiquement ses tables les plus faibles pour lui proposer des sessions d'entraînement sur-mesure.</p>
+                            <!-- Titres des slides avec Fredoka -->
+                            <h3 data-i18n="preview_slide1_title" class="text-lg font-display font-bold text-white">Sélection des planètes</h3>
+                            <p data-i18n="preview_slide1_text" class="text-gray-300 text-xs">Sélection des opérations et des exercices.</p>
                         </div>
                     </div>
 
-                    <!-- Slide 2 : Voyage Galactique -->
+                    <!-- Slide 2 : Mode révision intelligent -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
-                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10 flex flex-col justify-between p-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cosmic-cyan/10 via-space-900 to-space-900">
-                            <div class="flex items-center justify-between">
-                                <span class="bg-cosmic-cyan/20 text-cosmic-cyan border border-cosmic-cyan/30 text-[10px] font-bold px-2 py-0.5 rounded-full">MISSION GALAXIE</span>
-                                <span class="text-white/40 text-xs">Jour 4 : Mars 🪐</span>
-                            </div>
-                            <!-- Simulation carte spatiale -->
-                            <div class="my-auto space-y-1 text-center relative">
-                                <div class="absolute inset-0 flex items-center justify-center opacity-30">
-                                    <div class="w-16 h-16 rounded-full border border-dashed border-cosmic-cyan/50 animate-spin" style="animation-duration: 10s"></div>
-                                </div>
-                                <div class="text-[20px] font-black tracking-widest text-cosmic-cyan">ANECDOTE DU JOUR</div>
-                                <p class="text-[9px] text-gray-400 px-4 leading-normal italic">"Sur Mars, le ciel est rose et les couchers de soleil sont bleus car la poussière filtre la lumière !"</p>
-                            </div>
-                            <div class="text-[10px] text-gray-400 border-t border-white/5 pt-2 flex justify-between">
-                                <span>🚀 Du Soleil à Pluton</span>
-                                <span class="text-white font-bold">10 Fiches Planétaires</span>
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
+                            <img src="assets/screen-revision.png" alt="Mode révision intelligent" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-revision').style.display='flex';">
+                            <div id="fallback-screen-revision" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-pink/10 to-space-900">
+                                <svg class="w-12 h-12 text-cosmic-pink opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-xs font-bold text-white/50 tracking-wider">assets/screen-revision.png</span>
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <h3 data-i18n="preview_slide2_title" class="text-lg font-black text-white">Explore la Galaxie</h3>
-                            <p data-i18n="preview_slide2_text" class="text-gray-300 text-xs">Une mission quotidienne immersive ! L'enfant résout des calculs pour voyager de planète en planète et débloquer des fiches d'anecdotes réelles sur le système solaire.</p>
+                            <h3 data-i18n="preview_slide2_title" class="text-lg font-display font-bold text-white">Mode Révision Intelligent</h3>
+                            <p data-i18n="preview_slide2_text" class="text-gray-300 text-xs">Détection et ciblage des tables faibles de l'enfant.</p>
                         </div>
                     </div>
 
-                    <!-- Slide 3 : Professeur Robi -->
+                    <!-- Slide 3 : Apprendre avec Robi -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
-                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10 flex flex-col justify-between p-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cosmic-purple/10 via-space-900 to-space-900">
-                            <div class="flex items-center justify-between">
-                                <span class="bg-cosmic-purple/20 text-cosmic-purple border border-cosmic-purple/30 text-[10px] font-bold px-2 py-0.5 rounded-full">ROBI - ASSISTANT</span>
-                                <span class="text-white/40 text-xs">Explication de 12 ÷ 3</span>
-                            </div>
-                            <!-- Robi expliquant pas à pas -->
-                            <div class="my-auto flex items-center space-x-3 bg-white/5 p-2.5 rounded-xl border border-white/5">
-                                <div class="w-10 h-10 bg-cosmic-purple/10 border border-cosmic-purple/30 rounded-lg flex items-center justify-center text-xs">🤖</div>
-                                <div class="space-y-1 text-left flex-1">
-                                    <div class="text-[10px] font-black text-cosmic-purple uppercase">Méthode : Le Goûter</div>
-                                    <div class="text-[9px] text-gray-400 leading-snug">"Partageons équitablement 12 cookies entre 3 petits astronautes : chacun en reçoit 4 !"</div>
-                                </div>
-                            </div>
-                            <div class="text-[10px] text-gray-400 border-t border-white/5 pt-2 flex justify-between">
-                                <span>🧮 Goûter • Boîte à Outils • Tour</span>
-                                <span class="text-white font-bold">Multiplications & Divisions</span>
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
+                            <img src="assets/screen-robi.png" alt="Apprendre avec Robi" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-robi').style.display='flex';">
+                            <div id="fallback-screen-robi" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-purple/10 to-space-900">
+                                <svg class="w-12 h-12 text-cosmic-purple opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364.364l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                                <span class="text-xs font-bold text-white/50 tracking-wider">assets/screen-robi.png</span>
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <h3 data-i18n="preview_slide3_title" class="text-lg font-black text-white">Le Professeur Robi</h3>
-                            <p data-i18n="preview_slide3_text" class="text-gray-300 text-xs">Un compagnon pédagogique unique qui décortique les multiplications et divisions étape par étape à travers 3 approches visuelles hautement intuitives.</p>
+                            <h3 data-i18n="preview_slide3_title" class="text-lg font-display font-bold text-white">Apprendre avec Robi</h3>
+                            <p data-i18n="preview_slide3_text" class="text-gray-300 text-xs">Explication étape par étape des calculs.</p>
                         </div>
                     </div>
 
-                    <!-- Slide 4 : Les Mini-Jeux Arcade -->
+                    <!-- Slide 4 : Les mini jeux -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
-                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10 flex flex-col justify-between p-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cosmic-cyan/10 via-space-900 to-space-900">
-                            <div class="flex items-center justify-between">
-                                <span class="bg-cosmic-cyan/20 text-cosmic-cyan border border-cosmic-cyan/30 text-[10px] font-bold px-2 py-0.5 rounded-full">MINI-GAMES</span>
-                                <span class="text-white/40 text-xs">Astro Coins</span>
-                            </div>
-                            <!-- Mini-jeux list -->
-                            <div class="my-auto grid grid-cols-2 gap-2 text-left">
-                                <div class="bg-white/5 p-1.5 rounded-lg border border-white/5 text-[9px] flex items-center space-x-2">
-                                    <span>🎯</span> <div><span class="font-extrabold block text-white">Astro Target</span><span class="text-gray-500">Arcade infini</span></div>
-                                </div>
-                                <div class="bg-white/5 p-1.5 rounded-lg border border-white/5 text-[9px] flex items-center space-x-2">
-                                    <span>🛸</span> <div><span class="font-extrabold block text-white">Répare Fusée</span><span class="text-gray-500">Prêt au décollage</span></div>
-                                </div>
-                                <div class="bg-white/5 p-1.5 rounded-lg border border-white/5 text-[9px] flex items-center space-x-2">
-                                    <span>📦</span> <div><span class="font-extrabold block text-white">Cache-Cache</span><span class="text-gray-500">Trouve Robi</span></div>
-                                </div>
-                                <div class="bg-white/5 p-1.5 rounded-lg border border-white/5 text-[9px] flex items-center space-x-2">
-                                    <span>💎</span> <div><span class="font-extrabold block text-white">Marché Spatial</span><span class="text-gray-500">Calcule la monnaie</span></div>
-                                </div>
-                            </div>
-                            <div class="text-[10px] text-gray-400 border-t border-white/5 pt-2 flex justify-between">
-                                <span>🕹️ 5 Mini-Jeux addictifs</span>
-                                <span class="text-white font-bold">100% Hors-ligne</span>
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
+                            <img src="assets/screen-jeux.png" alt="Les mini-jeux" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-jeux').style.display='flex';">
+                            <div id="fallback-screen-jeux" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-cyan/10 to-space-900">
+                                <svg class="w-12 h-12 text-cosmic-cyan opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path></svg>
+                                <span class="text-xs font-bold text-white/50 tracking-wider">assets/screen-jeux.png</span>
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <h3 data-i18n="preview_slide4_title" class="text-lg font-black text-white">S'entraîner en s'amusant</h3>
-                            <p data-i18n="preview_slide4_text" class="text-gray-300 text-xs">En s'entraînant quotidiennement, l'enfant gagne des AstroPièces qui lui permettent de débloquer des mini-jeux d'arcade pour s'exercer sous un autre format.</p>
+                            <h3 data-i18n="preview_slide4_title" class="text-lg font-display font-bold text-white">Les mini-jeux d'entraînement</h3>
+                            <p data-i18n="preview_slide4_text" class="text-gray-300 text-xs">Déblocage d'activités d'arcade éducatives.</p>
                         </div>
                     </div>
 
-                    <!-- Slide 5 : Suivi Parent & Impression de Trophées -->
+                    <!-- Slide 5 : Tableau de bord pour les parents -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
-                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10 flex flex-col justify-between p-4 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cosmic-green/10 via-space-900 to-space-900">
-                            <div class="flex items-center justify-between">
-                                <span class="bg-cosmic-green/20 text-cosmic-green border border-cosmic-green/30 text-[10px] font-bold px-2 py-0.5 rounded-full">ESPACE PARENTS</span>
-                                <span class="text-white/40 text-xs">Impression active</span>
-                            </div>
-                            <!-- Badge print simulation -->
-                            <div class="my-auto flex flex-col items-center space-y-2 bg-white/5 p-3 rounded-xl border border-white/5">
-                                <div class="flex items-center space-x-2">
-                                    <div class="w-8 h-8 rounded-full bg-cosmic-green/20 flex items-center justify-center text-cosmic-green font-black text-xs">★</div>
-                                    <div class="text-left text-[9px]">
-                                        <span class="font-black text-white block">Badge "Commandant en Chef"</span>
-                                        <span class="text-gray-500">Prêt pour impression A4</span>
-                                    </div>
-                                </div>
-                                <button class="w-full bg-cosmic-green/20 text-cosmic-green text-[9px] font-black py-1.5 rounded-lg border border-cosmic-green/30 hover:bg-cosmic-green/30 transition-all flex items-center justify-center space-x-1">
-                                    <span>🖨️ Imprimer les Badges réels</span>
-                                </button>
-                            </div>
-                            <div class="text-[10px] text-gray-400 border-t border-white/5 pt-2 flex justify-between">
-                                <span>🔒 Code PIN sécurisé</span>
-                                <span class="text-white font-bold">Impression A4 Papier</span>
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
+                            <img src="assets/screen-parents.png" alt="Espace parents" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-parents').style.display='flex';">
+                            <div id="fallback-screen-parents" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-green/10 to-space-900">
+                                <svg class="w-12 h-12 text-cosmic-green opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                                <span class="text-xs font-bold text-white/50 tracking-wider">assets/screen-parents.png</span>
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <h3 data-i18n="preview_slide5_title" class="text-lg font-black text-white">Suivi Parent & Impression de Badges</h3>
-                            <p data-i18n="preview_slide5_text" class="text-gray-300 text-xs">Suivez les progrès de vos enfants avec un historique détaillé. Pour valoriser concrètement les efforts, imprimez leurs badges débloqués sur du vrai papier !</p>
+                            <h3 data-i18n="preview_slide5_title" class="text-lg font-display font-bold text-white">Tableau de bord parents</h3>
+                            <p class="text-gray-300 text-xs" data-i18n="preview_slide5_text">Suivi analytique précis des sessions de jeu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 : Les badges -->
+                    <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
+                            <img src="assets/screen-badges.png" alt="Les badges" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-badges').style.display='flex';">
+                            <div id="fallback-screen-badges" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-pink/10 to-space-900">
+                                <svg class="w-12 h-12 text-cosmic-pink opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4m-4 0H8m12 3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-xs font-bold text-white/50 tracking-wider">assets/screen-badges.png</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 data-i18n="preview_slide6_title" class="text-lg font-display font-bold text-white">Les badges de réussite</h3>
+                            <p class="text-gray-300 text-xs" data-i18n="preview_slide6_text">Médailles obtenues et options d'impression.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7 : Exploration de la galaxie -->
+                    <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
+                            <img src="assets/screen-galaxie.png" alt="Exploration de la galaxie" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-galaxie').style.display='flex';">
+                            <div id="fallback-screen-galaxie" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-cyan/10 to-space-900">
+                                <svg class="w-12 h-12 text-cosmic-cyan opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5A2.5 2.5 0 0119 14.5v.194M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-xs font-bold text-white/50 tracking-wider">assets/screen-galaxie.png</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 data-i18n="preview_slide7_title" class="text-lg font-display font-bold text-white">Exploration de la galaxie</h3>
+                            <p class="text-gray-300 text-xs" data-i18n="preview_slide7_text">Découverte des planètes et des étoiles.</p>
                         </div>
                     </div>
 
@@ -471,18 +455,19 @@
             </div>
         </section>
 
+        <!-- SIMULATEUR DE MISSION -->
         <section id="simulator" class="scroll-mt-24">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
                 <div class="inline-block bg-cosmic-pink/10 border border-cosmic-pink/20 px-4 py-1.5 rounded-full">
-                    <span data-i18n="sim_badge" class="text-xs font-black tracking-widest text-cosmic-pink uppercase">Testez l'application</span>
+                    <span data-i18n="sim_badge" class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Testez l'application</span>
                 </div>
-                <h2 data-i18n="sim_title" class="text-3xl md:text-4xl font-black">Préparez le décollage !</h2>
+                <!-- Titre H2 avec la police Fredoka -->
+                <h2 data-i18n="sim_title" class="text-3xl md:text-4xl font-display font-bold">Préparez le décollage !</h2>
                 <p data-i18n="sim_description" class="text-gray-300">
                     Choisissez votre niveau, répondez correctement et observez votre compagnon et la fusée s'envoler !
                 </p>
             </div>
 
-            <!-- Structure du simulateur de jeu -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-5xl mx-auto">
                 
                 <div class="lg:col-span-5 glass-panel rounded-3xl p-6 flex flex-col items-center justify-between min-h-[400px] relative overflow-hidden">
@@ -491,7 +476,7 @@
                         <div id="altitude-bar" class="w-full bg-cosmic-cyan rounded-full transition-all duration-1000" style="height: 10%;"></div>
                     </div>
                     
-                    <span data-i18n="sim_launchpad" class="text-xs text-gray-400 font-extrabold uppercase tracking-widest self-end">RAMPE DE LANCEMENT</span>
+                    <span data-i18n="sim_launchpad" class="text-xs text-gray-400 font-extrabold uppercase tracking-widest self-end font-display">RAMPE DE LANCEMENT</span>
                     
                     <div id="sim-rocket-container" class="relative w-36 h-64 flex items-end justify-center transition-all duration-1000 ease-out transform">
                         
@@ -516,7 +501,7 @@
                     </div>
 
                     <div class="text-center z-10 w-full bg-space-900/60 py-2 rounded-xl border border-white/5">
-                        <p id="rocket-status" data-i18n="sim_status_ready" class="text-xs font-black text-cosmic-cyan tracking-widest uppercase">SYSTÈME PRÊT</p>
+                        <p id="rocket-status" data-i18n="sim_status_ready" class="text-xs font-display font-bold text-cosmic-cyan tracking-wider uppercase">SYSTÈME PRÊT</p>
                         <p id="rocket-altitude" data-i18n="sim_altitude_val" class="text-sm font-bold text-gray-300">Altitude : 0 km</p>
                     </div>
                 </div>
@@ -535,22 +520,22 @@
                             </svg>
                         </div>
                         <div>
-                            <h4 data-i18n="sim_companion_title" class="text-sm font-black text-cosmic-cyan">VOTRE CO-PILOTE ROBI</h4>
+                            <h4 data-i18n="sim_companion_title" class="text-sm font-display font-bold text-cosmic-cyan">VOTRE CO-PILOTE ROBI</h4>
                             <p id="astro-speech" class="text-xs text-gray-300">"Prêt pour le calcul mental ? Choisis ta difficulté !"</p>
                         </div>
                     </div>
 
                     <div class="space-y-3">
-                        <label data-i18n="sim_label_level" class="text-xs font-black tracking-widest text-gray-400 uppercase">1. Niveau de l'enfant :</label>
+                        <label data-i18n="sim_label_level" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">1. Niveau de l'enfant :</label>
                         <div class="grid grid-cols-3 gap-3">
-                            <button onclick="setDifficulty('easy')" id="btn-easy" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 bg-space-800 border-cosmic-cyan text-cosmic-cyan shadow-sm">
-                                <span data-i18n="sim_level_easy_title">Recrue</span><br><span data-i18n="sim_level_easy_age" class="text-[10px] font-bold text-gray-400">4-6 ans</span>
+                            <button onclick="setDifficulty('easy')" id="btn-easy" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all duration-200 bg-space-800 border-cosmic-cyan text-cosmic-cyan shadow-sm">
+                                <span data-i18n="sim_level_easy_title">Recrue</span><br><span data-i18n="sim_level_easy_age" class="text-[10px] font-bold text-gray-400 font-sans">4-6 ans</span>
                             </button>
-                            <button onclick="setDifficulty('medium')" id="btn-medium" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 border-white/10 hover:border-white/25">
-                                <span data-i18n="sim_level_medium_title">Cadet</span><br><span data-i18n="sim_level_medium_age" class="text-[10px] font-bold text-gray-400">7-8 ans</span>
+                            <button onclick="setDifficulty('medium')" id="btn-medium" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all duration-200 border-white/10 hover:border-white/25">
+                                <span data-i18n="sim_level_medium_title">Cadet</span><br><span data-i18n="sim_level_medium_age" class="text-[10px] font-bold text-gray-400 font-sans">7-8 ans</span>
                             </button>
-                            <button onclick="setDifficulty('hard')" id="btn-hard" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 border-white/10 hover:border-white/25">
-                                <span data-i18n="sim_level_hard_title">Commandant</span><br><span data-i18n="sim_level_hard_age" class="text-[10px] font-bold text-gray-400">9-10 ans</span>
+                            <button onclick="setDifficulty('hard')" id="btn-hard" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all duration-200 border-white/10 hover:border-white/25">
+                                <span data-i18n="sim_level_hard_title">Commandant</span><br><span data-i18n="sim_level_hard_age" class="text-[10px] font-bold text-gray-400 font-sans">9-10 ans</span>
                             </button>
                         </div>
                     </div>
@@ -563,8 +548,9 @@
                         </div>
 
                         <div class="relative z-10 space-y-2">
-                            <span data-i18n="sim_eq_title" class="text-[11px] font-bold tracking-widest text-cosmic-pink uppercase">Équation Spatiale</span>
-                            <div id="calculation-display" class="text-4xl md:text-5xl font-black tracking-wider text-white py-2">
+                            <span data-i18n="sim_eq_title" class="text-[11px] font-bold tracking-widest text-cosmic-pink uppercase font-display">Équation Spatiale</span>
+                            <!-- Utilisation de Fredoka pour l'équation mathématique également -->
+                            <div id="calculation-display" class="text-4xl md:text-5xl font-display font-bold tracking-wider text-white py-2">
                                 4 + 3
                             </div>
                             <p data-i18n="sim_eq_desc" class="text-xs text-gray-400">Trouvez la bonne planète réponse pour propulser la fusée !</p>
@@ -572,7 +558,7 @@
                     </div>
 
                     <div class="space-y-3">
-                        <label data-i18n="sim_label_select" class="text-xs font-black tracking-widest text-gray-400 uppercase">2. Sélectionnez la réponse correcte :</label>
+                        <label data-i18n="sim_label_select" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">2. Sélectionnez la réponse correcte :</label>
                         <div id="choices-container" class="grid grid-cols-3 gap-4">
                             <!-- Généré dynamiquement en JS -->
                         </div>
@@ -581,9 +567,9 @@
                     <div class="flex items-center justify-between border-t border-white/10 pt-4 text-sm font-bold">
                         <div class="flex items-center space-x-2">
                             <span data-i18n="sim_score_label" class="text-gray-400">Score de mission :</span>
-                            <span id="simulator-score" class="text-cosmic-green font-black text-lg">0</span>
+                            <span id="simulator-score" class="text-cosmic-green font-display font-bold text-lg">0</span>
                         </div>
-                        <div id="simulator-feedback" data-i18n="sim_feedback_placeholder" class="text-cosmic-cyan font-black tracking-wide animate-pulse">
+                        <div id="simulator-feedback" data-i18n="sim_feedback_placeholder" class="text-cosmic-cyan font-display font-bold tracking-wide animate-pulse">
                             Sélectionnez une réponse !
                         </div>
                     </div>
@@ -592,12 +578,14 @@
             </div>
         </section>
 
+        <!-- ESPACE PARENTS -->
         <section id="parents" class="scroll-mt-24 space-y-16">
             <div class="text-center max-w-3xl mx-auto space-y-4">
                 <div class="inline-block bg-cosmic-cyan/10 border border-cosmic-cyan/20 px-4 py-1.5 rounded-full">
-                    <span data-i18n="parents_badge" class="text-xs font-black tracking-widest text-cosmic-cyan uppercase">Zéro stress pour la famille</span>
+                    <span data-i18n="parents_badge" class="text-xs font-extrabold tracking-widest text-cosmic-cyan uppercase font-display">Zéro stress pour la famille</span>
                 </div>
-                <h2 data-i18n="parents_title" class="text-3xl md:text-4xl font-black">L'apprentissage intelligent en toute sérénité</h2>
+                <!-- Titre H2 avec la police Fredoka -->
+                <h2 data-i18n="parents_title" class="text-3xl md:text-4xl font-display font-bold">L'apprentissage intelligent en toute sérénité</h2>
                 <p data-i18n="parents_description" class="text-gray-300">
                     AstroCalcul a été pensé par un papa développeur et soutenu par des enseignants pour offrir un cadre d'apprentissage parfaitement sain et stimulant.
                 </p>
@@ -613,12 +601,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                             </svg>
                         </div>
-                        <h3 data-i18n="parents_card1_title" class="text-xl font-extrabold">100% Sécurisé</h3>
+                        <!-- Titre H3 de carte avec Fredoka -->
+                        <h3 data-i18n="parents_card1_title" class="text-xl font-display font-bold">100% Sécurisé</h3>
                         <p data-i18n="parents_card1_text" class="text-gray-300 text-sm leading-relaxed">
-                            Aucune donnée personnelle n'est collectée ou stockée. Votre enfant s'entraîne en local de manière totalement privée et sécurisée (jusqu'à 4 profils enfants).
+                            Aucune donnée personnelle n'est collectée ou storée. Votre enfant s'entraîne en local de manière totalement privée et sécurisée (jusqu'à 4 profils enfants).
                         </p>
                     </div>
-                    <span data-i18n="parents_card1_footer" class="text-xs text-cosmic-cyan font-bold tracking-widest uppercase pt-6">AUCUN ENREGISTREMENT</span>
+                    <span data-i18n="parents_card1_footer" class="text-xs text-cosmic-cyan font-bold tracking-widest uppercase pt-6 font-display">AUCUN ENREGISTREMENT</span>
                 </div>
 
                 <div class="glass-panel rounded-3xl p-8 hover:border-cosmic-pink/30 transition-all duration-300 flex flex-col justify-between group">
@@ -629,12 +618,12 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
                             </svg>
                         </div>
-                        <h3 data-i18n="parents_card2_title" class="text-xl font-extrabold">0% Publicité, 0% Abonnement</h3>
+                        <h3 data-i18n="parents_card2_title" class="text-xl font-display font-bold">0% Publicité, 0% Abonnement</h3>
                         <p data-i18n="parents_card2_text" class="text-gray-300 text-sm leading-relaxed">
                             AstroCalcul fonctionne 100% hors-ligne. Pas de bannières intrusives, pas de prélèvements surprises. Les tables de multiplication, d'addition et de soustraction sont 100% gratuites !
                         </p>
                     </div>
-                    <span data-i18n="parents_card2_footer" class="text-xs text-cosmic-pink font-bold tracking-widest uppercase pt-6">CONCENTRATION TOTALE</span>
+                    <span data-i18n="parents_card2_footer" class="text-xs text-cosmic-pink font-bold tracking-widest uppercase pt-6 font-display">CONCENTRATION TOTALE</span>
                 </div>
 
                 <div class="glass-panel rounded-3xl p-8 hover:border-cosmic-purple/30 transition-all duration-300 flex flex-col justify-between group">
@@ -645,12 +634,12 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <h3 data-i18n="parents_card3_title" class="text-xl font-extrabold">3 à 5 minutes par jour</h3>
+                        <h3 data-i18n="parents_card3_title" class="text-xl font-display font-bold">3 à 5 minutes par jour</h3>
                         <p data-i18n="parents_card3_text" class="text-gray-300 text-sm leading-relaxed">
                             Une méthode d'ancrage rapide mais d'une efficacité redoutable. Configurez un rappel d'entraînement personnalisé quotidien depuis les contrôles parents sécurisés.
                         </p>
                     </div>
-                    <span data-i18n="parents_card3_footer" class="text-xs text-cosmic-purple font-bold tracking-widest uppercase pt-6">TEMPS D'ÉCRAN MAÎTRISÉ</span>
+                    <span data-i18n="parents_card3_footer" class="text-xs text-cosmic-purple font-bold tracking-widest uppercase pt-6 font-display">TEMPS D'ÉCRAN MAÎTRISÉ</span>
                 </div>
 
             </div>
@@ -664,7 +653,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                     </svg>
                 </div>
-                <span class="text-lg font-black tracking-wider text-white">ASTROCALCUL</span>
+                <span class="text-lg font-display font-bold tracking-wider text-white">ASTROCALCUL</span>
             </div>
             
             <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">
@@ -688,7 +677,7 @@
 
     <script>
         // ==========================================
-        // 1. GESTION DES LANGUES (i18n d'après Play/App Store)
+        // 1. GESTION DES LANGUES (i18n)
         // ==========================================
         const translations = {
             fr: {
@@ -743,16 +732,20 @@
                 preview_badge: "Un univers merveilleux",
                 preview_title: "Dans le cockpit d'AstroCalcul",
                 preview_description: "Glissez ou utilisez les boutons pour explorer les fonctionnalités phares issues du jeu.",
-                preview_slide1_title: "Mode Révision Intelligent",
-                preview_slide1_text: "AstroCalcul analyse les réponses de l'enfant et identifie automatiquement ses tables les plus faibles pour lui proposer des sessions d'entraînement sur-mesure.",
-                preview_slide2_title: "Explore la Galaxie",
-                preview_slide2_text: "Une mission quotidienne immersive ! L'enfant résout des calculs pour voyager de planète en planète et débloquer des fiches d'anecdotes réelles sur le système solaire.",
-                preview_slide3_title: "Le Professeur Robi",
-                preview_slide3_text: "Un compagnon pédagogique unique qui décortique les multiplications et divisions étape par étape à travers 3 approches visuelles hautement intuitives.",
-                preview_slide4_title: "S'entraîner en s'amusant",
-                preview_slide4_text: "En s'entraînant quotidiennement, l'enfant gagne des AstroPièces qui lui permettent de débloquer des mini-jeux d'arcade pour s'exercer sous un autre format.",
-                preview_slide5_title: "Suivi Parents & Badges Physiques",
-                preview_slide5_text: "Suivez les progrès de vos enfants avec un historique détaillé. Pour valoriser concrètement les efforts, imprimez leurs badges débloqués sur du vrai papier !",
+                preview_slide1_title: "Sélection des planètes et exercices (+ - × ÷)",
+                preview_slide1_text: "Un écran de sélection ludique où l'enfant choisit son opération et ses tables d'exercices à travers des mondes colorés.",
+                preview_slide2_title: "Mode révision intelligent",
+                preview_slide2_text: "Le jeu détecte automatiquement les faiblesses de l'enfant pour lui proposer des révisions ciblées et l'aider à progresser.",
+                preview_slide3_title: "Apprendre avec Robi",
+                preview_slide3_text: "Le professeur Robi explique les opérations étape par étape à l'aide de méthodes visuelles adaptées et claires.",
+                preview_slide4_title: "Les mini-jeux d'entraînement",
+                preview_slide4_text: "En s'entraînant, l'enfant gagne des AstroPièces pour débloquer des mini-jeux d'arcade éducatifs et amusants.",
+                preview_slide5_title: "Tableau de bord pour les parents",
+                preview_slide5_text: "Suivez l'évolution précise de votre enfant grâce à des graphiques simples de progression et de taux de réussite.",
+                preview_slide6_title: "Les badges de réussite",
+                preview_slide6_text: "Des récompenses virtuelles motivantes à collectionner, avec la possibilité unique de les imprimer sur papier.",
+                preview_slide7_title: "Exploration de la galaxie",
+                preview_slide7_text: "Un voyage fantastique où chaque calcul résolu permet de voyager vers une nouvelle planète et d'en apprendre plus sur l'espace.",
                 footer_desc: "L'apprentissage ludique, sécurisé et amusant du calcul mental pour la nouvelle génération d'explorateurs spatiaux.",
                 footer_privacy_link: "Politique de Confidentialité",
                 footer_delete_link: "Supprimer mon compte",
@@ -818,16 +811,20 @@
                 preview_badge: "A wonderful universe",
                 preview_title: "Inside AstroCalcul's Cockpit",
                 preview_description: "Swipe or use the buttons to explore the core game features.",
-                preview_slide1_title: "Smart Revision Mode",
-                preview_slide1_text: "AstroCalcul analyses the child's answers and automatically identifies their weakest tables to offer highly targeted training sessions.",
-                preview_slide2_title: "Explore the Galaxy",
-                preview_slide2_text: "An immersive daily mission! The child solves calculations to travel from planet to planet and unlock fascinating real facts about our solar system.",
-                preview_slide3_title: "Professor Robi",
-                preview_slide3_text: "A unique pedagogical assistant robot that explains multiplication and division step-by-step using 3 highly intuitive visual methods.",
-                preview_slide4_title: "Learn While Having Fun",
-                preview_slide4_text: "By practicing daily, the child earns AstroCoins to unlock endless arcade mini-games to practice in another format.",
-                preview_slide5_title: "Parents Portal & Physical Badges",
-                preview_slide5_text: "Track your child's progress with detailed history. To reward their hard work physically, print their unlocked badges on real paper!",
+                preview_slide1_title: "Planet Selection and Exercises (+ - × ÷)",
+                preview_slide1_text: "A playful selection screen where children choose their operations and practice tables through colorful worlds.",
+                preview_slide2_title: "Smart Revision Mode",
+                preview_slide2_text: "The game automatically detects areas where your child struggles, offering targeted practice sessions to boost progress.",
+                preview_slide3_title: "Learn with Robi",
+                preview_slide3_text: "Professor Robi explains arithmetic step-by-step using highly intuitive and tailored visual methods.",
+                preview_slide4_title: "Training Mini-Games",
+                preview_slide4_text: "By practicing, children earn AstroCoins to unlock educational and highly entertaining arcade mini-games.",
+                preview_slide5_title: "Parents' Dashboard",
+                preview_slide5_text: "Easily monitor your child's progress with clear success charts, stats, and customizable options.",
+                preview_slide6_title: "Reward Badges",
+                preview_slide6_text: "Motivating badges to collect in-game, with the unique feature of being printable on real paper.",
+                preview_slide7_title: "Galaxy Exploration",
+                preview_slide7_text: "An epic journey where solving math equations fuels the rocket to discover new planets and real space facts.",
                 footer_desc: "Playful, secure, and fun mental math learning for the new generation of space explorers.",
                 footer_privacy_link: "Privacy Policy",
                 footer_delete_link: "Delete my account",
@@ -893,16 +890,20 @@
                 preview_badge: "Een wonderbaarlijk universum",
                 preview_title: "In de Cockpit van AstroCalcul",
                 preview_description: "Sleep of gebruik de knoppen om de belangrijkste functies van het spel te verkennen.",
-                preview_slide1_title: "Slimme Revisiemodus",
-                preview_slide1_text: "AstroCalcul analyseert de prestaties van je kind en identificeert automatisch de zwakste tafels om zo persoonlijke oefensessies aan te bieden.",
-                preview_slide2_title: "Ontdek de Galaxie",
-                preview_slide2_text: "Een dagelijkse missie! Het kind lost sommen op om van planeet naar planeet te reizen en boeiende wetenschappelijke weetjes over het zonnestelsel te ontgrendelen.",
-                preview_slide3_title: "Professor Robi",
-                preview_slide3_text: "Een unieke educatieve robotassistent die vermenigvuldigingen en delingen stap voor stap uitlegt met 3 visuele methodes.",
-                preview_slide4_title: "Leren en Spelen",
-                preview_slide4_text: "Door dagelijks te oefenen, verdient het kind AstroMunten om arcade mini-spelletjes te ontgrendelen en op een andere manier te oefenen.",
-                preview_slide5_title: "Ouderportaal & Fysieke Badges",
-                preview_slide5_text: "Volg de voortgang van je kinderen met een gedetailleerde geschiedenis. Print hun ontgrendelde badges uit op echt papier als fysieke beloning!",
+                preview_slide1_title: "Planeetselectie en Oefeningen (+ - × ÷)",
+                preview_slide1_text: "Een speels selectiescherm waar uw kind bewerkingen en oefentafels kiest in prachtig vormgegeven werelden.",
+                preview_slide2_title: "Slimme Revisiemodus",
+                preview_slide2_text: "Het spel herkent automatisch de zwakke punten van uw kind en biedt gerichte oefeningen om snel vooruitgang te boeken.",
+                preview_slide3_title: "Leren met Robi",
+                preview_slide3_text: "Professor Robi legt rekenkundige bewerkingen stap voor stap uit met behulp van intuïtieve visuele hulpmiddelen.",
+                preview_slide4_title: "Educatieve Mini-Games",
+                preview_slide4_text: "Door te oefenen verdienen kinderen AstroMunten om leuke en leerzame arcade mini-spelletjes te ontgrendelen.",
+                preview_slide5_title: "Dashboard voor Ouders",
+                preview_slide5_text: "Volg de vooruitgang van uw kind nauwkeurig met heldere statistieken, foutenanalyses en opties.",
+                preview_slide6_title: "Beloningsbadges",
+                preview_slide6_text: "Mooie in-game badges om te verzamelen, met de unieke optie om ze op echt papier uit te printen.",
+                preview_slide7_title: "Ontdekking van de Galaxie",
+                preview_slide7_text: "Een fantastische reis waarbij elke opgeloste som de raket aandrijft om nieuwe planeten en sterrenweetjes te ontdekken.",
                 footer_desc: "Speels, veilig en leuk hoofdrekenen voor de nieuwe generatie ruimtevaarders.",
                 footer_privacy_link: "Privacybeleid",
                 footer_delete_link: "Mijn account verwijderen",
@@ -927,9 +928,9 @@
             ['fr', 'en', 'nl'].forEach(l => {
                 const btn = document.getElementById(`lang-${l}`);
                 if (l === lang) {
-                    btn.className = "px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow";
+                    btn.className = "px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display font-medium";
                 } else {
-                    btn.className = "px-2.5 py-1 rounded-full text-gray-400 transition-all";
+                    btn.className = "px-2.5 py-1 rounded-full text-gray-400 transition-all font-display";
                 }
             });
 
@@ -1085,7 +1086,7 @@
             currentDifficulty = diff;
             
             document.querySelectorAll('.difficulty-btn').forEach(btn => {
-                btn.className = "difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 border-white/10 hover:border-white/25";
+                btn.className = "difficulty-btn py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all duration-200 border-white/10 hover:border-white/25";
             });
 
             const activeBtn = document.getElementById(`btn-${diff}`);
@@ -1093,7 +1094,7 @@
             if (diff === 'medium') accentColor = 'cosmic-pink';
             if (diff === 'hard') accentColor = 'cosmic-purple';
             
-            activeBtn.className = `difficulty-btn py-3 px-2 rounded-2xl border text-sm font-black transition-all duration-200 bg-space-800 border-${accentColor} text-${accentColor} shadow-sm`;
+            activeBtn.className = `difficulty-btn py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all duration-200 bg-space-800 border-${accentColor} text-${accentColor} shadow-sm`;
 
             const planetImg = document.getElementById('planet-bg-asset');
             planetImg.src = planetAssets[diff];
@@ -1142,7 +1143,8 @@
             
             choices.forEach(choice => {
                 const button = document.createElement('button');
-                button.className = "choice-btn py-4 rounded-2xl bg-space-800 hover:bg-space-700 border border-white/10 text-xl font-extrabold hover:border-cosmic-cyan hover:scale-105 active:scale-95 transition-all duration-200";
+                // Les chiffres réponses utilisent aussi Fredoka pour être homogènes
+                button.className = "choice-btn py-4 rounded-2xl bg-space-800 hover:bg-space-700 border border-white/10 text-xl font-display font-bold hover:border-cosmic-cyan hover:scale-105 active:scale-95 transition-all duration-200";
                 button.innerText = choice;
                 button.onclick = () => verifyAnswer(choice, button);
                 container.appendChild(button);
@@ -1160,17 +1162,17 @@
                 score++;
                 document.getElementById('simulator-score').innerText = score;
                 feedback.innerText = translations[currentLang].sim_feedback_excellent;
-                feedback.className = "text-cosmic-green font-black tracking-wide animate-pulse";
+                feedback.className = "text-cosmic-green font-display font-bold tracking-wide animate-pulse";
                 
-                buttonElement.className = "choice-btn py-4 rounded-2xl bg-cosmic-green/20 border-2 border-cosmic-green text-cosmic-green text-xl font-extrabold transition-all duration-200";
+                buttonElement.className = "choice-btn py-4 rounded-2xl bg-cosmic-green/20 border-2 border-cosmic-green text-cosmic-green text-xl font-display font-bold transition-all duration-200";
                 
                 updateAstroCompanion('happy');
                 triggerRocketLaunch();
             } else {
                 feedback.innerText = translations[currentLang].sim_feedback_error;
-                feedback.className = "text-cosmic-pink font-black tracking-wide animate-shake";
+                feedback.className = "text-cosmic-pink font-display font-bold tracking-wide animate-shake";
                 
-                buttonElement.className = "choice-btn py-4 rounded-2xl bg-cosmic-pink/20 border-2 border-cosmic-pink text-cosmic-pink text-xl font-extrabold transition-all duration-200";
+                buttonElement.className = "choice-btn py-4 rounded-2xl bg-cosmic-pink/20 border-2 border-cosmic-pink text-cosmic-pink text-xl font-display font-bold transition-all duration-200";
                 
                 updateAstroCompanion('sad');
 
@@ -1192,7 +1194,7 @@
             fallbackFlame.classList.remove('hidden');
             smoke.classList.add('opacity-100', 'scale-150');
             status.innerText = translations[currentLang].sim_ready_status;
-            status.className = "text-xs font-black text-cosmic-pink tracking-widest uppercase";
+            status.className = "text-xs font-display font-bold text-cosmic-pink tracking-wide uppercase";
 
             let currentAlt = 0;
             const altInterval = setInterval(() => {
@@ -1203,7 +1205,7 @@
             setTimeout(() => {
                 rocket.style.transform = "translateY(-220px) scale(0.7)";
                 status.innerText = translations[currentLang].sim_success_status;
-                status.className = "text-xs font-black text-cosmic-green tracking-widest uppercase";
+                status.className = "text-xs font-display font-bold text-cosmic-green tracking-wide uppercase";
                 altitudeBar.style.height = "100%";
             }, 300);
 
@@ -1218,7 +1220,7 @@
                     rocket.style.transition = "all 1s ease-out";
                     rocket.style.transform = "translateY(0px) scale(1)";
                     status.innerText = translations[currentLang].sim_ready_system;
-                    status.className = "text-xs font-black text-cosmic-cyan tracking-widest uppercase";
+                    status.className = "text-xs font-display font-bold text-cosmic-cyan tracking-wide uppercase";
                     altitude.innerText = `${translations[currentLang].sim_alt} : 0 km`;
                     altitudeBar.style.height = "10%";
                     isLaunching = false;
@@ -1290,6 +1292,12 @@
         });
 
         window.onload = function() {
+            // Lecture automatique de la langue via paramètre de recherche URL (SEO Multi-langues)
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            if (langParam && ['fr', 'en', 'nl'].includes(langParam)) {
+                currentLang = langParam;
+            }
             changeLanguage(currentLang);
             setDifficulty('easy');
         };
