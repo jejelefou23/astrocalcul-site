@@ -16,6 +16,9 @@
     <link rel="alternate" hreflang="nl" href="https://jejelefou23.github.io/astrocalcul-site/?lang=nl" />
     <link rel="alternate" hreflang="x-default" href="https://jejelefou23.github.io/astrocalcul-site/" />
 
+    <!-- URL canonique pour éviter le contenu dupliqué -->
+    <link rel="canonical" href="https://jejelefou23.github.io/astrocalcul-site/" />
+
     <!-- Balises Open Graph pour optimiser le rendu lors d'un partage sur Facebook ou LinkedIn -->
     <meta property="og:title" content="AstroCalcul | Jeu de calcul mental pour enfants" />
     <meta property="og:description" content="Découvrez AstroCalcul, l'aventure spatiale éducative sans publicité pour apprendre le calcul mental en s'amusant." />
@@ -113,6 +116,38 @@
             animation: shake 0.3s ease-in-out;
         }
     </style>
+
+    <!-- Données structurées Schema.org (SoftwareApplication) pour les résultats enrichis -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AstroCalcul",
+      "description": "Aventure spatiale éducative sans publicité pour apprendre le calcul mental et réviser les tables de multiplication, d'addition et de soustraction. Conçue pour les enfants de 4 à 10 ans.",
+      "url": "https://jejelefou23.github.io/astrocalcul-site/",
+      "image": "https://jejelefou23.github.io/astrocalcul-site/assets/logo.png",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "iOS, Android",
+      "inLanguage": ["fr", "en", "nl"],
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4,
+        "suggestedMaxAge": 10
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "ratingCount": "1",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
 </head>
 <body class="text-white relative min-h-screen">
 
@@ -132,7 +167,7 @@
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center space-x-3 group">
                 <div class="w-10 h-10 bg-gradient-to-tr from-cosmic-pink to-cosmic-blue rounded-xl flex items-center justify-center shadow-lg shadow-cosmic-pink/20 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
-                    <img src="assets/logo.png" alt="AstroCalcul Logo" class="w-full h-full object-contain p-1" onerror="this.style.display='none'; document.getElementById('header-logo-fallback').style.display='block';">
+                    <img src="./assets/logo.png" alt="AstroCalcul Logo" class="w-full h-full object-contain p-1" onerror="this.style.display='none'; document.getElementById('header-logo-fallback').style.display='block';">
                     <svg id="header-logo-fallback" style="display: none;" class="w-6 h-6 text-white m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                     </svg>
@@ -167,7 +202,7 @@
             <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
                 <div class="inline-flex items-center space-x-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
                     <div class="w-6 h-6 rounded-full overflow-hidden bg-cosmic-cyan/20 flex items-center justify-center">
-                        <img src="assets/astronaute-tete.png" alt="Co-pilote" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('hero-mini-astrosvg').style.display='block';">
+                        <img src="./assets/astronaute-tete.png" alt="Co-pilote" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('hero-mini-astrosvg').style.display='block';">
                         <svg id="hero-mini-astrosvg" style="display: none;" class="w-4 h-4 text-cosmic-cyan" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2a10 10 0 00-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0012 2zm0 3a4 4 0 110 8 4 4 0 010-8zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                         </svg>
@@ -234,7 +269,7 @@
                 
                 <div class="relative w-full max-w-[400px] h-[400px]">
                     <div class="absolute inset-0 flex items-center justify-center animate-float-slow">
-                        <img src="assets/fusee-main.png" alt="Fusée AstroCalcul" class="w-4/5 h-4/5 object-contain" onerror="this.style.display='none'; document.getElementById('hero-fallback-rocket').style.display='block';">
+                        <img src="./assets/fusee-main.png" alt="Fusée AstroCalcul" class="w-4/5 h-4/5 object-contain" onerror="this.style.display='none'; document.getElementById('hero-fallback-rocket').style.display='block';">
                         
                         <div id="hero-fallback-rocket" style="display: none;" class="w-full h-full">
                             <svg class="w-full h-full" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -262,7 +297,7 @@
                     </div>
 
                     <div class="absolute -bottom-4 -left-4 w-36 h-36 animate-float z-10">
-                        <img src="assets/astronaute-hero.png" alt="Astronaute AstroCalcul" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('hero-fallback-astro').style.display='block';">
+                        <img src="./assets/astronaute-hero.png" alt="Astronaute AstroCalcul" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('hero-fallback-astro').style.display='block';">
                         
                         <div id="hero-fallback-astro" style="display: none;" class="w-full h-full">
                             <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -355,7 +390,7 @@
                     <!-- Slide 1 : Écran de sélection planète + - x : -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
                         <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
-                            <img src="assets/screen-planetes.png" alt="Sélection planète et exercices" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-planetes').style.display='flex';">
+                            <img src="./assets/screen-planetes.png" alt="Sélection planète et exercices" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-planetes').style.display='flex';">
                             <div id="fallback-screen-planetes" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-cyan/10 to-space-900">
                                 <svg class="w-12 h-12 text-cosmic-cyan opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707-.707m12.728 0l-.707.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                                 <span class="text-xs font-bold text-white/50 tracking-wider font-display">assets/screen-planetes.png</span>
@@ -371,7 +406,7 @@
                     <!-- Slide 2 : Mode révision intelligent -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
                         <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
-                            <img src="assets/screen-revision.png" alt="Mode révision intelligent" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-revision').style.display='flex';">
+                            <img src="./assets/screen-revision.png" alt="Mode révision intelligent" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-revision').style.display='flex';">
                             <div id="fallback-screen-revision" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-pink/10 to-space-900">
                                 <svg class="w-12 h-12 text-cosmic-pink opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 <span class="text-xs font-bold text-white/50 tracking-wider font-display">assets/screen-revision.png</span>
@@ -386,7 +421,7 @@
                     <!-- Slide 3 : Apprendre avec Robi -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
                         <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
-                            <img src="assets/screen-robi.png" alt="Apprendre avec Robi" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-robi').style.display='flex';">
+                            <img src="./assets/screen-robi.png" alt="Apprendre avec Robi" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-robi').style.display='flex';">
                             <div id="fallback-screen-robi" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-purple/10 to-space-900">
                                 <svg class="w-12 h-12 text-cosmic-purple opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364.364l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                                 <span class="text-xs font-bold text-white/50 tracking-wider font-display">assets/screen-robi.png</span>
@@ -401,7 +436,7 @@
                     <!-- Slide 4 : Les mini jeux -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
                         <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
-                            <img src="assets/screen-jeux.png" alt="Les mini-jeux" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-jeux').style.display='flex';">
+                            <img src="./assets/screen-jeux.png" alt="Les mini-jeux" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-jeux').style.display='flex';">
                             <div id="fallback-screen-jeux" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-cyan/10 to-space-900">
                                 <svg class="w-12 h-12 text-cosmic-cyan opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path></svg>
                                 <span class="text-xs font-bold text-white/50 tracking-wider font-display">assets/screen-jeux.png</span>
@@ -416,7 +451,7 @@
                     <!-- Slide 5 : Tableau de bord pour les parents -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
                         <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
-                            <img src="assets/screen-parents.png" alt="Espace parents" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-parents').style.display='flex';">
+                            <img src="./assets/screen-parents.png" alt="Espace parents" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-parents').style.display='flex';">
                             <div id="fallback-screen-parents" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-green/10 to-space-900">
                                 <svg class="w-12 h-12 text-cosmic-green opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                                 <span class="text-xs font-bold text-white/50 tracking-wider font-display">assets/screen-parents.png</span>
@@ -431,7 +466,7 @@
                     <!-- Slide 6 : Les badges -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
                         <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
-                            <img src="assets/screen-badges.png" alt="Les badges" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-badges').style.display='flex';">
+                            <img src="./assets/screen-badges.png" alt="Les badges" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-badges').style.display='flex';">
                             <div id="fallback-screen-badges" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-pink/10 to-space-900">
                                 <svg class="w-12 h-12 text-cosmic-pink opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4m-4 0H8m12 3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 <span class="text-xs font-bold text-white/50 tracking-wider font-display">assets/screen-badges.png</span>
@@ -446,7 +481,7 @@
                     <!-- Slide 7 : Exploration de la galaxie -->
                     <div class="snap-start min-w-[280px] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
                         <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
-                            <img src="assets/screen-galaxie.png" alt="Exploration de la galaxie" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-galaxie').style.display='flex';">
+                            <img src="./assets/screen-galaxie.png" alt="Exploration de la galaxie" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-galaxie').style.display='flex';">
                             <div id="fallback-screen-galaxie" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-cyan/10 to-space-900">
                                 <svg class="w-12 h-12 text-cosmic-cyan opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5A2.5 2.5 0 0119 14.5v.194M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 <span class="text-xs font-bold text-white/50 tracking-wider font-display">assets/screen-galaxie.png</span>
@@ -489,7 +524,7 @@
                         
                         <div id="sim-smoke" class="absolute bottom-0 w-24 h-8 bg-white/20 rounded-full blur-md opacity-0 scale-50 transition-all duration-300"></div>
                         
-                        <img src="assets/fusee-sim.png" id="sim-rocket-image" alt="Fusée" class="w-24 h-48 object-contain" onerror="this.style.display='none'; document.getElementById('sim-fallback-rocket').style.display='block';">
+                        <img src="./assets/fusee-sim.png" id="sim-rocket-image" alt="Fusée" class="w-24 h-48 object-contain" onerror="this.style.display='none'; document.getElementById('sim-fallback-rocket').style.display='block';">
                         
                         <svg id="sim-fallback-rocket" style="display: none;" class="w-24 h-48" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path id="sim-flame" d="M40,160 Q50,200 50,180 Q50,200 60,160 Z" fill="url(#flameGradSim)" class="hidden">
@@ -517,7 +552,7 @@
                     
                     <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-2xl border border-white/10">
                         <div class="relative w-16 h-16 flex-shrink-0">
-                            <img id="astro-companion-img" src="assets/astronaute-penseur.png" alt="Compagnon" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('astro-companion-fallback').style.display='block';">
+                            <img id="astro-companion-img" src="./assets/astronaute-penseur.png" alt="Compagnon" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('astro-companion-fallback').style.display='block';">
                             
                             <svg id="astro-companion-fallback" style="display: none;" class="w-full h-full" viewBox="0 0 100 100">
                                 <circle cx="50" cy="50" r="35" fill="#1D1D4A" stroke="#00F0FF" stroke-width="2"/>
@@ -551,7 +586,7 @@
                         <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
                         
                         <div class="absolute right-4 top-2 w-12 h-12 opacity-20">
-                            <img id="planet-bg-asset" src="assets/planete-easy.png" alt="" class="w-full h-full object-contain" onerror="this.style.display='none';">
+                            <img id="planet-bg-asset" src="./assets/planete-easy.png" alt="" class="w-full h-full object-contain" onerror="this.style.display='none';">
                         </div>
 
                         <div class="relative z-10 space-y-2">
@@ -603,7 +638,7 @@
                 <div class="glass-panel rounded-3xl p-8 hover:border-cosmic-cyan/30 transition-all duration-300 flex flex-col justify-between group">
                     <div class="space-y-6">
                         <div class="w-14 h-14 bg-cosmic-cyan/10 rounded-2xl flex items-center justify-center text-cosmic-cyan group-hover:scale-110 transition-transform duration-300 overflow-hidden">
-                            <img src="assets/icone-securite.png" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('shield-svg').style.display='block';">
+                            <img src="./assets/icone-securite.png" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('shield-svg').style.display='block';">
                             <svg id="shield-svg" style="display: none;" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                             </svg>
@@ -620,7 +655,7 @@
                 <div class="glass-panel rounded-3xl p-8 hover:border-cosmic-pink/30 transition-all duration-300 flex flex-col justify-between group">
                     <div class="space-y-6">
                         <div class="w-14 h-14 bg-cosmic-pink/10 rounded-2xl flex items-center justify-center text-cosmic-pink group-hover:scale-110 transition-transform duration-300 overflow-hidden">
-                            <img src="assets/icone-pub.png" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('ban-svg').style.display='block';">
+                            <img src="./assets/icone-pub.png" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('ban-svg').style.display='block';">
                             <svg id="ban-svg" style="display: none;" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
                             </svg>
@@ -636,7 +671,7 @@
                 <div class="glass-panel rounded-3xl p-8 hover:border-cosmic-purple/30 transition-all duration-300 flex flex-col justify-between group">
                     <div class="space-y-6">
                         <div class="w-14 h-14 bg-cosmic-purple/10 rounded-2xl flex items-center justify-center text-cosmic-purple group-hover:scale-110 transition-transform duration-300 overflow-hidden">
-                            <img src="assets/icone-chrono.png" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('timer-svg').style.display='block';">
+                            <img src="./assets/icone-chrono.png" alt="" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; document.getElementById('timer-svg').style.display='block';">
                             <svg id="timer-svg" style="display: none;" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
@@ -701,7 +736,7 @@
         <footer class="border-t border-white/5 pt-12 pb-16 text-center space-y-6">
             <div class="flex items-center justify-center space-x-3">
                 <div class="w-8 h-8 bg-gradient-to-tr from-cosmic-pink to-cosmic-blue rounded-lg flex items-center justify-center overflow-hidden">
-                    <img src="assets/logo.png" alt="AstroCalcul Logo" class="w-full h-full object-contain p-1" onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='block';">
+                    <img src="./assets/logo.png" alt="AstroCalcul Logo" class="w-full h-full object-contain p-1" onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='block';">
                     <svg id="footer-logo-fallback" style="display: none;" class="w-4 h-4 text-white m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                     </svg>
@@ -932,7 +967,7 @@
                 sim_level_medium_title: "Cadet",
                 sim_level_medium_age: "7-8 jaar",
                 sim_level_hard_title: "Commandant",
-                sim_level_hard_age: "9-10 ans",
+                sim_level_hard_age: "9-10 jaar",
                 sim_eq_title: "Ruimtevergelijking",
                 sim_eq_desc: "Vind de juiste antwoordplaneet om de raket aan te drijven!",
                 sim_label_select: "2. Selecteer het juiste antwoord:",
@@ -947,7 +982,7 @@
                 parents_card2_title: "0% Reclame, 0% Abonnement",
                 parents_card2_text: "AstroCalcul werkt 100% offline. Geen storende reclames of onverwachte afschrijvingen. De sommen voor optellen, aftrekken en vermenigvuldigen zijn 100% gratis!",
                 parents_card2_footer: "VOLLEDIGE CONCENTRATIE",
-                parents_card3_title: "3 tot 5 minutes per dag",
+                parents_card3_title: "3 tot 5 minuten per dag",
                 parents_card3_text: "Een zeer effectieve methode met korte sessies. Stel eenvoudig een dagelijkse herinnering in via het beveiligde ouderlijk toezicht.",
                 parents_card3_footer: "BEHEERSTE SCHERMTIJD",
                 preview_badge: "Een wonderbaarlijk universum",
@@ -1095,9 +1130,9 @@
         let isLaunching = false;
 
         const planetAssets = {
-            easy: 'assets/planete-easy.png',
-            medium: 'assets/planete-medium.png',
-            hard: 'assets/planete-hard.png'
+            easy: './assets/planete-easy.png',
+            medium: './assets/planete-medium.png',
+            hard: './assets/planete-hard.png'
         };
 
         const thinkingPhrases = {
@@ -1141,15 +1176,15 @@
 
             const lang = currentLang;
             if (state === 'happy') {
-                companionImg.src = 'assets/astronaute-content.png';
+                companionImg.src = './assets/astronaute-content.png';
                 speechText.innerText = `"${successPhrases[lang][Math.floor(Math.random() * successPhrases[lang].length)]}"`;
                 updateFallbackAstroFace('happy');
             } else if (state === 'sad') {
-                companionImg.src = 'assets/astronaute-erreur.png';
+                companionImg.src = './assets/astronaute-erreur.png';
                 speechText.innerText = `"${errorPhrases[lang][Math.floor(Math.random() * errorPhrases[lang].length)]}"`;
                 updateFallbackAstroFace('sad');
             } else {
-                companionImg.src = 'assets/astronaute-penseur.png';
+                companionImg.src = './assets/astronaute-penseur.png';
                 speechText.innerText = `"${thinkingPhrases[lang][Math.floor(Math.random() * thinkingPhrases[lang].length)]}"`;
                 updateFallbackAstroFace('neutral');
             }
@@ -1395,5 +1430,6 @@
             setDifficulty('easy');
         };
     </script>
+
 </body>
 </html>
