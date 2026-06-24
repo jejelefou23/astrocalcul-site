@@ -8,7 +8,6 @@
     <meta name="description" content="Conseils, méthodes et astuces pour aider votre enfant à apprendre les tables de multiplication et le calcul mental en s'amusant.">
 
     <link rel="canonical" href="https://jejelefou23.github.io/astrocalcul-site/blog/index.html" />
-
     <link rel="icon" type="image/png" href="../assets/logo.png">
     <link rel="apple-touch-icon" href="../assets/logo.png">
 
@@ -22,20 +21,10 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' },
-                        cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' }
-                    },
-                    fontFamily: {
-                        sans: ['Nunito', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-                        display: ['Fredoka', 'Nunito', 'sans-serif'],
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: {
+            colors: { space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' }, cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' } },
+            fontFamily: { sans: ['Nunito','ui-sans-serif','system-ui','sans-serif'], display: ['Fredoka','Nunito','sans-serif'] }
+        } } }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,14 +49,32 @@
                 </div>
                 <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
             </a>
+
             <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide">
-                <a href="../index.html#preview" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
-                <a href="../index.html#parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
-                <a href="./index.html" class="text-cosmic-green transition-colors">Conseils aux parents</a>
+                <a href="../index.html#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+                <a href="../index.html#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+                <a href="./index.html" data-i18n="nav_blog" class="text-cosmic-green transition-colors">Conseils aux parents</a>
             </nav>
-            <a href="../index.html#download-cta" class="bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">
-                TÉLÉCHARGER
-            </a>
+
+            <div class="flex items-center space-x-3">
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display">
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display">FR</button>
+                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">EN</button>
+                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
+                </div>
+                <a href="../index.html#download-cta" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">TÉLÉCHARGER</a>
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="md:hidden p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <a href="../index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+            <a href="../index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+            <a href="./index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-cosmic-green hover:bg-white/5 transition-colors">Conseils aux parents</a>
+            <a href="../index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
         </div>
     </header>
 
@@ -75,85 +82,136 @@
 
         <div class="text-center max-w-3xl mx-auto space-y-4">
             <div class="inline-block bg-cosmic-green/10 border border-cosmic-green/20 px-4 py-1.5 rounded-full">
-                <span class="text-xs font-extrabold tracking-widest text-cosmic-green uppercase font-display">Le blog AstroCalcul</span>
+                <span data-i18n="blog_badge" class="text-xs font-extrabold tracking-widest text-cosmic-green uppercase font-display">Le blog AstroCalcul</span>
             </div>
-            <h1 class="text-3xl md:text-5xl font-display font-bold">Conseils aux parents</h1>
-            <p class="text-gray-300 text-lg">
-                Des méthodes simples et bienveillantes pour aider votre enfant à apprendre les maths, sans stress et en s'amusant.
-            </p>
+            <h1 data-i18n="blog_title" class="text-3xl md:text-5xl font-display font-bold">Conseils aux parents</h1>
+            <p data-i18n="blog_subtitle" class="text-gray-300 text-lg">Des méthodes simples et bienveillantes pour aider votre enfant à apprendre les maths, sans stress et en s'amusant.</p>
         </div>
 
-        <!-- Liste des articles -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            <!-- Article 1 (publié) -->
             <a href="./apprendre-tables-multiplication.html" class="glass-panel rounded-3xl p-6 md:p-8 flex flex-col gap-4 hover:border-cosmic-cyan/40 transition-all duration-300 group md:col-span-2">
-                <span class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Tables de multiplication</span>
-                <h2 class="text-2xl font-display font-bold text-white group-hover:text-cosmic-cyan transition-colors">Comment apprendre les tables de multiplication facilement ?</h2>
-                <p class="text-gray-300 text-sm leading-relaxed">
-                    Votre enfant a du mal à retenir ses tables ? C'est normal. Découvrez les astuces qui réduisent la quantité à mémoriser, l'importance du jeu, et comment réviser efficacement en quelques minutes par jour.
-                </p>
-                <span class="inline-flex items-center gap-2 text-cosmic-cyan font-display font-bold text-sm pt-2">
-                    Lire l'article
-                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </span>
+                <span data-i18n="a1_label" class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Tables de multiplication</span>
+                <h2 data-i18n="a1_title" class="text-2xl font-display font-bold text-white group-hover:text-cosmic-cyan transition-colors">Comment apprendre les tables de multiplication facilement ?</h2>
+                <p data-i18n="a1_excerpt" class="text-gray-300 text-sm leading-relaxed">Votre enfant a du mal à retenir ses tables ? C'est normal. Découvrez les astuces qui réduisent la quantité à mémoriser, l'importance du jeu, et comment réviser efficacement en quelques minutes par jour.</p>
+                <span class="inline-flex items-center gap-2 text-cosmic-cyan font-display font-bold text-sm pt-2"><span data-i18n="read_more">Lire l'article</span><svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
             </a>
 
-            <!-- Articles à venir (placeholders, à activer quand publiés) -->
-            <div class="glass-panel rounded-3xl p-6 md:p-8 flex flex-col gap-3 opacity-50">
-                <span class="text-xs font-extrabold tracking-widest text-gray-500 uppercase font-display">Bientôt</span>
-                <h2 class="text-xl font-display font-bold text-gray-300">Calcul mental : exercices pour les enfants du primaire</h2>
-                <p class="text-gray-500 text-sm">Additions, soustractions, multiplications : des exercices simples à faire à la maison.</p>
-            </div>
+            <a href="./calcul-mental-primaire.html" class="glass-panel rounded-3xl p-6 md:p-8 flex flex-col gap-4 hover:border-cosmic-cyan/40 transition-all duration-300 group">
+                <span data-i18n="a2_label" class="text-xs font-extrabold tracking-widest text-cosmic-purple uppercase font-display">Calcul mental</span>
+                <h2 data-i18n="a2_title" class="text-xl font-display font-bold text-white group-hover:text-cosmic-cyan transition-colors">Calcul mental : exercices pour les enfants du primaire</h2>
+                <p data-i18n="a2_excerpt" class="text-gray-300 text-sm leading-relaxed flex-1">Additions, soustractions, multiplications : 20 exercices simples et progressifs à faire à la maison, adaptés à chaque âge.</p>
+                <span class="inline-flex items-center gap-2 text-cosmic-cyan font-display font-bold text-sm pt-1"><span data-i18n="read_more">Lire l'article</span><svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
+            </a>
 
-            <div class="glass-panel rounded-3xl p-6 md:p-8 flex flex-col gap-3 opacity-50">
-                <span class="text-xs font-extrabold tracking-widest text-gray-500 uppercase font-display">Bientôt</span>
-                <h2 class="text-xl font-display font-bold text-gray-300">Mon enfant n'aime pas les maths : comment le motiver ?</h2>
-                <p class="text-gray-500 text-sm">Des pistes concrètes pour redonner le goût des maths et de la confiance.</p>
-            </div>
+            <a href="./motiver-enfant-maths.html" class="glass-panel rounded-3xl p-6 md:p-8 flex flex-col gap-4 hover:border-cosmic-cyan/40 transition-all duration-300 group">
+                <span data-i18n="a3_label" class="text-xs font-extrabold tracking-widest text-cosmic-green uppercase font-display">Motivation</span>
+                <h2 data-i18n="a3_title" class="text-xl font-display font-bold text-white group-hover:text-cosmic-cyan transition-colors">Mon enfant n'aime pas les maths : comment le motiver ?</h2>
+                <p data-i18n="a3_excerpt" class="text-gray-300 text-sm leading-relaxed flex-1">Des pistes concrètes pour dédramatiser l'erreur, donner du sens aux maths et redonner confiance à votre enfant.</p>
+                <span class="inline-flex items-center gap-2 text-cosmic-cyan font-display font-bold text-sm pt-1"><span data-i18n="read_more">Lire l'article</span><svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
+            </a>
 
         </div>
 
         <div class="text-center pt-4">
-            <a href="../index.html" class="text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm">← Retour à l'accueil</a>
+            <a href="../index.html" data-i18n="back_home" class="text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm">← Retour à l'accueil</a>
         </div>
 
     </main>
 
     <footer class="border-t border-white/5 pt-10 pb-12 text-center space-y-4 max-w-5xl mx-auto px-6">
-        <p class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
+        <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
         <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-gray-500">
-            <a href="../index.html" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
+            <a href="../index.html" data-i18n="footer_home" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
             <span>•</span>
-            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
+            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="footer_privacy" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
             <span>•</span>
-            <a href="mailto:contact.astrolabs.be@gmail.com" class="hover:text-cosmic-cyan transition-colors">Contact</a>
+            <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact" class="hover:text-cosmic-cyan transition-colors">Contact</a>
         </div>
-        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. Tous droits réservés.</p>
+        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
     </footer>
 
     <script>
+        const T = {
+            fr: {
+                doc_title: "Conseils aux parents | AstroCalcul",
+                nav_features: "Fonctionnalités", nav_parents: "Espace Parents", nav_blog: "Conseils aux parents", nav_demo: "TÉLÉCHARGER",
+                blog_badge: "Le blog AstroCalcul", blog_title: "Conseils aux parents",
+                blog_subtitle: "Des méthodes simples et bienveillantes pour aider votre enfant à apprendre les maths, sans stress et en s'amusant.",
+                a1_label: "Tables de multiplication", a1_title: "Comment apprendre les tables de multiplication facilement ?",
+                a1_excerpt: "Votre enfant a du mal à retenir ses tables ? C'est normal. Découvrez les astuces qui réduisent la quantité à mémoriser, l'importance du jeu, et comment réviser efficacement en quelques minutes par jour.",
+                a2_label: "Calcul mental", a2_title: "Calcul mental : exercices pour les enfants du primaire",
+                a2_excerpt: "Additions, soustractions, multiplications : 20 exercices simples et progressifs à faire à la maison, adaptés à chaque âge.",
+                a3_label: "Motivation", a3_title: "Mon enfant n'aime pas les maths : comment le motiver ?",
+                a3_excerpt: "Des pistes concrètes pour dédramatiser l'erreur, donner du sens aux maths et redonner confiance à votre enfant.",
+                read_more: "Lire l'article", back_home: "← Retour à l'accueil",
+                footer_desc: "L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.",
+                footer_home: "Accueil", footer_privacy: "Confidentialité", footer_contact: "Contact", footer_rights: "Tous droits réservés."
+            },
+            en: {
+                doc_title: "Parents' Tips | AstroCalcul",
+                nav_features: "Features", nav_parents: "Parents' Space", nav_blog: "Parents' Tips", nav_demo: "DOWNLOAD",
+                blog_badge: "The AstroCalcul blog", blog_title: "Parents' Tips",
+                blog_subtitle: "Simple, caring methods to help your child learn maths, stress-free and while having fun.",
+                a1_label: "Multiplication tables", a1_title: "How to learn the multiplication tables easily?",
+                a1_excerpt: "Your child struggles to remember their tables? That's normal. Discover the tricks that reduce what there is to memorise, the power of play, and how to revise effectively in just a few minutes a day.",
+                a2_label: "Mental math", a2_title: "Mental math: exercises for primary school children",
+                a2_excerpt: "Additions, subtractions, multiplications: 20 simple, progressive exercises to do at home, adapted to each age.",
+                a3_label: "Motivation", a3_title: "My child doesn't like maths: how to motivate them?",
+                a3_excerpt: "Concrete ways to take the drama out of mistakes, give maths meaning and restore your child's confidence.",
+                read_more: "Read the article", back_home: "← Back to home",
+                footer_desc: "Playful and secure mental math learning for young space explorers.",
+                footer_home: "Home", footer_privacy: "Privacy", footer_contact: "Contact", footer_rights: "All rights reserved."
+            },
+            nl: {
+                doc_title: "Tips voor ouders | AstroCalcul",
+                nav_features: "Kenmerken", nav_parents: "Oudersruimte", nav_blog: "Tips voor ouders", nav_demo: "DOWNLOADEN",
+                blog_badge: "De AstroCalcul-blog", blog_title: "Tips voor ouders",
+                blog_subtitle: "Eenvoudige en zorgzame methodes om je kind spelenderwijs en zonder stress te helpen rekenen te leren.",
+                a1_label: "Tafels van vermenigvuldiging", a1_title: "Hoe leer je gemakkelijk de tafels van vermenigvuldiging?",
+                a1_excerpt: "Heeft je kind moeite om de tafels te onthouden? Dat is normaal. Ontdek de trucs die de hoeveelheid te onthouden stof verkleinen, het belang van spel, en hoe je in een paar minuten per dag doeltreffend oefent.",
+                a2_label: "Hoofdrekenen", a2_title: "Hoofdrekenen: oefeningen voor kinderen in het basisonderwijs",
+                a2_excerpt: "Optellen, aftrekken, vermenigvuldigen: 20 eenvoudige en oplopende oefeningen om thuis te doen, aangepast aan elke leeftijd.",
+                a3_label: "Motivatie", a3_title: "Mijn kind houdt niet van rekenen: hoe motiveer ik het?",
+                a3_excerpt: "Concrete pistes om fouten te ontdramatiseren, rekenen zin te geven en je kind weer vertrouwen te geven.",
+                read_more: "Lees het artikel", back_home: "← Terug naar home",
+                footer_desc: "Speels en veilig hoofdrekenen leren voor jonge ruimtevaarders.",
+                footer_home: "Home", footer_privacy: "Privacy", footer_contact: "Contact", footer_rights: "Alle rechten voorbehouden."
+            }
+        };
+        const LANGS = ['fr','en','nl'];
+        let lang = localStorage.getItem('astrocalcul_lang') || 'fr';
+
+        function applyLang(l) {
+            lang = l; localStorage.setItem('astrocalcul_lang', l);
+            document.documentElement.lang = l;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const k = e.getAttribute('data-i18n'); if (T[l] && T[l][k] != null) e.innerHTML = T[l][k]; });
+            if (T[l].doc_title) document.title = T[l].doc_title;
+            LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
+        }
+        function changeLanguage(l) { applyLang(l); }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            document.getElementById('burger-icon').classList.toggle('hidden', open);
+            document.getElementById('close-icon').classList.toggle('hidden', !open);
+            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
+        }
+
         const canvas = document.getElementById('stars-canvas');
         const ctx = canvas.getContext('2d');
         let stars = [];
         function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); }
-        function init() {
-            stars = [];
-            for (let i = 0; i < 100; i++) {
-                stars.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*1.5+0.5, a: Math.random(), s: Math.random()*0.02+0.005, c: Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF') });
-            }
-        }
-        function animate() {
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-            stars.forEach(st => {
-                st.a += st.s; if (st.a>1||st.a<0) st.s=-st.s;
-                ctx.save(); ctx.globalAlpha = Math.max(0.1, st.a);
-                ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, Math.PI*2); ctx.fillStyle = st.c; ctx.fill(); ctx.restore();
-            });
-            requestAnimationFrame(animate);
-        }
+        function init() { stars = []; for (let i=0;i<100;i++){ stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005,c:Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF')}); } }
+        function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(st=>{ st.a+=st.s; if(st.a>1||st.a<0)st.s=-st.s; ctx.save(); ctx.globalAlpha=Math.max(0.1,st.a); ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2); ctx.fillStyle=st.c; ctx.fill(); ctx.restore(); }); requestAnimationFrame(animate); }
         window.addEventListener('resize', resize);
-        resize(); animate();
+
+        window.addEventListener('load', () => {
+            const p = new URLSearchParams(location.search).get('lang');
+            if (p && LANGS.includes(p)) lang = p;
+            applyLang(lang);
+            resize(); animate();
+        });
     </script>
 </body>
 </html>
