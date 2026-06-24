@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conseils aux parents | AstroCalcul</title>
+    <meta name="description" content="Conseils, méthodes et astuces pour aider votre enfant à apprendre les tables de multiplication et le calcul mental en s'amusant.">
+
+    <link rel="canonical" href="https://jejelefou23.github.io/astrocalcul-site/blog/index.html" />
+
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="apple-touch-icon" href="../assets/logo.png">
+
+    <meta property="og:site_name" content="AstroCalcul" />
+    <meta property="og:title" content="Conseils aux parents | AstroCalcul" />
+    <meta property="og:description" content="Conseils et méthodes pour aider votre enfant en maths, en s'amusant." />
+    <meta property="og:image" content="https://jejelefou23.github.io/astrocalcul-site/assets/og-banner.png" />
+    <meta property="og:url" content="https://jejelefou23.github.io/astrocalcul-site/blog/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' },
+                        cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' }
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        display: ['Fredoka', 'Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #0B0B1E; overflow-x: hidden; }
+        .cosmic-glow { filter: blur(120px); opacity: 0.15; pointer-events: none; }
+        .glass-panel { background: rgba(20, 20, 50, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="text-white relative min-h-screen">
+
+    <canvas id="stars-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+    <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10"></div>
+
+    <header class="w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 bg-gradient-to-tr from-cosmic-pink to-cosmic-blue rounded-xl flex items-center justify-center shadow-lg shadow-cosmic-pink/20 overflow-hidden">
+                    <img src="../assets/logo.png" alt="AstroCalcul" class="w-full h-full object-contain p-1">
+                </div>
+                <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide">
+                <a href="../index.html#preview" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+                <a href="../index.html#parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+                <a href="./index.html" class="text-cosmic-green transition-colors">Conseils aux parents</a>
+            </nav>
+            <a href="../index.html#download-cta" class="bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">
+                TÉLÉCHARGER
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 md:px-12 py-12 space-y-12">
+
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <div class="inline-block bg-cosmic-green/10 border border-cosmic-green/20 px-4 py-1.5 rounded-full">
+                <span class="text-xs font-extrabold tracking-widest text-cosmic-green uppercase font-display">Le blog AstroCalcul</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-display font-bold">Conseils aux parents</h1>
+            <p class="text-gray-300 text-lg">
+                Des méthodes simples et bienveillantes pour aider votre enfant à apprendre les maths, sans stress et en s'amusant.
+            </p>
+        </div>
+
+        <!-- Liste des articles -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Article 1 (publié) -->
+            <a href="./apprendre-tables-multiplication.html" class="glass-panel rounded-3xl p-6 md:p-8 flex flex-col gap-4 hover:border-cosmic-cyan/40 transition-all duration-300 group md:col-span-2">
+                <span class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Tables de multiplication</span>
+                <h2 class="text-2xl font-display font-bold text-white group-hover:text-cosmic-cyan transition-colors">Comment apprendre les tables de multiplication facilement ?</h2>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Votre enfant a du mal à retenir ses tables ? C'est normal. Découvrez les astuces qui réduisent la quantité à mémoriser, l'importance du jeu, et comment réviser efficacement en quelques minutes par jour.
+                </p>
+                <span class="inline-flex items-center gap-2 text-cosmic-cyan font-display font-bold text-sm pt-2">
+                    Lire l'article
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+            </a>
+
+            <!-- Articles à venir (placeholders, à activer quand publiés) -->
+            <div class="glass-panel rounded-3xl p-6 md:p-8 flex flex-col gap-3 opacity-50">
+                <span class="text-xs font-extrabold tracking-widest text-gray-500 uppercase font-display">Bientôt</span>
+                <h2 class="text-xl font-display font-bold text-gray-300">Calcul mental : exercices pour les enfants du primaire</h2>
+                <p class="text-gray-500 text-sm">Additions, soustractions, multiplications : des exercices simples à faire à la maison.</p>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-6 md:p-8 flex flex-col gap-3 opacity-50">
+                <span class="text-xs font-extrabold tracking-widest text-gray-500 uppercase font-display">Bientôt</span>
+                <h2 class="text-xl font-display font-bold text-gray-300">Mon enfant n'aime pas les maths : comment le motiver ?</h2>
+                <p class="text-gray-500 text-sm">Des pistes concrètes pour redonner le goût des maths et de la confiance.</p>
+            </div>
+
+        </div>
+
+        <div class="text-center pt-4">
+            <a href="../index.html" class="text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm">← Retour à l'accueil</a>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-white/5 pt-10 pb-12 text-center space-y-4 max-w-5xl mx-auto px-6">
+        <p class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-gray-500">
+            <a href="../index.html" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
+            <span>•</span>
+            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
+            <span>•</span>
+            <a href="mailto:contact.astrolabs.be@gmail.com" class="hover:text-cosmic-cyan transition-colors">Contact</a>
+        </div>
+        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); }
+        function init() {
+            stars = [];
+            for (let i = 0; i < 100; i++) {
+                stars.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*1.5+0.5, a: Math.random(), s: Math.random()*0.02+0.005, c: Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF') });
+            }
+        }
+        function animate() {
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            stars.forEach(st => {
+                st.a += st.s; if (st.a>1||st.a<0) st.s=-st.s;
+                ctx.save(); ctx.globalAlpha = Math.max(0.1, st.a);
+                ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, Math.PI*2); ctx.fillStyle = st.c; ctx.fill(); ctx.restore();
+            });
+            requestAnimationFrame(animate);
+        }
+        window.addEventListener('resize', resize);
+        resize(); animate();
+    </script>
+</body>
+</html>
