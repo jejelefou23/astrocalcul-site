@@ -8,12 +8,9 @@
     <meta name="description" content="Votre enfant a du mal à retenir ses tables de multiplication ? Découvrez des méthodes simples, des astuces et des jeux pour les mémoriser facilement et durablement.">
 
     <link rel="canonical" href="https://jejelefou23.github.io/astrocalcul-site/blog/apprendre-tables-multiplication.html" />
-
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/logo.png">
     <link rel="apple-touch-icon" href="../assets/logo.png">
 
-    <!-- Open Graph -->
     <meta property="og:site_name" content="AstroCalcul" />
     <meta property="og:title" content="Comment apprendre les tables de multiplication facilement ?" />
     <meta property="og:description" content="Méthodes simples, astuces et jeux pour aider votre enfant à mémoriser ses tables de multiplication." />
@@ -22,41 +19,24 @@
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="fr_FR" />
 
-    <!-- Données structurées Article -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Article",
+      "@context": "https://schema.org", "@type": "Article",
       "headline": "Comment apprendre les tables de multiplication facilement ?",
       "description": "Méthodes simples, astuces et jeux pour aider votre enfant à mémoriser ses tables de multiplication.",
       "image": "https://jejelefou23.github.io/astrocalcul-site/assets/og-banner.png",
       "author": { "@type": "Organization", "name": "AstroCalcul" },
-      "publisher": {
-        "@type": "Organization",
-        "name": "AstroCalcul",
-        "logo": { "@type": "ImageObject", "url": "https://jejelefou23.github.io/astrocalcul-site/assets/logo.png" }
-      },
-      "mainEntityOfPage": "https://jejelefou23.github.io/astrocalcul-site/blog/apprendre-tables-multiplication.html",
-      "inLanguage": "fr"
+      "publisher": { "@type": "Organization", "name": "AstroCalcul", "logo": { "@type": "ImageObject", "url": "https://jejelefou23.github.io/astrocalcul-site/assets/logo.png" } },
+      "mainEntityOfPage": "https://jejelefou23.github.io/astrocalcul-site/blog/apprendre-tables-multiplication.html", "inLanguage": "fr"
     }
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' },
-                        cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' }
-                    },
-                    fontFamily: {
-                        sans: ['Nunito', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-                        display: ['Fredoka', 'Nunito', 'sans-serif'],
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: {
+            colors: { space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' }, cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' } },
+            fontFamily: { sans: ['Nunito','ui-sans-serif','system-ui','sans-serif'], display: ['Fredoka','Nunito','sans-serif'] }
+        } } }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +45,6 @@
         body { font-family: 'Nunito', sans-serif; background-color: #0B0B1E; overflow-x: hidden; }
         .cosmic-glow { filter: blur(120px); opacity: 0.15; pointer-events: none; }
         .glass-panel { background: rgba(20, 20, 50, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        /* Mise en forme du corps d'article */
         .article-body h2 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.6rem; line-height: 1.3; margin-top: 2.5rem; margin-bottom: 1rem; color: #fff; }
         .article-body p { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; }
         .article-body ul { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; padding-left: 1.4rem; list-style: disc; }
@@ -79,7 +58,6 @@
     <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10"></div>
     <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10"></div>
 
-    <!-- En-tête -->
     <header class="w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-5xl mx-auto flex items-center justify-between">
             <a href="../index.html" class="flex items-center space-x-3 group">
@@ -89,39 +67,51 @@
                 <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide">
-                <a href="../index.html#preview" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
-                <a href="../index.html#parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
-                <a href="./index.html" class="text-cosmic-cyan transition-colors">Conseils aux parents</a>
+                <a href="../index.html#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+                <a href="../index.html#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+                <a href="./index.html" data-i18n="nav_blog" class="text-cosmic-green transition-colors">Conseils aux parents</a>
             </nav>
-            <a href="../index.html#download-cta" class="bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">
-                TÉLÉCHARGER
-            </a>
+            <div class="flex items-center space-x-3">
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display">
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display">FR</button>
+                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">EN</button>
+                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
+                </div>
+                <a href="../index.html#download-cta" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">TÉLÉCHARGER</a>
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="md:hidden p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <a href="../index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+            <a href="../index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+            <a href="./index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-cosmic-green hover:bg-white/5 transition-colors">Conseils aux parents</a>
+            <a href="../index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
         </div>
     </header>
 
     <main class="max-w-3xl mx-auto px-6 md:px-8 py-12">
 
-        <!-- Fil d'Ariane -->
         <nav class="text-xs text-gray-500 font-bold mb-6 flex flex-wrap items-center gap-2">
-            <a href="../index.html" class="hover:text-cosmic-cyan">Accueil</a>
+            <a href="../index.html" data-i18n="bc_home" class="hover:text-cosmic-cyan">Accueil</a>
             <span>›</span>
-            <a href="./index.html" class="hover:text-cosmic-cyan">Conseils aux parents</a>
+            <a href="./index.html" data-i18n="bc_blog" class="hover:text-cosmic-cyan">Conseils aux parents</a>
             <span>›</span>
-            <span class="text-gray-400">Apprendre les tables de multiplication</span>
+            <span data-i18n="bc_current" class="text-gray-400">Apprendre les tables de multiplication</span>
         </nav>
 
         <article class="glass-panel rounded-3xl p-6 md:p-10">
+            <span data-i18n="kicker" class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Conseils aux parents</span>
+            <h1 data-i18n="h1" class="text-3xl md:text-4xl font-display font-bold leading-tight mt-3 mb-6">Comment apprendre les tables de multiplication facilement ?</h1>
 
-            <span class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Conseils aux parents</span>
-            <h1 class="text-3xl md:text-4xl font-display font-bold leading-tight mt-3 mb-6">Comment apprendre les tables de multiplication facilement ?</h1>
-
-            <div class="article-body">
+            <!-- FR -->
+            <div data-lang="fr" class="article-body">
                 <p>Beaucoup de parents s'inquiètent en voyant leur enfant buter sur ses tables de multiplication. Rassurez-vous : c'est une étape normale de l'apprentissage. Les tables demandent à la fois de la <strong>mémorisation</strong> et de la <strong>compréhension</strong>, et chaque enfant avance à son rythme. La bonne nouvelle, c'est qu'avec les bonnes méthodes, l'apprentissage devient beaucoup plus simple, et même agréable.</p>
-
                 <h2>Pourquoi les tables sont-elles difficiles à retenir ?</h2>
                 <p>Une table de multiplication représente une grande quantité d'informations à mémoriser : plusieurs dizaines de résultats à connaître par cœur. Pour un enfant de 7 à 10 ans, apprendre ces résultats « dans le vide », sans lien concret, peut vite devenir décourageant.</p>
                 <p>La difficulté vient souvent du fait que la table est présentée comme une longue liste à réciter. Or le cerveau retient bien mieux ce qui a du <strong>sens</strong>, ce qui est <strong>répété régulièrement</strong>, et ce qui est associé à une émotion positive comme le jeu ou la réussite.</p>
-
                 <h2>Les méthodes classiques (et leurs limites)</h2>
                 <p>La récitation à voix haute reste utile : elle aide à ancrer le rythme des tables. Les affiches au mur ou les chansons fonctionnent aussi bien pour certains enfants. Mais ces méthodes ont une limite : elles deviennent vite ennuyeuses, et l'enfant récite parfois sans vraiment comprendre.</p>
                 <p>Quelques repères qui aident énormément :</p>
@@ -130,77 +120,160 @@
                     <li>Certaines tables sont « gratuites » : la table de 1, de 2 (les doubles), de 5 (qui finit toujours par 0 ou 5) et de 10.</li>
                     <li>En se concentrant sur ces astuces, il ne reste finalement qu'une poignée de résultats vraiment nouveaux à mémoriser.</li>
                 </ul>
-
                 <h2>Apprendre par le jeu : la clé de la mémorisation</h2>
                 <p>C'est sans doute le levier le plus efficace. Quand l'enfant joue, il répète les calculs sans s'en rendre compte et associe les tables au plaisir plutôt qu'à la contrainte. Cartes à jouer, dés, petits défis chronométrés en famille, jeux de société : tout ce qui transforme la table en activité ludique accélère l'apprentissage.</p>
                 <p>L'objectif n'est pas de « faire des maths », mais de <strong>manipuler les nombres souvent et avec plaisir</strong>. Un enfant qui s'amuse révise plus longtemps et retient mieux.</p>
-
                 <h2>Des exercices courts, mais quotidiens</h2>
                 <p>Mieux vaut <strong>5 minutes par jour</strong> qu'une heure le dimanche. La mémorisation repose sur la répétition espacée : revoir une table un peu chaque jour ancre les résultats durablement, alors qu'une longue séance unique s'oublie vite.</p>
                 <p>Quelques idées simples : poser deux ou trois calculs au petit-déjeuner, réviser une table par semaine, et revenir régulièrement sur les anciennes pour ne pas les perdre. La régularité compte plus que la durée.</p>
-
                 <h2>Les applications éducatives pour s'entraîner</h2>
                 <p>Les applications bien conçues réunissent les deux ingrédients gagnants : le <strong>jeu</strong> et la <strong>répétition quotidienne</strong>. Elles permettent à l'enfant de s'entraîner en autonomie, tout en gardant la motivation grâce aux récompenses et à la progression.</p>
                 <p>C'est précisément l'idée derrière <strong>AstroCalcul</strong> : chaque calcul résolu propulse une fusée et permet d'explorer une galaxie, planète après planète. L'enfant révise ses tables de multiplication (mais aussi additions et soustractions) en vivant une véritable aventure spatiale, sans publicité ni collecte de données. Les parents peuvent suivre la progression et fixer une courte session quotidienne.</p>
-
                 <h2>En résumé</h2>
                 <p>Apprendre les tables de multiplication n'a rien d'insurmontable. En s'appuyant sur les astuces qui réduisent la quantité à mémoriser, en privilégiant le jeu, et en pratiquant un peu chaque jour, la plupart des enfants progressent vite et reprennent confiance. Le secret n'est pas l'intensité, mais la <strong>régularité dans la bonne humeur</strong>.</p>
             </div>
 
-            <!-- Encart d'appel à l'action -->
+            <!-- EN -->
+            <div data-lang="en" class="article-body" style="display:none">
+                <p>Many parents worry when they see their child struggle with the multiplication tables. Rest assured: it is a normal stage of learning. The tables require both <strong>memorisation</strong> and <strong>understanding</strong>, and every child moves at their own pace. The good news is that with the right methods, learning becomes much simpler, and even enjoyable.</p>
+                <h2>Why are the tables hard to remember?</h2>
+                <p>A multiplication table represents a large amount of information to memorise: several dozen results to know by heart. For a child aged 7 to 10, learning these results "in a vacuum", with no concrete connection, can quickly become discouraging.</p>
+                <p>The difficulty often comes from the table being presented as a long list to recite. Yet the brain remembers far better what makes <strong>sense</strong>, what is <strong>repeated regularly</strong>, and what is linked to a positive emotion such as play or success.</p>
+                <h2>The classic methods (and their limits)</h2>
+                <p>Reciting out loud is still useful: it helps anchor the rhythm of the tables. Wall posters or songs also work well for some children. But these methods have a limit: they quickly become boring, and the child sometimes recites without truly understanding.</p>
+                <p>A few markers that help enormously:</p>
+                <ul>
+                    <li>Multiplication is <strong>commutative</strong>: 7 × 3 gives the same result as 3 × 7. Learning one means learning the other.</li>
+                    <li>Some tables are "free": the 1 table, the 2 (the doubles), the 5 (which always ends in 0 or 5) and the 10.</li>
+                    <li>By focusing on these tricks, only a handful of truly new results are left to memorise.</li>
+                </ul>
+                <h2>Learning through play: the key to memorisation</h2>
+                <p>This is probably the most effective lever. When a child plays, they repeat the calculations without realising it and link the tables to pleasure rather than constraint. Playing cards, dice, short timed family challenges, board games: anything that turns the table into a fun activity speeds up learning.</p>
+                <p>The goal is not to "do maths", but to <strong>handle numbers often and with pleasure</strong>. A child who has fun revises for longer and remembers better.</p>
+                <h2>Short but daily exercises</h2>
+                <p><strong>5 minutes a day</strong> is better than one hour on Sunday. Memorisation relies on spaced repetition: reviewing a table a little each day anchors the results durably, whereas a single long session is quickly forgotten.</p>
+                <p>A few simple ideas: ask two or three calculations at breakfast, revise one table per week, and regularly come back to the older ones so they are not lost. Consistency matters more than duration.</p>
+                <h2>Educational apps to practise</h2>
+                <p>Well-designed apps combine the two winning ingredients: <strong>play</strong> and <strong>daily repetition</strong>. They let the child practise independently while staying motivated thanks to rewards and progression.</p>
+                <p>That is precisely the idea behind <strong>AstroCalcul</strong>: each calculation solved propels a rocket and lets the child explore a galaxy, planet after planet. The child revises their multiplication tables (but also additions and subtractions) while living a real space adventure, with no ads or data collection. Parents can follow the progress and set a short daily session.</p>
+                <h2>In summary</h2>
+                <p>Learning the multiplication tables is nothing insurmountable. By relying on the tricks that reduce what there is to memorise, by favouring play, and by practising a little every day, most children progress quickly and regain confidence. The secret is not intensity, but <strong>consistency in good spirits</strong>.</p>
+            </div>
+
+            <!-- NL -->
+            <div data-lang="nl" class="article-body" style="display:none">
+                <p>Veel ouders maken zich zorgen als ze hun kind zien worstelen met de tafels van vermenigvuldiging. Geen paniek: dat is een normale fase in het leerproces. De tafels vragen zowel <strong>memoriseren</strong> als <strong>begrip</strong>, en elk kind gaat in zijn eigen tempo. Het goede nieuws is dat het leren met de juiste methodes veel eenvoudiger en zelfs leuk wordt.</p>
+                <h2>Waarom zijn de tafels moeilijk te onthouden?</h2>
+                <p>Een tafel van vermenigvuldiging staat voor een grote hoeveelheid te onthouden informatie: enkele tientallen resultaten die je uit het hoofd moet kennen. Voor een kind van 7 tot 10 jaar kan het uit het hoofd leren van die resultaten "in het luchtledige", zonder concreet verband, snel ontmoedigend worden.</p>
+                <p>De moeilijkheid komt vaak doordat de tafel wordt voorgesteld als een lange lijst om op te dreunen. Maar de hersenen onthouden veel beter wat <strong>betekenis</strong> heeft, wat <strong>regelmatig herhaald</strong> wordt en wat verbonden is met een positieve emotie zoals spel of succes.</p>
+                <h2>De klassieke methodes (en hun grenzen)</h2>
+                <p>Hardop opzeggen blijft nuttig: het helpt het ritme van de tafels vast te leggen. Posters aan de muur of liedjes werken voor sommige kinderen ook goed. Maar deze methodes hebben een grens: ze worden snel saai, en het kind dreunt soms op zonder echt te begrijpen.</p>
+                <p>Enkele houvasten die enorm helpen:</p>
+                <ul>
+                    <li>Vermenigvuldigen is <strong>commutatief</strong>: 7 × 3 geeft hetzelfde resultaat als 3 × 7. Het ene leren is het andere leren.</li>
+                    <li>Sommige tafels zijn "gratis": de tafel van 1, van 2 (de dubbels), van 5 (eindigt altijd op 0 of 5) en van 10.</li>
+                    <li>Door je op deze trucs te richten, blijven er uiteindelijk maar een handvol echt nieuwe resultaten over om te onthouden.</li>
+                </ul>
+                <h2>Spelenderwijs leren: de sleutel tot memoriseren</h2>
+                <p>Dit is wellicht de meest doeltreffende hefboom. Wanneer een kind speelt, herhaalt het de berekeningen zonder het te beseffen en verbindt het de tafels met plezier in plaats van met dwang. Speelkaarten, dobbelstenen, korte uitdagingen op tijd met het gezin, gezelschapsspellen: alles wat de tafel in een leuke activiteit verandert, versnelt het leren.</p>
+                <p>Het doel is niet "rekenen", maar <strong>vaak en met plezier met getallen omgaan</strong>. Een kind dat plezier heeft, oefent langer en onthoudt beter.</p>
+                <h2>Korte maar dagelijkse oefeningen</h2>
+                <p><strong>5 minuten per dag</strong> is beter dan een uur op zondag. Memoriseren steunt op gespreide herhaling: een tafel elke dag een beetje herhalen verankert de resultaten duurzaam, terwijl één lange sessie snel wordt vergeten.</p>
+                <p>Enkele eenvoudige ideeën: stel twee of drie sommen bij het ontbijt, herhaal één tafel per week en kom regelmatig terug op de oude zodat ze niet verloren gaan. Regelmaat telt meer dan duur.</p>
+                <h2>Educatieve apps om te oefenen</h2>
+                <p>Goed ontworpen apps combineren de twee winnende ingrediënten: <strong>spel</strong> en <strong>dagelijkse herhaling</strong>. Ze laten het kind zelfstandig oefenen en houden het gemotiveerd dankzij beloningen en progressie.</p>
+                <p>Dat is precies het idee achter <strong>AstroCalcul</strong>: elke opgeloste som stuwt een raket voort en laat het kind een melkwegstelsel verkennen, planeet na planeet. Het kind herhaalt zijn tafels van vermenigvuldiging (maar ook optellen en aftrekken) terwijl het een echt ruimte-avontuur beleeft, zonder reclame of gegevensverzameling. Ouders kunnen de voortgang volgen en een korte dagelijkse sessie instellen.</p>
+                <h2>Samengevat</h2>
+                <p>De tafels van vermenigvuldiging leren is helemaal niet onoverkomelijk. Door te steunen op de trucs die de te onthouden hoeveelheid verkleinen, door het spel voorop te stellen en door elke dag een beetje te oefenen, gaan de meeste kinderen snel vooruit en krijgen ze hun vertrouwen terug. Het geheim is niet intensiteit, maar <strong>regelmaat in een goede sfeer</strong>.</p>
+            </div>
+
             <div class="mt-10 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden border border-white/10 bg-gradient-to-r from-cosmic-pink/10 via-transparent to-cosmic-blue/10">
-                <h3 class="text-xl md:text-2xl font-display font-bold mb-3">🚀 Et si réviser devenait une aventure ?</h3>
-                <p class="text-gray-300 text-sm max-w-xl mx-auto mb-5">AstroCalcul transforme les tables de multiplication en exploration spatiale. Gratuit pour les tables, sans publicité, conçu par un papa développeur.</p>
+                <h3 data-i18n="cta_title" class="text-xl md:text-2xl font-display font-bold mb-3">🚀 Et si réviser devenait une aventure ?</h3>
+                <p data-i18n="cta_text" class="text-gray-300 text-sm max-w-xl mx-auto mb-5">AstroCalcul transforme les tables de multiplication en exploration spatiale. Gratuit pour les tables, sans publicité, conçu par un papa développeur.</p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a href="https://apps.apple.com/us/app/astrocalcul/id6760236661" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">App Store</a>
                     <a href="https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">Google Play</a>
                 </div>
             </div>
-
         </article>
 
-        <!-- Lien retour -->
         <div class="mt-8 text-center">
-            <a href="./index.html" class="text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm">← Tous les conseils aux parents</a>
+            <a href="./index.html" data-i18n="back_link" class="text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm">← Tous les conseils aux parents</a>
         </div>
-
     </main>
 
     <footer class="border-t border-white/5 pt-10 pb-12 text-center space-y-4 max-w-5xl mx-auto px-6">
-        <p class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
+        <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
         <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-gray-500">
-            <a href="../index.html" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
+            <a href="../index.html" data-i18n="footer_home" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
             <span>•</span>
-            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
+            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="footer_privacy" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
             <span>•</span>
-            <a href="mailto:contact.astrolabs.be@gmail.com" class="hover:text-cosmic-cyan transition-colors">Contact</a>
+            <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact" class="hover:text-cosmic-cyan transition-colors">Contact</a>
         </div>
-        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. Tous droits réservés.</p>
+        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
     </footer>
 
     <script>
-        // Étoiles scintillantes (version allégée, identique à l'accueil)
+        const T = {
+            fr: { doc_title: "Comment apprendre les tables de multiplication facilement ? | AstroCalcul",
+                nav_features: "Fonctionnalités", nav_parents: "Espace Parents", nav_blog: "Conseils aux parents", nav_demo: "TÉLÉCHARGER",
+                bc_home: "Accueil", bc_blog: "Conseils aux parents", bc_current: "Apprendre les tables de multiplication",
+                kicker: "Conseils aux parents", h1: "Comment apprendre les tables de multiplication facilement ?",
+                cta_title: "🚀 Et si réviser devenait une aventure ?",
+                cta_text: "AstroCalcul transforme les tables de multiplication en exploration spatiale. Gratuit pour les tables, sans publicité, conçu par un papa développeur.",
+                back_link: "← Tous les conseils aux parents",
+                footer_desc: "L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.",
+                footer_home: "Accueil", footer_privacy: "Confidentialité", footer_contact: "Contact", footer_rights: "Tous droits réservés." },
+            en: { doc_title: "How to learn the multiplication tables easily? | AstroCalcul",
+                nav_features: "Features", nav_parents: "Parents' Space", nav_blog: "Parents' Tips", nav_demo: "DOWNLOAD",
+                bc_home: "Home", bc_blog: "Parents' Tips", bc_current: "Learning the multiplication tables",
+                kicker: "Parents' Tips", h1: "How to learn the multiplication tables easily?",
+                cta_title: "🚀 What if revising became an adventure?",
+                cta_text: "AstroCalcul turns the multiplication tables into a space exploration. Free for the tables, ad-free, designed by a developer dad.",
+                back_link: "← All parents' tips",
+                footer_desc: "Playful and secure mental math learning for young space explorers.",
+                footer_home: "Home", footer_privacy: "Privacy", footer_contact: "Contact", footer_rights: "All rights reserved." },
+            nl: { doc_title: "Hoe leer je gemakkelijk de tafels van vermenigvuldiging? | AstroCalcul",
+                nav_features: "Kenmerken", nav_parents: "Oudersruimte", nav_blog: "Tips voor ouders", nav_demo: "DOWNLOADEN",
+                bc_home: "Home", bc_blog: "Tips voor ouders", bc_current: "De tafels van vermenigvuldiging leren",
+                kicker: "Tips voor ouders", h1: "Hoe leer je gemakkelijk de tafels van vermenigvuldiging?",
+                cta_title: "🚀 En als oefenen een avontuur werd?",
+                cta_text: "AstroCalcul verandert de tafels van vermenigvuldiging in een ruimte-ontdekking. Gratis voor de tafels, zonder reclame, ontworpen door een developer-papa.",
+                back_link: "← Alle tips voor ouders",
+                footer_desc: "Speels en veilig hoofdrekenen leren voor jonge ruimtevaarders.",
+                footer_home: "Home", footer_privacy: "Privacy", footer_contact: "Contact", footer_rights: "Alle rechten voorbehouden." }
+        };
+        const LANGS = ['fr','en','nl'];
+        let lang = localStorage.getItem('astrocalcul_lang') || 'fr';
+        function applyLang(l) {
+            lang = l; localStorage.setItem('astrocalcul_lang', l);
+            document.documentElement.lang = l;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const k = e.getAttribute('data-i18n'); if (T[l] && T[l][k] != null) e.innerHTML = T[l][k]; });
+            document.querySelectorAll('[data-lang]').forEach(b => { b.style.display = (b.getAttribute('data-lang') === l) ? '' : 'none'; });
+            if (T[l].doc_title) document.title = T[l].doc_title;
+            LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
+        }
+        function changeLanguage(l) { applyLang(l); }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            document.getElementById('burger-icon').classList.toggle('hidden', open);
+            document.getElementById('close-icon').classList.toggle('hidden', !open);
+            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
+        }
         const canvas = document.getElementById('stars-canvas');
         const ctx = canvas.getContext('2d');
         let stars = [];
         function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); }
-        function init() {
-            stars = [];
-            for (let i = 0; i < 100; i++) {
-                stars.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*1.5+0.5, a: Math.random(), s: Math.random()*0.02+0.005, c: Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF') });
-            }
-        }
-        function animate() {
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-            stars.forEach(st => {
-                st.a += st.s; if (st.a>1||st.a<0) st.s=-st.s;
-                ctx.save(); ctx.globalAlpha = Math.max(0.1, st.a);
-                ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, Math.PI*2); ctx.fillStyle = st.c; ctx.fill(); ctx.restore();
-            });
-            requestAnimationFrame(animate);
-        }
+        function init() { stars = []; for (let i=0;i<100;i++){ stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005,c:Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF')}); } }
+        function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(st=>{ st.a+=st.s; if(st.a>1||st.a<0)st.s=-st.s; ctx.save(); ctx.globalAlpha=Math.max(0.1,st.a); ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2); ctx.fillStyle=st.c; ctx.fill(); ctx.restore(); }); requestAnimationFrame(animate); }
         window.addEventListener('resize', resize);
-        resize(); animate();
+        window.addEventListener('load', () => {
+            const p = new URLSearchParams(location.search).get('lang');
+            if (p && LANGS.includes(p)) lang = p;
+            applyLang(lang); resize(); animate();
+        });
     </script>
 </body>
 </html>
