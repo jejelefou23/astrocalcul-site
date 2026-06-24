@@ -210,17 +210,32 @@
                 <a href="blog/index.html" data-i18n="nav_blog" class="text-gray-300 hover:text-cosmic-green transition-colors">Conseils aux parents</a>
             </nav>
             
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-3">
                 <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display">
                     <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow">FR</button>
                     <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all">EN</button>
                     <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all">NL</button>
                 </div>
 
-                <a href="#simulator" data-i18n="nav_demo" class="bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-6 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:shadow-cosmic-cyan/45 hover:scale-105 active:scale-95 transition-all duration-300 font-display">
+                <a href="#simulator" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-6 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:shadow-cosmic-cyan/45 hover:scale-105 active:scale-95 transition-all duration-300 font-display">
                     ESSAYER LA DÉMO
                 </a>
+
+                <!-- Bouton menu mobile -->
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="md:hidden p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
             </div>
+        </div>
+
+        <!-- Menu déroulant mobile -->
+        <div id="mobile-menu" class="md:hidden hidden max-w-7xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <a href="#preview" onclick="toggleMobileMenu()" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+            <a href="#parents" onclick="toggleMobileMenu()" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+            <a href="#simulator" onclick="toggleMobileMenu()" data-i18n="nav_preview" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-purple transition-colors">Aperçu interactif</a>
+            <a href="blog/index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-green transition-colors">Conseils aux parents</a>
+            <a href="#simulator" onclick="toggleMobileMenu()" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">ESSAYER LA DÉMO</a>
         </div>
     </header>
 
@@ -895,6 +910,17 @@
     </main>
 
     <script>
+        // ==========================================
+        // 0. MENU MOBILE
+        // ==========================================
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            document.getElementById('burger-icon').classList.toggle('hidden', open);
+            document.getElementById('close-icon').classList.toggle('hidden', !open);
+            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
+        }
+
         // ==========================================
         // 1. GESTION DES LANGUES (i18n)
         // ==========================================
