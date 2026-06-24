@@ -160,10 +160,20 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "ratingCount": "1",
+        "ratingCount": "8",
         "bestRating": "5",
         "worstRating": "1"
-      }
+      },
+      "review": [
+        { "@type": "Review", "author": { "@type": "Person", "name": "jerem2307" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Super app. Mes enfants adorent, meme la plus petite veut faire comme sa soeur. Le multi-profil est vraiment top pour nous." },
+        { "@type": "Review", "author": { "@type": "Person", "name": "Navytchi" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Enfin une app qui permet d'occuper les enfants intelligemment au resto ou en salle d'attente ! Ludique, educative et vraiment bien pensee. Un vrai coup de coeur !" },
+        { "@type": "Review", "author": { "@type": "Person", "name": "Sylvain-Jct" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Super application ! Mon fils est fan, il veut absolument gagner tous les badges. Les dessins sont vraiment agreables et l'app est facile a prendre en main." },
+        { "@type": "Review", "author": { "@type": "Person", "name": "OliviaPG99" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Super application pour l'apprentissage des maths de facon ludique et efficace !" },
+        { "@type": "Review", "author": { "@type": "Person", "name": "Thomasrscafcb" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Tres belle application pour les enfants. Pour apprendre les calculs !" },
+        { "@type": "Review", "author": { "@type": "Person", "name": "Arnaud1920" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "App super facile a utiliser et geniale pour les enfants." },
+        { "@type": "Review", "author": { "@type": "Person", "name": "Carpediempapro" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Application simple a utiliser et hyper ludique ! Le theme astro est une chouette idee, mon neveu adore." },
+        { "@type": "Review", "author": { "@type": "Person", "name": "Mike D2202" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Visueel zeer sterk en heel leuk om te doen. Mijn zoon van 6 is alvast fan, en ik ook!" }
+      ]
     }
     </script>
 </head>
@@ -197,6 +207,7 @@
                 <a href="#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
                 <a href="#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
                 <a href="#simulator" data-i18n="nav_preview" class="text-gray-300 hover:text-cosmic-purple transition-colors">Aperçu interactif</a>
+                <a href="blog/index.html" data-i18n="nav_blog" class="text-gray-300 hover:text-cosmic-green transition-colors">Conseils aux parents</a>
             </nav>
             
             <div class="flex items-center space-x-4">
@@ -705,6 +716,108 @@
             </div>
         </section>
 
+        <!-- AVIS DES PARENTS -->
+        <section id="reviews" class="scroll-mt-24 space-y-12">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <div class="inline-block bg-cosmic-green/10 border border-cosmic-green/20 px-4 py-1.5 rounded-full">
+                    <span data-i18n="reviews_badge" class="text-xs font-extrabold tracking-widest text-cosmic-green uppercase font-display">Ils ont adore</span>
+                </div>
+                <h2 data-i18n="reviews_title" class="text-3xl md:text-4xl font-display font-bold">Ce que disent les parents</h2>
+                <p data-i18n="reviews_subtitle" class="text-gray-300">Une note de 5,0/5 sur l'App Store. Voici quelques retours de familles qui utilisent AstroCalcul au quotidien.</p>
+            </div>
+
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6">
+                <div class="glass-panel rounded-3xl p-6 flex flex-col gap-4 mb-6 break-inside-avoid">
+                    <div class="text-cosmic-green text-sm tracking-widest">★★★★★</div>
+                    <p class="text-gray-200 text-sm leading-relaxed flex-1">Super app. Mes enfants adorent, meme la plus petite veut faire comme sa soeur. Le multi-profil est vraiment top pour nous.</p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-cosmic-pink to-cosmic-blue flex items-center justify-center font-display font-bold text-sm text-white">J</div>
+                        <div class="leading-tight">
+                            <p class="text-sm font-display font-bold text-white">jerem2307</p>
+                            <p class="text-[11px] text-gray-500 font-bold">App Store · 🇧🇪 Belgique</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-3xl p-6 flex flex-col gap-4 mb-6 break-inside-avoid">
+                    <div class="text-cosmic-green text-sm tracking-widest">★★★★★</div>
+                    <p class="text-gray-200 text-sm leading-relaxed flex-1">Enfin une app qui permet d'occuper les enfants intelligemment au resto ou en salle d'attente ! Ludique, educative et vraiment bien pensee. Mes enfants apprennent en s'amusant sans meme s'en rendre compte. Un vrai coup de coeur ! 🚀</p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-cosmic-pink to-cosmic-blue flex items-center justify-center font-display font-bold text-sm text-white">N</div>
+                        <div class="leading-tight">
+                            <p class="text-sm font-display font-bold text-white">Navytchi</p>
+                            <p class="text-[11px] text-gray-500 font-bold">App Store · 🇧🇪 Belgique</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-3xl p-6 flex flex-col gap-4 mb-6 break-inside-avoid">
+                    <div class="text-cosmic-green text-sm tracking-widest">★★★★★</div>
+                    <p class="text-gray-200 text-sm leading-relaxed flex-1">Super application ! Mon fils Barry est fan, il veut absolument gagner tous les badges. Les dessins sont vraiment agreables et l'app est facile a prendre en main. On sent qu'il y a eu beaucoup de travail derriere 👏</p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-cosmic-pink to-cosmic-blue flex items-center justify-center font-display font-bold text-sm text-white">S</div>
+                        <div class="leading-tight">
+                            <p class="text-sm font-display font-bold text-white">Sylvain-Jct</p>
+                            <p class="text-[11px] text-gray-500 font-bold">App Store · 🇧🇪 Belgique</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-3xl p-6 flex flex-col gap-4 mb-6 break-inside-avoid">
+                    <div class="text-cosmic-green text-sm tracking-widest">★★★★★</div>
+                    <p class="text-gray-200 text-sm leading-relaxed flex-1">Super application pour l'apprentissage des maths de facon ludique et efficace !</p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-cosmic-pink to-cosmic-blue flex items-center justify-center font-display font-bold text-sm text-white">O</div>
+                        <div class="leading-tight">
+                            <p class="text-sm font-display font-bold text-white">OliviaPG99</p>
+                            <p class="text-[11px] text-gray-500 font-bold">App Store · 🇨🇦 Canada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-3xl p-6 flex flex-col gap-4 mb-6 break-inside-avoid">
+                    <div class="text-cosmic-green text-sm tracking-widest">★★★★★</div>
+                    <p class="text-gray-200 text-sm leading-relaxed flex-1">Tres belle application pour les enfants. Pour apprendre les calculs !</p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-cosmic-pink to-cosmic-blue flex items-center justify-center font-display font-bold text-sm text-white">T</div>
+                        <div class="leading-tight">
+                            <p class="text-sm font-display font-bold text-white">Thomasrscafcb</p>
+                            <p class="text-[11px] text-gray-500 font-bold">App Store · 🇨🇦 Canada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-3xl p-6 flex flex-col gap-4 mb-6 break-inside-avoid">
+                    <div class="text-cosmic-green text-sm tracking-widest">★★★★★</div>
+                    <p class="text-gray-200 text-sm leading-relaxed flex-1">App super facile a utiliser et geniale pour les enfants.</p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-cosmic-pink to-cosmic-blue flex items-center justify-center font-display font-bold text-sm text-white">A</div>
+                        <div class="leading-tight">
+                            <p class="text-sm font-display font-bold text-white">Arnaud1920</p>
+                            <p class="text-[11px] text-gray-500 font-bold">App Store · 🇧🇪 Belgique</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-3xl p-6 flex flex-col gap-4 mb-6 break-inside-avoid">
+                    <div class="text-cosmic-green text-sm tracking-widest">★★★★★</div>
+                    <p class="text-gray-200 text-sm leading-relaxed flex-1">Application simple a utiliser et hyper ludique ! Le theme astro est une chouette idee, mon neveu adore.</p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-cosmic-pink to-cosmic-blue flex items-center justify-center font-display font-bold text-sm text-white">C</div>
+                        <div class="leading-tight">
+                            <p class="text-sm font-display font-bold text-white">Carpediempapro</p>
+                            <p class="text-[11px] text-gray-500 font-bold">App Store · 🇧🇪 Belgique</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-3xl p-6 flex flex-col gap-4 mb-6 break-inside-avoid">
+                    <div class="text-cosmic-green text-sm tracking-widest">★★★★★</div>
+                    <p class="text-gray-200 text-sm leading-relaxed flex-1">Visueel zeer sterk en heel leuk om te doen. Mijn zoon van 6 is alvast fan, en ik ook!</p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-cosmic-pink to-cosmic-blue flex items-center justify-center font-display font-bold text-sm text-white">M</div>
+                        <div class="leading-tight">
+                            <p class="text-sm font-display font-bold text-white">Mike D2202</p>
+                            <p class="text-[11px] text-gray-500 font-bold">App Store · 🇧🇪 Belgique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION TELECHARGEMENT BAS DE PAGE (CTA) -->
         <section id="download-cta" class="glass-panel rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto relative overflow-hidden group">
             <div class="absolute inset-0 bg-gradient-to-r from-cosmic-pink/10 via-transparent to-cosmic-blue/10"></div>
@@ -792,6 +905,10 @@
                 nav_features: "Fonctionnalités",
                 nav_parents: "Espace Parents",
                 nav_preview: "Aperçu interactif",
+                nav_blog: "Conseils aux parents",
+                reviews_badge: "Ils ont adore",
+                reviews_title: "Ce que disent les parents",
+                reviews_subtitle: "Une note de 5,0/5 sur l'App Store. Voici quelques retours de familles qui utilisent AstroCalcul au quotidien.",
                 nav_demo: "ESSAYER LA DÉMO",
                 hero_tagline: "MISSION APPRENDRE EN S'AMUSANT",
                 hero_title: "Le calcul mental devient une <br class=\"hidden sm:inline\"><span class=\"bg-gradient-to-r from-cosmic-cyan via-cosmic-pink to-cosmic-purple bg-clip-text text-transparent\">aventure spatiale !</span>",
@@ -875,6 +992,10 @@
                 nav_features: "Features",
                 nav_parents: "Parents' Space",
                 nav_preview: "Interactive Demo",
+                nav_blog: "Parents' Tips",
+                reviews_badge: "They loved it",
+                reviews_title: "What parents are saying",
+                reviews_subtitle: "A 5.0/5 rating on the App Store. Here is some feedback from families using AstroCalcul every day.",
                 nav_demo: "TRY THE DEMO",
                 hero_tagline: "MISSION LEARN WHILE HAVING FUN",
                 hero_title: "Mental math becomes a <br class=\"hidden sm:inline\"><span class=\"bg-gradient-to-r from-cosmic-cyan via-cosmic-pink to-cosmic-purple bg-clip-text text-transparent\">space adventure!</span>",
@@ -958,6 +1079,10 @@
                 nav_features: "Kenmerken",
                 nav_parents: "Oudersruimte",
                 nav_preview: "Interactieve Demo",
+                nav_blog: "Tips voor ouders",
+                reviews_badge: "Ze vonden het geweldig",
+                reviews_title: "Wat ouders zeggen",
+                reviews_subtitle: "Een score van 5,0/5 in de App Store. Hier zijn enkele reacties van gezinnen die AstroCalcul dagelijks gebruiken.",
                 nav_demo: "PROBEER DE DEMO",
                 hero_tagline: "MISSIE SPELEND LEREN",
                 hero_title: "Hoofdrekenen wordt een <br class=\"hidden sm:inline\"><span class=\"bg-gradient-to-r from-cosmic-cyan via-cosmic-pink to-cosmic-purple bg-clip-text text-transparent\">ruimte-avontuur!</span>",
