@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jejelefou23.github.io/astrocalcul-site/sitemap.xml
