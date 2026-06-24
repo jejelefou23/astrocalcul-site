@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calcul mental : exercices pour les enfants du primaire | AstroCalcul</title>
+    <meta name="description" content="Additions, soustractions, multiplications : des exercices de calcul mental simples et progressifs pour entraîner votre enfant du primaire à la maison.">
+
+    <link rel="canonical" href="https://jejelefou23.github.io/astrocalcul-site/blog/calcul-mental-primaire.html" />
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="apple-touch-icon" href="../assets/logo.png">
+
+    <meta property="og:site_name" content="AstroCalcul" />
+    <meta property="og:title" content="Calcul mental : exercices pour les enfants du primaire" />
+    <meta property="og:description" content="Des exercices de calcul mental simples et progressifs pour entraîner votre enfant à la maison." />
+    <meta property="og:image" content="https://jejelefou23.github.io/astrocalcul-site/assets/og-banner.png" />
+    <meta property="og:url" content="https://jejelefou23.github.io/astrocalcul-site/blog/calcul-mental-primaire.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org", "@type": "Article",
+      "headline": "Calcul mental : exercices pour les enfants du primaire",
+      "description": "Des exercices de calcul mental simples et progressifs pour entraîner votre enfant du primaire à la maison.",
+      "image": "https://jejelefou23.github.io/astrocalcul-site/assets/og-banner.png",
+      "author": { "@type": "Organization", "name": "AstroCalcul" },
+      "publisher": { "@type": "Organization", "name": "AstroCalcul", "logo": { "@type": "ImageObject", "url": "https://jejelefou23.github.io/astrocalcul-site/assets/logo.png" } },
+      "mainEntityOfPage": "https://jejelefou23.github.io/astrocalcul-site/blog/calcul-mental-primaire.html", "inLanguage": "fr"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            colors: { space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' }, cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' } },
+            fontFamily: { sans: ['Nunito','ui-sans-serif','system-ui','sans-serif'], display: ['Fredoka','Nunito','sans-serif'] }
+        } } }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #0B0B1E; overflow-x: hidden; }
+        .cosmic-glow { filter: blur(120px); opacity: 0.15; pointer-events: none; }
+        .glass-panel { background: rgba(20, 20, 50, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .article-body h2 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.6rem; line-height: 1.3; margin-top: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .article-body p { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; }
+        .article-body ul { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; padding-left: 1.4rem; list-style: disc; }
+        .article-body li { margin-bottom: 0.4rem; }
+        .article-body strong { color: #fff; }
+        .exo { background: rgba(0,240,255,0.06); border: 1px solid rgba(0,240,255,0.15); border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+        .exo h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; color: #00F0FF; margin-bottom: 0.6rem; }
+        .exo ol { color: #d1d5db; padding-left: 1.4rem; list-style: decimal; line-height: 1.9; }
+    </style>
+</head>
+<body class="text-white relative min-h-screen">
+
+    <canvas id="stars-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+    <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10"></div>
+
+    <header class="w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 bg-gradient-to-tr from-cosmic-pink to-cosmic-blue rounded-xl flex items-center justify-center shadow-lg shadow-cosmic-pink/20 overflow-hidden">
+                    <img src="../assets/logo.png" alt="AstroCalcul" class="w-full h-full object-contain p-1">
+                </div>
+                <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide">
+                <a href="../index.html#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+                <a href="../index.html#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+                <a href="./index.html" data-i18n="nav_blog" class="text-cosmic-green transition-colors">Conseils aux parents</a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display">
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display">FR</button>
+                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">EN</button>
+                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
+                </div>
+                <a href="../index.html#download-cta" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">TÉLÉCHARGER</a>
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="md:hidden p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <a href="../index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+            <a href="../index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+            <a href="./index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-cosmic-green hover:bg-white/5 transition-colors">Conseils aux parents</a>
+            <a href="../index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 md:px-8 py-12">
+
+        <nav class="text-xs text-gray-500 font-bold mb-6 flex flex-wrap items-center gap-2">
+            <a href="../index.html" data-i18n="bc_home" class="hover:text-cosmic-cyan">Accueil</a>
+            <span>›</span>
+            <a href="./index.html" data-i18n="bc_blog" class="hover:text-cosmic-cyan">Conseils aux parents</a>
+            <span>›</span>
+            <span data-i18n="bc_current" class="text-gray-400">Calcul mental au primaire</span>
+        </nav>
+
+        <article class="glass-panel rounded-3xl p-6 md:p-10">
+            <span data-i18n="kicker" class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Conseils aux parents</span>
+            <h1 data-i18n="h1" class="text-3xl md:text-4xl font-display font-bold leading-tight mt-3 mb-6">Calcul mental : exercices pour les enfants du primaire</h1>
+
+            <!-- FR -->
+            <div data-lang="fr" class="article-body">
+                <p>Le calcul mental est l'une des compétences les plus utiles que votre enfant développera à l'école primaire. Il ne sert pas qu'aux contrôles : il aide à raisonner plus vite, à gérer l'argent plus tard, et à gagner en confiance face aux nombres. La bonne nouvelle, c'est qu'il se travaille très bien à la maison, avec des exercices courts et réguliers.</p>
+                <h2>Pourquoi entraîner le calcul mental ?</h2>
+                <p>Un enfant qui calcule de tête mobilise sa mémoire, sa logique et sa concentration en même temps. Plus il s'entraîne, plus les résultats deviennent <strong>automatiques</strong>, ce qui libère son cerveau pour comprendre des notions plus complexes (problèmes, géométrie, fractions). C'est un véritable socle pour toute la scolarité.</p>
+                <p>L'objectif n'est pas la vitesse à tout prix, mais l'<strong>aisance</strong>. Un enfant à l'aise avec les nombres aborde les maths plus sereinement.</p>
+                <h2>Adapter les exercices à l'âge</h2>
+                <p>Inutile de brûler les étapes. Voici une progression simple selon le niveau :</p>
+                <ul>
+                    <li><strong>4 à 6 ans :</strong> reconnaître les nombres, compter, petites additions et soustractions jusqu'à 10.</li>
+                    <li><strong>7 à 8 ans :</strong> additions et soustractions jusqu'à 100, premières tables de multiplication (2, 5, 10).</li>
+                    <li><strong>9 à 10 ans :</strong> toutes les tables, multiplications et divisions simples, calculs à deux étapes.</li>
+                </ul>
+                <h2>20 exercices à faire à la maison</h2>
+                <div class="exo"><h3>Additions (7-8 ans)</h3><ol><li>8 + 6</li><li>14 + 5</li><li>23 + 9</li><li>17 + 17</li><li>36 + 28</li></ol></div>
+                <div class="exo"><h3>Soustractions (7-8 ans)</h3><ol><li>15 − 7</li><li>20 − 8</li><li>34 − 16</li><li>50 − 23</li><li>62 − 19</li></ol></div>
+                <div class="exo"><h3>Multiplications (9-10 ans)</h3><ol><li>6 × 7</li><li>8 × 4</li><li>9 × 6</li><li>7 × 8</li><li>12 × 3</li></ol></div>
+                <div class="exo"><h3>Petits défis mélangés (9-10 ans)</h3><ol><li>5 × 6 + 4</li><li>40 ÷ 8</li><li>9 × 3 − 7</li><li>100 − 45</li><li>6 × 5 ÷ 2</li></ol></div>
+                <p>Le truc qui change tout : faites ces exercices <strong>par petites séries de 5</strong>, à l'oral, dans un moment calme. Mieux vaut 5 calculs réussis avec le sourire qu'une longue feuille qui décourage.</p>
+                <h2>Les bons réflexes pour progresser</h2>
+                <ul>
+                    <li><strong>Régularité plutôt qu'intensité :</strong> 5 minutes chaque jour valent mieux qu'une grosse séance hebdomadaire.</li>
+                    <li><strong>Valoriser l'effort :</strong> féliciter la tentative, pas seulement le bon résultat. L'erreur fait partie de l'apprentissage.</li>
+                    <li><strong>Rendre ça vivant :</strong> calculs au supermarché, en cuisine, en voiture. Les maths du quotidien marquent les esprits.</li>
+                    <li><strong>Varier les supports :</strong> oral, jeux, applications. La variété entretient la motivation.</li>
+                </ul>
+                <h2>S'entraîner en s'amusant avec une application</h2>
+                <p>Une application bien pensée combine la répétition quotidienne et le jeu, deux ingrédients clés du calcul mental. C'est l'idée d'<strong>AstroCalcul</strong> : votre enfant résout des additions, soustractions et multiplications pour faire décoller sa fusée et explorer une galaxie. Trois niveaux suivent la progression du primaire (4-6, 7-8, 9-10 ans), et les parents peuvent fixer une courte session quotidienne. Le tout sans publicité ni collecte de données.</p>
+                <h2>En résumé</h2>
+                <p>Le calcul mental se construit par petites touches : des exercices courts, adaptés à l'âge, répétés régulièrement et dans la bonne humeur. En quelques minutes par jour, votre enfant gagnera en rapidité et surtout en confiance face aux nombres.</p>
+            </div>
+
+            <!-- EN -->
+            <div data-lang="en" class="article-body" style="display:none">
+                <p>Mental math is one of the most useful skills your child will develop in primary school. It is not just for tests: it helps them reason faster, manage money later on, and gain confidence with numbers. The good news is that it can be practised very well at home, with short, regular exercises.</p>
+                <h2>Why train mental math?</h2>
+                <p>A child who calculates in their head uses memory, logic and concentration at the same time. The more they practise, the more the results become <strong>automatic</strong>, which frees their brain to understand more complex notions (word problems, geometry, fractions). It is a real foundation for the whole of school.</p>
+                <p>The goal is not speed at all costs, but <strong>ease</strong>. A child comfortable with numbers approaches maths more calmly.</p>
+                <h2>Adapting exercises to age</h2>
+                <p>No need to rush the steps. Here is a simple progression by level:</p>
+                <ul>
+                    <li><strong>4 to 6 years:</strong> recognising numbers, counting, small additions and subtractions up to 10.</li>
+                    <li><strong>7 to 8 years:</strong> additions and subtractions up to 100, first multiplication tables (2, 5, 10).</li>
+                    <li><strong>9 to 10 years:</strong> all the tables, simple multiplications and divisions, two-step calculations.</li>
+                </ul>
+                <h2>20 exercises to do at home</h2>
+                <div class="exo"><h3>Additions (7-8 years)</h3><ol><li>8 + 6</li><li>14 + 5</li><li>23 + 9</li><li>17 + 17</li><li>36 + 28</li></ol></div>
+                <div class="exo"><h3>Subtractions (7-8 years)</h3><ol><li>15 − 7</li><li>20 − 8</li><li>34 − 16</li><li>50 − 23</li><li>62 − 19</li></ol></div>
+                <div class="exo"><h3>Multiplications (9-10 years)</h3><ol><li>6 × 7</li><li>8 × 4</li><li>9 × 6</li><li>7 × 8</li><li>12 × 3</li></ol></div>
+                <div class="exo"><h3>Mixed mini-challenges (9-10 years)</h3><ol><li>5 × 6 + 4</li><li>40 ÷ 8</li><li>9 × 3 − 7</li><li>100 − 45</li><li>6 × 5 ÷ 2</li></ol></div>
+                <p>The trick that changes everything: do these exercises <strong>in small sets of 5</strong>, out loud, in a calm moment. Five calculations done with a smile are worth more than a long sheet that discourages.</p>
+                <h2>The right habits to progress</h2>
+                <ul>
+                    <li><strong>Consistency over intensity:</strong> 5 minutes every day beats one big weekly session.</li>
+                    <li><strong>Value the effort:</strong> praise the attempt, not only the right answer. Mistakes are part of learning.</li>
+                    <li><strong>Make it alive:</strong> calculations at the supermarket, while cooking, in the car. Everyday maths sticks.</li>
+                    <li><strong>Vary the formats:</strong> oral, games, apps. Variety keeps motivation up.</li>
+                </ul>
+                <h2>Practising while having fun with an app</h2>
+                <p>A well-designed app combines daily repetition and play, two key ingredients of mental math. That is the idea of <strong>AstroCalcul</strong>: your child solves additions, subtractions and multiplications to launch their rocket and explore a galaxy. Three levels follow primary-school progression (4-6, 7-8, 9-10 years), and parents can set a short daily session. All with no ads or data collection.</p>
+                <h2>In summary</h2>
+                <p>Mental math is built little by little: short exercises, adapted to age, repeated regularly and in good spirits. In a few minutes a day, your child will gain speed and, above all, confidence with numbers.</p>
+            </div>
+
+            <!-- NL -->
+            <div data-lang="nl" class="article-body" style="display:none">
+                <p>Hoofdrekenen is een van de nuttigste vaardigheden die je kind in het basisonderwijs ontwikkelt. Het is niet alleen voor toetsen: het helpt sneller redeneren, later met geld omgaan en vertrouwen krijgen met getallen. Het goede nieuws is dat het thuis heel goed te oefenen valt, met korte, regelmatige oefeningen.</p>
+                <h2>Waarom hoofdrekenen oefenen?</h2>
+                <p>Een kind dat uit het hoofd rekent, gebruikt tegelijk geheugen, logica en concentratie. Hoe meer het oefent, hoe meer de resultaten <strong>automatisch</strong> worden, wat de hersenen vrijmaakt om complexere begrippen te begrijpen (vraagstukken, meetkunde, breuken). Het is een echte basis voor de hele schoolloopbaan.</p>
+                <p>Het doel is niet snelheid tegen elke prijs, maar <strong>gemak</strong>. Een kind dat zich op zijn gemak voelt met getallen, benadert rekenen rustiger.</p>
+                <h2>Oefeningen aanpassen aan de leeftijd</h2>
+                <p>Geen reden om stappen over te slaan. Hier is een eenvoudige opbouw per niveau:</p>
+                <ul>
+                    <li><strong>4 tot 6 jaar:</strong> getallen herkennen, tellen, kleine optellingen en aftrekkingen tot 10.</li>
+                    <li><strong>7 tot 8 jaar:</strong> optellen en aftrekken tot 100, eerste tafels van vermenigvuldiging (2, 5, 10).</li>
+                    <li><strong>9 tot 10 jaar:</strong> alle tafels, eenvoudige vermenigvuldigingen en delingen, berekeningen in twee stappen.</li>
+                </ul>
+                <h2>20 oefeningen om thuis te doen</h2>
+                <div class="exo"><h3>Optellingen (7-8 jaar)</h3><ol><li>8 + 6</li><li>14 + 5</li><li>23 + 9</li><li>17 + 17</li><li>36 + 28</li></ol></div>
+                <div class="exo"><h3>Aftrekkingen (7-8 jaar)</h3><ol><li>15 − 7</li><li>20 − 8</li><li>34 − 16</li><li>50 − 23</li><li>62 − 19</li></ol></div>
+                <div class="exo"><h3>Vermenigvuldigingen (9-10 jaar)</h3><ol><li>6 × 7</li><li>8 × 4</li><li>9 × 6</li><li>7 × 8</li><li>12 × 3</li></ol></div>
+                <div class="exo"><h3>Gemengde mini-uitdagingen (9-10 jaar)</h3><ol><li>5 × 6 + 4</li><li>40 ÷ 8</li><li>9 × 3 − 7</li><li>100 − 45</li><li>6 × 5 ÷ 2</li></ol></div>
+                <p>De truc die alles verandert: doe deze oefeningen <strong>in kleine reeksen van 5</strong>, hardop, op een rustig moment. Vijf sommen met een glimlach zijn meer waard dan een lang blad dat ontmoedigt.</p>
+                <h2>De juiste gewoontes om vooruit te gaan</h2>
+                <ul>
+                    <li><strong>Regelmaat boven intensiteit:</strong> 5 minuten per dag is beter dan één grote sessie per week.</li>
+                    <li><strong>Waardeer de inspanning:</strong> prijs de poging, niet alleen het juiste antwoord. Fouten horen bij het leren.</li>
+                    <li><strong>Maak het levendig:</strong> rekenen in de supermarkt, tijdens het koken, in de auto. Alledaagse rekenkunde blijft hangen.</li>
+                    <li><strong>Wissel de vormen af:</strong> mondeling, spelletjes, apps. Afwisseling houdt de motivatie hoog.</li>
+                </ul>
+                <h2>Oefenen met plezier dankzij een app</h2>
+                <p>Een goed doordachte app combineert dagelijkse herhaling en spel, twee sleutelingrediënten van hoofdrekenen. Dat is het idee van <strong>AstroCalcul</strong>: je kind lost optellingen, aftrekkingen en vermenigvuldigingen op om zijn raket te lanceren en een melkwegstelsel te verkennen. Drie niveaus volgen de opbouw van het basisonderwijs (4-6, 7-8, 9-10 jaar), en ouders kunnen een korte dagelijkse sessie instellen. Dit alles zonder reclame of gegevensverzameling.</p>
+                <h2>Samengevat</h2>
+                <p>Hoofdrekenen bouw je beetje bij beetje op: korte oefeningen, aangepast aan de leeftijd, regelmatig herhaald en in een goede sfeer. In een paar minuten per dag wint je kind aan snelheid en vooral aan vertrouwen met getallen.</p>
+            </div>
+
+            <div class="mt-10 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden border border-white/10 bg-gradient-to-r from-cosmic-pink/10 via-transparent to-cosmic-blue/10">
+                <h3 data-i18n="cta_title" class="text-xl md:text-2xl font-display font-bold mb-3">🚀 Transformez l'entraînement en aventure</h3>
+                <p data-i18n="cta_text" class="text-gray-300 text-sm max-w-xl mx-auto mb-5">Avec AstroCalcul, chaque calcul propulse une fusée vers de nouvelles planètes. Trois niveaux, sans publicité, conçu par un papa développeur.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="https://apps.apple.com/us/app/astrocalcul/id6760236661" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">Google Play</a>
+                </div>
+            </div>
+        </article>
+
+        <div class="mt-8 text-center">
+            <a href="./index.html" data-i18n="back_link" class="text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm">← Tous les conseils aux parents</a>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 pt-10 pb-12 text-center space-y-4 max-w-5xl mx-auto px-6">
+        <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-gray-500">
+            <a href="../index.html" data-i18n="footer_home" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
+            <span>•</span>
+            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="footer_privacy" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
+            <span>•</span>
+            <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact" class="hover:text-cosmic-cyan transition-colors">Contact</a>
+        </div>
+        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+    </footer>
+
+    <script>
+        const T = {
+            fr: { doc_title: "Calcul mental : exercices pour les enfants du primaire | AstroCalcul",
+                nav_features: "Fonctionnalités", nav_parents: "Espace Parents", nav_blog: "Conseils aux parents", nav_demo: "TÉLÉCHARGER",
+                bc_home: "Accueil", bc_blog: "Conseils aux parents", bc_current: "Calcul mental au primaire",
+                kicker: "Conseils aux parents", h1: "Calcul mental : exercices pour les enfants du primaire",
+                cta_title: "🚀 Transformez l'entraînement en aventure",
+                cta_text: "Avec AstroCalcul, chaque calcul propulse une fusée vers de nouvelles planètes. Trois niveaux, sans publicité, conçu par un papa développeur.",
+                back_link: "← Tous les conseils aux parents",
+                footer_desc: "L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.",
+                footer_home: "Accueil", footer_privacy: "Confidentialité", footer_contact: "Contact", footer_rights: "Tous droits réservés." },
+            en: { doc_title: "Mental math: exercises for primary school children | AstroCalcul",
+                nav_features: "Features", nav_parents: "Parents' Space", nav_blog: "Parents' Tips", nav_demo: "DOWNLOAD",
+                bc_home: "Home", bc_blog: "Parents' Tips", bc_current: "Mental math in primary school",
+                kicker: "Parents' Tips", h1: "Mental math: exercises for primary school children",
+                cta_title: "🚀 Turn practice into an adventure",
+                cta_text: "With AstroCalcul, every calculation propels a rocket towards new planets. Three levels, ad-free, designed by a developer dad.",
+                back_link: "← All parents' tips",
+                footer_desc: "Playful and secure mental math learning for young space explorers.",
+                footer_home: "Home", footer_privacy: "Privacy", footer_contact: "Contact", footer_rights: "All rights reserved." },
+            nl: { doc_title: "Hoofdrekenen: oefeningen voor kinderen in het basisonderwijs | AstroCalcul",
+                nav_features: "Kenmerken", nav_parents: "Oudersruimte", nav_blog: "Tips voor ouders", nav_demo: "DOWNLOADEN",
+                bc_home: "Home", bc_blog: "Tips voor ouders", bc_current: "Hoofdrekenen in het basisonderwijs",
+                kicker: "Tips voor ouders", h1: "Hoofdrekenen: oefeningen voor kinderen in het basisonderwijs",
+                cta_title: "🚀 Maak van oefenen een avontuur",
+                cta_text: "Met AstroCalcul stuwt elke som een raket naar nieuwe planeten. Drie niveaus, zonder reclame, ontworpen door een developer-papa.",
+                back_link: "← Alle tips voor ouders",
+                footer_desc: "Speels en veilig hoofdrekenen leren voor jonge ruimtevaarders.",
+                footer_home: "Home", footer_privacy: "Privacy", footer_contact: "Contact", footer_rights: "Alle rechten voorbehouden." }
+        };
+        const LANGS = ['fr','en','nl'];
+        let lang = localStorage.getItem('astrocalcul_lang') || 'fr';
+        function applyLang(l) {
+            lang = l; localStorage.setItem('astrocalcul_lang', l);
+            document.documentElement.lang = l;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const k = e.getAttribute('data-i18n'); if (T[l] && T[l][k] != null) e.innerHTML = T[l][k]; });
+            document.querySelectorAll('[data-lang]').forEach(b => { b.style.display = (b.getAttribute('data-lang') === l) ? '' : 'none'; });
+            if (T[l].doc_title) document.title = T[l].doc_title;
+            LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
+        }
+        function changeLanguage(l) { applyLang(l); }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            document.getElementById('burger-icon').classList.toggle('hidden', open);
+            document.getElementById('close-icon').classList.toggle('hidden', !open);
+            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
+        }
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); }
+        function init() { stars = []; for (let i=0;i<100;i++){ stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005,c:Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF')}); } }
+        function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(st=>{ st.a+=st.s; if(st.a>1||st.a<0)st.s=-st.s; ctx.save(); ctx.globalAlpha=Math.max(0.1,st.a); ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2); ctx.fillStyle=st.c; ctx.fill(); ctx.restore(); }); requestAnimationFrame(animate); }
+        window.addEventListener('resize', resize);
+        window.addEventListener('load', () => {
+            const p = new URLSearchParams(location.search).get('lang');
+            if (p && LANGS.includes(p)) lang = p;
+            applyLang(lang); resize(); animate();
+        });
+    </script>
+</body>
+</html>

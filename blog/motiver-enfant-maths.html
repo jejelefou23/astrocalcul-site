@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mon enfant n'aime pas les maths : comment le motiver ? | AstroCalcul</title>
+    <meta name="description" content="Votre enfant déteste les maths ou se décourage vite ? Découvrez des conseils concrets pour le remotiver, lui redonner confiance et réconcilier avec les chiffres.">
+
+    <link rel="canonical" href="https://jejelefou23.github.io/astrocalcul-site/blog/motiver-enfant-maths.html" />
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="apple-touch-icon" href="../assets/logo.png">
+
+    <meta property="og:site_name" content="AstroCalcul" />
+    <meta property="og:title" content="Mon enfant n'aime pas les maths : comment le motiver ?" />
+    <meta property="og:description" content="Des conseils concrets pour remotiver votre enfant en maths et lui redonner confiance." />
+    <meta property="og:image" content="https://jejelefou23.github.io/astrocalcul-site/assets/og-banner.png" />
+    <meta property="og:url" content="https://jejelefou23.github.io/astrocalcul-site/blog/motiver-enfant-maths.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org", "@type": "Article",
+      "headline": "Mon enfant n'aime pas les maths : comment le motiver ?",
+      "description": "Des conseils concrets pour remotiver votre enfant en maths et lui redonner confiance.",
+      "image": "https://jejelefou23.github.io/astrocalcul-site/assets/og-banner.png",
+      "author": { "@type": "Organization", "name": "AstroCalcul" },
+      "publisher": { "@type": "Organization", "name": "AstroCalcul", "logo": { "@type": "ImageObject", "url": "https://jejelefou23.github.io/astrocalcul-site/assets/logo.png" } },
+      "mainEntityOfPage": "https://jejelefou23.github.io/astrocalcul-site/blog/motiver-enfant-maths.html", "inLanguage": "fr"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            colors: { space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' }, cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' } },
+            fontFamily: { sans: ['Nunito','ui-sans-serif','system-ui','sans-serif'], display: ['Fredoka','Nunito','sans-serif'] }
+        } } }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #0B0B1E; overflow-x: hidden; }
+        .cosmic-glow { filter: blur(120px); opacity: 0.15; pointer-events: none; }
+        .glass-panel { background: rgba(20, 20, 50, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .article-body h2 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.6rem; line-height: 1.3; margin-top: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .article-body p { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; }
+        .article-body ul { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; padding-left: 1.4rem; list-style: disc; }
+        .article-body li { margin-bottom: 0.4rem; }
+        .article-body strong { color: #fff; }
+    </style>
+</head>
+<body class="text-white relative min-h-screen">
+
+    <canvas id="stars-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+    <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10"></div>
+
+    <header class="w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 bg-gradient-to-tr from-cosmic-pink to-cosmic-blue rounded-xl flex items-center justify-center shadow-lg shadow-cosmic-pink/20 overflow-hidden">
+                    <img src="../assets/logo.png" alt="AstroCalcul" class="w-full h-full object-contain p-1">
+                </div>
+                <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide">
+                <a href="../index.html#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+                <a href="../index.html#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+                <a href="./index.html" data-i18n="nav_blog" class="text-cosmic-green transition-colors">Conseils aux parents</a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display">
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display">FR</button>
+                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">EN</button>
+                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
+                </div>
+                <a href="../index.html#download-cta" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">TÉLÉCHARGER</a>
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="md:hidden p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <a href="../index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+            <a href="../index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+            <a href="./index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-cosmic-green hover:bg-white/5 transition-colors">Conseils aux parents</a>
+            <a href="../index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 md:px-8 py-12">
+
+        <nav class="text-xs text-gray-500 font-bold mb-6 flex flex-wrap items-center gap-2">
+            <a href="../index.html" data-i18n="bc_home" class="hover:text-cosmic-cyan">Accueil</a>
+            <span>›</span>
+            <a href="./index.html" data-i18n="bc_blog" class="hover:text-cosmic-cyan">Conseils aux parents</a>
+            <span>›</span>
+            <span data-i18n="bc_current" class="text-gray-400">Motiver un enfant en maths</span>
+        </nav>
+
+        <article class="glass-panel rounded-3xl p-6 md:p-10">
+            <span data-i18n="kicker" class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Conseils aux parents</span>
+            <h1 data-i18n="h1" class="text-3xl md:text-4xl font-display font-bold leading-tight mt-3 mb-6">Mon enfant n'aime pas les maths : comment le motiver ?</h1>
+
+            <!-- FR -->
+            <div data-lang="fr" class="article-body">
+                <p>« Je suis nul en maths », « les maths c'est trop dur », « j'y arriverai jamais »… Si ces phrases vous sont familières, vous n'êtes pas seul. Beaucoup d'enfants développent un blocage avec les mathématiques. La bonne nouvelle : ce rejet n'a presque jamais à voir avec un manque de capacités. C'est souvent une question de <strong>confiance et de plaisir</strong>, deux choses sur lesquelles vous pouvez agir.</p>
+                <h2>Pourquoi un enfant se met à détester les maths</h2>
+                <p>Le rejet des maths vient rarement de la matière elle-même. Les causes les plus fréquentes sont :</p>
+                <ul>
+                    <li>Une <strong>mauvaise expérience</strong> : une note décevante, une remarque, un moment d'humiliation devant la classe.</li>
+                    <li>Un <strong>rythme trop rapide</strong> : l'enfant a manqué une notion et accumule du retard, ce qui rend la suite incompréhensible.</li>
+                    <li>Un sentiment d'<strong>échec répété</strong> qui finit par convaincre l'enfant qu'il « n'est pas fait pour ça ».</li>
+                    <li>L'absence de <strong>sens concret</strong> : des chiffres abstraits, sans lien avec sa vie.</li>
+                </ul>
+                <p>Comprendre la cause est la première étape. Un enfant qui décroche a presque toujours besoin qu'on ralentisse et qu'on le rassure, pas qu'on en rajoute.</p>
+                <h2>Dédramatiser l'erreur</h2>
+                <p>En maths, se tromper fait partie du processus. Pourtant, beaucoup d'enfants vivent l'erreur comme un échec personnel. Votre rôle est de leur montrer que <strong>l'erreur est une information utile</strong>, pas une faute. Une phrase comme « ce n'est pas encore juste, regardons ensemble pourquoi » change complètement le rapport à la difficulté.</p>
+                <p>Évitez les étiquettes (« tu es nul », mais aussi « tu es un génie ») : elles enferment. Préférez féliciter <strong>l'effort et la stratégie</strong> : « tu as bien réfléchi », « tu as essayé une autre méthode, bravo ».</p>
+                <h2>Donner du sens et du concret</h2>
+                <p>Les maths deviennent passionnantes quand elles servent à quelque chose. Cuisiner (peser, doubler une recette), faire les courses (comparer les prix, rendre la monnaie), jouer à des jeux de société avec des dés ou des scores : tout cela transforme les chiffres en outils du quotidien. L'enfant calcule sans même s'en rendre compte, et surtout sans pression scolaire.</p>
+                <h2>Miser sur le jeu</h2>
+                <p>Le jeu est le meilleur allié de la motivation. Quand l'apprentissage prend la forme d'un défi, d'une récompense ou d'une histoire, le cerveau associe les maths au plaisir plutôt qu'à la corvée. Cartes, jeux de plateau, énigmes, applications éducatives : peu importe le support, l'essentiel est que l'enfant ait <strong>envie de recommencer</strong>.</p>
+                <p>C'est exactement la philosophie d'<strong>AstroCalcul</strong> : chaque calcul réussi propulse une fusée et permet d'explorer une galaxie, de débloquer des planètes et de collectionner des badges. L'enfant progresse motivé par l'aventure, pas par la contrainte. Et comme les sessions sont courtes, il garde le plaisir d'y revenir le lendemain.</p>
+                <h2>Valoriser chaque petit progrès</h2>
+                <p>La confiance se reconstruit par petites victoires. Fixez des objectifs <strong>atteignables</strong> (maîtriser une table, réussir cinq calculs d'affilée) et célébrez-les. Un enfant qui ressent qu'il progresse retrouve l'envie d'essayer. À l'inverse, viser trop haut trop vite ne fait que renforcer le découragement.</p>
+                <h2>Et si ça ne suffit pas ?</h2>
+                <p>Si le blocage est profond ou s'accompagne d'une réelle souffrance, n'hésitez pas à en parler avec l'enseignant, voire à envisager un accompagnement adapté. Parfois, une notion mal comprise très tôt suffit à expliquer des années de difficultés, et un petit coup de pouce ciblé débloque tout.</p>
+                <h2>En résumé</h2>
+                <p>Un enfant qui n'aime pas les maths n'est presque jamais « mauvais » en maths : il a perdu confiance ou plaisir. En dédramatisant l'erreur, en donnant du sens, en misant sur le jeu et en valorisant chaque progrès, vous pouvez progressivement réconcilier votre enfant avec les chiffres. La motivation ne se force pas, elle se cultive, avec patience et bienveillance.</p>
+            </div>
+
+            <!-- EN -->
+            <div data-lang="en" class="article-body" style="display:none">
+                <p>"I'm rubbish at maths", "maths is too hard", "I'll never get it"... If these sentences sound familiar, you are not alone. Many children develop a block with mathematics. The good news: this rejection almost never has to do with a lack of ability. It is often a question of <strong>confidence and enjoyment</strong>, two things you can act on.</p>
+                <h2>Why a child starts to hate maths</h2>
+                <p>The rejection of maths rarely comes from the subject itself. The most common causes are:</p>
+                <ul>
+                    <li>A <strong>bad experience</strong>: a disappointing grade, a remark, a humiliating moment in front of the class.</li>
+                    <li>A <strong>pace that is too fast</strong>: the child missed a notion and falls behind, which makes the rest incomprehensible.</li>
+                    <li>A feeling of <strong>repeated failure</strong> that ends up convincing the child they are "not made for it".</li>
+                    <li>The lack of <strong>concrete meaning</strong>: abstract figures with no link to their life.</li>
+                </ul>
+                <p>Understanding the cause is the first step. A child who disengages almost always needs us to slow down and reassure them, not to pile on more.</p>
+                <h2>Take the drama out of mistakes</h2>
+                <p>In maths, getting it wrong is part of the process. Yet many children experience a mistake as a personal failure. Your role is to show them that <strong>a mistake is useful information</strong>, not a fault. A sentence like "it's not right yet, let's look together at why" completely changes their relationship to difficulty.</p>
+                <p>Avoid labels ("you're hopeless", but also "you're a genius"): they lock children in. Prefer to praise <strong>effort and strategy</strong>: "you thought hard about that", "you tried another method, well done".</p>
+                <h2>Give meaning and make it concrete</h2>
+                <p>Maths becomes exciting when it serves a purpose. Cooking (weighing, doubling a recipe), shopping (comparing prices, giving change), playing board games with dice or scores: all of this turns figures into everyday tools. The child calculates without even realising it, and above all without school pressure.</p>
+                <h2>Rely on play</h2>
+                <p>Play is the best ally of motivation. When learning takes the form of a challenge, a reward or a story, the brain links maths to pleasure rather than to a chore. Cards, board games, riddles, educational apps: whatever the format, the key is that the child <strong>wants to start again</strong>.</p>
+                <p>That is exactly the philosophy of <strong>AstroCalcul</strong>: each successful calculation propels a rocket and lets the child explore a galaxy, unlock planets and collect badges. The child progresses driven by adventure, not constraint. And because the sessions are short, they keep the pleasure of coming back the next day.</p>
+                <h2>Value every small step</h2>
+                <p>Confidence is rebuilt through small victories. Set <strong>achievable</strong> goals (master one table, get five calculations in a row) and celebrate them. A child who feels they are progressing regains the desire to try. Conversely, aiming too high too fast only reinforces discouragement.</p>
+                <h2>And if that's not enough?</h2>
+                <p>If the block is deep or comes with real distress, do not hesitate to talk to the teacher, or even to consider suitable support. Sometimes a notion misunderstood very early is enough to explain years of difficulty, and a small, targeted boost unlocks everything.</p>
+                <h2>In summary</h2>
+                <p>A child who doesn't like maths is almost never "bad" at maths: they have lost confidence or enjoyment. By taking the drama out of mistakes, giving meaning, relying on play and valuing every step, you can gradually reconcile your child with numbers. Motivation cannot be forced, it is cultivated, with patience and kindness.</p>
+            </div>
+
+            <!-- NL -->
+            <div data-lang="nl" class="article-body" style="display:none">
+                <p>"Ik ben slecht in rekenen", "rekenen is te moeilijk", "het lukt me nooit"... Als deze zinnen je bekend in de oren klinken, ben je niet alleen. Veel kinderen ontwikkelen een blokkade voor wiskunde. Het goede nieuws: die afkeer heeft bijna nooit te maken met een gebrek aan capaciteiten. Het is vaak een kwestie van <strong>vertrouwen en plezier</strong>, twee zaken waar je iets aan kunt doen.</p>
+                <h2>Waarom een kind een hekel aan rekenen krijgt</h2>
+                <p>De afkeer van rekenen komt zelden van het vak zelf. De meest voorkomende oorzaken zijn:</p>
+                <ul>
+                    <li>Een <strong>slechte ervaring</strong>: een teleurstellend cijfer, een opmerking, een vernederend moment voor de klas.</li>
+                    <li>Een <strong>te hoog tempo</strong>: het kind heeft een begrip gemist en loopt achter, waardoor de rest onbegrijpelijk wordt.</li>
+                    <li>Een gevoel van <strong>herhaald falen</strong> dat het kind uiteindelijk overtuigt dat het "er niet voor gemaakt is".</li>
+                    <li>Het ontbreken van <strong>concrete betekenis</strong>: abstracte cijfers zonder verband met zijn leven.</li>
+                </ul>
+                <p>De oorzaak begrijpen is de eerste stap. Een kind dat afhaakt, heeft bijna altijd nodig dat we vertragen en het geruststellen, niet dat we er nog een schepje bovenop doen.</p>
+                <h2>Fouten ontdramatiseren</h2>
+                <p>Bij rekenen hoort fouten maken bij het proces. Toch ervaren veel kinderen een fout als een persoonlijke mislukking. Jouw rol is hen te tonen dat <strong>een fout nuttige informatie is</strong>, geen schuld. Een zin als "het klopt nog niet, laten we samen kijken waarom" verandert hun verhouding tot moeilijkheden volledig.</p>
+                <p>Vermijd etiketten ("je bent slecht", maar ook "je bent een genie"): ze sluiten op. Prijs liever de <strong>inspanning en de strategie</strong>: "je hebt goed nagedacht", "je hebt een andere methode geprobeerd, knap".</p>
+                <h2>Betekenis en concreetheid geven</h2>
+                <p>Rekenen wordt boeiend wanneer het ergens toe dient. Koken (wegen, een recept verdubbelen), boodschappen doen (prijzen vergelijken, wisselgeld teruggeven), gezelschapsspellen met dobbelstenen of scores spelen: dat alles maakt van cijfers alledaagse hulpmiddelen. Het kind rekent zonder het te beseffen, en vooral zonder schooldruk.</p>
+                <h2>Inzetten op spel</h2>
+                <p>Spel is de beste bondgenoot van motivatie. Wanneer leren de vorm aanneemt van een uitdaging, een beloning of een verhaal, verbinden de hersenen rekenen met plezier in plaats van met een karwei. Kaarten, bordspellen, raadsels, educatieve apps: ongeacht de vorm is het belangrijkste dat het kind <strong>opnieuw wil beginnen</strong>.</p>
+                <p>Dat is precies de filosofie van <strong>AstroCalcul</strong>: elke geslaagde som stuwt een raket voort en laat het kind een melkwegstelsel verkennen, planeten ontgrendelen en badges verzamelen. Het kind gaat vooruit, gedreven door avontuur en niet door dwang. En omdat de sessies kort zijn, behoudt het het plezier om er de volgende dag op terug te komen.</p>
+                <h2>Elke kleine vooruitgang waarderen</h2>
+                <p>Vertrouwen wordt heropgebouwd met kleine overwinningen. Stel <strong>haalbare</strong> doelen (één tafel beheersen, vijf sommen op rij goed) en vier ze. Een kind dat voelt dat het vooruitgaat, krijgt opnieuw zin om te proberen. Omgekeerd versterkt te hoog mikken, te snel, alleen maar de ontmoediging.</p>
+                <h2>En als dat niet volstaat?</h2>
+                <p>Als de blokkade diep zit of gepaard gaat met echt lijden, aarzel dan niet om met de leerkracht te praten of zelfs aangepaste begeleiding te overwegen. Soms volstaat één begrip dat heel vroeg verkeerd begrepen werd om jaren van moeilijkheden te verklaren, en een klein, gericht duwtje deblokkeert alles.</p>
+                <h2>Samengevat</h2>
+                <p>Een kind dat niet van rekenen houdt, is bijna nooit "slecht" in rekenen: het heeft vertrouwen of plezier verloren. Door fouten te ontdramatiseren, betekenis te geven, op spel in te zetten en elke vooruitgang te waarderen, kun je je kind geleidelijk weer met getallen verzoenen. Motivatie kun je niet afdwingen, je kweekt ze, met geduld en zorgzaamheid.</p>
+            </div>
+
+            <div class="mt-10 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden border border-white/10 bg-gradient-to-r from-cosmic-pink/10 via-transparent to-cosmic-blue/10">
+                <h3 data-i18n="cta_title" class="text-xl md:text-2xl font-display font-bold mb-3">🚀 Redonnez-lui le goût des maths</h3>
+                <p data-i18n="cta_text" class="text-gray-300 text-sm max-w-xl mx-auto mb-5">AstroCalcul transforme les révisions en aventure spatiale motivante. Sans publicité, avec un suivi parental et des récompenses qui donnent envie de continuer.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="https://apps.apple.com/us/app/astrocalcul/id6760236661" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">Google Play</a>
+                </div>
+            </div>
+        </article>
+
+        <div class="mt-8 text-center">
+            <a href="./index.html" data-i18n="back_link" class="text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm">← Tous les conseils aux parents</a>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 pt-10 pb-12 text-center space-y-4 max-w-5xl mx-auto px-6">
+        <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-gray-500">
+            <a href="../index.html" data-i18n="footer_home" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
+            <span>•</span>
+            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="footer_privacy" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
+            <span>•</span>
+            <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact" class="hover:text-cosmic-cyan transition-colors">Contact</a>
+        </div>
+        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+    </footer>
+
+    <script>
+        const T = {
+            fr: { doc_title: "Mon enfant n'aime pas les maths : comment le motiver ? | AstroCalcul",
+                nav_features: "Fonctionnalités", nav_parents: "Espace Parents", nav_blog: "Conseils aux parents", nav_demo: "TÉLÉCHARGER",
+                bc_home: "Accueil", bc_blog: "Conseils aux parents", bc_current: "Motiver un enfant en maths",
+                kicker: "Conseils aux parents", h1: "Mon enfant n'aime pas les maths : comment le motiver ?",
+                cta_title: "🚀 Redonnez-lui le goût des maths",
+                cta_text: "AstroCalcul transforme les révisions en aventure spatiale motivante. Sans publicité, avec un suivi parental et des récompenses qui donnent envie de continuer.",
+                back_link: "← Tous les conseils aux parents",
+                footer_desc: "L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.",
+                footer_home: "Accueil", footer_privacy: "Confidentialité", footer_contact: "Contact", footer_rights: "Tous droits réservés." },
+            en: { doc_title: "My child doesn't like maths: how to motivate them? | AstroCalcul",
+                nav_features: "Features", nav_parents: "Parents' Space", nav_blog: "Parents' Tips", nav_demo: "DOWNLOAD",
+                bc_home: "Home", bc_blog: "Parents' Tips", bc_current: "Motivating a child in maths",
+                kicker: "Parents' Tips", h1: "My child doesn't like maths: how to motivate them?",
+                cta_title: "🚀 Give them back the taste for maths",
+                cta_text: "AstroCalcul turns revision into a motivating space adventure. Ad-free, with parental tracking and rewards that make children want to continue.",
+                back_link: "← All parents' tips",
+                footer_desc: "Playful and secure mental math learning for young space explorers.",
+                footer_home: "Home", footer_privacy: "Privacy", footer_contact: "Contact", footer_rights: "All rights reserved." },
+            nl: { doc_title: "Mijn kind houdt niet van rekenen: hoe motiveer ik het? | AstroCalcul",
+                nav_features: "Kenmerken", nav_parents: "Oudersruimte", nav_blog: "Tips voor ouders", nav_demo: "DOWNLOADEN",
+                bc_home: "Home", bc_blog: "Tips voor ouders", bc_current: "Een kind motiveren bij rekenen",
+                kicker: "Tips voor ouders", h1: "Mijn kind houdt niet van rekenen: hoe motiveer ik het?",
+                cta_title: "🚀 Geef het opnieuw zin in rekenen",
+                cta_text: "AstroCalcul verandert oefenen in een motiverend ruimte-avontuur. Zonder reclame, met ouderlijke opvolging en beloningen die zin geven om door te gaan.",
+                back_link: "← Alle tips voor ouders",
+                footer_desc: "Speels en veilig hoofdrekenen leren voor jonge ruimtevaarders.",
+                footer_home: "Home", footer_privacy: "Privacy", footer_contact: "Contact", footer_rights: "Alle rechten voorbehouden." }
+        };
+        const LANGS = ['fr','en','nl'];
+        let lang = localStorage.getItem('astrocalcul_lang') || 'fr';
+        function applyLang(l) {
+            lang = l; localStorage.setItem('astrocalcul_lang', l);
+            document.documentElement.lang = l;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const k = e.getAttribute('data-i18n'); if (T[l] && T[l][k] != null) e.innerHTML = T[l][k]; });
+            document.querySelectorAll('[data-lang]').forEach(b => { b.style.display = (b.getAttribute('data-lang') === l) ? '' : 'none'; });
+            if (T[l].doc_title) document.title = T[l].doc_title;
+            LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
+        }
+        function changeLanguage(l) { applyLang(l); }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            document.getElementById('burger-icon').classList.toggle('hidden', open);
+            document.getElementById('close-icon').classList.toggle('hidden', !open);
+            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
+        }
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); }
+        function init() { stars = []; for (let i=0;i<100;i++){ stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005,c:Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF')}); } }
+        function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(st=>{ st.a+=st.s; if(st.a>1||st.a<0)st.s=-st.s; ctx.save(); ctx.globalAlpha=Math.max(0.1,st.a); ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2); ctx.fillStyle=st.c; ctx.fill(); ctx.restore(); }); requestAnimationFrame(animate); }
+        window.addEventListener('resize', resize);
+        window.addEventListener('load', () => {
+            const p = new URLSearchParams(location.search).get('lang');
+            if (p && LANGS.includes(p)) lang = p;
+            applyLang(lang); resize(); animate();
+        });
+    </script>
+</body>
+</html>
