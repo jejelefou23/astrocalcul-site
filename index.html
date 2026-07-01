@@ -308,6 +308,14 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
                     <span data-i18n="hero_privacy">Conforme RGPD</span>
                 </div>
+
+                <div class="flex justify-center lg:justify-start">
+                    <div class="inline-flex items-center gap-2.5 bg-cosmic-green/10 border border-cosmic-green/20 px-4 py-2 rounded-full">
+                        <img src="assets/teacher-approved.png" alt="" class="w-5 h-5 object-contain" onerror="this.style.display='none'; document.getElementById('ta-emblem-hero').style.display='block';">
+                        <span id="ta-emblem-hero" style="display:none;" class="w-5 h-5"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="url(#thg)"/><path d="M8 12.5l2.5 2.5 5-5.6" stroke="#0B0B1E" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="thg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00F0FF"/><stop offset="1" stop-color="#00FF87"/></linearGradient></defs></svg></span>
+                        <span data-i18n="teacher_hero" class="text-xs font-extrabold tracking-wide text-cosmic-green font-display">Approuvé par les enseignants · Google Play</span>
+                    </div>
+                </div>
             </div>
 
             <div class="lg:col-span-5 flex justify-center relative">
@@ -731,6 +739,31 @@
                 </div>
 
             </div>
+
+            <!-- BADGE APPROUVÉ PAR LES ENSEIGNANTS -->
+            <div class="glass-panel rounded-3xl p-8 md:p-10 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-cosmic-green/10 rounded-full blur-3xl -z-10"></div>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-shrink-0 w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
+                        <img src="assets/teacher-approved.png" alt="Approuvé par les enseignants" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('ta-emblem-big').style.display='block';">
+                        <div id="ta-emblem-big" style="display:none;" class="w-full h-full"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" fill="url(#tbg)" stroke="#00FF87" stroke-width="1.5"/><path d="M24 13 L37 18.5 L24 24 L11 18.5 Z" fill="#0B0B1E"/><path d="M17 21 V27 C17 28.8 20.1 30.5 24 30.5 C27.9 30.5 31 28.8 31 27 V21" stroke="#0B0B1E" stroke-width="2.2" fill="none"/><line x1="37" y1="18.5" x2="37" y2="26" stroke="#0B0B1E" stroke-width="1.6" stroke-linecap="round"/><circle cx="35" cy="34" r="8" fill="#00FF87" stroke="#0B0B1E" stroke-width="1.6"/><path d="M31.4 34 l2.3 2.3 l4.1-4.4" stroke="#0B0B1E" stroke-width="2.1" fill="none" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="tbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00F0FF"/><stop offset="1" stop-color="#00FF87"/></linearGradient></defs></svg></div>
+                    </div>
+                    <div class="flex-1 text-center md:text-left space-y-4">
+                        <span data-i18n="teacher_badge" class="inline-block text-xs font-extrabold tracking-widest text-cosmic-green uppercase font-display">Programme Google Play</span>
+                        <h3 data-i18n="teacher_title" class="text-2xl md:text-3xl font-display font-bold">Approuvé par les enseignants</h3>
+                        <p data-i18n="teacher_desc" class="text-gray-300 text-sm leading-relaxed">AstroCalcul a été évaluée et approuvée par des enseignants et des spécialistes dans le cadre du programme « Approuvé par les enseignants » de Google Play, gage d'une application de qualité pensée pour les enfants.</p>
+                        <p data-i18n="teacher_ages" class="text-xs font-bold text-cosmic-green uppercase tracking-widest font-display">Évaluée pour les enfants de 6 à 12 ans</p>
+                        <div class="flex flex-wrap gap-2 justify-center md:justify-start pt-1">
+                            <span data-i18n="teacher_q1" class="text-xs font-bold px-3 py-1.5 rounded-full bg-cosmic-green/10 border border-cosmic-green/20 text-cosmic-green">Mathématiques</span>
+                            <span data-i18n="teacher_q2" class="text-xs font-bold px-3 py-1.5 rounded-full bg-cosmic-green/10 border border-cosmic-green/20 text-cosmic-green">Divertissante et attrayante</span>
+                            <span data-i18n="teacher_q3" class="text-xs font-bold px-3 py-1.5 rounded-full bg-cosmic-green/10 border border-cosmic-green/20 text-cosmic-green">Conçue avec soin</span>
+                            <span data-i18n="teacher_q4" class="text-xs font-bold px-3 py-1.5 rounded-full bg-cosmic-green/10 border border-cosmic-green/20 text-cosmic-green">Simplicité d'utilisation</span>
+                            <span data-i18n="teacher_q5" class="text-xs font-bold px-3 py-1.5 rounded-full bg-cosmic-green/10 border border-cosmic-green/20 text-cosmic-green">Créativité et imagination</span>
+                            <span data-i18n="teacher_q6" class="text-xs font-bold px-3 py-1.5 rounded-full bg-cosmic-green/10 border border-cosmic-green/20 text-cosmic-green">Regard critique</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- AVIS DES PARENTS -->
@@ -945,6 +978,17 @@
                 playstore_sub: "DISPONIBLE SUR",
                 hero_age: "4-10 Ans",
                 hero_privacy: "Conforme RGPD",
+                teacher_hero: "Approuvé par les enseignants · Google Play",
+                teacher_badge: "Programme Google Play",
+                teacher_title: "Approuvé par les enseignants",
+                teacher_desc: "AstroCalcul a été évaluée et approuvée par des enseignants et des spécialistes dans le cadre du programme « Approuvé par les enseignants » de Google Play, gage d'une application de qualité pensée pour les enfants.",
+                teacher_ages: "Évaluée pour les enfants de 6 à 12 ans",
+                teacher_q1: "Mathématiques",
+                teacher_q2: "Divertissante et attrayante",
+                teacher_q3: "Conçue avec soin",
+                teacher_q4: "Simplicité d'utilisation",
+                teacher_q5: "Créativité et imagination",
+                teacher_q6: "Regard critique",
                 press_badge: "REVUE DE PRESSE",
                 press_title: "On parle de nous !",
                 press_subtitle: "Découvrez l'histoire derrière AstroCalcul et pourquoi les parents et médias partagent notre aventure.",
@@ -1032,6 +1076,17 @@
                 playstore_sub: "AVAILABLE ON",
                 hero_age: "Ages 4-10",
                 hero_privacy: "GDPR Compliant",
+                teacher_hero: "Teacher Approved · Google Play",
+                teacher_badge: "Google Play program",
+                teacher_title: "Teacher Approved",
+                teacher_desc: "AstroCalcul was reviewed and approved by teachers and specialists as part of Google Play's Teacher Approved program, a guarantee of a quality app designed for children.",
+                teacher_ages: "Reviewed for children aged 6 to 12",
+                teacher_q1: "Mathematics",
+                teacher_q2: "Fun and engaging",
+                teacher_q3: "Thoughtfully designed",
+                teacher_q4: "Easy to use",
+                teacher_q5: "Creativity and imagination",
+                teacher_q6: "Critical thinking",
                 press_badge: "PRESS COVERAGE",
                 press_title: "In the Media!",
                 press_subtitle: "Discover the story behind AstroCalcul and why parents and media are sharing our adventure.",
@@ -1119,6 +1174,17 @@
                 playstore_sub: "BESCHIKBAAR OP",
                 hero_age: "4-10 Jaar",
                 hero_privacy: "AVG-conform",
+                teacher_hero: "Goedgekeurd door leerkrachten · Google Play",
+                teacher_badge: "Google Play-programma",
+                teacher_title: "Goedgekeurd door leerkrachten",
+                teacher_desc: "AstroCalcul werd beoordeeld en goedgekeurd door leerkrachten en specialisten in het kader van het programma 'Goedgekeurd door leerkrachten' van Google Play, een garantie voor een kwaliteitsvolle app voor kinderen.",
+                teacher_ages: "Beoordeeld voor kinderen van 6 tot 12 jaar",
+                teacher_q1: "Wiskunde",
+                teacher_q2: "Leuk en boeiend",
+                teacher_q3: "Zorgvuldig ontworpen",
+                teacher_q4: "Gebruiksgemak",
+                teacher_q5: "Creativiteit en verbeelding",
+                teacher_q6: "Kritisch denken",
                 press_badge: "IN DE MEDIA",
                 press_title: "In de pers!",
                 press_subtitle: "Ontdek het verhaal achter AstroCalcul en waarom ouders en media ons avontuur delen.",
