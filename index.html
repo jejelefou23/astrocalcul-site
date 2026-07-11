@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon (logo affiché dans l'onglet du navigateur) -->
-    <link rel="icon" type="image/png" href="./assets/logo.png">
-    <link rel="apple-touch-icon" href="./assets/logo.png">
+    <!-- Favicon dédié (carré) pour l'onglet ET les résultats Google -->
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
+    <link rel="icon" type="image/png" href="./assets/favicon-96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon-180.png">
     
     <!-- Titre optimisé pour les moteurs de recherche (SEO) -->
     <title>AstroCalcul | Jeu de calcul mental et tables de multiplication pour enfants</title>
@@ -178,6 +181,26 @@
     </script>
     <!-- Umami Analytics (sans cookie, sans donnee personnelle) -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="89600733-b04f-492a-99ce-688a591b4dfc"></script>
+
+    <!-- Donnée structurée WebSite (pour afficher "AstroCalcul" comme nom de site dans Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AstroCalcul",
+      "alternateName": "AstroCalcul - Jeu de calcul mental pour enfants",
+      "url": "https://jejelefou23.github.io/astrocalcul-site/",
+      "inLanguage": ["fr", "en", "nl"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "AstroCalcul",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://jejelefou23.github.io/astrocalcul-site/assets/logo.png"
+        }
+      }
+    }
+    </script>
 </head>
 <body class="text-white relative min-h-screen">
 
