@@ -52,10 +52,11 @@
                 <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
             </a>
 
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide">
+            <nav class="hidden">
                 <a href="../index.html#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
                 <a href="../index.html#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
                 <a href="./index.html" data-i18n="nav_blog" class="text-cosmic-green transition-colors">Conseils aux parents</a>
+                <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="inline-flex items-center gap-2 text-gray-300 hover:text-[#1877F2] transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
             </nav>
 
             <div class="flex items-center space-x-3">
@@ -65,17 +66,18 @@
                     <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
                 </div>
                 <a href="../index.html#download-cta" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">TÉLÉCHARGER</a>
-                <button onclick="toggleMobileMenu()" id="burger-btn" class="md:hidden p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
                     <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="md:hidden hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+        <div id="mobile-menu" class="hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
             <a href="../index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
             <a href="../index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
             <a href="./index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-cosmic-green hover:bg-white/5 transition-colors">Conseils aux parents</a>
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-[#1877F2] transition-colors inline-flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
             <a href="../index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
         </div>
     </header>
@@ -130,6 +132,9 @@
             <span>•</span>
             <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact" class="hover:text-cosmic-cyan transition-colors">Contact</a>
         </div>
+        <div class="flex items-center justify-center pt-1">
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" aria-label="AstroCalcul sur Facebook" data-umami-event="clic-facebook" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-200"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
         <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
     </footer>
 
@@ -137,7 +142,7 @@
         const T = {
             fr: {
                 doc_title: "Conseils aux parents | AstroCalcul",
-                nav_features: "Fonctionnalités", nav_parents: "Espace Parents", nav_blog: "Conseils aux parents", nav_demo: "TÉLÉCHARGER",
+                nav_features: "Fonctionnalités", nav_parents: "Espace Parents", nav_blog: "Conseils aux parents", nav_facebook: "Rejoignez-nous sur Facebook", nav_demo: "TÉLÉCHARGER",
                 blog_badge: "Le blog AstroCalcul", blog_title: "Conseils aux parents",
                 blog_subtitle: "Des méthodes simples et bienveillantes pour aider votre enfant à apprendre les maths, sans stress et en s'amusant.",
                 a1_label: "Tables de multiplication", a1_title: "Comment apprendre les tables de multiplication facilement ?",
@@ -152,7 +157,7 @@
             },
             en: {
                 doc_title: "Parents' Tips | AstroCalcul",
-                nav_features: "Features", nav_parents: "Parents' Space", nav_blog: "Parents' Tips", nav_demo: "DOWNLOAD",
+                nav_features: "Features", nav_parents: "Parents' Space", nav_blog: "Parents' Tips", nav_facebook: "Join us on Facebook", nav_demo: "DOWNLOAD",
                 blog_badge: "The AstroCalcul blog", blog_title: "Parents' Tips",
                 blog_subtitle: "Simple, caring methods to help your child learn maths, stress-free and while having fun.",
                 a1_label: "Multiplication tables", a1_title: "How to learn the multiplication tables easily?",
@@ -167,7 +172,7 @@
             },
             nl: {
                 doc_title: "Tips voor ouders | AstroCalcul",
-                nav_features: "Kenmerken", nav_parents: "Oudersruimte", nav_blog: "Tips voor ouders", nav_demo: "DOWNLOADEN",
+                nav_features: "Kenmerken", nav_parents: "Oudersruimte", nav_blog: "Tips voor ouders", nav_facebook: "Volg ons op Facebook", nav_demo: "DOWNLOADEN",
                 blog_badge: "De AstroCalcul-blog", blog_title: "Tips voor ouders",
                 blog_subtitle: "Eenvoudige en zorgzame methodes om je kind spelenderwijs en zonder stress te helpen rekenen te leren.",
                 a1_label: "Tafels van vermenigvuldiging", a1_title: "Hoe leer je gemakkelijk de tafels van vermenigvuldiging?",
