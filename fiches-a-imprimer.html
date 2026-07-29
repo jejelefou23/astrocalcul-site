@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fiches d'exercices de maths à imprimer (gratuit) | AstroCalcul</title>
+    <meta name="description" content="Générez et imprimez gratuitement des fiches d'exercices de calcul mental : additions, soustractions, multiplications et divisions. Choisissez les tables et mixez les opérations.">
+
+    <link rel="canonical" href="https://jejelefou23.github.io/astrocalcul-site/fiches-a-imprimer.html" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
+    <link rel="icon" type="image/png" href="./assets/favicon-96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon-180.png">
+
+    <meta property="og:site_name" content="AstroCalcul" />
+    <meta property="og:title" content="Fiches d'exercices de maths à imprimer (gratuit)" />
+    <meta property="og:description" content="Générez et imprimez gratuitement des fiches de calcul mental : additions, soustractions, multiplications, divisions." />
+    <meta property="og:image" content="https://jejelefou23.github.io/astrocalcul-site/assets/og-banner.png" />
+    <meta property="og:url" content="https://jejelefou23.github.io/astrocalcul-site/fiches-a-imprimer.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org", "@type": "WebApplication",
+      "name": "Générateur de fiches d'exercices AstroCalcul",
+      "description": "Générez et imprimez gratuitement des fiches de calcul mental : additions, soustractions, multiplications et divisions.",
+      "url": "https://jejelefou23.github.io/astrocalcul-site/fiches-a-imprimer.html",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "inLanguage": ["fr","en","nl"]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            colors: { space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' }, cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' } },
+            fontFamily: { sans: ['Nunito','ui-sans-serif','system-ui','sans-serif'], display: ['Fredoka','Nunito','sans-serif'] }
+        } } }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #0B0B1E; overflow-x: hidden; }
+        .cosmic-glow { filter: blur(120px); opacity: 0.15; pointer-events: none; }
+        .glass-panel { background: rgba(20, 20, 50, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+
+        /* La "feuille" imprimable */
+        .sheet {
+            background: #ffffff; color: #111; border-radius: 8px;
+            width: 100%; max-width: 800px; margin: 0 auto;
+            padding: 32px 36px; box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        .sheet h2, .sheet .brand-name { font-family: 'Fredoka', sans-serif; }
+        .problems-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 20px; }
+        @media (max-width: 640px) { .problems-grid { grid-template-columns: repeat(2, 1fr); } }
+        .problem { font-size: 17px; font-weight: 700; color: #111; white-space: nowrap; }
+        .problem .idx { color: #A12EFF; font-size: 12px; margin-right: 4px; }
+        .blank { display: inline-block; min-width: 34px; border-bottom: 2px solid #bbb; margin-left: 4px; }
+        .answers-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px 16px; }
+
+        /* Impression : n'imprimer que la feuille */
+        @media print {
+            @page { size: A4; margin: 12mm; }
+            body { background: #fff !important; }
+            .no-print { display: none !important; }
+            .sheet { box-shadow: none; max-width: 100%; padding: 0; border-radius: 0; }
+            .page-break { break-before: page; }
+            * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body class="text-white relative min-h-screen">
+
+    <canvas id="stars-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none no-print"></canvas>
+    <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10 no-print"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10 no-print"></div>
+
+    <!-- HEADER -->
+    <header class="no-print w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="./index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-cosmic-cyan/10 group-hover:scale-105 transition-transform duration-300">
+                    <img src="./assets/logo.png" alt="AstroCalcul" class="w-full h-full object-cover">
+                </div>
+                <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
+            </a>
+            <nav class="hidden"></nav>
+            <div class="flex items-center space-x-3">
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display">
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display">FR</button>
+                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">EN</button>
+                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
+                </div>
+                <a href="./index.html#download-cta" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">TÉLÉCHARGER</a>
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <a href="./index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+            <a href="./index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+            <a href="./blog/index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-green transition-colors">Conseils aux parents</a>
+            <a href="./fiches-a-imprimer.html" data-i18n="nav_print" class="py-2.5 px-2 rounded-lg text-cosmic-cyan hover:bg-white/5 transition-colors">Fiches à imprimer</a>
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-[#1877F2] transition-colors inline-flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
+            <a href="./index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 md:px-12 py-12 space-y-10">
+
+        <!-- Intro -->
+        <div class="no-print text-center max-w-3xl mx-auto space-y-4">
+            <div class="inline-block bg-cosmic-cyan/10 border border-cosmic-cyan/20 px-4 py-1.5 rounded-full">
+                <span data-i18n="page_badge" class="text-xs font-extrabold tracking-widest text-cosmic-cyan uppercase font-display">Gratuit &amp; sans inscription</span>
+            </div>
+            <h1 data-i18n="page_title" class="text-3xl md:text-5xl font-display font-bold">Fiches d'exercices à imprimer</h1>
+            <p data-i18n="page_desc" class="text-gray-300 text-lg">Choisissez vos opérations et vos tables, générez une fiche, et imprimez-la gratuitement. Additions, soustractions, multiplications, divisions — à mixer comme vous voulez.</p>
+        </div>
+
+        <!-- PANNEAU DE CONFIGURATION -->
+        <div class="no-print glass-panel rounded-3xl p-6 md:p-8 space-y-8">
+
+            <!-- Opérations -->
+            <div class="space-y-3">
+                <label data-i18n="lbl_ops" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">1. Opérations (mixez-les !)</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="ops-container">
+                    <button data-op="add" onclick="toggleOp('add')" class="op-btn py-3 rounded-2xl border text-sm font-display font-bold transition-all bg-space-800 border-cosmic-green text-cosmic-green">+ <span data-i18n="op_add">Addition</span></button>
+                    <button data-op="sub" onclick="toggleOp('sub')" class="op-btn py-3 rounded-2xl border text-sm font-display font-bold transition-all border-white/10 hover:border-white/25 text-gray-300">− <span data-i18n="op_sub">Soustraction</span></button>
+                    <button data-op="mul" onclick="toggleOp('mul')" class="op-btn py-3 rounded-2xl border text-sm font-display font-bold transition-all bg-space-800 border-cosmic-cyan text-cosmic-cyan">× <span data-i18n="op_mul">Multiplication</span></button>
+                    <button data-op="div" onclick="toggleOp('div')" class="op-btn py-3 rounded-2xl border text-sm font-display font-bold transition-all border-white/10 hover:border-white/25 text-gray-300">÷ <span data-i18n="op_div">Division</span></button>
+                </div>
+            </div>
+
+            <!-- Tables -->
+            <div class="space-y-3">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <label data-i18n="lbl_tables" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">2. Nombres à travailler</label>
+                    <div class="flex gap-2">
+                        <button onclick="selectAllTables(true)" data-i18n="btn_all" class="text-xs font-bold text-cosmic-cyan hover:underline">Tout</button>
+                        <button onclick="selectAllTables(false)" data-i18n="btn_none" class="text-xs font-bold text-gray-500 hover:underline">Aucun</button>
+                    </div>
+                </div>
+                <p data-i18n="tables_hint" class="text-xs text-gray-500 -mt-1">Pour × et ÷ ce sont les tables ; pour + et − ce sont les nombres utilisés dans les calculs.</p>
+                <div class="grid grid-cols-6 sm:grid-cols-12 gap-2" id="tables-container"></div>
+            </div>
+
+            <!-- Options -->
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div class="space-y-3">
+                    <label data-i18n="lbl_count" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">3. Nombre d'exercices</label>
+                    <select id="count-select" onchange="setCount(parseInt(this.value))" class="w-full py-2.5 px-3 rounded-xl bg-space-800 border border-white/10 text-white font-display font-bold text-sm focus:outline-none focus:border-cosmic-cyan cursor-pointer">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20" selected>20</option>
+                    </select>
+                </div>
+                <div class="space-y-3">
+                    <label data-i18n="lbl_extra" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">4. Options</label>
+                    <label class="flex items-center gap-3 py-2.5 px-3 rounded-xl bg-space-800 border border-white/10 cursor-pointer">
+                        <input type="checkbox" id="opt-answers" class="w-4 h-4 accent-cosmic-cyan">
+                        <span data-i18n="opt_answers" class="text-sm font-bold text-gray-200">Ajouter le corrigé (page séparée)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                <button onclick="generate()" data-i18n="btn_generate" class="flex-1 py-3.5 rounded-2xl bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black hover:scale-[1.02] active:scale-95 transition-transform">🚀 Générer la fiche</button>
+                <button onclick="window.print()" data-i18n="btn_print" class="flex-1 py-3.5 rounded-2xl bg-white/10 border border-white/15 text-white font-display font-black hover:bg-white/20 transition-colors">🖨️ Imprimer</button>
+            </div>
+            <p id="config-msg" class="text-cosmic-pink text-sm font-bold text-center hidden" data-i18n="msg_empty">Sélectionnez au moins une opération et une table.</p>
+        </div>
+
+        <!-- APERÇU / FEUILLE IMPRIMABLE -->
+        <div class="sheet" id="sheet">
+            <!-- En-tête de la feuille -->
+            <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid #eee; padding-bottom:16px; margin-bottom:20px;">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <img src="./assets/logo.png" alt="AstroCalcul" style="width:52px; height:52px; border-radius:12px; object-fit:cover;">
+                    <div>
+                        <div class="brand-name" style="font-size:22px; font-weight:700; color:#1D1D4A; line-height:1;">AstroCalcul</div>
+                        <div id="sheet-subtitle" style="font-size:12px; color:#888; font-weight:700;">Fiche d'entraînement</div>
+                    </div>
+                </div>
+                <img src="./assets/astronaute-hero.png" alt="" style="width:64px; height:64px; object-fit:contain;">
+            </div>
+
+            <!-- Champs nom / date -->
+            <div style="display:flex; gap:24px; margin-bottom:22px; font-size:13px; color:#555; font-weight:700;">
+                <div style="flex:1;"><span id="lbl-name">Prénom</span> : <span style="display:inline-block; border-bottom:1px solid #ccc; min-width:140px;"></span></div>
+                <div><span id="lbl-date">Date</span> : <span style="display:inline-block; border-bottom:1px solid #ccc; min-width:100px;"></span></div>
+                <div><span id="lbl-score">Score</span> : <span style="display:inline-block; border-bottom:1px solid #ccc; min-width:60px;"></span></div>
+            </div>
+
+            <!-- Grille d'exercices -->
+            <div class="problems-grid" id="problems"></div>
+
+            <!-- Pied de feuille : QR + message -->
+            <div style="display:flex; align-items:center; gap:16px; border-top:2px solid #eee; padding-top:16px; margin-top:28px;">
+                <img src="./assets/qr-astrocalcul.png" alt="QR code AstroCalcul" style="width:70px; height:70px;">
+                <div style="font-size:12px; color:#555; font-weight:700; line-height:1.5;">
+                    <div id="sheet-cta" style="color:#1D1D4A; font-size:14px;">Entraîne-toi en t'amusant avec l'appli AstroCalcul !</div>
+                    <div>jejelefou23.github.io/astrocalcul-site</div>
+                </div>
+            </div>
+
+            <!-- Corrigé (page séparée, si demandé) -->
+            <div id="answers-section" style="display:none;">
+                <div class="page-break"></div>
+                <div style="display:flex; align-items:center; gap:12px; border-bottom:2px solid #eee; padding-bottom:16px; margin:0 0 20px;">
+                    <img src="./assets/logo.png" alt="" style="width:40px; height:40px; border-radius:10px; object-fit:cover;">
+                    <div class="brand-name" id="answers-title" style="font-size:20px; font-weight:700; color:#1D1D4A;">Corrigé</div>
+                </div>
+                <div class="answers-grid" id="answers"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="no-print border-t border-white/5 pt-10 pb-12 text-center space-y-4 max-w-5xl mx-auto px-6">
+        <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-gray-500">
+            <a href="./index.html" data-i18n="footer_home" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
+            <span>•</span>
+            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="footer_privacy" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
+            <span>•</span>
+            <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact" class="hover:text-cosmic-cyan transition-colors">Contact</a>
+        </div>
+    </footer>
+
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="89600733-b04f-492a-99ce-688a591b4dfc"></script>
+    <script>
+        // ---------- i18n ----------
+        const T = {
+            fr: { doc_title:"Fiches d'exercices de maths à imprimer (gratuit) | AstroCalcul",
+                nav_features:"Fonctionnalités", nav_parents:"Espace Parents", nav_blog:"Conseils aux parents", nav_print:"Fiches à imprimer", nav_facebook:"Rejoignez-nous sur Facebook", nav_demo:"TÉLÉCHARGER",
+                page_badge:"Gratuit & sans inscription", page_title:"Fiches d'exercices à imprimer",
+                page_desc:"Choisissez vos opérations et vos tables, générez une fiche, et imprimez-la gratuitement. Additions, soustractions, multiplications, divisions — à mixer comme vous voulez.",
+                lbl_ops:"1. Opérations (mixez-les !)", op_add:"Addition", op_sub:"Soustraction", op_mul:"Multiplication", op_div:"Division",
+                lbl_tables:"2. Nombres à travailler", tables_hint:"Pour × et ÷ ce sont les tables ; pour + et − ce sont les nombres utilisés dans les calculs.", btn_all:"Tout", btn_none:"Aucun",
+                lbl_count:"3. Nombre d'exercices", lbl_extra:"4. Options", opt_answers:"Ajouter le corrigé (page séparée)",
+                btn_generate:"🚀 Générer la fiche", btn_print:"🖨️ Imprimer", msg_empty:"Sélectionnez au moins une opération et une table.",
+                sheet_subtitle:"Fiche d'entraînement", lbl_name:"Prénom", lbl_date:"Date", lbl_score:"Score",
+                sheet_cta:"Entraîne-toi en t'amusant avec l'appli AstroCalcul !", answers_title:"Corrigé",
+                footer_desc:"L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.",
+                footer_home:"Accueil", footer_privacy:"Confidentialité", footer_contact:"Contact" },
+            en: { doc_title:"Printable math worksheets (free) | AstroCalcul",
+                nav_features:"Features", nav_parents:"Parents' Space", nav_blog:"Parents' Tips", nav_print:"Printable sheets", nav_facebook:"Join us on Facebook", nav_demo:"DOWNLOAD",
+                page_badge:"Free & no sign-up", page_title:"Printable worksheets",
+                page_desc:"Choose your operations and tables, generate a worksheet, and print it for free. Additions, subtractions, multiplications, divisions — mix them however you like.",
+                lbl_ops:"1. Operations (mix them!)", op_add:"Addition", op_sub:"Subtraction", op_mul:"Multiplication", op_div:"Division",
+                lbl_tables:"2. Numbers to practise", tables_hint:"For × and ÷ these are the tables; for + and − these are the numbers used in the calculations.", btn_all:"All", btn_none:"None",
+                lbl_count:"3. Number of exercises", lbl_extra:"4. Options", opt_answers:"Add the answer key (separate page)",
+                btn_generate:"🚀 Generate worksheet", btn_print:"🖨️ Print", msg_empty:"Select at least one operation and one table.",
+                sheet_subtitle:"Practice worksheet", lbl_name:"Name", lbl_date:"Date", lbl_score:"Score",
+                sheet_cta:"Keep practising while having fun with the AstroCalcul app!", answers_title:"Answer key",
+                footer_desc:"Playful and secure mental math learning for young space explorers.",
+                footer_home:"Home", footer_privacy:"Privacy", footer_contact:"Contact" },
+            nl: { doc_title:"Rekenbladen om af te printen (gratis) | AstroCalcul",
+                nav_features:"Kenmerken", nav_parents:"Oudersruimte", nav_blog:"Tips voor ouders", nav_print:"Werkbladen printen", nav_facebook:"Volg ons op Facebook", nav_demo:"DOWNLOADEN",
+                page_badge:"Gratis & zonder registratie", page_title:"Werkbladen om af te printen",
+                page_desc:"Kies je bewerkingen en tafels, genereer een werkblad en print het gratis. Optellen, aftrekken, vermenigvuldigen, delen — meng ze zoals je wilt.",
+                lbl_ops:"1. Bewerkingen (meng ze!)", op_add:"Optellen", op_sub:"Aftrekken", op_mul:"Vermenigvuldigen", op_div:"Delen",
+                lbl_tables:"2. Getallen om te oefenen", tables_hint:"Voor × en ÷ zijn dit de tafels; voor + en − zijn dit de gebruikte getallen.", btn_all:"Alles", btn_none:"Geen",
+                lbl_count:"3. Aantal oefeningen", lbl_extra:"4. Opties", opt_answers:"Correctiesleutel toevoegen (aparte pagina)",
+                btn_generate:"🚀 Werkblad genereren", btn_print:"🖨️ Afdrukken", msg_empty:"Selecteer minstens één bewerking en één tafel.",
+                sheet_subtitle:"Oefenblad", lbl_name:"Naam", lbl_date:"Datum", lbl_score:"Score",
+                sheet_cta:"Blijf spelenderwijs oefenen met de AstroCalcul-app!", answers_title:"Correctiesleutel",
+                footer_desc:"Speels en veilig hoofdrekenen leren voor jonge ruimtevaarders.",
+                footer_home:"Home", footer_privacy:"Privacy", footer_contact:"Contact" }
+        };
+        const LANGS = ['fr','en','nl'];
+        let lang = localStorage.getItem('astrocalcul_lang') || 'fr';
+        function applyLang(l) {
+            lang = l; localStorage.setItem('astrocalcul_lang', l);
+            document.documentElement.lang = l;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const k = e.getAttribute('data-i18n'); if (T[l] && T[l][k] != null) e.innerHTML = T[l][k]; });
+            if (T[l].doc_title) document.title = T[l].doc_title;
+            // libellés dans la feuille (non-data-i18n)
+            document.getElementById('sheet-subtitle').textContent = T[l].sheet_subtitle;
+            document.getElementById('lbl-name').textContent = T[l].lbl_name;
+            document.getElementById('lbl-date').textContent = T[l].lbl_date;
+            document.getElementById('lbl-score').textContent = T[l].lbl_score;
+            document.getElementById('sheet-cta').textContent = T[l].sheet_cta;
+            document.getElementById('answers-title').textContent = T[l].answers_title;
+            LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
+        }
+        function changeLanguage(l) { applyLang(l); }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            document.getElementById('burger-icon').classList.toggle('hidden', open);
+            document.getElementById('close-icon').classList.toggle('hidden', !open);
+            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
+        }
+
+        // ---------- État du générateur ----------
+        const state = { ops: new Set(['add','mul']), tables: new Set([2,3,4,5,10]), count: 20 };
+
+        // Boutons tables 1..12
+        const tablesContainer = document.getElementById('tables-container');
+        for (let n = 1; n <= 10; n++) {
+            const b = document.createElement('button');
+            b.textContent = n;
+            b.dataset.n = n;
+            b.onclick = () => toggleTable(n);
+            b.className = 'table-btn py-2 rounded-lg border text-sm font-display font-bold transition-all';
+            tablesContainer.appendChild(b);
+        }
+        function refreshTableBtns() {
+            document.querySelectorAll('.table-btn').forEach(b => {
+                const on = state.tables.has(parseInt(b.dataset.n));
+                b.className = 'table-btn py-2 rounded-lg border text-sm font-display font-bold transition-all ' +
+                    (on ? 'bg-space-800 border-cosmic-cyan text-cosmic-cyan' : 'border-white/10 hover:border-white/25 text-gray-400');
+            });
+        }
+        function refreshOpBtns() {
+            const colors = { add:'cosmic-green', sub:'cosmic-pink', mul:'cosmic-cyan', div:'cosmic-purple' };
+            document.querySelectorAll('.op-btn').forEach(b => {
+                const op = b.dataset.op, on = state.ops.has(op), c = colors[op];
+                b.className = 'op-btn py-3 rounded-2xl border text-sm font-display font-bold transition-all ' +
+                    (on ? `bg-space-800 border-${c} text-${c}` : 'border-white/10 hover:border-white/25 text-gray-300');
+            });
+        }
+        function toggleOp(op){ state.ops.has(op) ? state.ops.delete(op) : state.ops.add(op); refreshOpBtns(); }
+        function toggleTable(n){ state.tables.has(n) ? state.tables.delete(n) : state.tables.add(n); refreshTableBtns(); }
+        function selectAllTables(all){ state.tables = new Set(all ? Array.from({length:10},(_,i)=>i+1) : []); refreshTableBtns(); }
+        function setCount(c){ state.count = c; }
+
+        function rand(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
+        function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+        function makeProblem() {
+            const op = pick(Array.from(state.ops));
+            const base = pick(Array.from(state.tables));
+            const b = rand(1,10);
+            if (op === 'add')  return { text:`${base} + ${b}`, ans: base + b };
+            if (op === 'mul')  return { text:`${base} × ${b}`, ans: base * b };
+            if (op === 'sub')  return { text:`${base + b} − ${b}`, ans: base };      // résultat = base, jamais négatif
+            if (op === 'div')  return { text:`${base * b} ÷ ${b}`, ans: base };       // division entière propre
+        }
+
+        function generate() {
+            const msg = document.getElementById('config-msg');
+            if (state.ops.size === 0 || state.tables.size === 0) { msg.classList.remove('hidden'); return; }
+            msg.classList.add('hidden');
+
+            const probs = [];
+            for (let i = 0; i < state.count; i++) probs.push(makeProblem());
+
+            // Grille d'exercices
+            const grid = document.getElementById('problems');
+            grid.innerHTML = '';
+            probs.forEach((p, i) => {
+                const d = document.createElement('div');
+                d.className = 'problem';
+                d.innerHTML = `<span class="idx">${i+1}.</span> ${p.text} = <span class="blank"></span>`;
+                grid.appendChild(d);
+            });
+
+            // Corrigé
+            const ansSection = document.getElementById('answers-section');
+            const ansGrid = document.getElementById('answers');
+            ansGrid.innerHTML = '';
+            if (document.getElementById('opt-answers').checked) {
+                probs.forEach((p, i) => {
+                    const d = document.createElement('div');
+                    d.className = 'problem';
+                    d.style.fontSize = '14px';
+                    d.innerHTML = `<span class="idx">${i+1}.</span> ${p.text} = <strong>${p.ans}</strong>`;
+                    ansGrid.appendChild(d);
+                });
+                ansSection.style.display = 'block';
+            } else {
+                ansSection.style.display = 'none';
+            }
+            document.getElementById('sheet').scrollIntoView({ behavior:'smooth', block:'start' });
+        }
+
+        // ---------- Étoiles ----------
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); }
+        function init() { stars = []; for (let i=0;i<80;i++){ stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005,c:Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF')}); } }
+        function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(st=>{ st.a+=st.s; if(st.a>1||st.a<0)st.s=-st.s; ctx.save(); ctx.globalAlpha=Math.max(0.1,st.a); ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2); ctx.fillStyle=st.c; ctx.fill(); ctx.restore(); }); requestAnimationFrame(animate); }
+        window.addEventListener('resize', resize);
+
+        // ---------- Init ----------
+        window.addEventListener('load', () => {
+            const p = new URLSearchParams(location.search).get('lang');
+            if (p && LANGS.includes(p)) lang = p;
+            applyLang(lang);
+            refreshOpBtns(); refreshTableBtns();
+            generate();
+            resize(); animate();
+        });
+    </script>
+</body>
+</html>
