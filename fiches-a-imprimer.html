@@ -373,7 +373,16 @@
             msg.classList.add('hidden');
 
             const probs = [];
-            for (let i = 0; i < state.count; i++) probs.push(makeProblem());
+            const seen = new Set();
+            let tries = 0;
+            const maxTries = state.count * 60;
+            while (probs.length < state.count && tries < maxTries) {
+                tries++;
+                const p = makeProblem();
+                if (seen.has(p.text)) continue;   // pas deux fois le même calcul
+                seen.add(p.text);
+                probs.push(p);
+            }
 
             // Grille d'exercices
             const grid = document.getElementById('problems');
