@@ -164,10 +164,11 @@
                 </div>
                 <div class="space-y-3">
                     <label data-i18n="lbl_extra" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">4. Options</label>
-                    <label class="flex items-center gap-3 py-2.5 px-3 rounded-xl bg-space-800 border border-white/10 cursor-pointer">
-                        <input type="checkbox" id="opt-answers" class="w-4 h-4 accent-cosmic-cyan">
-                        <span data-i18n="opt_answers" class="text-sm font-bold text-gray-200">Ajouter le corrigé (page séparée)</span>
-                    </label>
+                    <select id="answers-mode" class="w-full py-2.5 px-3 rounded-xl bg-space-800 border border-white/10 text-white font-display font-bold text-sm focus:outline-none focus:border-cosmic-cyan cursor-pointer">
+                        <option value="none" data-i18n="ans_none">Sans corrigé</option>
+                        <option value="below" data-i18n="ans_below">Corrigé en dessous (à plier)</option>
+                        <option value="page" data-i18n="ans_page">Corrigé sur une page séparée</option>
+                    </select>
                 </div>
             </div>
 
@@ -212,9 +213,15 @@
                 </div>
             </div>
 
-            <!-- Corrigé (page séparée, si demandé) -->
+            <!-- Corrigé (en dessous ou page séparée, selon l'option) -->
             <div id="answers-section" style="display:none;">
-                <div class="page-break"></div>
+                <div id="answers-pagebreak" class="page-break"></div>
+                <!-- Trait pointillé "à plier" (visible seulement en mode "en dessous") -->
+                <div id="fold-line" style="display:none; align-items:center; gap:10px; margin:26px 0 18px; color:#999;">
+                    <span style="flex:1; border-top:2px dashed #bbb;"></span>
+                    <span style="font-size:11px; font-weight:700; white-space:nowrap;">✂ <span id="fold-label">pliez ici</span></span>
+                    <span style="flex:1; border-top:2px dashed #bbb;"></span>
+                </div>
                 <div style="display:flex; align-items:center; gap:12px; border-bottom:2px solid #eee; padding-bottom:16px; margin:0 0 20px;">
                     <img src="./assets/logo.png" alt="" style="width:40px; height:40px; border-radius:10px; object-fit:cover;">
                     <div class="brand-name" id="answers-title" style="font-size:20px; font-weight:700; color:#1D1D4A;">Corrigé</div>
@@ -265,7 +272,7 @@
                 page_desc:"Choisissez vos opérations et vos tables, générez une fiche, et imprimez-la gratuitement. Additions, soustractions, multiplications, divisions — à mixer comme vous voulez.",
                 lbl_ops:"1. Opérations (mixez-les !)", op_add:"Addition", op_sub:"Soustraction", op_mul:"Multiplication", op_div:"Division",
                 lbl_tables:"2. Nombres à travailler", tables_hint:"Pour × et ÷ ce sont les tables ; pour + et − ce sont les nombres utilisés dans les calculs.", btn_all:"Tout", btn_none:"Aucun",
-                lbl_count:"3. Nombre d'exercices", lbl_extra:"4. Options", opt_answers:"Ajouter le corrigé (page séparée)",
+                lbl_count:"3. Nombre d'exercices", lbl_extra:"4. Options", ans_none:"Sans corrigé", ans_below:"Corrigé en dessous (à plier)", ans_page:"Corrigé sur une page séparée", fold_label:"pliez ici",
                 btn_generate:"🚀 Générer la fiche", btn_print:"🖨️ Imprimer", msg_empty:"Sélectionnez au moins une opération et une table.",
                 sheet_subtitle:"Fiche d'entraînement", lbl_name:"Prénom", lbl_date:"Date", lbl_score:"Score",
                 sheet_cta:"Entraîne-toi en t'amusant avec l'appli AstroCalcul !", answers_title:"Corrigé",
@@ -277,7 +284,7 @@
                 page_desc:"Choose your operations and tables, generate a worksheet, and print it for free. Additions, subtractions, multiplications, divisions — mix them however you like.",
                 lbl_ops:"1. Operations (mix them!)", op_add:"Addition", op_sub:"Subtraction", op_mul:"Multiplication", op_div:"Division",
                 lbl_tables:"2. Numbers to practise", tables_hint:"For × and ÷ these are the tables; for + and − these are the numbers used in the calculations.", btn_all:"All", btn_none:"None",
-                lbl_count:"3. Number of exercises", lbl_extra:"4. Options", opt_answers:"Add the answer key (separate page)",
+                lbl_count:"3. Number of exercises", lbl_extra:"4. Options", ans_none:"No answer key", ans_below:"Answer key below (fold)", ans_page:"Answer key on a separate page", fold_label:"fold here",
                 btn_generate:"🚀 Generate worksheet", btn_print:"🖨️ Print", msg_empty:"Select at least one operation and one table.",
                 sheet_subtitle:"Practice worksheet", lbl_name:"Name", lbl_date:"Date", lbl_score:"Score",
                 sheet_cta:"Keep practising while having fun with the AstroCalcul app!", answers_title:"Answer key",
@@ -289,7 +296,7 @@
                 page_desc:"Kies je bewerkingen en tafels, genereer een werkblad en print het gratis. Optellen, aftrekken, vermenigvuldigen, delen — meng ze zoals je wilt.",
                 lbl_ops:"1. Bewerkingen (meng ze!)", op_add:"Optellen", op_sub:"Aftrekken", op_mul:"Vermenigvuldigen", op_div:"Delen",
                 lbl_tables:"2. Getallen om te oefenen", tables_hint:"Voor × en ÷ zijn dit de tafels; voor + en − zijn dit de gebruikte getallen.", btn_all:"Alles", btn_none:"Geen",
-                lbl_count:"3. Aantal oefeningen", lbl_extra:"4. Opties", opt_answers:"Correctiesleutel toevoegen (aparte pagina)",
+                lbl_count:"3. Aantal oefeningen", lbl_extra:"4. Opties", ans_none:"Zonder correctiesleutel", ans_below:"Correctiesleutel eronder (vouwen)", ans_page:"Correctiesleutel op aparte pagina", fold_label:"hier vouwen",
                 btn_generate:"🚀 Werkblad genereren", btn_print:"🖨️ Afdrukken", msg_empty:"Selecteer minstens één bewerking en één tafel.",
                 sheet_subtitle:"Oefenblad", lbl_name:"Naam", lbl_date:"Datum", lbl_score:"Score",
                 sheet_cta:"Blijf spelenderwijs oefenen met de AstroCalcul-app!", answers_title:"Correctiesleutel",
@@ -310,6 +317,7 @@
             document.getElementById('lbl-score').textContent = T[l].lbl_score;
             document.getElementById('sheet-cta').textContent = T[l].sheet_cta;
             document.getElementById('answers-title').textContent = T[l].answers_title;
+            const fl = document.getElementById('fold-label'); if (fl) fl.textContent = T[l].fold_label;
             LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
         }
         function changeLanguage(l) { applyLang(l); }
@@ -397,8 +405,9 @@
             // Corrigé
             const ansSection = document.getElementById('answers-section');
             const ansGrid = document.getElementById('answers');
+            const mode = document.getElementById('answers-mode').value;
             ansGrid.innerHTML = '';
-            if (document.getElementById('opt-answers').checked) {
+            if (mode !== 'none') {
                 probs.forEach((p, i) => {
                     const d = document.createElement('div');
                     d.className = 'problem';
@@ -406,11 +415,13 @@
                     d.innerHTML = `<span class="idx">${i+1}.</span> ${p.text} = <strong>${p.ans}</strong>`;
                     ansGrid.appendChild(d);
                 });
+                // Page séparée -> saut de page + pas de trait. En dessous -> trait pointillé + pas de saut.
+                document.getElementById('answers-pagebreak').style.display = (mode === 'page') ? 'block' : 'none';
+                document.getElementById('fold-line').style.display = (mode === 'below') ? 'flex' : 'none';
                 ansSection.style.display = 'block';
             } else {
                 ansSection.style.display = 'none';
             }
-            document.getElementById('sheet').scrollIntoView({ behavior:'smooth', block:'start' });
         }
 
         // ---------- Étoiles ----------
