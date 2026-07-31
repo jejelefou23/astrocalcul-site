@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Comment apprendre la table de 7 (et les tables difficiles) ? | AstroCalcul</title>
+    <meta name="description" content="La table de 7 pose problème à votre enfant ? Découvrez des astuces simples pour mémoriser les tables de multiplication les plus difficiles (7, 8, 9) sans réciter bêtement.">
+
+    <link rel="canonical" href="https://astrocalcul.com/blog/table-de-7.html" />
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="apple-touch-icon" href="../assets/logo.png">
+
+    <meta property="og:site_name" content="AstroCalcul" />
+    <meta property="og:title" content="Comment apprendre la table de 7 (et les tables difficiles) ?" />
+    <meta property="og:description" content="Des astuces simples pour mémoriser les tables de multiplication les plus difficiles." />
+    <meta property="og:image" content="https://astrocalcul.com/assets/og-banner.png" />
+    <meta property="og:url" content="https://astrocalcul.com/blog/table-de-7.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org", "@type": "Article",
+      "headline": "Comment apprendre la table de 7 (et les tables difficiles) ?",
+      "description": "Des astuces simples pour mémoriser les tables de multiplication les plus difficiles.",
+      "image": "https://astrocalcul.com/assets/og-banner.png",
+      "author": { "@type": "Organization", "name": "AstroCalcul" },
+      "publisher": { "@type": "Organization", "name": "AstroCalcul", "logo": { "@type": "ImageObject", "url": "https://astrocalcul.com/assets/logo.png" } },
+      "mainEntityOfPage": "https://astrocalcul.com/blog/table-de-7.html", "inLanguage": "fr"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            colors: { space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' }, cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' } },
+            fontFamily: { sans: ['Nunito','ui-sans-serif','system-ui','sans-serif'], display: ['Fredoka','Nunito','sans-serif'] }
+        } } }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #0B0B1E; overflow-x: hidden; }
+        .cosmic-glow { filter: blur(120px); opacity: 0.15; pointer-events: none; }
+        .glass-panel { background: rgba(20, 20, 50, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .article-body h2 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.6rem; line-height: 1.3; margin-top: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .article-body p { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; }
+        .article-body ul { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; padding-left: 1.4rem; list-style: disc; }
+        .article-body li { margin-bottom: 0.4rem; }
+        .article-body strong { color: #fff; }
+    </style>
+    <!-- Umami Analytics (sans cookie, sans donnee personnelle) -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="89600733-b04f-492a-99ce-688a591b4dfc"></script>
+</head>
+<body class="text-white relative min-h-screen">
+
+    <canvas id="stars-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+    <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10"></div>
+
+    <header class="w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-cosmic-cyan/10">
+                    <img src="../assets/logo.png" alt="AstroCalcul" class="w-full h-full object-cover">
+                </div>
+                <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
+            </a>
+            <nav class="hidden">
+                <a href="../index.html#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+                <a href="../index.html#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+                <a href="./index.html" data-i18n="nav_blog" class="text-cosmic-green transition-colors">Conseils aux parents</a>
+                <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="inline-flex items-center gap-2 text-gray-300 hover:text-[#1877F2] transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display">
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display">FR</button>
+                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">EN</button>
+                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
+                </div>
+                <a href="../index.html#download-cta" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">TÉLÉCHARGER</a>
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <a href="../index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+            <a href="../index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+            <a href="./index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-cosmic-green hover:bg-white/5 transition-colors">Conseils aux parents</a>
+            <a href="../fiches-a-imprimer.html" data-i18n="nav_print" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fiches à imprimer</a>
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-[#1877F2] transition-colors inline-flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
+            <a href="../index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 md:px-8 py-12">
+
+        <nav class="text-xs text-gray-500 font-bold mb-6 flex flex-wrap items-center gap-2">
+            <a href="../index.html" data-i18n="bc_home" class="hover:text-cosmic-cyan">Accueil</a>
+            <span>›</span>
+            <a href="./index.html" data-i18n="bc_blog" class="hover:text-cosmic-cyan">Conseils aux parents</a>
+            <span>›</span>
+            <span data-i18n="bc_current" class="text-gray-400">Apprendre la table de 7</span>
+        </nav>
+
+        <article class="glass-panel rounded-3xl p-6 md:p-10">
+            <span data-i18n="kicker" class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Conseils aux parents</span>
+            <h1 data-i18n="h1" class="text-3xl md:text-4xl font-display font-bold leading-tight mt-3 mb-6">Comment apprendre la table de 7 (et les tables difficiles) ?</h1>
+
+            <!-- FR -->
+            <div data-lang="fr" class="article-body">
+                <p>Si votre enfant récite sans problème les tables de 2, 5 et 10 mais bloque sur la table de 7, rassurez-vous : c'est le cas de presque tous les enfants. Certaines tables sont réellement plus difficiles à mémoriser, et la table de 7 est championne dans cette catégorie. La bonne nouvelle, c'est qu'avec quelques astuces, même les tables réputées « impossibles » deviennent accessibles.</p>
+                <h2>Pourquoi certaines tables sont plus difficiles</h2>
+                <p>Les tables de 2, 5 et 10 ont des régularités faciles à repérer : les doubles, les nombres qui finissent par 0 ou 5, les dizaines. Le cerveau adore ces motifs. La table de 7 (comme celles de 8, et en partie de 6 et 9) n'a pas de motif aussi évident : ses résultats semblent « tomber au hasard ». C'est cette absence de repère visuel qui la rend difficile, pas un manque d'intelligence de l'enfant.</p>
+                <h2>Astuce 1 : vous en connaissez déjà la moitié</h2>
+                <p>La multiplication est <strong>commutative</strong> : 7 × 3 donne le même résultat que 3 × 7. Autrement dit, si votre enfant connaît déjà les tables de 2, 3, 4 et 5, il connaît déjà 7 × 2, 7 × 3, 7 × 4 et 7 × 5 sans le savoir ! Il ne reste vraiment à apprendre que 7 × 6, 7 × 7, 7 × 8 et 7 × 9. La montagne devient une colline.</p>
+                <h2>Astuce 2 : s'appuyer sur les tables faciles</h2>
+                <p>Plutôt que d'apprendre chaque résultat isolément, on peut le reconstruire à partir d'un résultat connu :</p>
+                <ul>
+                    <li><strong>7 × 6</strong> = 7 × 5 + 7 = 35 + 7 = 42 (on part de la table de 5, facile).</li>
+                    <li><strong>7 × 8</strong> = 7 × 10 − 7 × 2 = 70 − 14 = 56.</li>
+                    <li><strong>7 × 9</strong> = 7 × 10 − 7 = 70 − 7 = 63.</li>
+                </ul>
+                <p>Ces petits calculs semblent longs au début, mais à force de répétition, le résultat finit par venir tout seul. Et surtout, l'enfant <strong>comprend</strong> au lieu de réciter.</p>
+                <h2>Astuce 3 : le truc de la table de 9</h2>
+                <p>La table de 9 cache une régularité magique : dans chaque résultat, le chiffre des dizaines augmente de 1 et celui des unités diminue de 1 (09, 18, 27, 36, 45, 54, 63, 72, 81, 90). Et la somme des deux chiffres fait toujours 9 ! Montrez-le à votre enfant : c'est le genre de découverte qui rend les maths amusantes.</p>
+                <h2>La table de 7 pas à pas</h2>
+                <p>Pour ancrer la table de 7, faites-la réciter dans l'ordre, à voix haute, régulièrement : 7, 14, 21, 28, 35, 42, 49, 56, 63, 70. Une fois l'ordre maîtrisé, interrogez dans le désordre (« combien font 7 × 8 ? ») — c'est là que la mémorisation devient vraiment solide.</p>
+                <h2>Le secret : la répétition espacée et le jeu</h2>
+                <p>Aucune astuce ne remplace la <strong>répétition régulière</strong>. Mais réciter dix fois la même table est vite ennuyeux. C'est là que le jeu change tout : sous forme de défi, de score ou d'aventure, l'enfant répète les mêmes calculs avec plaisir, et retient bien mieux.</p>
+                <p>C'est exactement ce que fait <strong>AstroCalcul</strong> : son mode révision <strong>repère automatiquement les tables où votre enfant se trompe le plus</strong> (souvent le 7 et le 8) et lui propose davantage d'exercices dessus, sous forme de jeu spatial. L'enfant s'entraîne pile là où il en a besoin, sans même s'en rendre compte.</p>
+                <h2>En résumé</h2>
+                <p>La table de 7 n'a rien d'insurmontable. En s'appuyant sur la commutativité (vous en connaissez déjà la moitié), en reconstruisant les résultats difficiles à partir des tables faciles, et en pratiquant un peu chaque jour dans la bonne humeur, votre enfant viendra à bout des tables les plus coriaces. Le secret n'est pas de réciter plus fort, mais de <strong>comprendre et répéter avec plaisir</strong>.</p>
+            </div>
+
+            <!-- EN -->
+            <div data-lang="en" class="article-body" style="display:none">
+                <p>If your child recites the 2, 5 and 10 times tables without a hitch but gets stuck on the 7 times table, rest assured: it happens to almost every child. Some tables really are harder to memorise, and the 7 times table is the champion in that category. The good news is that with a few tricks, even the tables that seem "impossible" become manageable.</p>
+                <h2>Why some tables are harder</h2>
+                <p>The 2, 5 and 10 times tables have easy-to-spot patterns: doubles, numbers ending in 0 or 5, tens. The brain loves these patterns. The 7 times table (like the 8, and partly the 6 and 9) has no such obvious pattern: its results seem to "fall at random". It's this lack of a visual anchor that makes it hard, not a lack of intelligence on the child's part.</p>
+                <h2>Trick 1: you already know half of it</h2>
+                <p>Multiplication is <strong>commutative</strong>: 7 × 3 gives the same result as 3 × 7. In other words, if your child already knows the 2, 3, 4 and 5 times tables, they already know 7 × 2, 7 × 3, 7 × 4 and 7 × 5 without realising it! All that's really left to learn is 7 × 6, 7 × 7, 7 × 8 and 7 × 9. The mountain becomes a hill.</p>
+                <h2>Trick 2: lean on the easy tables</h2>
+                <p>Rather than learning each result in isolation, you can rebuild it from a known one:</p>
+                <ul>
+                    <li><strong>7 × 6</strong> = 7 × 5 + 7 = 35 + 7 = 42 (start from the easy 5 times table).</li>
+                    <li><strong>7 × 8</strong> = 7 × 10 − 7 × 2 = 70 − 14 = 56.</li>
+                    <li><strong>7 × 9</strong> = 7 × 10 − 7 = 70 − 7 = 63.</li>
+                </ul>
+                <p>These little calculations feel slow at first, but with repetition the result eventually comes on its own. And above all, the child <strong>understands</strong> instead of reciting.</p>
+                <h2>Trick 3: the 9 times table secret</h2>
+                <p>The 9 times table hides a magic pattern: in each result the tens digit goes up by 1 and the units digit goes down by 1 (09, 18, 27, 36, 45, 54, 63, 72, 81, 90). And the two digits always add up to 9! Show it to your child — it's the kind of discovery that makes maths fun.</p>
+                <h2>The 7 times table step by step</h2>
+                <p>To anchor the 7 times table, have it recited in order, out loud, regularly: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70. Once the order is mastered, quiz out of order ("what's 7 × 8?") — that's when memorisation becomes truly solid.</p>
+                <h2>The secret: spaced repetition and play</h2>
+                <p>No trick replaces <strong>regular repetition</strong>. But reciting the same table ten times quickly gets boring. That's where play changes everything: as a challenge, a score or an adventure, the child repeats the same calculations with pleasure, and remembers far better.</p>
+                <p>That's exactly what <strong>AstroCalcul</strong> does: its revision mode <strong>automatically spots the tables your child gets wrong most</strong> (often the 7 and the 8) and offers more exercises on them, as a space game. The child practises exactly where they need to, without even realising it.</p>
+                <h2>In summary</h2>
+                <p>The 7 times table is nothing insurmountable. By relying on commutativity (you already know half of it), rebuilding the hard results from the easy tables, and practising a little every day in good spirits, your child will conquer even the toughest tables. The secret isn't to recite louder, but to <strong>understand and repeat with pleasure</strong>.</p>
+            </div>
+
+            <!-- NL -->
+            <div data-lang="nl" class="article-body" style="display:none">
+                <p>Als je kind de tafels van 2, 5 en 10 vlot opzegt maar vastloopt op de tafel van 7, geen zorgen: het overkomt bijna elk kind. Sommige tafels zijn echt moeilijker te onthouden, en de tafel van 7 is kampioen in die categorie. Het goede nieuws is dat zelfs de tafels die "onmogelijk" lijken, met een paar trucs haalbaar worden.</p>
+                <h2>Waarom sommige tafels moeilijker zijn</h2>
+                <p>De tafels van 2, 5 en 10 hebben makkelijk herkenbare patronen: dubbels, getallen die op 0 of 5 eindigen, tientallen. De hersenen zijn dol op die patronen. De tafel van 7 (net als die van 8, en deels 6 en 9) heeft zo'n duidelijk patroon niet: de resultaten lijken "willekeurig te vallen". Dat gebrek aan een visueel houvast maakt hem moeilijk, niet een gebrek aan intelligentie bij het kind.</p>
+                <h2>Truc 1: je kent al de helft</h2>
+                <p>Vermenigvuldigen is <strong>commutatief</strong>: 7 × 3 geeft hetzelfde resultaat als 3 × 7. Met andere woorden: als je kind de tafels van 2, 3, 4 en 5 al kent, kent het 7 × 2, 7 × 3, 7 × 4 en 7 × 5 al zonder het te beseffen! Wat echt nog te leren valt, is alleen 7 × 6, 7 × 7, 7 × 8 en 7 × 9. De berg wordt een heuvel.</p>
+                <h2>Truc 2: steun op de makkelijke tafels</h2>
+                <p>In plaats van elk resultaat apart te leren, kun je het opbouwen uit een gekend resultaat:</p>
+                <ul>
+                    <li><strong>7 × 6</strong> = 7 × 5 + 7 = 35 + 7 = 42 (vertrek van de makkelijke tafel van 5).</li>
+                    <li><strong>7 × 8</strong> = 7 × 10 − 7 × 2 = 70 − 14 = 56.</li>
+                    <li><strong>7 × 9</strong> = 7 × 10 − 7 = 70 − 7 = 63.</li>
+                </ul>
+                <p>Die kleine berekeningen lijken traag in het begin, maar met herhaling komt het resultaat vanzelf. En vooral: het kind <strong>begrijpt</strong> in plaats van op te dreunen.</p>
+                <h2>Truc 3: het geheim van de tafel van 9</h2>
+                <p>De tafel van 9 verbergt een magisch patroon: in elk resultaat gaat het tiental met 1 omhoog en het eental met 1 omlaag (09, 18, 27, 36, 45, 54, 63, 72, 81, 90). En de som van beide cijfers is altijd 9! Toon het aan je kind: dat soort ontdekking maakt rekenen leuk.</p>
+                <h2>De tafel van 7 stap voor stap</h2>
+                <p>Om de tafel van 7 te verankeren, laat je hem regelmatig hardop in volgorde opzeggen: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70. Zodra de volgorde zit, vraag je door elkaar ("hoeveel is 7 × 8?") — dan pas wordt het geheugen echt stevig.</p>
+                <h2>Het geheim: gespreide herhaling en spel</h2>
+                <p>Geen enkele truc vervangt <strong>regelmatige herhaling</strong>. Maar dezelfde tafel tien keer opzeggen wordt snel saai. Daar verandert spel alles: als uitdaging, score of avontuur herhaalt het kind dezelfde berekeningen met plezier, en onthoudt het veel beter.</p>
+                <p>Dat is precies wat <strong>AstroCalcul</strong> doet: de herhalingsmodus <strong>spot automatisch de tafels waarop je kind zich het vaakst vergist</strong> (vaak de 7 en de 8) en biedt er meer oefeningen op aan, als ruimtespel. Het kind oefent net waar het nodig is, zonder het zelfs te beseffen.</p>
+                <h2>Samengevat</h2>
+                <p>De tafel van 7 is helemaal niet onoverkomelijk. Door te steunen op commutativiteit (je kent al de helft), de moeilijke resultaten op te bouwen uit de makkelijke tafels, en elke dag een beetje te oefenen in een goede sfeer, krijgt je kind zelfs de taaiste tafels onder de knie. Het geheim is niet luider opzeggen, maar <strong>begrijpen en met plezier herhalen</strong>.</p>
+            </div>
+            <div class="mt-10 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden border border-white/10 bg-gradient-to-r from-cosmic-pink/10 via-transparent to-cosmic-blue/10">
+                <h3 data-i18n="cta_title" class="text-xl md:text-2xl font-display font-bold mb-3">🚀 Et si la table de 7 devenait un jeu ?</h3>
+                <p data-i18n="cta_text" class="text-gray-300 text-sm max-w-xl mx-auto mb-5">AstroCalcul repère automatiquement les tables où votre enfant bute et les transforme en aventure spatiale. Sans publicité, conçu par un papa développeur.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="https://apps.apple.com/us/app/astrocalcul/id6760236661" data-umami-event="clic-app-store" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul" data-umami-event="clic-google-play" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">Google Play</a>
+                </div>
+            </div>
+        </article>
+
+        <div class="mt-8 text-center">
+            <a href="./index.html" data-i18n="back_link" class="text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm">← Tous les conseils aux parents</a>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 pt-10 pb-12 text-center space-y-4 max-w-5xl mx-auto px-6">
+        <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-gray-500">
+            <a href="../index.html" data-i18n="footer_home" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
+            <span>•</span>
+            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="footer_privacy" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
+            <span>•</span>
+            <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact" class="hover:text-cosmic-cyan transition-colors">Contact</a>
+        </div>
+        <div class="flex items-center justify-center pt-1">
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" aria-label="AstroCalcul sur Facebook" data-umami-event="clic-facebook" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-200"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
+        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+    </footer>
+
+    <script>
+        const T = {
+            fr: { doc_title:"Comment apprendre la table de 7 (et les tables difficiles) ? | AstroCalcul", nav_features:"Fonctionnalités", nav_parents:"Espace Parents", nav_blog:"Conseils aux parents", nav_facebook:"Rejoignez-nous sur Facebook", nav_print:"Fiches à imprimer", nav_demo:"TÉLÉCHARGER", bc_home:"Accueil", bc_blog:"Conseils aux parents", bc_current:"Apprendre la table de 7", kicker:"Conseils aux parents", h1:"Comment apprendre la table de 7 (et les tables difficiles) ?", cta_title:"🚀 Et si la table de 7 devenait un jeu ?", cta_text:"AstroCalcul repère automatiquement les tables où votre enfant bute et les transforme en aventure spatiale. Sans publicité, conçu par un papa développeur.", back_link:"← Tous les conseils aux parents", footer_desc:"L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.", footer_home:"Accueil", footer_privacy:"Confidentialité", footer_contact:"Contact", footer_rights:"Tous droits réservés." },
+            en: { doc_title:"How to learn the 7 times table (and the hard ones)? | AstroCalcul", nav_features:"Features", nav_parents:"Parents' Space", nav_blog:"Parents' Tips", nav_facebook:"Join us on Facebook", nav_print:"Printable sheets", nav_demo:"DOWNLOAD", bc_home:"Home", bc_blog:"Parents' Tips", bc_current:"Learning the 7 times table", kicker:"Parents' Tips", h1:"How to learn the 7 times table (and the hard ones)?", cta_title:"🚀 What if the 7 times table became a game?", cta_text:"AstroCalcul automatically spots the tables your child struggles with and turns them into a space adventure. Ad-free, designed by a developer dad.", back_link:"← All parents' tips", footer_desc:"Playful and secure mental math learning for young space explorers.", footer_home:"Home", footer_privacy:"Privacy", footer_contact:"Contact", footer_rights:"All rights reserved." },
+            nl: { doc_title:"Hoe leer je de tafel van 7 (en de moeilijke tafels)? | AstroCalcul", nav_features:"Kenmerken", nav_parents:"Oudersruimte", nav_blog:"Tips voor ouders", nav_facebook:"Volg ons op Facebook", nav_print:"Werkbladen printen", nav_demo:"DOWNLOADEN", bc_home:"Home", bc_blog:"Tips voor ouders", bc_current:"De tafel van 7 leren", kicker:"Tips voor ouders", h1:"Hoe leer je de tafel van 7 (en de moeilijke tafels)?", cta_title:"🚀 En als de tafel van 7 een spel werd?", cta_text:"AstroCalcul spot automatisch de tafels waar je kind mee worstelt en verandert ze in een ruimte-avontuur. Zonder reclame, ontworpen door een developer-papa.", back_link:"← Alle tips voor ouders", footer_desc:"Speels en veilig hoofdrekenen leren voor jonge ruimtevaarders.", footer_home:"Home", footer_privacy:"Privacy", footer_contact:"Contact", footer_rights:"Alle rechten voorbehouden." }
+        };
+        const LANGS = ['fr','en','nl'];
+        let lang = localStorage.getItem('astrocalcul_lang') || 'fr';
+        function applyLang(l) {
+            lang = l; localStorage.setItem('astrocalcul_lang', l);
+            document.documentElement.lang = l;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const k = e.getAttribute('data-i18n'); if (T[l] && T[l][k] != null) e.innerHTML = T[l][k]; });
+            document.querySelectorAll('[data-lang]').forEach(b => { b.style.display = (b.getAttribute('data-lang') === l) ? '' : 'none'; });
+            if (T[l].doc_title) document.title = T[l].doc_title;
+            LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
+        }
+        function changeLanguage(l) { applyLang(l); }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            document.getElementById('burger-icon').classList.toggle('hidden', open);
+            document.getElementById('close-icon').classList.toggle('hidden', !open);
+            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
+        }
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); }
+        function init() { stars = []; for (let i=0;i<100;i++){ stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005,c:Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF')}); } }
+        function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(st=>{ st.a+=st.s; if(st.a>1||st.a<0)st.s=-st.s; ctx.save(); ctx.globalAlpha=Math.max(0.1,st.a); ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2); ctx.fillStyle=st.c; ctx.fill(); ctx.restore(); }); requestAnimationFrame(animate); }
+        window.addEventListener('resize', resize);
+        window.addEventListener('load', () => {
+            const p = new URLSearchParams(location.search).get('lang');
+            if (p && LANGS.includes(p)) lang = p;
+            applyLang(lang); resize(); animate();
+        });
+    </script>
+</body>
+</html>

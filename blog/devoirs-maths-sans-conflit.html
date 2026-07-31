@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aider son enfant à faire ses devoirs de maths sans conflit | AstroCalcul</title>
+    <meta name="description" content="Les devoirs de maths tournent au conflit ? Découvrez des conseils concrets pour aider votre enfant sans crier, sans stress, et sans y passer la soirée.">
+
+    <link rel="canonical" href="https://astrocalcul.com/blog/devoirs-maths-sans-conflit.html" />
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="apple-touch-icon" href="../assets/logo.png">
+
+    <meta property="og:site_name" content="AstroCalcul" />
+    <meta property="og:title" content="Aider son enfant à faire ses devoirs de maths sans conflit" />
+    <meta property="og:description" content="Des conseils concrets pour accompagner votre enfant en maths sans tension ni cris." />
+    <meta property="og:image" content="https://astrocalcul.com/assets/og-banner.png" />
+    <meta property="og:url" content="https://astrocalcul.com/blog/devoirs-maths-sans-conflit.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org", "@type": "Article",
+      "headline": "Aider son enfant à faire ses devoirs de maths sans conflit",
+      "description": "Des conseils concrets pour accompagner votre enfant en maths sans tension ni cris.",
+      "image": "https://astrocalcul.com/assets/og-banner.png",
+      "author": { "@type": "Organization", "name": "AstroCalcul" },
+      "publisher": { "@type": "Organization", "name": "AstroCalcul", "logo": { "@type": "ImageObject", "url": "https://astrocalcul.com/assets/logo.png" } },
+      "mainEntityOfPage": "https://astrocalcul.com/blog/devoirs-maths-sans-conflit.html", "inLanguage": "fr"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            colors: { space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' }, cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' } },
+            fontFamily: { sans: ['Nunito','ui-sans-serif','system-ui','sans-serif'], display: ['Fredoka','Nunito','sans-serif'] }
+        } } }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #0B0B1E; overflow-x: hidden; }
+        .cosmic-glow { filter: blur(120px); opacity: 0.15; pointer-events: none; }
+        .glass-panel { background: rgba(20, 20, 50, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .article-body h2 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.6rem; line-height: 1.3; margin-top: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .article-body p { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; }
+        .article-body ul { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; padding-left: 1.4rem; list-style: disc; }
+        .article-body li { margin-bottom: 0.4rem; }
+        .article-body strong { color: #fff; }
+    </style>
+    <!-- Umami Analytics (sans cookie, sans donnee personnelle) -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="89600733-b04f-492a-99ce-688a591b4dfc"></script>
+</head>
+<body class="text-white relative min-h-screen">
+
+    <canvas id="stars-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+    <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10"></div>
+
+    <header class="w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-cosmic-cyan/10">
+                    <img src="../assets/logo.png" alt="AstroCalcul" class="w-full h-full object-cover">
+                </div>
+                <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
+            </a>
+            <nav class="hidden">
+                <a href="../index.html#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+                <a href="../index.html#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+                <a href="./index.html" data-i18n="nav_blog" class="text-cosmic-green transition-colors">Conseils aux parents</a>
+                <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="inline-flex items-center gap-2 text-gray-300 hover:text-[#1877F2] transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display">
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display">FR</button>
+                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">EN</button>
+                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
+                </div>
+                <a href="../index.html#download-cta" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">TÉLÉCHARGER</a>
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <a href="../index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+            <a href="../index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+            <a href="./index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-cosmic-green hover:bg-white/5 transition-colors">Conseils aux parents</a>
+            <a href="../fiches-a-imprimer.html" data-i18n="nav_print" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fiches à imprimer</a>
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-[#1877F2] transition-colors inline-flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
+            <a href="../index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 md:px-8 py-12">
+
+        <nav class="text-xs text-gray-500 font-bold mb-6 flex flex-wrap items-center gap-2">
+            <a href="../index.html" data-i18n="bc_home" class="hover:text-cosmic-cyan">Accueil</a>
+            <span>›</span>
+            <a href="./index.html" data-i18n="bc_blog" class="hover:text-cosmic-cyan">Conseils aux parents</a>
+            <span>›</span>
+            <span data-i18n="bc_current" class="text-gray-400">Les devoirs de maths sans conflit</span>
+        </nav>
+
+        <article class="glass-panel rounded-3xl p-6 md:p-10">
+            <span data-i18n="kicker" class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Conseils aux parents</span>
+            <h1 data-i18n="h1" class="text-3xl md:text-4xl font-display font-bold leading-tight mt-3 mb-6">Aider son enfant à faire ses devoirs de maths sans conflit</h1>
+
+            <!-- FR -->
+            <div data-lang="fr" class="article-body">
+                <p>La scène est connue de beaucoup de parents : il est 18 h, l'enfant est fatigué, il reste une fiche de maths à finir, et en dix minutes le ton monte. Les devoirs de mathématiques sont l'une des premières sources de tension à la maison. Bonne nouvelle : avec quelques changements simples, on peut transformer ce moment en accompagnement serein — sans crier et sans y passer la soirée.</p>
+                <h2>Pourquoi ça dégénère si souvent</h2>
+                <p>Le conflit vient rarement de l'enfant « qui ne veut pas ». Les vraies causes sont presque toujours les mêmes :</p>
+                <ul>
+                    <li>La <strong>fatigue</strong> : après une journée d'école, le cerveau est saturé. Ce n'est pas le meilleur moment pour apprendre.</li>
+                    <li>La <strong>peur de l'erreur</strong> : un enfant qui craint de se tromper se bloque, et cette tension est vite contagieuse.</li>
+                    <li>La <strong>posture parent-professeur</strong> : quand le parent devient celui qui corrige et sanctionne, la relation se crispe.</li>
+                    <li>Les <strong>attentes trop hautes</strong> : vouloir tout finir parfaitement et tout de suite met une pression inutile.</li>
+                </ul>
+                <h2>Poser un cadre serein</h2>
+                <p>Avant même le contenu, l'ambiance compte. Choisissez un <strong>moment</strong> où l'enfant n'est pas épuisé (parfois un goûter et une pause avant de commencer changent tout), un <strong>lieu calme</strong> sans télévision ni téléphone, et fixez une <strong>durée courte</strong>. Mieux vaut 15 minutes concentrées qu'une heure de lutte.</p>
+                <h2>Changer de posture : accompagner, pas corriger</h2>
+                <p>Votre rôle n'est pas d'être un second professeur, mais un <strong>allié</strong>. Au lieu de pointer ce qui est faux, posez des questions : « comment tu as fait ? », « et si on essayait autrement ? ». Quand l'enfant se trompe, évitez le « non, c'est faux » : préférez « regardons ensemble ». L'erreur doit rester une information, pas une faute. Cette simple différence de ton désamorce énormément de conflits.</p>
+                <h2>Découper et valoriser</h2>
+                <p>Une fiche entière peut décourager. Découpez-la en <strong>petites étapes</strong> : « on fait juste ces trois calculs, puis on fait une pause ». Et félicitez l'<strong>effort</strong>, pas seulement le résultat : « tu t'es bien concentré », « tu as essayé, bravo ». Un enfant valorisé coopère bien plus qu'un enfant sous pression.</p>
+                <h2>Savoir s'arrêter</h2>
+                <p>Si le ton monte vraiment, il vaut mieux <strong>arrêter</strong> que forcer. Rien ne s'apprend dans les larmes. Mieux vaut reprendre plus tard, ou le lendemain matin quand l'enfant est reposé. Forcer au-delà de la fatigue abîme à la fois l'apprentissage et la relation.</p>
+                <h2>Sortir du face-à-face grâce au jeu</h2>
+                <p>Une grande partie des tensions vient du face-à-face parent-enfant autour de la fiche. Le jeu permet de <strong>sortir de ce rapport de force</strong> : quand l'entraînement prend la forme d'un défi ou d'une aventure, l'enfant s'entraîne de lui-même, sans que vous ayez à jouer le gendarme.</p>
+                <p>C'est justement l'idée d'<strong>AstroCalcul</strong> : votre enfant s'entraîne <strong>en autonomie</strong>, sous forme de jeu spatial, à son rythme. Les révisions ne sont plus un moment imposé et surveillé, mais une activité qu'il a envie de faire. De quoi soulager considérablement l'ambiance du soir — et vous permettre de redevenir simplement le parent, pas le professeur.</p>
+                <h2>En résumé</h2>
+                <p>Les devoirs de maths n'ont pas à tourner au conflit. En choisissant le bon moment, en adoptant une posture d'allié plutôt que de correcteur, en découpant le travail et en valorisant l'effort, la tension retombe. Et quand l'entraînement devient un jeu que l'enfant fait seul, vous récupérez des soirées apaisées. La clé, ce n'est pas plus de sévérité, c'est plus de <strong>sérénité</strong>.</p>
+            </div>
+
+            <!-- EN -->
+            <div data-lang="en" class="article-body" style="display:none">
+                <p>Many parents know the scene: it's 6 p.m., the child is tired, there's a maths sheet left to finish, and within ten minutes voices are rising. Maths homework is one of the leading sources of tension at home. Good news: with a few simple changes, you can turn this moment into calm support — without shouting and without spending the whole evening on it.</p>
+                <h2>Why it so often escalates</h2>
+                <p>The conflict rarely comes from a child "who won't try". The real causes are almost always the same:</p>
+                <ul>
+                    <li><strong>Tiredness</strong>: after a school day, the brain is saturated. It's not the best time to learn.</li>
+                    <li><strong>Fear of mistakes</strong>: a child afraid of getting it wrong freezes up, and that tension is quickly contagious.</li>
+                    <li><strong>The parent-as-teacher stance</strong>: when the parent becomes the one who corrects and sanctions, the relationship tightens.</li>
+                    <li><strong>Expectations that are too high</strong>: wanting everything finished perfectly and right now creates needless pressure.</li>
+                </ul>
+                <h2>Set a calm frame</h2>
+                <p>Before the content itself, the mood matters. Choose a <strong>time</strong> when the child isn't exhausted (a snack and a break before starting sometimes change everything), a <strong>quiet place</strong> with no TV or phone, and set a <strong>short duration</strong>. Fifteen focused minutes beat an hour of struggle.</p>
+                <h2>Change your stance: support, don't correct</h2>
+                <p>Your role isn't to be a second teacher, but an <strong>ally</strong>. Instead of pointing out what's wrong, ask questions: "how did you do it?", "what if we tried another way?". When the child makes a mistake, avoid "no, that's wrong": prefer "let's look together". A mistake should stay information, not a fault. This simple change of tone defuses a huge amount of conflict.</p>
+                <h2>Break it down and value effort</h2>
+                <p>A whole worksheet can be discouraging. Break it into <strong>small steps</strong>: "we'll just do these three calculations, then take a break". And praise the <strong>effort</strong>, not only the result: "you concentrated well", "you tried, well done". A valued child cooperates far more than one under pressure.</p>
+                <h2>Know when to stop</h2>
+                <p>If tempers really flare, it's better to <strong>stop</strong> than to force. Nothing is learned in tears. Better to pick it up later, or the next morning when the child is rested. Pushing beyond tiredness harms both learning and the relationship.</p>
+                <h2>Escape the face-off through play</h2>
+                <p>A large part of the tension comes from the parent-child face-off over the sheet. Play lets you <strong>step out of that power struggle</strong>: when practice takes the form of a challenge or an adventure, the child practises on their own, without you having to play the enforcer.</p>
+                <p>That's exactly the idea behind <strong>AstroCalcul</strong>: your child practises <strong>independently</strong>, as a space game, at their own pace. Revision is no longer an imposed, supervised moment, but an activity they want to do. That greatly eases the evening mood — and lets you simply be the parent again, not the teacher.</p>
+                <h2>In summary</h2>
+                <p>Maths homework doesn't have to turn into conflict. By choosing the right moment, adopting the stance of an ally rather than a corrector, breaking down the work and valuing effort, the tension drops. And when practice becomes a game the child does alone, you get calm evenings back. The key isn't more strictness, it's more <strong>calm</strong>.</p>
+            </div>
+
+            <!-- NL -->
+            <div data-lang="nl" class="article-body" style="display:none">
+                <p>Veel ouders kennen het tafereel: het is 18 u, het kind is moe, er ligt nog een rekenblad af te maken, en binnen tien minuten stijgt de toon. Rekenhuiswerk is een van de belangrijkste bronnen van spanning thuis. Goed nieuws: met een paar eenvoudige aanpassingen kun je dit moment veranderen in rustige begeleiding — zonder roepen en zonder er de hele avond aan te besteden.</p>
+                <h2>Waarom het zo vaak escaleert</h2>
+                <p>Het conflict komt zelden van een kind "dat niet wil". De echte oorzaken zijn bijna altijd dezelfde:</p>
+                <ul>
+                    <li><strong>Vermoeidheid</strong>: na een schooldag zijn de hersenen verzadigd. Dat is niet het beste moment om te leren.</li>
+                    <li><strong>Angst om fouten te maken</strong>: een kind dat bang is om zich te vergissen, blokkeert, en die spanning is snel besmettelijk.</li>
+                    <li><strong>De ouder-als-leerkracht-houding</strong>: wanneer de ouder degene wordt die verbetert en straft, verkrampt de relatie.</li>
+                    <li><strong>Te hoge verwachtingen</strong>: alles perfect en meteen willen afwerken zet nutteloze druk.</li>
+                </ul>
+                <h2>Een rustig kader scheppen</h2>
+                <p>Nog vóór de inhoud telt de sfeer. Kies een <strong>moment</strong> waarop het kind niet uitgeput is (soms veranderen een tussendoortje en een pauze alles), een <strong>rustige plek</strong> zonder tv of telefoon, en stel een <strong>korte duur</strong> in. Vijftien geconcentreerde minuten zijn beter dan een uur strijd.</p>
+                <h2>Verander van houding: begeleiden, niet verbeteren</h2>
+                <p>Je rol is niet die van een tweede leerkracht, maar van een <strong>bondgenoot</strong>. In plaats van aan te wijzen wat fout is, stel je vragen: "hoe heb je het gedaan?", "en als we het anders proberen?". Als het kind zich vergist, vermijd "nee, dat is fout": zeg liever "laten we samen kijken". Een fout moet informatie blijven, geen schuld. Dat eenvoudige verschil in toon ontmijnt heel veel conflicten.</p>
+                <h2>Opdelen en waarderen</h2>
+                <p>Een heel werkblad kan ontmoedigen. Deel het op in <strong>kleine stappen</strong>: "we doen even deze drie sommen en dan pauzeren we". En prijs de <strong>inspanning</strong>, niet alleen het resultaat: "je hebt je goed geconcentreerd", "je hebt het geprobeerd, knap". Een gewaardeerd kind werkt veel beter mee dan een kind onder druk.</p>
+                <h2>Weten wanneer te stoppen</h2>
+                <p>Als de toon echt stijgt, kun je beter <strong>stoppen</strong> dan forceren. In tranen wordt niets geleerd. Beter later hervatten, of de volgende ochtend als het kind uitgerust is. Voorbij de vermoeidheid duwen schaadt zowel het leren als de relatie.</p>
+                <h2>Uit het één-op-één stappen dankzij spel</h2>
+                <p>Een groot deel van de spanning komt van het één-op-één tussen ouder en kind rond het blad. Spel laat je <strong>uit die machtsstrijd stappen</strong>: als oefenen de vorm aanneemt van een uitdaging of een avontuur, oefent het kind uit zichzelf, zonder dat jij de politieagent hoeft te spelen.</p>
+                <p>Dat is net het idee achter <strong>AstroCalcul</strong>: je kind oefent <strong>zelfstandig</strong>, als ruimtespel, op zijn eigen tempo. Oefenen is niet langer een opgelegd, bewaakt moment, maar een activiteit die het graag doet. Dat verlicht de avondsfeer aanzienlijk — en laat jou weer gewoon de ouder zijn, niet de leerkracht.</p>
+                <h2>Samengevat</h2>
+                <p>Rekenhuiswerk hoeft niet in conflict te ontaarden. Door het juiste moment te kiezen, de houding van bondgenoot aan te nemen in plaats van verbeteraar, het werk op te delen en inspanning te waarderen, zakt de spanning. En wanneer oefenen een spel wordt dat het kind alleen doet, krijg je rustige avonden terug. De sleutel is niet meer strengheid, maar meer <strong>rust</strong>.</p>
+            </div>
+            <div class="mt-10 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden border border-white/10 bg-gradient-to-r from-cosmic-pink/10 via-transparent to-cosmic-blue/10">
+                <h3 data-i18n="cta_title" class="text-xl md:text-2xl font-display font-bold mb-3">🚀 Et si les maths devenaient un moment de plaisir ?</h3>
+                <p data-i18n="cta_text" class="text-gray-300 text-sm max-w-xl mx-auto mb-5">Avec AstroCalcul, votre enfant s'entraîne seul, en autonomie et sous forme de jeu — de quoi désamorcer les tensions du soir. Sans publicité, conçu par un papa développeur.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="https://apps.apple.com/us/app/astrocalcul/id6760236661" data-umami-event="clic-app-store" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul" data-umami-event="clic-google-play" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">Google Play</a>
+                </div>
+            </div>
+        </article>
+
+        <div class="mt-8 text-center">
+            <a href="./index.html" data-i18n="back_link" class="text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm">← Tous les conseils aux parents</a>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 pt-10 pb-12 text-center space-y-4 max-w-5xl mx-auto px-6">
+        <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-gray-500">
+            <a href="../index.html" data-i18n="footer_home" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
+            <span>•</span>
+            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="footer_privacy" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
+            <span>•</span>
+            <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact" class="hover:text-cosmic-cyan transition-colors">Contact</a>
+        </div>
+        <div class="flex items-center justify-center pt-1">
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" aria-label="AstroCalcul sur Facebook" data-umami-event="clic-facebook" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-200"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
+        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+    </footer>
+
+    <script>
+        const T = {
+            fr: { doc_title:"Aider son enfant à faire ses devoirs de maths sans conflit | AstroCalcul", nav_features:"Fonctionnalités", nav_parents:"Espace Parents", nav_blog:"Conseils aux parents", nav_facebook:"Rejoignez-nous sur Facebook", nav_print:"Fiches à imprimer", nav_demo:"TÉLÉCHARGER", bc_home:"Accueil", bc_blog:"Conseils aux parents", bc_current:"Les devoirs de maths sans conflit", kicker:"Conseils aux parents", h1:"Aider son enfant à faire ses devoirs de maths sans conflit", cta_title:"🚀 Et si les maths devenaient un moment de plaisir ?", cta_text:"Avec AstroCalcul, votre enfant s'entraîne seul, en autonomie et sous forme de jeu — de quoi désamorcer les tensions du soir. Sans publicité, conçu par un papa développeur.", back_link:"← Tous les conseils aux parents", footer_desc:"L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.", footer_home:"Accueil", footer_privacy:"Confidentialité", footer_contact:"Contact", footer_rights:"Tous droits réservés." },
+            en: { doc_title:"Helping your child do maths homework without conflict | AstroCalcul", nav_features:"Features", nav_parents:"Parents' Space", nav_blog:"Parents' Tips", nav_facebook:"Join us on Facebook", nav_print:"Printable sheets", nav_demo:"DOWNLOAD", bc_home:"Home", bc_blog:"Parents' Tips", bc_current:"Maths homework without conflict", kicker:"Parents' Tips", h1:"Helping your child do maths homework without conflict", cta_title:"🚀 What if maths became an enjoyable moment?", cta_text:"With AstroCalcul, your child practises alone, independently and as a game — easing the evening tension. Ad-free, designed by a developer dad.", back_link:"← All parents' tips", footer_desc:"Playful and secure mental math learning for young space explorers.", footer_home:"Home", footer_privacy:"Privacy", footer_contact:"Contact", footer_rights:"All rights reserved." },
+            nl: { doc_title:"Je kind helpen met rekenhuiswerk zonder conflict | AstroCalcul", nav_features:"Kenmerken", nav_parents:"Oudersruimte", nav_blog:"Tips voor ouders", nav_facebook:"Volg ons op Facebook", nav_print:"Werkbladen printen", nav_demo:"DOWNLOADEN", bc_home:"Home", bc_blog:"Tips voor ouders", bc_current:"Rekenhuiswerk zonder conflict", kicker:"Tips voor ouders", h1:"Je kind helpen met rekenhuiswerk zonder conflict", cta_title:"🚀 En als rekenen een leuk moment werd?", cta_text:"Met AstroCalcul oefent je kind zelfstandig en spelenderwijs — dat haalt de spanning van de avond weg. Zonder reclame, ontworpen door een developer-papa.", back_link:"← Alle tips voor ouders", footer_desc:"Speels en veilig hoofdrekenen leren voor jonge ruimtevaarders.", footer_home:"Home", footer_privacy:"Privacy", footer_contact:"Contact", footer_rights:"Alle rechten voorbehouden." }
+        };
+        const LANGS = ['fr','en','nl'];
+        let lang = localStorage.getItem('astrocalcul_lang') || 'fr';
+        function applyLang(l) {
+            lang = l; localStorage.setItem('astrocalcul_lang', l);
+            document.documentElement.lang = l;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const k = e.getAttribute('data-i18n'); if (T[l] && T[l][k] != null) e.innerHTML = T[l][k]; });
+            document.querySelectorAll('[data-lang]').forEach(b => { b.style.display = (b.getAttribute('data-lang') === l) ? '' : 'none'; });
+            if (T[l].doc_title) document.title = T[l].doc_title;
+            LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
+        }
+        function changeLanguage(l) { applyLang(l); }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            document.getElementById('burger-icon').classList.toggle('hidden', open);
+            document.getElementById('close-icon').classList.toggle('hidden', !open);
+            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
+        }
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); }
+        function init() { stars = []; for (let i=0;i<100;i++){ stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005,c:Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF')}); } }
+        function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(st=>{ st.a+=st.s; if(st.a>1||st.a<0)st.s=-st.s; ctx.save(); ctx.globalAlpha=Math.max(0.1,st.a); ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2); ctx.fillStyle=st.c; ctx.fill(); ctx.restore(); }); requestAnimationFrame(animate); }
+        window.addEventListener('resize', resize);
+        window.addEventListener('load', () => {
+            const p = new URLSearchParams(location.search).get('lang');
+            if (p && LANGS.includes(p)) lang = p;
+            applyLang(lang); resize(); animate();
+        });
+    </script>
+</body>
+</html>
