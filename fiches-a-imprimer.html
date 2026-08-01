@@ -174,7 +174,7 @@
 
             <!-- Actions -->
             <div class="flex flex-col sm:flex-row gap-3 pt-2">
-                <button onclick="generate()" data-i18n="btn_generate" class="flex-1 py-3.5 rounded-2xl bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black hover:scale-[1.02] active:scale-95 transition-transform">🚀 Générer la fiche</button>
+                <button onclick="generate(true)" data-i18n="btn_generate" class="flex-1 py-3.5 rounded-2xl bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black hover:scale-[1.02] active:scale-95 transition-transform">🚀 Générer la fiche</button>
                 <button onclick="window.print()" data-i18n="btn_print" class="flex-1 py-3.5 rounded-2xl bg-white/10 border border-white/15 text-white font-display font-black hover:bg-white/20 transition-colors">🖨️ Imprimer</button>
             </div>
             <p id="config-msg" class="text-cosmic-pink text-sm font-bold text-center hidden" data-i18n="msg_empty">Sélectionnez au moins une opération et une table.</p>
@@ -375,7 +375,7 @@
             if (op === 'div')  return { text:`${base * b} ÷ ${b}`, ans: base };       // division entière propre
         }
 
-        function generate() {
+        function generate(scroll) {
             const msg = document.getElementById('config-msg');
             if (state.ops.size === 0 || state.tables.size === 0) { msg.classList.remove('hidden'); return; }
             msg.classList.add('hidden');
@@ -422,6 +422,8 @@
             } else {
                 ansSection.style.display = 'none';
             }
+            // Défilement vers la fiche uniquement lors d'un clic sur "Générer"
+            if (scroll) document.getElementById('sheet').scrollIntoView({ behavior:'smooth', block:'start' });
         }
 
         // ---------- Étoiles ----------
