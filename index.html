@@ -630,11 +630,10 @@
                 </div>
 
                 <div class="lg:col-span-7 glass-panel rounded-3xl p-6 md:p-8 flex flex-col justify-between space-y-6">
-                    
-                    <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-2xl border border-white/10">
+
+                                    <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-2xl border border-white/10">
                         <div class="relative w-16 h-16 flex-shrink-0">
                             <img id="astro-companion-img" src="./assets/astronaute-penseur.png" alt="Compagnon" class="w-full h-full object-contain" onerror="this.style.display='none'; document.getElementById('astro-companion-fallback').style.display='block';">
-                            
                             <svg id="astro-companion-fallback" style="display: none;" class="w-full h-full" viewBox="0 0 100 100">
                                 <circle cx="50" cy="50" r="35" fill="#1D1D4A" stroke="#00F0FF" stroke-width="2"/>
                                 <rect x="25" y="25" width="50" height="40" rx="12" fill="#0B0B1E" stroke="#FF2E93" stroke-width="2"/>
@@ -644,57 +643,64 @@
                         </div>
                         <div>
                             <h4 data-i18n="sim_companion_title" class="text-sm font-display font-bold text-cosmic-cyan">VOTRE CO-PILOTE ROBI</h4>
-                            <p id="astro-speech" class="text-xs text-gray-300">"Prêt pour le calcul mental ? Choisis ta difficulté !"</p>
+                            <p id="astro-speech" class="text-xs text-gray-300">"Prêt pour le calcul mental ? Règle ta mission !"</p>
                         </div>
                     </div>
 
-                    <div class="space-y-3">
-                        <label data-i18n="sim_label_level" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">1. Niveau de l'enfant :</label>
-                        <div class="grid grid-cols-3 gap-3">
-                            <button onclick="setDifficulty('easy')" id="btn-easy" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all duration-200 bg-space-800 border-cosmic-cyan text-cosmic-cyan shadow-sm">
-                                <span data-i18n="sim_level_easy_title">Recrue</span><br><span data-i18n="sim_level_easy_age" class="text-[10px] font-bold text-gray-400 font-sans">4-6 ans</span>
-                            </button>
-                            <button onclick="setDifficulty('medium')" id="btn-medium" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all duration-200 border-white/10 hover:border-white/25">
-                                <span data-i18n="sim_level_medium_title">Cadet</span><br><span data-i18n="sim_level_medium_age" class="text-[10px] font-bold text-gray-400 font-sans">7-8 ans</span>
-                            </button>
-                            <button onclick="setDifficulty('hard')" id="btn-hard" class="difficulty-btn py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all duration-200 border-white/10 hover:border-white/25">
-                                <span data-i18n="sim_level_hard_title">Commandant</span><br><span data-i18n="sim_level_hard_age" class="text-[10px] font-bold text-gray-400 font-sans">9-10 ans</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="bg-space-900/90 border border-white/5 rounded-2xl p-6 text-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-                        
-                        <div class="absolute right-4 top-2 w-12 h-12 opacity-20">
-                            <img id="planet-bg-asset" src="./assets/planete-easy.png" alt="" class="w-full h-full object-contain" onerror="this.style.display='none';">
-                        </div>
-
-                        <div class="relative z-10 space-y-2">
-                            <span data-i18n="sim_eq_title" class="text-[11px] font-bold tracking-widest text-cosmic-pink uppercase font-display">Équation Spatiale</span>
-                            <!-- Utilisation de Fredoka pour l'équation mathématique également -->
-                            <div id="calculation-display" class="text-4xl md:text-5xl font-display font-bold tracking-wider text-white py-2">
-                                4 + 3
+                    <!-- ================= RÉGLAGES ================= -->
+                    <div id="sim-setup" class="space-y-5">
+                        <div class="space-y-2">
+                            <label data-i18n="sim_label_level" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">1. Niveau</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button id="btn-lvl-1" onclick="setLevel(1)" class="py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all"><span data-i18n="sim_lvl">Niveau</span> 1<br><span data-i18n="sim_cap1" class="text-[10px] font-bold text-gray-400 font-sans">jusqu'à 20</span></button>
+                                <button id="btn-lvl-2" onclick="setLevel(2)" class="py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all"><span data-i18n="sim_lvl">Niveau</span> 2<br><span data-i18n="sim_cap2" class="text-[10px] font-bold text-gray-400 font-sans">jusqu'à 50</span></button>
+                                <button id="btn-lvl-3" onclick="setLevel(3)" class="py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all"><span data-i18n="sim_lvl">Niveau</span> 3<br><span data-i18n="sim_cap3" class="text-[10px] font-bold text-gray-400 font-sans">jusqu'à 100</span></button>
                             </div>
-                            <p data-i18n="sim_eq_desc" class="text-xs text-gray-400">Trouvez la bonne planète réponse pour propulser la fusée !</p>
                         </div>
+                        <div class="space-y-2">
+                            <label data-i18n="sim_label_ops" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">2. Opérations (mixez !)</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="sim-ops">
+                                <button data-op="add" onclick="toggleSimOp('add')" class="op-btn py-3 rounded-xl border text-sm font-display font-bold transition-all">+ <span data-i18n="sim_op_add">Addition</span></button>
+                                <button data-op="sub" onclick="toggleSimOp('sub')" class="op-btn py-3 rounded-xl border text-sm font-display font-bold transition-all">− <span data-i18n="sim_op_sub">Soustraction</span></button>
+                                <button data-op="mul" onclick="toggleSimOp('mul')" class="op-btn py-3 rounded-xl border text-sm font-display font-bold transition-all">× <span data-i18n="sim_op_mul">Multiplication</span></button>
+                                <button data-op="div" onclick="toggleSimOp('div')" class="op-btn py-3 rounded-xl border text-sm font-display font-bold transition-all">÷ <span data-i18n="sim_op_div">Division</span></button>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label data-i18n="sim_label_tables" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">3. Tables (1 à 10)</label>
+                            <div class="grid grid-cols-5 sm:grid-cols-10 gap-2" id="sim-tables"></div>
+                        </div>
+                        <button onclick="startMission()" data-i18n="sim_start" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black hover:scale-[1.02] active:scale-95 transition-transform">🚀 Lancer la mission</button>
+                        <p id="sim-setup-msg" data-i18n="sim_msg_empty" class="text-cosmic-pink text-sm font-bold text-center hidden">Choisis au moins une opération et une table.</p>
                     </div>
 
-                    <div class="space-y-3">
-                        <label data-i18n="sim_label_select" class="text-xs font-extrabold tracking-widest text-gray-400 uppercase font-display">2. Sélectionnez la réponse correcte :</label>
-                        <div id="choices-container" class="grid grid-cols-3 gap-4">
-                            <!-- Généré dynamiquement en JS -->
+                    <!-- ================= JEU ================= -->
+                    <div id="sim-play" class="space-y-5 hidden">
+                        <div class="flex items-center justify-between text-xs font-display font-bold text-gray-400 uppercase tracking-widest">
+                            <span><span data-i18n="sim_question">Calcul</span> <span id="sim-qnum" class="text-white">1</span>/5</span>
+                            <span><span data-i18n="sim_score_label">Score</span> : <span id="sim-score" class="text-cosmic-green text-base">0</span></span>
                         </div>
+                        <div class="bg-space-900/90 border border-white/5 rounded-2xl p-6 text-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+                            <div class="relative z-10 space-y-3">
+                                <span data-i18n="sim_eq_title" class="text-[11px] font-bold tracking-widest text-cosmic-pink uppercase font-display">Équation Spatiale</span>
+                                <div id="sim-equation" class="text-4xl md:text-5xl font-display font-bold tracking-wider text-white py-2">4 + 3</div>
+                                <div class="flex gap-3 max-w-xs mx-auto">
+                                    <input id="sim-input" type="number" inputmode="numeric" class="flex-1 py-3 px-4 rounded-xl bg-space-800 border border-white/15 text-white text-center text-2xl font-display font-bold focus:outline-none focus:border-cosmic-cyan" placeholder="?">
+                                    <button onclick="submitAnswer()" id="sim-validate" data-i18n="sim_validate" class="px-5 rounded-xl bg-cosmic-cyan text-space-900 font-display font-black">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sim-feedback" class="text-center font-display font-bold tracking-wide min-h-[1.5rem]"></div>
                     </div>
 
-                    <div class="flex items-center justify-between border-t border-white/10 pt-4 text-sm font-bold">
-                        <div class="flex items-center space-x-2">
-                            <span data-i18n="sim_score_label" class="text-gray-400">Score de mission :</span>
-                            <span id="simulator-score" class="text-cosmic-green font-display font-bold text-lg">0</span>
-                        </div>
-                        <div id="simulator-feedback" data-i18n="sim_feedback_placeholder" class="text-cosmic-cyan font-display font-bold tracking-wide animate-pulse">
-                            Sélectionnez une réponse !
-                        </div>
+                    <!-- ================= RÉSULTAT ================= -->
+                    <div id="sim-result" class="space-y-3 text-center hidden">
+                        <div id="sim-result-emoji" class="text-5xl"></div>
+                        <h3 id="sim-result-title" class="text-2xl font-display font-bold"></h3>
+                        <p id="sim-result-text" class="text-gray-300 text-sm"></p>
+                        <div class="text-lg font-display font-bold"><span data-i18n="sim_score_label">Score</span> : <span id="sim-result-score" class="text-cosmic-green"></span>/5</div>
+                        <button onclick="replayMission()" data-i18n="sim_replay" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black hover:scale-[1.02] active:scale-95 transition-transform">↻ Rejouer</button>
                     </div>
 
                 </div>
@@ -1030,8 +1036,18 @@
                 press_read_more: "Lire l'article complet",
                 sim_badge: "Testez l'application",
                 sim_title: "Préparez le décollage !",
-                sim_description: "Choisissez votre niveau, répondez correctement et observez votre compagnon et la fusée s'envoler !",
+                sim_description: "Réglez le niveau, les opérations et les tables, réussissez la série de 5 calculs, et faites décoller la fusée le plus haut possible !",
                 sim_launchpad: "RAMPE DE LANCEMENT",
+                sim_lvl: "Niveau", sim_cap1: "jusqu'à 20", sim_cap2: "jusqu'à 50", sim_cap3: "jusqu'à 100",
+                sim_label_ops: "2. Opérations (mixez !)", sim_label_tables: "3. Tables (1 à 10)",
+                sim_op_add: "Addition", sim_op_sub: "Soustraction", sim_op_mul: "Multiplication", sim_op_div: "Division",
+                sim_start: "🚀 Lancer la mission", sim_msg_empty: "Choisis au moins une opération et une table.",
+                sim_question: "Calcul", sim_validate: "OK", sim_replay: "↻ Rejouer",
+                sim_ok: "Bonne réponse ! 🌟", sim_ko: "Raté :",
+                sim_status_launch: "DÉCOLLAGE !", sim_status_orbit: "EN ORBITE", sim_status_nofuel: "PAS DE CARBURANT",
+                sim_res_perfect: "Score parfait !", sim_res_success_title: "Décollage réussi !",
+                sim_res_success_text: "Bravo, la fusée s'envole ! Entraîne-toi pour monter encore plus haut.",
+                sim_res_fail_title: "La fusée reste au sol", sim_res_fail_text: "Il faut au moins un calcul juste pour décoller. Réessaie, tu vas y arriver !",
                 sim_status_ready: "SYSTÈME PRÊT",
                 sim_altitude_val: "Altitude : 0 km",
                 sim_companion_title: "VOTRE CO-PILOTE ROBI",
@@ -1130,8 +1146,18 @@
                 press_read_more: "Read the full article",
                 sim_badge: "Test the app",
                 sim_title: "Prepare for launch!",
-                sim_description: "Choose your level, answer correctly, and watch your companion and the rocket blast off!",
+                sim_description: "Set the level, operations and tables, complete the series of 5 problems, and launch the rocket as high as possible!",
                 sim_launchpad: "LAUNCHPAD",
+                sim_lvl: "Level", sim_cap1: "up to 20", sim_cap2: "up to 50", sim_cap3: "up to 100",
+                sim_label_ops: "2. Operations (mix them!)", sim_label_tables: "3. Tables (1 to 10)",
+                sim_op_add: "Addition", sim_op_sub: "Subtraction", sim_op_mul: "Multiplication", sim_op_div: "Division",
+                sim_start: "🚀 Start the mission", sim_msg_empty: "Choose at least one operation and one table.",
+                sim_question: "Problem", sim_validate: "OK", sim_replay: "↻ Play again",
+                sim_ok: "Correct! 🌟", sim_ko: "Missed:",
+                sim_status_launch: "LIFT-OFF!", sim_status_orbit: "IN ORBIT", sim_status_nofuel: "NO FUEL",
+                sim_res_perfect: "Perfect score!", sim_res_success_title: "Successful launch!",
+                sim_res_success_text: "Well done, the rocket blasts off! Keep practising to fly even higher.",
+                sim_res_fail_title: "The rocket stays grounded", sim_res_fail_text: "You need at least one correct answer to take off. Try again, you can do it!",
                 sim_status_ready: "SYSTEM READY",
                 sim_altitude_val: "Altitude: 0 km",
                 sim_companion_title: "YOUR CO-PILOT ROBI",
@@ -1232,6 +1258,16 @@
                 sim_title: "Bereid de lancering voor!",
                 sim_description: "Kies je niveau, antwoord correct en zie je metgezel en de raket wegvliegen!",
                 sim_launchpad: "LANCERINGSPLATFORM",
+                sim_lvl: "Niveau", sim_cap1: "tot 20", sim_cap2: "tot 50", sim_cap3: "tot 100",
+                sim_label_ops: "2. Bewerkingen (meng ze!)", sim_label_tables: "3. Tafels (1 tot 10)",
+                sim_op_add: "Optellen", sim_op_sub: "Aftrekken", sim_op_mul: "Vermenigvuldigen", sim_op_div: "Delen",
+                sim_start: "🚀 Start de missie", sim_msg_empty: "Kies minstens één bewerking en één tafel.",
+                sim_question: "Som", sim_validate: "OK", sim_replay: "↻ Opnieuw spelen",
+                sim_ok: "Juist! 🌟", sim_ko: "Mis:",
+                sim_status_launch: "LANCERING!", sim_status_orbit: "IN EEN BAAN", sim_status_nofuel: "GEEN BRANDSTOF",
+                sim_res_perfect: "Perfecte score!", sim_res_success_title: "Geslaagde lancering!",
+                sim_res_success_text: "Goed gedaan, de raket stijgt op! Blijf oefenen om nog hoger te vliegen.",
+                sim_res_fail_title: "De raket blijft op de grond", sim_res_fail_text: "Je hebt minstens één juist antwoord nodig om op te stijgen. Probeer opnieuw, het lukt je!",
                 sim_status_ready: "SYSTEEM GEREED",
                 sim_altitude_val: "Hoogte: 0 km",
                 sim_companion_title: "JE CO-PILOOT ROBI",
@@ -1327,13 +1363,8 @@
             const currentAltKm = document.getElementById('rocket-altitude').innerText.replace(/[^0-9]/g, '');
             document.getElementById('rocket-altitude').innerText = `${translations[currentLang].sim_alt} : ${currentAltKm || 0} km`;
             
-            if (!isLaunching) {
-                document.getElementById('rocket-status').innerText = translations[currentLang].sim_ready_system;
-                document.getElementById('astro-speech').innerText = translations[currentLang].sim_companion_placeholder;
-                document.getElementById('simulator-feedback').innerText = translations[currentLang].sim_feedback_placeholder;
-            }
-
-            generateQuestion();
+            const _asp = document.getElementById('astro-speech');
+            if (_asp && translations[currentLang].sim_companion_placeholder) _asp.innerText = translations[currentLang].sim_companion_placeholder;
         }
 
 
@@ -1464,153 +1495,203 @@
             }
         }
 
-        function setDifficulty(diff) {
-            if (isLaunching) return;
-            currentDifficulty = diff;
-            
-            document.querySelectorAll('.difficulty-btn').forEach(btn => {
-                btn.className = "difficulty-btn py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all duration-200 border-white/10 hover:border-white/25";
+        // ---- Nouveau simulateur : série de 5 calculs, saisie clavier, fusée selon score ----
+        let simLevel = 1;
+        const simCaps = { 1: 20, 2: 50, 3: 100 };
+        let simOps = new Set(['add']);
+        let simTables = new Set([2, 3, 4, 5]);
+        let simSeries = [];
+        let simIndex = 0;
+        let simScore = 0;
+        let simBusy = false;
+
+        // Boutons tables 1..10
+        (function () {
+            const c = document.getElementById('sim-tables');
+            if (!c) return;
+            for (let n = 1; n <= 10; n++) {
+                const b = document.createElement('button');
+                b.textContent = n; b.dataset.n = n;
+                b.onclick = () => toggleSimTable(n);
+                b.className = 'sim-table-btn py-2 rounded-lg border text-sm font-display font-bold transition-all';
+                c.appendChild(b);
+            }
+        })();
+
+        function refreshLevelBtns() {
+            [1, 2, 3].forEach(l => {
+                const b = document.getElementById('btn-lvl-' + l);
+                if (!b) return;
+                b.className = 'py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all ' +
+                    (simLevel === l ? 'bg-space-800 border-cosmic-cyan text-cosmic-cyan shadow-sm' : 'border-white/10 hover:border-white/25 text-gray-300');
             });
+        }
+        function refreshSimOps() {
+            const col = { add: 'cosmic-green', sub: 'cosmic-pink', mul: 'cosmic-cyan', div: 'cosmic-purple' };
+            document.querySelectorAll('#sim-ops .op-btn').forEach(b => {
+                const op = b.dataset.op, on = simOps.has(op), c = col[op];
+                b.className = 'op-btn py-3 rounded-xl border text-sm font-display font-bold transition-all ' +
+                    (on ? ('bg-space-800 border-' + c + ' text-' + c) : 'border-white/10 hover:border-white/25 text-gray-300');
+            });
+        }
+        function refreshSimTables() {
+            document.querySelectorAll('.sim-table-btn').forEach(b => {
+                const on = simTables.has(parseInt(b.dataset.n));
+                b.className = 'sim-table-btn py-2 rounded-lg border text-sm font-display font-bold transition-all ' +
+                    (on ? 'bg-space-800 border-cosmic-cyan text-cosmic-cyan' : 'border-white/10 hover:border-white/25 text-gray-400');
+            });
+        }
+        function setLevel(l) { simLevel = l; refreshLevelBtns(); }
+        function toggleSimOp(op) { simOps.has(op) ? simOps.delete(op) : simOps.add(op); refreshSimOps(); }
+        function toggleSimTable(n) { simTables.has(n) ? simTables.delete(n) : simTables.add(n); refreshSimTables(); }
 
-            const activeBtn = document.getElementById(`btn-${diff}`);
-            let accentColor = 'cosmic-cyan';
-            if (diff === 'medium') accentColor = 'cosmic-pink';
-            if (diff === 'hard') accentColor = 'cosmic-purple';
-            
-            activeBtn.className = `difficulty-btn py-3 px-2 rounded-2xl border text-sm font-display font-bold transition-all duration-200 bg-space-800 border-${accentColor} text-${accentColor} shadow-sm`;
+        function _rnd(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+        function _pick(a) { return a[Math.floor(Math.random() * a.length)]; }
 
-            const planetImg = document.getElementById('planet-bg-asset');
-            planetImg.src = planetAssets[diff];
-            planetImg.style.display = 'block';
-
-            generateQuestion();
+        function makeSimProblem(cap) {
+            for (let t = 0; t < 300; t++) {
+                const op = _pick([...simOps]);
+                const base = _pick([...simTables]);
+                const b = _rnd(1, 10);
+                if (op === 'add') { const r = base + b; if (r <= cap) return { q: base + ' + ' + b, a: r }; }
+                else if (op === 'mul') { const r = base * b; if (r <= cap) return { q: base + ' × ' + b, a: r }; }
+                else if (op === 'sub') { const r = base; if (r <= cap) return { q: (base + b) + ' − ' + b, a: r }; }
+                else if (op === 'div') { const r = base; if (r <= cap) return { q: (base * b) + ' ÷ ' + b, a: r }; }
+            }
+            const base = _pick([...simTables]); return { q: base + ' + 1', a: base + 1 };
         }
 
-        function generateQuestion() {
-            let num1, num2, questionText, answer;
-            
-            if (currentDifficulty === 'easy') {
-                num1 = Math.floor(Math.random() * 8) + 2;
-                num2 = Math.floor(Math.random() * 7) + 1;
-                questionText = `${num1} + ${num2}`;
-                answer = num1 + num2;
-            } else if (currentDifficulty === 'medium') {
-                num1 = Math.floor(Math.random() * 15) + 5;
-                num2 = Math.floor(Math.random() * 10) + 2;
-                if (Math.random() > 0.5) {
-                    questionText = `${num1} + ${num2}`;
-                    answer = num1 + num2;
-                } else {
-                    questionText = `${num1 + num2} - ${num2}`;
-                    answer = num1;
-                }
-            } else {
-                num1 = Math.floor(Math.random() * 8) + 2;
-                num2 = Math.floor(Math.random() * 8) + 2;
-                questionText = `${num1} × ${num2}`;
-                answer = num1 * num2;
-            }
+        function startMission() {
+            if (simOps.size === 0 || simTables.size === 0) { document.getElementById('sim-setup-msg').classList.remove('hidden'); return; }
+            document.getElementById('sim-setup-msg').classList.add('hidden');
+            const cap = simCaps[simLevel];
+            simSeries = []; simIndex = 0; simScore = 0;
+            const seen = new Set(); let tries = 0;
+            while (simSeries.length < 5 && tries < 500) { tries++; const p = makeSimProblem(cap); if (seen.has(p.q)) continue; seen.add(p.q); simSeries.push(p); }
+            while (simSeries.length < 5) simSeries.push(makeSimProblem(cap));
+            document.getElementById('sim-setup').classList.add('hidden');
+            document.getElementById('sim-result').classList.add('hidden');
+            document.getElementById('sim-play').classList.remove('hidden');
+            document.getElementById('sim-score').innerText = '0';
+            showSimProblem();
+        }
 
-            let fake1 = answer + (Math.random() > 0.5 ? 2 : -2);
-            let fake2 = answer + (Math.random() > 0.5 ? 5 : -3);
-            if (fake1 === answer || fake1 <= 0) fake1 = answer + 1;
-            if (fake2 === answer || fake2 === fake1 || fake2 <= 0) fake2 = answer + 3;
-
-            const choices = [answer, fake1, fake2].sort(() => Math.random() - 0.5);
-            currentQuestion = { question: questionText, answer: answer, choices: choices };
-            
-            document.getElementById('calculation-display').innerText = questionText;
-            
-            const container = document.getElementById('choices-container');
-            container.innerHTML = '';
-            
-            choices.forEach(choice => {
-                const button = document.createElement('button');
-                // Les chiffres réponses utilisent aussi Fredoka pour être homogènes
-                button.className = "choice-btn py-4 rounded-2xl bg-space-800 hover:bg-space-700 border border-white/10 text-xl font-display font-bold hover:border-cosmic-cyan hover:scale-105 active:scale-95 transition-all duration-200";
-                button.innerText = choice;
-                button.onclick = () => verifyAnswer(choice, button);
-                container.appendChild(button);
-            });
-
+        function showSimProblem() {
+            const p = simSeries[simIndex];
+            document.getElementById('sim-qnum').innerText = simIndex + 1;
+            document.getElementById('sim-equation').innerText = p.q;
+            const inp = document.getElementById('sim-input');
+            inp.value = ''; inp.disabled = false;
+            document.getElementById('sim-validate').disabled = false;
+            document.getElementById('sim-feedback').innerText = '';
+            try { inp.focus(); } catch (e) {}
             updateAstroCompanion('neutral');
         }
 
-        function verifyAnswer(selected, buttonElement) {
-            if (isLaunching) return;
-
-            const feedback = document.getElementById('simulator-feedback');
-            
-            if (selected === currentQuestion.answer) {
-                score++;
-                document.getElementById('simulator-score').innerText = score;
-                feedback.innerText = translations[currentLang].sim_feedback_excellent;
-                feedback.className = "text-cosmic-green font-display font-bold tracking-wide animate-pulse";
-                
-                buttonElement.className = "choice-btn py-4 rounded-2xl bg-cosmic-green/20 border-2 border-cosmic-green text-cosmic-green text-xl font-display font-bold transition-all duration-200";
-                
+        function submitAnswer() {
+            if (simBusy) return;
+            const inp = document.getElementById('sim-input');
+            if (inp.value === '') return;
+            simBusy = true; inp.disabled = true; document.getElementById('sim-validate').disabled = true;
+            const val = parseInt(inp.value, 10);
+            const p = simSeries[simIndex];
+            const fb = document.getElementById('sim-feedback');
+            if (val === p.a) {
+                simScore++;
+                document.getElementById('sim-score').innerText = simScore;
+                fb.innerText = translations[currentLang].sim_ok;
+                fb.className = 'text-center font-display font-bold tracking-wide text-cosmic-green';
                 updateAstroCompanion('happy');
-                triggerRocketLaunch();
             } else {
-                feedback.innerText = translations[currentLang].sim_feedback_error;
-                feedback.className = "text-cosmic-pink font-display font-bold tracking-wide animate-shake";
-                
-                buttonElement.className = "choice-btn py-4 rounded-2xl bg-cosmic-pink/20 border-2 border-cosmic-pink text-cosmic-pink text-xl font-display font-bold transition-all duration-200";
-                
+                fb.innerHTML = translations[currentLang].sim_ko + ' <span class="text-white">' + p.q + ' = ' + p.a + '</span>';
+                fb.className = 'text-center font-display font-bold tracking-wide text-cosmic-pink';
                 updateAstroCompanion('sad');
-
-                const container = document.getElementById('sim-rocket-container');
-                container.classList.add('animate-shake');
-                setTimeout(() => container.classList.remove('animate-shake'), 300);
             }
+            setTimeout(() => {
+                simBusy = false; simIndex++;
+                if (simIndex < 5) showSimProblem();
+                else endMission();
+            }, 1200);
         }
 
-        function triggerRocketLaunch() {
-            isLaunching = true;
+        function endMission() {
+            document.getElementById('sim-play').classList.add('hidden');
+            launchRocket(simScore);
+        }
+
+        function launchRocket(sc) {
             const rocket = document.getElementById('sim-rocket-container');
-            const fallbackFlame = document.getElementById('sim-flame');
+            const flame = document.getElementById('sim-flame');
             const smoke = document.getElementById('sim-smoke');
             const status = document.getElementById('rocket-status');
             const altitude = document.getElementById('rocket-altitude');
             const altitudeBar = document.getElementById('altitude-bar');
+            const res = document.getElementById('sim-result');
+            const T = translations[currentLang];
 
-            fallbackFlame.classList.remove('hidden');
-            smoke.classList.add('opacity-100', 'scale-150');
-            status.innerText = translations[currentLang].sim_ready_status;
-            status.className = "text-xs font-display font-bold text-cosmic-pink tracking-wide uppercase";
+            document.getElementById('sim-result-score').innerText = sc;
+            if (sc === 0) {
+                document.getElementById('sim-result-emoji').innerText = '🛰️';
+                document.getElementById('sim-result-title').innerText = T.sim_res_fail_title;
+                document.getElementById('sim-result-text').innerText = T.sim_res_fail_text;
+                status.innerText = T.sim_status_nofuel;
+                status.className = 'text-xs font-display font-bold text-cosmic-pink tracking-wide uppercase';
+                if (flame) flame.classList.add('hidden');
+                res.classList.remove('hidden');
+                return;
+            }
+            document.getElementById('sim-result-emoji').innerText = sc >= 4 ? '🌟' : '🚀';
+            document.getElementById('sim-result-title').innerText = (sc === 5 ? T.sim_res_perfect : T.sim_res_success_title);
+            document.getElementById('sim-result-text').innerText = T.sim_res_success_text;
 
-            let currentAlt = 0;
-            const altInterval = setInterval(() => {
-                currentAlt += 12;
-                altitude.innerText = `${translations[currentLang].sim_alt} : ${currentAlt} km`;
-            }, 50);
+            const up = Math.round(260 * sc / 5);
+            const km = sc * 100;
+            if (flame) flame.classList.remove('hidden');
+            if (smoke) smoke.classList.add('opacity-100', 'scale-150');
+            status.innerText = T.sim_status_launch;
+            status.className = 'text-xs font-display font-bold text-cosmic-pink tracking-wide uppercase';
+            altitudeBar.style.height = (20 + sc / 5 * 80) + '%';
+
+            let cur = 0; const stp = Math.max(1, Math.round(km / 20));
+            const it = setInterval(() => { cur = Math.min(km, cur + stp); altitude.innerText = T.sim_alt + ' : ' + cur + ' km'; if (cur >= km) clearInterval(it); }, 40);
 
             setTimeout(() => {
-                rocket.style.transform = "translateY(-220px) scale(0.7)";
-                status.innerText = translations[currentLang].sim_success_status;
-                status.className = "text-xs font-display font-bold text-cosmic-green tracking-wide uppercase";
-                altitudeBar.style.height = "100%";
-            }, 300);
+                rocket.style.transition = 'all 1.4s ease-out';
+                rocket.style.transform = 'translateY(-' + up + 'px) scale(' + (1 - sc * 0.05) + ')';
+                status.innerText = T.sim_status_orbit;
+                status.className = 'text-xs font-display font-bold text-cosmic-green tracking-wide uppercase';
+            }, 200);
 
-            setTimeout(() => {
-                clearInterval(altInterval);
-                rocket.style.transition = "none";
-                rocket.style.transform = "translateY(220px) scale(0.1)";
-                fallbackFlame.classList.add('hidden');
-                smoke.classList.remove('opacity-100', 'scale-150');
-                
-                setTimeout(() => {
-                    rocket.style.transition = "all 1s ease-out";
-                    rocket.style.transform = "translateY(0px) scale(1)";
-                    status.innerText = translations[currentLang].sim_ready_system;
-                    status.className = "text-xs font-display font-bold text-cosmic-cyan tracking-wide uppercase";
-                    altitude.innerText = `${translations[currentLang].sim_alt} : 0 km`;
-                    altitudeBar.style.height = "10%";
-                    isLaunching = false;
-                    generateQuestion();
-                }, 50);
-            }, 2500);
+            setTimeout(() => { res.classList.remove('hidden'); }, 1500);
         }
+
+        function replayMission() {
+            const rocket = document.getElementById('sim-rocket-container');
+            const flame = document.getElementById('sim-flame');
+            const smoke = document.getElementById('sim-smoke');
+            const status = document.getElementById('rocket-status');
+            const altitude = document.getElementById('rocket-altitude');
+            const altitudeBar = document.getElementById('altitude-bar');
+            rocket.style.transition = 'all 0.6s ease-out';
+            rocket.style.transform = 'translateY(0px) scale(1)';
+            if (flame) flame.classList.add('hidden');
+            if (smoke) smoke.classList.remove('opacity-100', 'scale-150');
+            status.innerText = translations[currentLang].sim_ready_system;
+            status.className = 'text-xs font-display font-bold text-cosmic-cyan tracking-wide uppercase';
+            altitude.innerText = translations[currentLang].sim_alt + ' : 0 km';
+            altitudeBar.style.height = '10%';
+            document.getElementById('sim-result').classList.add('hidden');
+            document.getElementById('sim-play').classList.add('hidden');
+            document.getElementById('sim-setup').classList.remove('hidden');
+            updateAstroCompanion('neutral');
+        }
+
+        // init réglages + touche Entrée pour valider
+        refreshLevelBtns(); refreshSimOps(); refreshSimTables();
+        (function () {
+            const inp = document.getElementById('sim-input');
+            if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter') submitAnswer(); });
+        })();
 
 
         // ==========================================
@@ -1701,7 +1782,6 @@
                 currentLang = langParam;
             }
             changeLanguage(currentLang);
-            setDifficulty('easy');
         };
     </script>
 
