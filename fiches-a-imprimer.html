@@ -104,9 +104,11 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <div data-i18n="grp_app" class="px-2 pt-1 pb-0.5 text-[10px] font-extrabold tracking-widest text-gray-500 uppercase font-display">Découvrir</div>
             <a href="./index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
             <a href="./index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
-            <a href="./blog/index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-green transition-colors">Conseils aux parents</a>
+            <div data-i18n="grp_res" class="px-2 pt-2 pb-0.5 text-[10px] font-extrabold tracking-widest text-gray-500 uppercase font-display">Ressources</div>
+            <a href="./blog/index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-green transition-colors">Conseils & articles</a>
             <a href="./fiches-a-imprimer.html" data-i18n="nav_print" class="py-2.5 px-2 rounded-lg text-cosmic-cyan hover:bg-white/5 transition-colors">Fiches à imprimer</a>
             <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-[#1877F2] transition-colors inline-flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
             <a href="./index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
@@ -267,7 +269,7 @@
         // ---------- i18n ----------
         const T = {
             fr: { doc_title:"Fiches d'exercices de maths à imprimer (gratuit) | AstroCalcul",
-                nav_features:"Fonctionnalités", nav_parents:"Espace Parents", nav_blog:"Conseils aux parents", nav_print:"Fiches à imprimer", nav_facebook:"Rejoignez-nous sur Facebook", nav_demo:"TÉLÉCHARGER",
+                nav_features:"Fonctionnalités", nav_parents:"Espace Parents", nav_blog:"Conseils & articles", nav_print:"Fiches à imprimer", nav_facebook:"Rejoignez-nous sur Facebook", nav_demo:"TÉLÉCHARGER",
                 page_badge:"Gratuit & sans inscription", page_title:"Fiches d'exercices à imprimer",
                 page_desc:"Choisissez vos opérations et vos tables, générez une fiche, et imprimez-la gratuitement. Additions, soustractions, multiplications, divisions — à mixer comme vous voulez.",
                 lbl_ops:"1. Opérations (mixez-les !)", op_add:"Addition", op_sub:"Soustraction", op_mul:"Multiplication", op_div:"Division",
@@ -279,7 +281,7 @@
                 footer_desc:"L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.",
                 footer_home:"Accueil", footer_privacy:"Confidentialité", footer_contact:"Contact", dl_title:"Vous voulez rejoindre l'aventure interactive ?", dl_desc:"Téléchargez AstroCalcul sur votre smartphone et votre tablette pour transformer les révisions en véritable exploration spatiale.", appstore_sub:"Télécharger sur l'", playstore_sub:"DISPONIBLE SUR" },
             en: { doc_title:"Printable math worksheets (free) | AstroCalcul",
-                nav_features:"Features", nav_parents:"Parents' Space", nav_blog:"Parents' Tips", nav_print:"Printable sheets", nav_facebook:"Join us on Facebook", nav_demo:"DOWNLOAD",
+                nav_features:"Features", nav_parents:"Parents' Space", nav_blog:"Tips & articles", nav_print:"Printable sheets", nav_facebook:"Join us on Facebook", nav_demo:"DOWNLOAD",
                 page_badge:"Free & no sign-up", page_title:"Printable worksheets",
                 page_desc:"Choose your operations and tables, generate a worksheet, and print it for free. Additions, subtractions, multiplications, divisions — mix them however you like.",
                 lbl_ops:"1. Operations (mix them!)", op_add:"Addition", op_sub:"Subtraction", op_mul:"Multiplication", op_div:"Division",
@@ -291,7 +293,7 @@
                 footer_desc:"Playful and secure mental math learning for young space explorers.",
                 footer_home:"Home", footer_privacy:"Privacy", footer_contact:"Contact", dl_title:"Want to join the interactive adventure?", dl_desc:"Download AstroCalcul on your smartphone and tablet to turn revision into a real space exploration.", appstore_sub:"Download on the", playstore_sub:"AVAILABLE ON" },
             nl: { doc_title:"Rekenbladen om af te printen (gratis) | AstroCalcul",
-                nav_features:"Kenmerken", nav_parents:"Oudersruimte", nav_blog:"Tips voor ouders", nav_print:"Werkbladen printen", nav_facebook:"Volg ons op Facebook", nav_demo:"DOWNLOADEN",
+                nav_features:"Kenmerken", nav_parents:"Oudersruimte", nav_blog:"Tips & artikels", nav_print:"Werkbladen printen", nav_facebook:"Volg ons op Facebook", nav_demo:"DOWNLOADEN",
                 page_badge:"Gratis & zonder registratie", page_title:"Werkbladen om af te printen",
                 page_desc:"Kies je bewerkingen en tafels, genereer een werkblad en print het gratis. Optellen, aftrekken, vermenigvuldigen, delen — meng ze zoals je wilt.",
                 lbl_ops:"1. Bewerkingen (meng ze!)", op_add:"Optellen", op_sub:"Aftrekken", op_mul:"Vermenigvuldigen", op_div:"Delen",
