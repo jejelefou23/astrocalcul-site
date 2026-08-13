@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jeux de calcul mental sans écran (voiture, vacances, attente) | AstroCalcul</title>
+    <meta name="description" content="Des idées de jeux de calcul mental sans écran à faire en voiture, en vacances ou dans une salle d'attente. Ludique, gratuit et sans matériel.">
+
+    <link rel="canonical" href="https://astrocalcul.com/blog/jeux-calcul-mental-sans-ecran.html" />
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="apple-touch-icon" href="../assets/logo.png">
+
+    <meta property="og:site_name" content="AstroCalcul" />
+    <meta property="og:title" content="Des jeux de calcul mental sans écran pour occuper les enfants" />
+    <meta property="og:description" content="Des idées de jeux de calcul mental à faire partout, sans écran ni matériel." />
+    <meta property="og:image" content="https://astrocalcul.com/assets/og-banner.png" />
+    <meta property="og:url" content="https://astrocalcul.com/blog/jeux-calcul-mental-sans-ecran.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org", "@type": "Article",
+      "headline": "Des jeux de calcul mental sans écran pour occuper les enfants",
+      "description": "Des idées de jeux de calcul mental à faire partout, sans écran ni matériel.",
+      "image": "https://astrocalcul.com/assets/og-banner.png",
+      "author": { "@type": "Organization", "name": "AstroCalcul" },
+      "publisher": { "@type": "Organization", "name": "AstroCalcul", "logo": { "@type": "ImageObject", "url": "https://astrocalcul.com/assets/logo.png" } },
+      "mainEntityOfPage": "https://astrocalcul.com/blog/jeux-calcul-mental-sans-ecran.html", "inLanguage": "fr"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            colors: { space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' }, cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' } },
+            fontFamily: { sans: ['Nunito','ui-sans-serif','system-ui','sans-serif'], display: ['Fredoka','Nunito','sans-serif'] }
+        } } }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #0B0B1E; overflow-x: hidden; }
+        .cosmic-glow { filter: blur(120px); opacity: 0.15; pointer-events: none; }
+        .glass-panel { background: rgba(20, 20, 50, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .article-body h2 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.6rem; line-height: 1.3; margin-top: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .article-body p { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; }
+        .article-body ul { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; padding-left: 1.4rem; list-style: disc; }
+        .article-body li { margin-bottom: 0.4rem; }
+        .article-body strong { color: #fff; }
+    </style>
+    <!-- Umami Analytics (sans cookie, sans donnee personnelle) -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="89600733-b04f-492a-99ce-688a591b4dfc"></script>
+</head>
+<body class="text-white relative min-h-screen">
+
+    <canvas id="stars-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+    <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10"></div>
+
+    <header class="w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-cosmic-cyan/10">
+                    <img src="../assets/logo.png" alt="AstroCalcul" class="w-full h-full object-cover">
+                </div>
+                <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
+            </a>
+            <nav class="hidden">
+                <a href="../index.html#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+                <a href="../index.html#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+                <a href="./index.html" data-i18n="nav_blog" class="text-cosmic-green transition-colors">Conseils aux parents</a>
+                <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="inline-flex items-center gap-2 text-gray-300 hover:text-[#1877F2] transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display">
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display">FR</button>
+                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">EN</button>
+                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
+                </div>
+                <a href="../index.html#download-cta" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">TÉLÉCHARGER</a>
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <a href="../index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+            <a href="../index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+            <a href="./index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-cosmic-green hover:bg-white/5 transition-colors">Conseils aux parents</a>
+            <a href="../fiches-a-imprimer.html" data-i18n="nav_print" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fiches à imprimer</a>
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-[#1877F2] transition-colors inline-flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
+            <a href="../index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 md:px-8 py-12">
+
+        <nav class="text-xs text-gray-500 font-bold mb-6 flex flex-wrap items-center gap-2">
+            <a href="../index.html" data-i18n="bc_home" class="hover:text-cosmic-cyan">Accueil</a>
+            <span>›</span>
+            <a href="./index.html" data-i18n="bc_blog" class="hover:text-cosmic-cyan">Conseils aux parents</a>
+            <span>›</span>
+            <span data-i18n="bc_current" class="text-gray-400">Jeux de calcul mental sans écran</span>
+        </nav>
+
+        <article class="glass-panel rounded-3xl p-6 md:p-10">
+            <span data-i18n="kicker" class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Conseils aux parents</span>
+            <h1 data-i18n="h1" class="text-3xl md:text-4xl font-display font-bold leading-tight mt-3 mb-6">Des jeux de calcul mental sans écran (voiture, vacances, attente)</h1>
+
+            <!-- FR -->
+            <div data-lang="fr" class="article-body">
+                <p>Le calcul mental ne s'entraîne pas qu'avec un cahier ou une application. Les meilleurs moments sont souvent ceux où l'on s'ennuie un peu : un trajet en voiture, une salle d'attente, la file au supermarché. Voici des jeux simples, sans écran et sans matériel, pour transformer ces instants en entraînement ludique.</p>
+                <h2>Les jeux de nombres autour de vous</h2>
+                <ul>
+                    <li><strong>La plaque d'immatriculation.</strong> Additionnez les chiffres de la plaque de la voiture devant vous. Pour les plus grands : multipliez-les, ou trouvez le plus grand nombre possible.</li>
+                    <li><strong>Le compte est bon (version facile).</strong> Annoncez un nombre cible (par exemple 12) et des petits nombres (3, 4, 5) : l'enfant doit les combiner pour l'atteindre.</li>
+                    <li><strong>Devine mon nombre.</strong> « Je pense à un nombre. Si tu lui ajoutes 5, tu obtiens 12. » L'enfant retrouve le nombre de départ — excellent pour la soustraction.</li>
+                </ul>
+                <h2>Les jeux du quotidien</h2>
+                <ul>
+                    <li><strong>Le petit caissier.</strong> Au supermarché, demandez d'estimer le total du panier, ou de calculer la monnaie à rendre. Concret et motivant.</li>
+                    <li><strong>La recette de cuisine.</strong> « On double la recette : il faut combien d'œufs ? » Les maths deviennent utiles et gourmandes.</li>
+                    <li><strong>Compter par bonds.</strong> En marchant, comptez de 2 en 2, de 5 en 5, puis de 7 en 7 pour les plus grands. Parfait pour préparer les tables.</li>
+                </ul>
+                <h2>Les jeux à deux ou en famille</h2>
+                <ul>
+                    <li><strong>La bataille des dés.</strong> Chacun lance deux dés et additionne (ou multiplie). Le plus grand résultat gagne le tour.</li>
+                    <li><strong>Le furet.</strong> On compte à tour de rôle, mais on remplace les multiples d'un nombre par « furet ». À 3 : « 1, 2, furet, 4, 5, furet… ». Fou rire garanti quand quelqu'un se trompe.</li>
+                    <li><strong>Plus ou moins.</strong> Un joueur pense à un nombre entre 1 et 100, l'autre devine ; on répond « plus » ou « moins ». Ça travaille la logique et les ordres de grandeur.</li>
+                </ul>
+                <h2>Pourquoi ces jeux marchent si bien</h2>
+                <p>Sans écran, sans enjeu de note, l'enfant calcule <strong>pour jouer</strong>, pas pour être évalué. C'est exactement dans ces conditions détendues que la mémorisation s'installe le mieux. Et ces jeux ont un autre avantage : ils créent des moments partagés, loin de la pression des devoirs.</p>
+                <h2>Et l'écran, dans tout ça ?</h2>
+                <p>L'écran n'est pas l'ennemi : bien utilisé, en complément, il motive et varie les plaisirs. Une application comme <strong>AstroCalcul</strong> prend le relais quand le jeu à voix haute a fait son temps, en gardant la même logique : s'entraîner en s'amusant, sous forme de défi spatial, sans publicité ni distraction. L'idéal est d'alterner : des jeux sans écran dans la voiture, l'appli à la maison.</p>
+                <h2>En résumé</h2>
+                <p>Pas besoin de matériel ni d'écran pour entraîner le calcul mental : les trajets, les courses et les temps d'attente sont autant d'occasions de jouer avec les nombres. En rendant le calcul naturel et amusant, vous ancrez des réflexes qui dureront — et vous passez un bon moment ensemble.</p>
+            </div>
+
+            <!-- EN -->
+            <div data-lang="en" class="article-body" style="display:none">
+                <p>Mental math isn't practised only with a workbook or an app. The best moments are often the slightly boring ones: a car ride, a waiting room, the supermarket queue. Here are simple games, screen-free and with no equipment, to turn those moments into playful practice.</p>
+                <h2>Number games around you</h2>
+                <ul>
+                    <li><strong>The number plate.</strong> Add up the digits on the plate of the car in front. For older kids: multiply them, or find the biggest possible number.</li>
+                    <li><strong>Reach the target (easy version).</strong> Call out a target number (say 12) and small numbers (3, 4, 5): the child combines them to reach it.</li>
+                    <li><strong>Guess my number.</strong> "I'm thinking of a number. Add 5 and you get 12." The child finds the starting number — great for subtraction.</li>
+                </ul>
+                <h2>Everyday games</h2>
+                <ul>
+                    <li><strong>The little cashier.</strong> At the shop, ask them to estimate the basket total, or work out the change. Concrete and motivating.</li>
+                    <li><strong>The recipe.</strong> "We're doubling the recipe: how many eggs?" Maths becomes useful and tasty.</li>
+                    <li><strong>Skip counting.</strong> While walking, count in 2s, in 5s, then in 7s for older kids. Perfect groundwork for the times tables.</li>
+                </ul>
+                <h2>Games for two or the whole family</h2>
+                <ul>
+                    <li><strong>Dice battle.</strong> Each rolls two dice and adds (or multiplies). The biggest result wins the round.</li>
+                    <li><strong>The buzz game.</strong> Count in turns, but replace multiples of a number with "buzz". For 3: "1, 2, buzz, 4, 5, buzz…". Laughter guaranteed when someone slips.</li>
+                    <li><strong>Higher or lower.</strong> One player thinks of a number from 1 to 100, the other guesses; you answer "higher" or "lower". Great for logic and orders of magnitude.</li>
+                </ul>
+                <h2>Why these games work so well</h2>
+                <p>With no screen and no grade at stake, the child calculates <strong>to play</strong>, not to be assessed. It's precisely in these relaxed conditions that memorisation takes hold best. And these games have another benefit: they create shared moments, far from homework pressure.</p>
+                <h2>What about screens?</h2>
+                <p>Screens aren't the enemy: used well, as a complement, they motivate and add variety. An app like <strong>AstroCalcul</strong> takes over when the out-loud games have run their course, keeping the same idea: practising while having fun, as a space challenge, with no ads or distractions. The ideal is to alternate: screen-free games in the car, the app at home.</p>
+                <h2>In summary</h2>
+                <p>You need no equipment or screen to train mental math: journeys, shopping and waiting times are all chances to play with numbers. By making calculation natural and fun, you build reflexes that last — and you enjoy a nice moment together.</p>
+            </div>
+
+            <!-- NL -->
+            <div data-lang="nl" class="article-body" style="display:none">
+                <p>Hoofdrekenen oefen je niet alleen met een werkboek of een app. De beste momenten zijn vaak de wat saaie: een autorit, een wachtkamer, de rij in de supermarkt. Hier zijn eenvoudige spelletjes, zonder scherm en zonder materiaal, om die momenten om te toveren tot speels oefenen.</p>
+                <h2>Getallenspelletjes om je heen</h2>
+                <ul>
+                    <li><strong>De nummerplaat.</strong> Tel de cijfers op van de plaat van de auto voor je. Voor grotere kinderen: vermenigvuldig ze, of vind het grootst mogelijke getal.</li>
+                    <li><strong>Bereik het doel (makkelijke versie).</strong> Noem een doelgetal (bijvoorbeeld 12) en kleine getallen (3, 4, 5): het kind combineert ze om het te bereiken.</li>
+                    <li><strong>Raad mijn getal.</strong> "Ik denk aan een getal. Tel er 5 bij en je krijgt 12." Het kind vindt het startgetal — ideaal voor aftrekken.</li>
+                </ul>
+                <h2>Dagelijkse spelletjes</h2>
+                <ul>
+                    <li><strong>De kleine kassier.</strong> Vraag in de winkel om het totaal van het mandje te schatten, of het wisselgeld te berekenen. Concreet en motiverend.</li>
+                    <li><strong>Het recept.</strong> "We verdubbelen het recept: hoeveel eieren?" Rekenen wordt nuttig en lekker.</li>
+                    <li><strong>Sprongen tellen.</strong> Tel al wandelend per 2, per 5, en per 7 voor de groteren. Perfecte voorbereiding op de tafels.</li>
+                </ul>
+                <h2>Spelletjes met twee of met het gezin</h2>
+                <ul>
+                    <li><strong>Dobbelstrijd.</strong> Ieder gooit twee dobbelstenen en telt op (of vermenigvuldigt). Het grootste resultaat wint de ronde.</li>
+                    <li><strong>Het bzzt-spel.</strong> Tel om de beurt, maar vervang veelvouden van een getal door "bzzt". Voor 3: "1, 2, bzzt, 4, 5, bzzt…". Lachen gegarandeerd als iemand zich vergist.</li>
+                    <li><strong>Hoger of lager.</strong> Eén speler denkt aan een getal van 1 tot 100, de ander raadt; je antwoordt "hoger" of "lager". Ideaal voor logica en grootteordes.</li>
+                </ul>
+                <h2>Waarom deze spelletjes zo goed werken</h2>
+                <p>Zonder scherm en zonder punten op het spel rekent het kind <strong>om te spelen</strong>, niet om beoordeeld te worden. Net in die ontspannen omstandigheden zet het geheugen zich het best vast. En deze spelletjes hebben nog een voordeel: ze creëren gedeelde momenten, ver van de huiswerkdruk.</p>
+                <h2>En het scherm dan?</h2>
+                <p>Schermen zijn niet de vijand: goed gebruikt, als aanvulling, motiveren ze en brengen ze afwisseling. Een app als <strong>AstroCalcul</strong> neemt het over wanneer de spelletjes hardop hun tijd hebben gehad, met dezelfde gedachte: oefenen met plezier, als ruimte-uitdaging, zonder reclame of afleiding. Ideaal is afwisselen: schermloze spelletjes in de auto, de app thuis.</p>
+                <h2>Samengevat</h2>
+                <p>Je hebt geen materiaal of scherm nodig om hoofdrekenen te oefenen: ritten, boodschappen en wachttijden zijn allemaal kansen om met getallen te spelen. Door rekenen natuurlijk en leuk te maken, bouw je reflexen die blijven — en beleef je samen een fijn moment.</p>
+            </div>
+            <div class="mt-10 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden border border-white/10 bg-gradient-to-r from-cosmic-pink/10 via-transparent to-cosmic-blue/10">
+                <h3 data-i18n="cta_title" class="text-xl md:text-2xl font-display font-bold mb-3">🚀 Et pour continuer en s'amusant ?</h3>
+                <p data-i18n="cta_text" class="text-gray-300 text-sm max-w-xl mx-auto mb-5">Quand l'écran a sa place, AstroCalcul prend le relais en douceur : du calcul mental sous forme de jeu spatial, sans pub. Conçu par un papa développeur.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="https://apps.apple.com/us/app/astrocalcul/id6760236661" data-umami-event="clic-app-store" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul" data-umami-event="clic-google-play" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">Google Play</a>
+                </div>
+            </div>
+        </article>
+
+        <div class="mt-8 text-center">
+            <a href="./index.html" data-i18n="back_link" class="text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm">← Tous les conseils aux parents</a>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 pt-10 pb-12 text-center space-y-4 max-w-5xl mx-auto px-6">
+        <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-gray-500">
+            <a href="../index.html" data-i18n="footer_home" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
+            <span>•</span>
+            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="footer_privacy" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
+            <span>•</span>
+            <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact" class="hover:text-cosmic-cyan transition-colors">Contact</a>
+        </div>
+        <div class="flex items-center justify-center pt-1">
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" aria-label="AstroCalcul sur Facebook" data-umami-event="clic-facebook" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-200"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
+        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+    </footer>
+
+    <script>
+        const T = {
+            fr: { doc_title:"Jeux de calcul mental sans écran (voiture, vacances, attente) | AstroCalcul", nav_features:"Fonctionnalités", nav_parents:"Espace Parents", nav_blog:"Conseils aux parents", nav_facebook:"Rejoignez-nous sur Facebook", nav_print:"Fiches à imprimer", nav_demo:"TÉLÉCHARGER", bc_home:"Accueil", bc_blog:"Conseils aux parents", bc_current:"Jeux de calcul mental sans écran", kicker:"Conseils aux parents", h1:"Des jeux de calcul mental sans écran (voiture, vacances, attente)", cta_title:"🚀 Et pour continuer en s'amusant ?", cta_text:"Quand l'écran a sa place, AstroCalcul prend le relais en douceur : du calcul mental sous forme de jeu spatial, sans pub. Conçu par un papa développeur.", back_link:"← Tous les conseils aux parents", footer_desc:"L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.", footer_home:"Accueil", footer_privacy:"Confidentialité", footer_contact:"Contact", footer_rights:"Tous droits réservés." },
+            en: { doc_title:"Screen-free mental math games (car, holidays, waiting) | AstroCalcul", nav_features:"Features", nav_parents:"Parents' Space", nav_blog:"Parents' Tips", nav_facebook:"Join us on Facebook", nav_print:"Printable sheets", nav_demo:"DOWNLOAD", bc_home:"Home", bc_blog:"Parents' Tips", bc_current:"Screen-free mental math games", kicker:"Parents' Tips", h1:"Screen-free mental math games (car, holidays, waiting rooms)", cta_title:"🚀 And to keep the fun going?", cta_text:"When screen time has its place, AstroCalcul takes over gently: mental math as a space game, ad-free. Built by a developer dad.", back_link:"← All parents' tips", footer_desc:"Playful and secure mental math learning for young space explorers.", footer_home:"Home", footer_privacy:"Privacy", footer_contact:"Contact", footer_rights:"All rights reserved." },
+            nl: { doc_title:"Hoofdrekenspelletjes zonder scherm (auto, vakantie, wachten) | AstroCalcul", nav_features:"Kenmerken", nav_parents:"Oudersruimte", nav_blog:"Tips voor ouders", nav_facebook:"Volg ons op Facebook", nav_print:"Werkbladen printen", nav_demo:"DOWNLOADEN", bc_home:"Home", bc_blog:"Tips voor ouders", bc_current:"Hoofdrekenspelletjes zonder scherm", kicker:"Tips voor ouders", h1:"Hoofdrekenspelletjes zonder scherm (auto, vakantie, wachtkamer)", cta_title:"🚀 En om spelend verder te gaan?", cta_text:"Wanneer schermtijd zijn plaats heeft, neemt AstroCalcul zachtjes over: hoofdrekenen als ruimtespel, zonder reclame. Gemaakt door een developer-papa.", back_link:"← Alle tips voor ouders", footer_desc:"Speels en veilig hoofdrekenen leren voor jonge ruimtevaarders.", footer_home:"Home", footer_privacy:"Privacy", footer_contact:"Contact", footer_rights:"Alle rechten voorbehouden." }
+        };
+        const LANGS = ['fr','en','nl'];
+        let lang = localStorage.getItem('astrocalcul_lang') || 'fr';
+        function applyLang(l) {
+            lang = l; localStorage.setItem('astrocalcul_lang', l);
+            document.documentElement.lang = l;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const k = e.getAttribute('data-i18n'); if (T[l] && T[l][k] != null) e.innerHTML = T[l][k]; });
+            document.querySelectorAll('[data-lang]').forEach(b => { b.style.display = (b.getAttribute('data-lang') === l) ? '' : 'none'; });
+            if (T[l].doc_title) document.title = T[l].doc_title;
+            LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
+        }
+        function changeLanguage(l) { applyLang(l); }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            document.getElementById('burger-icon').classList.toggle('hidden', open);
+            document.getElementById('close-icon').classList.toggle('hidden', !open);
+            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
+        }
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); }
+        function init() { stars = []; for (let i=0;i<100;i++){ stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005,c:Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF')}); } }
+        function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(st=>{ st.a+=st.s; if(st.a>1||st.a<0)st.s=-st.s; ctx.save(); ctx.globalAlpha=Math.max(0.1,st.a); ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2); ctx.fillStyle=st.c; ctx.fill(); ctx.restore(); }); requestAnimationFrame(animate); }
+        window.addEventListener('resize', resize);
+        window.addEventListener('load', () => {
+            const p = new URLSearchParams(location.search).get('lang');
+            if (p && LANGS.includes(p)) lang = p;
+            applyLang(lang); resize(); animate();
+        });
+    </script>
+</body>
+</html>
