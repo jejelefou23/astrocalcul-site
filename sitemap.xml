@@ -48,5 +48,21 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://astrocalcul.com/blog/jeux-calcul-mental-sans-ecran.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://astrocalcul.com/blog/reconnaitre-bonne-application-educative.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://astrocalcul.com/blog/calcul-mental-selon-age.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Articles futurs : dupliquer un bloc <url> ci-dessus en changeant le <loc> -->
 </urlset>
