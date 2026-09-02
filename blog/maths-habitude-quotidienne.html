@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Les mathématiques : une habitude quotidienne à partager | AstroCalcul</title>
+    <meta name="description" content="Des micro-actions quotidiennes pour retrouver le plaisir des mathématiques. L'approche Gamathification de Fanny Reignier : jeu, sens et plaisir partagé.">
+
+    <link rel="canonical" href="https://astrocalcul.com/blog/maths-habitude-quotidienne.html" />
+    <link rel="icon" type="image/png" href="../assets/logo.png">
+    <link rel="apple-touch-icon" href="../assets/logo.png">
+
+    <meta property="og:site_name" content="AstroCalcul" />
+    <meta property="og:title" content="Les mathématiques : une habitude quotidienne à partager" />
+    <meta property="og:description" content="Des micro-actions quotidiennes pour redonner aux enfants le plaisir des mathématiques." />
+    <meta property="og:image" content="https://astrocalcul.com/assets/og-banner.png" />
+    <meta property="og:url" content="https://astrocalcul.com/blog/maths-habitude-quotidienne.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org", "@type": "Article",
+      "headline": "Les mathématiques : une habitude quotidienne à partager",
+      "description": "Des micro-actions quotidiennes pour retrouver le plaisir des mathématiques. L'approche Gamathification de Fanny Reignier : jeu, sens et plaisir partagé.",
+      "image": "https://astrocalcul.com/assets/og-banner.png",
+      "author": { "@type": "Person", "name": "Fanny Reignier", "url": "https://www.linkedin.com/in/fanny-reignier/" },
+      "publisher": { "@type": "Organization", "name": "AstroCalcul", "logo": { "@type": "ImageObject", "url": "https://astrocalcul.com/assets/logo.png" } },
+      "mainEntityOfPage": "https://astrocalcul.com/blog/maths-habitude-quotidienne.html", "inLanguage": "fr"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            colors: { space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' }, cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' } },
+            fontFamily: { sans: ['Nunito','ui-sans-serif','system-ui','sans-serif'], display: ['Fredoka','Nunito','sans-serif'] }
+        } } }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #0B0B1E; overflow-x: hidden; }
+        .cosmic-glow { filter: blur(120px); opacity: 0.15; pointer-events: none; }
+        .glass-panel { background: rgba(20, 20, 50, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .article-body h2 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.6rem; line-height: 1.3; margin-top: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .article-body p { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; }
+        .article-body ul { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; padding-left: 1.4rem; list-style: disc; }
+        .article-body li { margin-bottom: 0.4rem; }
+        .article-body strong { color: #fff; }
+    </style>
+    <!-- Umami Analytics (sans cookie, sans donnee personnelle) -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="89600733-b04f-492a-99ce-688a591b4dfc"></script>
+</head>
+<body class="text-white relative min-h-screen">
+
+    <canvas id="stars-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+    <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10"></div>
+
+    <header class="w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-cosmic-cyan/10">
+                    <img src="../assets/logo.png" alt="AstroCalcul" class="w-full h-full object-cover">
+                </div>
+                <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
+            </a>
+            <nav class="hidden">
+                <a href="../index.html#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+                <a href="../index.html#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+                <a href="./index.html" data-i18n="nav_blog" class="text-cosmic-green transition-colors">Conseils & articles</a>
+                <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="inline-flex items-center gap-2 text-gray-300 hover:text-[#1877F2] transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display" style="display:none">
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display">FR</button>
+                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">EN</button>
+                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
+                </div>
+                <a href="../index.html#download-cta" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">TÉLÉCHARGER</a>
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <div data-i18n="grp_app" class="px-2 pt-1 pb-0.5 text-[10px] font-extrabold tracking-widest text-gray-500 uppercase font-display">Découvrir</div>
+            <a href="../index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+            <a href="../index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+            <div data-i18n="grp_res" class="px-2 pt-2 pb-0.5 text-[10px] font-extrabold tracking-widest text-gray-500 uppercase font-display">Ressources</div>
+            <a href="./index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-cosmic-green hover:bg-white/5 transition-colors">Conseils & articles</a>
+            <a href="../fiches-a-imprimer.html" data-i18n="nav_print" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fiches à imprimer</a>
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-[#1877F2] transition-colors inline-flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
+            <a href="../index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 md:px-8 py-12">
+
+        <nav class="text-xs text-gray-500 font-bold mb-6 flex flex-wrap items-center gap-2">
+            <a href="../index.html" data-i18n="bc_home" class="hover:text-cosmic-cyan">Accueil</a>
+            <span>›</span>
+            <a href="./index.html" data-i18n="bc_blog" class="hover:text-cosmic-cyan">Conseils & articles</a>
+            <span>›</span>
+            <span class="text-gray-400">Une habitude quotidienne</span>
+        </nav>
+
+        <article class="glass-panel rounded-3xl p-6 md:p-10">
+            <span class="text-xs font-extrabold tracking-widest text-cosmic-purple uppercase font-display">Article invité</span>
+            <h1 class="text-3xl md:text-4xl font-display font-bold leading-tight mt-3 mb-2">Les mathématiques : une habitude quotidienne à partager</h1>
+            <p class="text-sm text-gray-400 mb-6">Article invité — par <a href="https://www.linkedin.com/in/fanny-reignier/" target="_blank" rel="noopener noreferrer" class="text-cosmic-cyan hover:underline">Fanny Reignier</a>, créatrice du protocole Gamathification™</p>
+
+            <div class="article-body">
+                <p class="text-lg text-gray-200"><em>Des micro-actions quotidiennes pour retrouver le plaisir des mathématiques.</em></p>
+                <p>Les mathématiques sont souvent vues par les enfants comme une matière particulièrement difficile, souvent ennuyeuse, parfois même complètement inutile. Et pourtant, je suis persuadée que tous les enfants peuvent retrouver du plaisir et vraiment apprécier les mathématiques, lorsqu'on met en place une méthode adaptée.</p>
+                <h2>Les petites gouttes font de grandes rivières</h2>
+                <p>Mieux vaut une micro-action quotidienne de 5 minutes qu'une session de 3 h tous les week-ends. Le cerveau n'apprend pas par la force : rien ne sert de le brusquer, il suffit d'un petit rappel quotidien. C'est la raison pour laquelle il me semble judicieux de mettre en place des micro-actions quotidiennes. Mais quelles actions réaliser ? Si je vous conseille d'instaurer le réflexe d'explorer l'univers mathématique quotidiennement, je déconseille vivement d'imposer une routine stricte. Le terrain de jeu des mathématiques est infini, alors autant en profiter : une session de calcul mental (avec AstroCalcul !), un défi mathématique, une recette de cuisine à préparer en adaptant les proportions au nombre de convives, un tour de magie basé sur les maths, etc. N'hésitez pas à laisser le choix à votre enfant !</p>
+                <h2>Une approche ludique</h2>
+                <p>Un enfant apprend toujours mieux par le jeu que par la contrainte. Alors autant jouer : tout le monde peut en profiter et cela évite les conflits. Si l'on peut créer des jeux autour des mathématiques, on peut même aller encore plus loin. Une composante gamifiée est présente intrinsèquement dans les mathématiques : chaque exercice est une quête, dans laquelle on a des pouvoirs qui nous permettent (ou non) de résoudre l'énigme.</p>
+                <h2>L'utilité avant tout</h2>
+                <p>Il ne suffit pas toujours que les mathématiques soient un jeu pour que les enfants accrochent vraiment. Parfois, les enfants ont besoin de comprendre l'utilité, le sens réel de ce qu'ils font. Pour cela, il faut poser des problèmes concrets qui s'appliquent vraiment à leur situation.</p>
+                <h2>Le plaisir partagé</h2>
+                <p>On ne progresse jamais mieux qu'en prenant du plaisir. S'amuser, chercher, explorer permet à la fois à l'enfant de grandir et de progresser. Mais le jeu mathématique prend tout son sens lorsqu'on le partage. Entre enfants, c'est une opportunité géniale de s'éclater. Avec toute la famille, cela donne de l'importance à l'enfant : il se rend compte que les adultes aussi peuvent s'amuser avec les maths. Et je suis sûre que vous pourriez vous surprendre à vous prendre aisément au jeu.</p>
+                <h2>À l'ère de l'IA</h2>
+                <p>Les mathématiques sont l'occasion de nouer plus profondément les liens entre enfants et parents, d'explorer ensemble de nouveaux horizons. À l'heure de l'intelligence artificielle, explorer les mathématiques n'apporte pas seulement des connaissances utiles au quotidien, mais également des compétences telles que l'acceptation de l'échec ou la persévérance.</p>
+                <h2>En résumé</h2>
+                <p>Les mathématiques ne doivent pas se limiter aux cours et aux devoirs. Au contraire, il est essentiel d'intégrer les maths au quotidien afin que chaque enfant prenne du plaisir et n'oublie jamais leur utilité.</p>
+            </div>
+
+            <!-- Encadré autrice -->
+            <div class="mt-10 glass-panel rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                <div class="flex-shrink-0 w-20 h-20 rounded-full bg-gradient-to-br from-cosmic-purple to-cosmic-pink flex items-center justify-center font-display font-black text-2xl text-white shadow-lg">FR</div>
+                <div class="text-center sm:text-left">
+                    <span class="text-xs font-extrabold tracking-widest text-cosmic-purple uppercase font-display">À propos de l'autrice</span>
+                    <h3 class="text-xl font-display font-bold text-white mt-1">Fanny Reignier</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mt-2">Passionnée par les mathématiques, Fanny a créé le protocole <strong>Gamathification™</strong> : une méthode fondée sur des micro-actions quotidiennes pour aider les parents à redonner le goût des maths à leurs enfants, renouer une relation de plaisir avec cette matière et éviter les conflits, notamment lors des devoirs.</p>
+                    <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 mt-3 text-sm font-display font-bold">
+                        <a href="https://www.linkedin.com/in/fanny-reignier/" target="_blank" rel="noopener noreferrer" class="text-cosmic-cyan hover:text-white transition-colors">LinkedIn</a>
+                        <a href="https://fannyreignier.tinypages.co/" target="_blank" rel="noopener noreferrer" class="text-cosmic-cyan hover:text-white transition-colors">Site internet</a>
+                        <a href="mailto:contact@fanny-reignier.com" class="text-cosmic-cyan hover:text-white transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden border border-white/10 bg-gradient-to-r from-cosmic-pink/10 via-transparent to-cosmic-blue/10">
+                <h3 data-i18n="cta_title" class="text-xl md:text-2xl font-display font-bold mb-3">🚀 Envie de rendre les maths ludiques ?</h3>
+                <p data-i18n="cta_text" class="text-gray-300 text-sm max-w-xl mx-auto mb-5">AstroCalcul transforme le calcul mental en aventure spatiale, sans publicité ni collecte de données. Une belle façon d'intégrer les maths au quotidien, en s'amusant.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="https://apps.apple.com/us/app/astrocalcul/id6760236661" data-umami-event="clic-app-store" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul" data-umami-event="clic-google-play" target="_blank" rel="noopener noreferrer" class="bg-white text-space-900 font-black text-sm px-6 py-3 rounded-full font-display hover:scale-105 transition-transform">Google Play</a>
+                </div>
+            </div>
+        </article>
+
+        <div class="mt-8 text-center">
+            <a href="./index.html" data-i18n="back_link" class="text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm">← Tous les conseils & articles</a>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 pt-10 pb-12 text-center space-y-4 max-w-5xl mx-auto px-6">
+        <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-gray-500">
+            <a href="../index.html" data-i18n="footer_home" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
+            <span>•</span>
+            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="footer_privacy" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
+            <span>•</span>
+            <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact" class="hover:text-cosmic-cyan transition-colors">Contact</a>
+        </div>
+        <div class="flex items-center justify-center pt-1">
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" aria-label="AstroCalcul sur Facebook" data-umami-event="clic-facebook" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-200"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
+        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+    </footer>
+
+    <script>
+        const T = {
+            fr: { doc_title: "Mon enfant n'aime pas les maths : comment le motiver ? | AstroCalcul",
+                nav_features: "Fonctionnalités", nav_parents: "Espace Parents", nav_blog: "Conseils & articles", nav_facebook: "Rejoignez-nous sur Facebook", nav_print: "Fiches à imprimer", grp_app: "Découvrir", grp_res: "Ressources", pin_save: "Épingler sur Pinterest", nav_demo: "TÉLÉCHARGER",
+                bc_home: "Accueil", bc_blog: "Conseils & articles", bc_current: "Motiver un enfant en maths",
+                kicker: "Conseils & articles", h1: "Mon enfant n'aime pas les maths : comment le motiver ?",
+                cta_title: "🚀 Envie de rendre les maths ludiques ?",
+                cta_text: "AstroCalcul transforme le calcul mental en aventure spatiale, sans publicité ni collecte de données. Une belle façon d'intégrer les maths au quotidien, en s'amusant.",
+                back_link: "← Tous les conseils & articles",
+                footer_desc: "L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.",
+                footer_home: "Accueil", footer_privacy: "Confidentialité", footer_contact: "Contact", footer_rights: "Tous droits réservés." },
+            en: { doc_title: "My child doesn't like maths: how to motivate them? | AstroCalcul",
+                nav_features: "Features", nav_parents: "Parents' Space", nav_blog: "Tips & articles", nav_facebook: "Join us on Facebook", nav_print: "Printable sheets", grp_app: "Discover", grp_res: "Resources", pin_save: "Save on Pinterest", nav_demo: "DOWNLOAD",
+                bc_home: "Home", bc_blog: "Tips & articles", bc_current: "Motivating a child in maths",
+                kicker: "Tips & articles", h1: "My child doesn't like maths: how to motivate them?",
+                cta_title: "🚀 Give them back the taste for maths",
+                cta_text: "AstroCalcul turns revision into a motivating space adventure. Ad-free, with parental tracking and rewards that make children want to continue.",
+                back_link: "← All tips & articles",
+                footer_desc: "Playful and secure mental math learning for young space explorers.",
+                footer_home: "Home", footer_privacy: "Privacy", footer_contact: "Contact", footer_rights: "All rights reserved." },
+            nl: { doc_title: "Mijn kind houdt niet van rekenen: hoe motiveer ik het? | AstroCalcul",
+                nav_features: "Kenmerken", nav_parents: "Oudersruimte", nav_blog: "Tips & artikels", nav_facebook: "Volg ons op Facebook", nav_print: "Werkbladen printen", grp_app: "Ontdekken", grp_res: "Bronnen", pin_save: "Opslaan op Pinterest", nav_demo: "DOWNLOADEN",
+                bc_home: "Home", bc_blog: "Tips & artikels", bc_current: "Een kind motiveren bij rekenen",
+                kicker: "Tips & artikels", h1: "Mijn kind houdt niet van rekenen: hoe motiveer ik het?",
+                cta_title: "🚀 Geef het opnieuw zin in rekenen",
+                cta_text: "AstroCalcul verandert oefenen in een motiverend ruimte-avontuur. Zonder reclame, met ouderlijke opvolging en beloningen die zin geven om door te gaan.",
+                back_link: "← Alle tips & artikels",
+                footer_desc: "Speels en veilig hoofdrekenen leren voor jonge ruimtevaarders.",
+                footer_home: "Home", footer_privacy: "Privacy", footer_contact: "Contact", footer_rights: "Alle rechten voorbehouden." }
+        };
+        const LANGS = ['fr','en','nl'];
+        let lang = localStorage.getItem('astrocalcul_lang') || 'fr';
+        function applyLang(l) {
+            lang = l; localStorage.setItem('astrocalcul_lang', l);
+            document.documentElement.lang = l;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const k = e.getAttribute('data-i18n'); if (T[l] && T[l][k] != null) e.innerHTML = T[l][k]; });
+            document.querySelectorAll('[data-lang]').forEach(b => { b.style.display = (b.getAttribute('data-lang') === l) ? '' : 'none'; });
+            if (T[l].doc_title) document.title = T[l].doc_title;
+            LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
+        }
+        function changeLanguage(l) { applyLang(l); }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            document.getElementById('burger-icon').classList.toggle('hidden', open);
+            document.getElementById('close-icon').classList.toggle('hidden', !open);
+            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
+        }
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); }
+        function init() { stars = []; for (let i=0;i<100;i++){ stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005,c:Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF')}); } }
+        function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(st=>{ st.a+=st.s; if(st.a>1||st.a<0)st.s=-st.s; ctx.save(); ctx.globalAlpha=Math.max(0.1,st.a); ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2); ctx.fillStyle=st.c; ctx.fill(); ctx.restore(); }); requestAnimationFrame(animate); }
+        window.addEventListener('resize', resize);
+        window.addEventListener('load', () => {
+            resize(); animate();
+        });
+    </script>
+</body>
+</html>
