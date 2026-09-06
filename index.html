@@ -437,14 +437,19 @@
                 <!-- TV Com -->
                 <div class="glass-panel rounded-3xl p-6 md:p-8 hover:border-cosmic-cyan/40 transition-all duration-300 flex flex-col items-center text-center gap-6 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-cosmic-pink/10 rounded-full blur-2xl -z-10 group-hover:scale-150 transition-transform duration-500"></div>
-                    <div class="flex-shrink-0 w-full max-w-[220px] h-32 bg-white rounded-2xl flex items-center justify-center p-6 shadow-lg transform group-hover:rotate-2 transition-transform duration-300">
-                        <img src="./assets/tv-com.png" alt="TV Com" class="max-h-full max-w-full object-contain">
-                    </div>
+                    <button type="button" onclick="playTvcom(this)" aria-label="Lire le reportage TV Com" class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg group/vid">
+                        <img src="./assets/tvcom-reportage.png" alt="Reportage TV Com sur AstroCalcul" class="w-full h-full object-cover" loading="lazy">
+                        <span class="absolute inset-0 flex items-center justify-center">
+                            <span class="w-16 h-16 rounded-full bg-[#E60023] flex items-center justify-center shadow-xl group-hover/vid:scale-110 transition-transform duration-200">
+                                <svg viewBox="0 0 24 24" class="w-7 h-7 text-white ml-1" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                        </span>
+                    </button>
                     <div class="space-y-3 flex-1">
                         <h3 data-i18n="press_tvcom_title" class="text-lg md:text-xl font-display font-bold text-white leading-tight">AstroCalcul au journal de 18h de TV Com</h3>
                         <p data-i18n="press_tvcom_desc" class="text-gray-300 text-sm leading-relaxed">TV Com (Brabant wallon) a consacré un reportage à AstroCalcul dans son journal télévisé : l'histoire d'un papa développeur et de son application pour apprendre les maths en s'amusant.</p>
                         <div class="pt-1">
-                            <a href="https://www.tvcom.be/replay/emission/actu-bw/actu-bw/58139" target="_blank" rel="noopener noreferrer" data-umami-event="clic-presse-tvcom" class="inline-flex items-center space-x-2 text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm transition-all duration-200 group/link">
+                            <a href="https://youtu.be/X7AtxjGMhRM" target="_blank" rel="noopener noreferrer" data-umami-event="clic-presse-tvcom" class="inline-flex items-center space-x-2 text-cosmic-cyan hover:text-cosmic-pink font-display font-bold text-sm transition-all duration-200 group/link">
                                 <span data-i18n="press_tvcom_link">Voir le reportage</span>
                                 <svg class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </a>
@@ -1875,5 +1880,20 @@
         };
     </script>
 
+<script>
+  function playTvcom(el){
+    var w=document.createElement('div');
+    w.className='w-full aspect-video rounded-2xl overflow-hidden shadow-lg';
+    var f=document.createElement('iframe');
+    f.className='w-full h-full';
+    f.setAttribute('src','https://www.youtube-nocookie.com/embed/X7AtxjGMhRM?autoplay=1&rel=0');
+    f.setAttribute('title','Reportage TV Com — AstroCalcul');
+    f.setAttribute('frameborder','0');
+    f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    f.setAttribute('allowfullscreen','');
+    w.appendChild(f);
+    el.replaceWith(w);
+  }
+</script>
 </body>
 </html>
