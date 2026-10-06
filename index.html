@@ -669,7 +669,7 @@
                         </div>
                         <div class="space-y-2">
                             <h3 data-i18n="preview_slide3_title" class="text-lg font-display font-bold text-white">Apprendre avec Robi</h3>
-                            <p data-i18n="preview_slide3_text" class="text-gray-300 text-xs font-sans">Explication étape par étape des calculs.</p>
+                            <p data-i18n="preview_slide3_text" class="text-gray-300 text-xs font-sans">Additions, soustractions, tables et divisions expliquées étape par étape, avec « Explique-moi mon calcul ».</p>
                         </div>
                     </div>
 
@@ -684,7 +684,7 @@
                         </div>
                         <div class="space-y-2">
                             <h3 data-i18n="preview_slide4_title" class="text-lg font-display font-bold text-white">Les mini-jeux d'entraînement</h3>
-                            <p data-i18n="preview_slide4_text" class="text-gray-300 text-xs font-sans">Déblocage d'activités d'arcade éducatives.</p>
+                            <p data-i18n="preview_slide4_text" class="text-gray-300 text-xs font-sans">5 mini-jeux à débloquer : Astro Target, Répare la fusée, Cache-cache avec Robi, Reconstitue le calcul, Le Marché Spatial.</p>
                         </div>
                     </div>
 
@@ -729,7 +729,22 @@
                         </div>
                         <div class="space-y-2">
                             <h3 data-i18n="preview_slide7_title" class="text-lg font-display font-bold text-white">Exploration de la galaxie</h3>
-                            <p class="text-gray-300 text-xs font-sans" data-i18n="preview_slide7_text">Découverte des planètes et des étoiles.</p>
+                            <p class="text-gray-300 text-xs font-sans" data-i18n="preview_slide7_text">Voyage du Soleil jusqu'à Pluton, puis découverte des lunes (la Lune, Phobos, Europe, Titan...), avec un fait à apprendre à chaque étape.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 : Série quotidienne -->
+                    <div class="snap-start w-[280px] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] glass-panel rounded-3xl p-6 space-y-6 flex-shrink-0 flex flex-col justify-between">
+                        <div class="w-full aspect-[4/3] bg-space-900 rounded-2xl relative overflow-hidden border border-white/10">
+                            <img src="./assets/screen-serie.png" alt="Série quotidienne" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-screen-serie').style.display='flex';">
+                            <div id="fallback-screen-serie" style="display: none;" class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-gradient-to-tr from-cosmic-green/10 to-space-900">
+                                <svg class="w-12 h-12 text-cosmic-green opacity-40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path></svg>
+                                <span class="text-xs font-bold text-white/50 tracking-wider font-display">assets/screen-serie.png</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 data-i18n="preview_slide8_title" class="text-lg font-display font-bold text-white">Série quotidienne</h3>
+                            <p class="text-gray-300 text-xs font-sans" data-i18n="preview_slide8_text">Une flamme qui grandit à chaque jour de connexion, des avatars bonus à débloquer, et une série cassée récupérable avec des AstroPièces.</p>
                         </div>
                     </div>
 
@@ -879,7 +894,7 @@
                             <span data-i18n="faq_q5">Peut-on créer plusieurs profils enfants ?</span>
                             <svg class="w-5 h-5 flex-shrink-0 text-cosmic-cyan transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </summary>
-                        <p data-i18n="faq_a5" class="text-gray-300 text-sm leading-relaxed mt-3">Oui. La gestion de plusieurs profils enfants est disponible avec le Premium : idéal pour les familles, chaque enfant conservant sa propre progression.</p>
+                        <p data-i18n="faq_a5" class="text-gray-300 text-sm leading-relaxed mt-3">Oui. La gestion de plusieurs profils enfants est disponible avec le Premium : idéal pour les familles, chaque enfant conservant sa propre progression, son prénom et son choix parmi 15 avatars.</p>
                     </details>
                     <details class="group glass-panel rounded-2xl px-6 py-4">
                         <summary class="flex justify-between items-center gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden font-display font-bold text-white text-left">
@@ -1154,7 +1169,7 @@
                 faq_q2: "L'application est-elle vraiment gratuite ?", faq_a2: "Oui. L'essentiel d'AstroCalcul est gratuit — environ 90 % du contenu, dont les additions, les soustractions et les tables de multiplication. Une option Premium, en achat unique à vie et sans abonnement, débloque des fonctionnalités avancées.",
                 faq_q3: "Y a-t-il de la publicité ou de la collecte de données ?", faq_a3: "Non. AstroCalcul ne contient aucune publicité et aucun suivi de l'activité de votre enfant. Les progrès peuvent être synchronisés entre vos appareils, uniquement pour vous.",
                 faq_q4: "Qu'est-ce que la version Premium débloque ?", faq_a4: "Le Premium (achat unique à vie, sans abonnement) débloque les profils multiples, des mini-jeux supplémentaires, les divisions et le mode avancé. Il permet aussi de soutenir un développeur indépendant.",
-                faq_q5: "Peut-on créer plusieurs profils enfants ?", faq_a5: "Oui. La gestion de plusieurs profils enfants est disponible avec le Premium : idéal pour les familles, chaque enfant conservant sa propre progression.",
+                faq_q5: "Peut-on créer plusieurs profils enfants ?", faq_a5: "Oui. La gestion de plusieurs profils enfants est disponible avec le Premium : idéal pour les familles, chaque enfant conservant sa propre progression, son prénom et son choix parmi 15 avatars.",
                 faq_q6: "À quel âge apprend-on les tables de multiplication ?", faq_a6: "Les tables faciles (2, 5, 10) s'abordent vers 7-8 ans, puis les tables complètes (dont 7 et 8) vers 8-9 ans, avant d'être automatisées vers 9-11 ans. AstroCalcul propose des niveaux progressifs adaptés à chaque étape.",
                 faq_q7: "Comment aider mon enfant à apprendre ses tables ?", faq_a7: "En privilégiant des séances courtes et régulières, en donnant du sens avant de mémoriser, et en rendant l'entraînement ludique plutôt que contraignant. C'est exactement l'approche d'AstroCalcul, sous forme de jeu spatial.",
                 faq_q8: "Combien de temps faut-il travailler le calcul mental par jour ?", faq_a8: "Mieux vaut 3 à 5 minutes par jour, régulièrement, qu'une longue séance de temps en temps. De courtes sessions permettent d'ancrer les automatismes sans transformer les devoirs en corvée.",
@@ -1215,15 +1230,17 @@
                 preview_slide2_title: "Mode révision intelligent",
                 preview_slide2_text: "Le jeu détecte automatiquement les faiblesses de l'enfant pour lui proposer des révisions ciblées et l'aider à progresser.",
                 preview_slide3_title: "Apprendre avec Robi",
-                preview_slide3_text: "Le professeur Robi explique les opérations étape par étape à l'aide de méthodes visuelles adaptées et claires.",
+                preview_slide3_text: "Le professeur Robi explique les additions, soustractions, tables et divisions étape par étape, avec des méthodes visuelles claires. Grâce à « Explique-moi mon calcul », il aide aussi l'enfant sur le calcul précis où il bloque.",
                 preview_slide4_title: "Les mini-jeux d'entraînement",
-                preview_slide4_text: "En s'entraînant, l'enfant gagne des AstroPièces pour débloquer des mini-jeux d'arcade éducatifs et amusants.",
+                preview_slide4_text: "En s'entraînant, l'enfant gagne des AstroPièces pour débloquer 5 mini-jeux : Astro Target, Répare la fusée, Cache-cache avec Robi, Reconstitue le calcul et Le Marché Spatial.",
                 preview_slide5_title: "Tableau de bord pour les parents",
                 preview_slide5_text: "Suivi des progrès de votre enfant, affiché aux parents (statistiques claires).",
                 preview_slide6_title: "Les badges de réussite",
                 preview_slide6_text: "Des récompenses virtuelles motivantes à collectionner, avec la possibilité unique de les imprimer sur papier.",
                 preview_slide7_title: "Exploration de la galaxie",
-                preview_slide7_text: "Un voyage fantastique où chaque calcul résolu permet de voyager vers une nouvelle planète et d'en apprendre plus sur l'espace.",
+                preview_slide8_title: "Série quotidienne",
+                preview_slide8_text: "Une flamme qui grandit à chaque jour de connexion, des avatars bonus à débloquer, et une série cassée récupérable avec des AstroPièces.",
+                preview_slide7_text: "Un voyage du Soleil jusqu'à Pluton, puis vers les lunes du système solaire (la Lune, Phobos, Europe, Titan...), avec un fait à apprendre à chaque étape et des récompenses quotidiennes.",
                 cta_title: "Prêt à commencer l'aventure ?",
                 cta_desc: "Téléchargez AstroCalcul dès maintenant et transformez les devoirs de mathématiques en un jeu d'exploration amusant !",
                 footer_desc: "L'apprentissage ludique, sécurisé et amusant du calcul mental pour la nouvelle génération d'explorateurs spatiaux.",
@@ -1282,7 +1299,7 @@
                 faq_q2: "Is the app really free?", faq_a2: "Yes. The essentials of AstroCalcul are free — around 90% of the content, including additions, subtractions and times tables. An optional Premium, a one-time lifetime purchase with no subscription, unlocks advanced features.",
                 faq_q3: "Are there any ads or data collection?", faq_a3: "No. AstroCalcul has no advertising and no tracking of your child's activity. Progress can be synced across your own devices, for you only.",
                 faq_q4: "What does the Premium version unlock?", faq_a4: "Premium (a one-time lifetime purchase, no subscription) unlocks multiple profiles, extra mini-games, division and advanced mode. It also helps support an independent developer.",
-                faq_q5: "Can I create several child profiles?", faq_a5: "Yes. Multiple child profiles are available with Premium — ideal for families, with each child keeping their own progress.",
+                faq_q5: "Can I create several child profiles?", faq_a5: "Yes. Multiple child profiles are available with Premium — ideal for families, with each child keeping their own progress, name, and choice among 15 avatars.",
                 faq_q6: "At what age are times tables learned?", faq_a6: "The easy tables (2, 5, 10) start around age 7-8, then the full tables (including 7 and 8) around 8-9, before becoming automatic around 9-11. AstroCalcul offers progressive levels for each stage.",
                 faq_q7: "How can I help my child learn their tables?", faq_a7: "By favouring short, regular sessions, giving meaning before memorising, and making practice playful rather than a chore. That's exactly AstroCalcul's approach, as a space game.",
                 faq_q8: "How long should mental math be practised each day?", faq_a8: "A few minutes a day, regularly, beats one long session now and then. Short sessions build automaticity without turning homework into a chore.",
@@ -1343,15 +1360,17 @@
                 preview_slide2_title: "Smart Revision Mode",
                 preview_slide2_text: "The game automatically detects areas where your child struggles, offering targeted practice sessions to boost progress.",
                 preview_slide3_title: "Learn with Robi",
-                preview_slide3_text: "Professor Robi explains arithmetic step-by-step using highly intuitive and tailored visual methods.",
+                preview_slide3_text: "Professor Robi explains additions, subtractions, multiplication tables and divisions step-by-step with clear visual methods. With \"Explain my calculation\", he also helps on the exact problem your child is stuck on.",
                 preview_slide4_title: "Training Mini-Games",
-                preview_slide4_text: "By practicing, children earn AstroCoins to unlock educational and highly entertaining arcade mini-games.",
+                preview_slide4_text: "By practicing, children earn AstroCoins to unlock 5 mini-games: Astro Target, Fix the Rocket, Hide-and-Seek with Robi, Rebuild the Equation, and The Space Market.",
                 preview_slide5_title: "Parents' Dashboard",
                 preview_slide5_text: "Easily monitor your child's progress with clear success charts, stats, and customizable options.",
                 preview_slide6_title: "Reward Badges",
                 preview_slide6_text: "Motivating badges to collect in-game, with the unique feature of being printable on real paper.",
                 preview_slide7_title: "Galaxy Exploration",
-                preview_slide7_text: "An epic journey where solving math equations fuels the rocket to discover new planets and real space facts.",
+                preview_slide8_title: "Daily Streak",
+                preview_slide8_text: "A flame that grows with every consecutive day, bonus avatars to unlock, and a broken streak that can be recovered with AstroCoins.",
+                preview_slide7_text: "A journey from the Sun to Pluto, then on to the solar system's moons (the Moon, Phobos, Europa, Titan...), with a fun fact to learn at every step and daily rewards.",
                 cta_title: "Ready to start the adventure?",
                 cta_desc: "Download AstroCalcul now and turn math homework into a fun exploration game!",
                 footer_desc: "Playful, secure, and fun mental math learning for the new generation of space explorers.",
@@ -1410,7 +1429,7 @@
                 faq_q2: "Is de app echt gratis?", faq_a2: "Ja. Het essentiële van AstroCalcul is gratis — ongeveer 90% van de inhoud, waaronder optellen, aftrekken en de tafels. Een optionele Premium, een eenmalige aankoop voor het leven zonder abonnement, ontgrendelt geavanceerde functies.",
                 faq_q3: "Is er reclame of gegevensverzameling?", faq_a3: "Nee. AstroCalcul bevat geen reclame en geen tracking van de activiteit van je kind. De voortgang kan tussen je eigen apparaten worden gesynchroniseerd, alleen voor jou.",
                 faq_q4: "Wat ontgrendelt de Premium-versie?", faq_a4: "Premium (een eenmalige aankoop voor het leven, zonder abonnement) ontgrendelt meerdere profielen, extra minispelletjes, delingen en de geavanceerde modus. Het steunt ook een onafhankelijke ontwikkelaar.",
-                faq_q5: "Kun je meerdere kinderprofielen aanmaken?", faq_a5: "Ja. Meerdere kinderprofielen zijn beschikbaar met Premium — ideaal voor gezinnen, waarbij elk kind zijn eigen voortgang behoudt.",
+                faq_q5: "Kun je meerdere kinderprofielen aanmaken?", faq_a5: "Ja. Meerdere kinderprofielen zijn beschikbaar met Premium — ideaal voor gezinnen, waarbij elk kind zijn eigen voortgang, naam en keuze uit 15 avatars behoudt.",
                 faq_q6: "Op welke leeftijd leer je de tafels?", faq_a6: "De makkelijke tafels (2, 5, 10) beginnen rond 7-8 jaar, daarna de volledige tafels (waaronder 7 en 8) rond 8-9 jaar, om rond 9-11 jaar geautomatiseerd te worden. AstroCalcul biedt progressieve niveaus voor elke fase.",
                 faq_q7: "Hoe help ik mijn kind de tafels te leren?", faq_a7: "Door korte, regelmatige sessies te verkiezen, betekenis te geven vóór het memoriseren, en oefenen speels te maken in plaats van dwingend. Dat is precies de aanpak van AstroCalcul, als ruimtespel.",
                 faq_q8: "Hoelang moet je per dag hoofdrekenen oefenen?", faq_a8: "Een paar minuten per dag, regelmatig, is beter dan af en toe een lange sessie. Korte sessies verankeren de automatismen zonder van huiswerk een corvee te maken.",
@@ -1471,15 +1490,17 @@
                 preview_slide2_title: "Slimme Revisiemodus",
                 preview_slide2_text: "Het spel herkent automatisch de zwakke punten van uw kind en biedt gerichte oefeningen om snel vooruitgang te boeken.",
                 preview_slide3_title: "Leren met Robi",
-                preview_slide3_text: "Professor Robi legt rekenkundige bewerkingen stap voor stap uit met behulp van intuïtieve visuele hulpmiddelen.",
+                preview_slide3_text: "Professor Robi legt optellen, aftrekken, tafels en delingen stap voor stap uit met duidelijke visuele methodes. Met \"Leg mijn berekening uit\" helpt hij ook bij de precieze som waar uw kind vastloopt.",
                 preview_slide4_title: "Educatieve Mini-Games",
-                preview_slide4_text: "Door te oefenen verdienen kinderen AstroMunten om leuke en leerzame arcade mini-spelletjes te ontgrendelen.",
+                preview_slide4_text: "Door te oefenen verdienen kinderen AstroMunten om 5 mini-games te ontgrendelen: Astro Target, Repareer de raket, Verstoppertje met Robi, Herbouw de som en De Ruimtemarkt.",
                 preview_slide5_title: "Dashboard voor Ouders",
                 preview_slide5_text: "Volg de vooruitgang van uw kind nauwkeurig met heldere statistieken, foutenanalyses en opties.",
                 preview_slide6_title: "Beloningsbadges",
                 preview_slide6_text: "Mooie in-game badges om te verzamelen, met de unieke optie om ze op echt papier uit te printen.",
                 preview_slide7_title: "Ontdekking van de Galaxie",
-                preview_slide7_text: "Een fantastische reis waarbij elke opgeloste som de raket aandrijft om nieuwe planeten en sterrenweetjes te ontgrendelen.",
+                preview_slide8_title: "Dagelijkse reeks",
+                preview_slide8_text: "Een vlam die groeit met elke opeenvolgende dag, bonusavatars om te ontgrendelen, en een verbroken reeks die hersteld kan worden met AstroMunten.",
+                preview_slide7_text: "Een reis van de Zon tot Pluto, en daarna naar de manen van het zonnestelsel (de Maan, Phobos, Europa, Titan...), met een leuk weetje bij elke stap en dagelijkse beloningen.",
                 cta_title: "Klaar om het avontuur te beginnen?",
                 cta_desc: "Download AstroCalcul nu en verander wiskundehuiswerk in een leuk ontdekkingsspel!",
                 footer_desc: "Speels, veilig en leuk hoofdrekenen voor de nieuwe generatie ruimtevaarders.",
