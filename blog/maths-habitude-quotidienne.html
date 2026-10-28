@@ -1,3 +1,8 @@
+---
+root: "../"
+section: "blog"
+hide_lang: true
+---
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
@@ -60,44 +65,7 @@
     <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10"></div>
     <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10"></div>
 
-    <header class="w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto flex items-center justify-between">
-            <a href="../index.html" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-cosmic-cyan/10">
-                    <img src="../assets/logo.png" alt="AstroCalcul" class="w-full h-full object-cover">
-                </div>
-                <span class="text-2xl font-display font-bold bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
-            </a>
-            <nav class="hidden">
-                <a href="../index.html#preview" data-i18n="nav_features" class="text-gray-300 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
-                <a href="../index.html#parents" data-i18n="nav_parents" class="text-gray-300 hover:text-cosmic-pink transition-colors">Espace Parents</a>
-                <a href="./index.html" data-i18n="nav_blog" class="text-cosmic-green transition-colors">Conseils & articles</a>
-                <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="inline-flex items-center gap-2 text-gray-300 hover:text-[#1877F2] transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
-            </nav>
-            <div class="flex items-center space-x-3">
-                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display" style="display:none">
-                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display">FR</button>
-                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">EN</button>
-                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
-                </div>
-                <a href="../index.html#download-cta" data-i18n="nav_demo" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-5 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:scale-105 transition-all duration-300 font-display">TÉLÉCHARGER</a>
-                <button onclick="toggleMobileMenu()" id="burger-btn" class="p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
-                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden max-w-5xl mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
-            <div data-i18n="grp_app" class="px-2 pt-1 pb-0.5 text-[10px] font-extrabold tracking-widest text-gray-500 uppercase font-display">Découvrir</div>
-            <a href="../index.html#preview" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
-            <a href="../index.html#parents" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
-            <div data-i18n="grp_res" class="px-2 pt-2 pb-0.5 text-[10px] font-extrabold tracking-widest text-gray-500 uppercase font-display">Ressources</div>
-            <a href="./index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg text-cosmic-green hover:bg-white/5 transition-colors">Conseils & articles</a>
-            <a href="../fiches-a-imprimer.html" data-i18n="nav_print" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fiches à imprimer</a>
-            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-[#1877F2] transition-colors inline-flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
-            <a href="../index.html#download-cta" data-i18n="nav_demo" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">TÉLÉCHARGER</a>
-        </div>
-    </header>
+    {% include header.html %}
 
     <main class="max-w-3xl mx-auto px-6 md:px-8 py-12">
 
@@ -178,7 +146,7 @@
     <script>
         const T = {
             fr: { doc_title: "Mon enfant n'aime pas les maths : comment le motiver ? | AstroCalcul",
-                nav_features: "Fonctionnalités", nav_parents: "Espace Parents", nav_blog: "Conseils & articles", nav_facebook: "Rejoignez-nous sur Facebook", nav_print: "Fiches à imprimer", grp_app: "Découvrir", grp_res: "Ressources", pin_save: "Épingler sur Pinterest", nav_demo: "TÉLÉCHARGER",
+                pin_save: "Épingler sur Pinterest", 
                 bc_home: "Accueil", bc_blog: "Conseils & articles", bc_current: "Motiver un enfant en maths",
                 kicker: "Conseils & articles", h1: "Mon enfant n'aime pas les maths : comment le motiver ?",
                 cta_title: "🚀 Envie de rendre les maths ludiques ?",
@@ -187,7 +155,7 @@
                 footer_desc: "L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.",
                 footer_home: "Accueil", footer_privacy: "Confidentialité", footer_contact: "Contact", footer_rights: "Tous droits réservés." },
             en: { doc_title: "My child doesn't like maths: how to motivate them? | AstroCalcul",
-                nav_features: "Features", nav_parents: "Parents' Space", nav_blog: "Tips & articles", nav_facebook: "Join us on Facebook", nav_print: "Printable sheets", grp_app: "Discover", grp_res: "Resources", pin_save: "Save on Pinterest", nav_demo: "DOWNLOAD",
+                pin_save: "Save on Pinterest", 
                 bc_home: "Home", bc_blog: "Tips & articles", bc_current: "Motivating a child in maths",
                 kicker: "Tips & articles", h1: "My child doesn't like maths: how to motivate them?",
                 cta_title: "🚀 Give them back the taste for maths",
@@ -196,7 +164,7 @@
                 footer_desc: "Playful and secure mental math learning for young space explorers.",
                 footer_home: "Home", footer_privacy: "Privacy", footer_contact: "Contact", footer_rights: "All rights reserved." },
             nl: { doc_title: "Mijn kind houdt niet van rekenen: hoe motiveer ik het? | AstroCalcul",
-                nav_features: "Kenmerken", nav_parents: "Oudersruimte", nav_blog: "Tips & artikels", nav_facebook: "Volg ons op Facebook", nav_print: "Werkbladen printen", grp_app: "Ontdekken", grp_res: "Bronnen", pin_save: "Opslaan op Pinterest", nav_demo: "DOWNLOADEN",
+                pin_save: "Opslaan op Pinterest", 
                 bc_home: "Home", bc_blog: "Tips & artikels", bc_current: "Een kind motiveren bij rekenen",
                 kicker: "Tips & artikels", h1: "Mijn kind houdt niet van rekenen: hoe motiveer ik het?",
                 cta_title: "🚀 Geef het opnieuw zin in rekenen",
@@ -216,13 +184,6 @@
             LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
         }
         function changeLanguage(l) { applyLang(l); }
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const open = menu.classList.toggle('hidden') === false;
-            document.getElementById('burger-icon').classList.toggle('hidden', open);
-            document.getElementById('close-icon').classList.toggle('hidden', !open);
-            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
-        }
         const canvas = document.getElementById('stars-canvas');
         const ctx = canvas.getContext('2d');
         let stars = [];
