@@ -56,6 +56,7 @@
         <!-- Menu déroulant -->
         <div id="mobile-menu" class="hidden {{ w }} mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
             <div data-i18n="grp_app" class="px-2 pt-1 pb-0.5 text-[10px] font-extrabold tracking-widest text-gray-500 uppercase font-display">Découvrir</div>
+            <a href="{{ root }}application-calcul-mental-enfants.html" data-i18n="nav_app" class="py-2.5 px-2 rounded-lg {% if page.section == 'app' %}text-cosmic-cyan hover:bg-white/5{% else %}text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan{% endif %} transition-colors">L'application</a>
             <a href="{{ idx }}#preview" onclick="toggleMobileMenu()" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
             <a href="{{ idx }}#parents" onclick="toggleMobileMenu()" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
             <div data-i18n="grp_res" class="px-2 pt-2 pb-0.5 text-[10px] font-extrabold tracking-widest text-gray-500 uppercase font-display">Ressources</div>
@@ -71,9 +72,9 @@
     // Ces clés ne doivent plus figurer dans les dictionnaires des pages.
     (function () {
         var NAV_T = {
-            fr: { grp_app: "Découvrir", nav_features: "Fonctionnalités", nav_parents: "Espace Parents", grp_res: "Ressources", nav_blog: "Conseils & articles", nav_print: "Fiches à imprimer", nav_facebook: "Rejoignez-nous sur Facebook", nav_cta_demo: "ESSAYER LA DÉMO", nav_cta_dl: "TÉLÉCHARGER" },
-            en: { grp_app: "Discover", nav_features: "Features", nav_parents: "Parents' Space", grp_res: "Resources", nav_blog: "Tips & articles", nav_print: "Printable sheets", nav_facebook: "Join us on Facebook", nav_cta_demo: "TRY THE DEMO", nav_cta_dl: "DOWNLOAD" },
-            nl: { grp_app: "Ontdekken", nav_features: "Kenmerken", nav_parents: "Oudersruimte", grp_res: "Bronnen", nav_blog: "Tips & artikels", nav_print: "Werkbladen printen", nav_facebook: "Volg ons op Facebook", nav_cta_demo: "PROBEER DE DEMO", nav_cta_dl: "DOWNLOADEN" }
+            fr: { grp_app: "Découvrir", nav_app: "L'application", nav_features: "Fonctionnalités", nav_parents: "Espace Parents", grp_res: "Ressources", nav_blog: "Conseils & articles", nav_print: "Fiches à imprimer", nav_facebook: "Rejoignez-nous sur Facebook", nav_cta_demo: "ESSAYER LA DÉMO", nav_cta_dl: "TÉLÉCHARGER" },
+            en: { grp_app: "Discover", nav_app: "The app", nav_features: "Features", nav_parents: "Parents' Space", grp_res: "Resources", nav_blog: "Tips & articles", nav_print: "Printable sheets", nav_facebook: "Join us on Facebook", nav_cta_demo: "TRY THE DEMO", nav_cta_dl: "DOWNLOAD" },
+            nl: { grp_app: "Ontdekken", nav_app: "De app", nav_features: "Kenmerken", nav_parents: "Oudersruimte", grp_res: "Bronnen", nav_blog: "Tips & artikels", nav_print: "Werkbladen printen", nav_facebook: "Volg ons op Facebook", nav_cta_demo: "PROBEER DE DEMO", nav_cta_dl: "DOWNLOADEN" }
         };
 
         window.toggleMobileMenu = function () {
