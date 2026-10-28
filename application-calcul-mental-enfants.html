@@ -1,0 +1,317 @@
+---
+root: ""
+section: "app"
+---
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Application de calcul mental pour enfants dès 6 ans | AstroCalcul</title>
+    <meta name="description" content="AstroCalcul : application de calcul mental pour enfants dès 6 ans. Additions, soustractions, tables et divisions en jeu spatial. Sans pub, sans abonnement.">
+
+    <link rel="canonical" href="https://astrocalcul.com/application-calcul-mental-enfants.html" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon-96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon-180.png">
+
+    <meta property="og:site_name" content="AstroCalcul" />
+    <meta property="og:title" content="Application de calcul mental pour enfants dès 6 ans" />
+    <meta property="og:description" content="AstroCalcul : application de calcul mental pour enfants dès 6 ans. Additions, soustractions, tables et divisions en jeu spatial. Sans pub, sans abonnement." />
+    <meta property="og:image" content="https://astrocalcul.com/assets/og-banner.png" />
+    <meta property="og:url" content="https://astrocalcul.com/application-calcul-mental-enfants.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "AstroCalcul",
+  "description": "AstroCalcul : application de calcul mental pour enfants dès 6 ans. Additions, soustractions, tables et divisions en jeu spatial. Sans pub, sans abonnement.",
+  "url": "https://astrocalcul.com/application-calcul-mental-enfants.html",
+  "image": "https://astrocalcul.com/assets/logo.png",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "iOS, Android",
+  "inLanguage": [
+    "fr",
+    "en",
+    "nl"
+  ],
+  "audience": {
+    "@type": "PeopleAudience",
+    "suggestedMinAge": 6
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "installUrl": [
+    "https://apps.apple.com/us/app/astrocalcul/id6760236661",
+    "https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul"
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "À partir de quel âge peut-on utiliser AstroCalcul ?", "acceptedAnswer": {"@type": "Answer", "text": "AstroCalcul est conçue pour les enfants dès 6 ans, avec des niveaux progressifs qui s'adaptent au rythme de chacun."}}, {"@type": "Question", "name": "L'application est-elle gratuite ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, l'essentiel est gratuit : additions, soustractions et tables de multiplication. Une option Premium, en achat unique à vie et sans abonnement, débloque des fonctionnalités avancées."}}, {"@type": "Question", "name": "Y a-t-il de la publicité ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. AstroCalcul ne contient aucune publicité et aucun suivi de l'activité de votre enfant."}}, {"@type": "Question", "name": "Sur quels appareils est-elle disponible ?", "acceptedAnswer": {"@type": "Answer", "text": "Sur iOS via l'App Store et sur Android via Google Play."}}, {"@type": "Question", "name": "Combien de temps par jour faut-il s'entraîner ?", "acceptedAnswer": {"@type": "Answer", "text": "Mieux vaut 3 à 5 minutes par jour, régulièrement, qu'une longue séance de temps en temps."}}, {"@type": "Question", "name": "Convient-elle à un enfant en difficulté en maths ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. La progression par petits paliers, la révision qui cible les erreurs et le côté jeu aident l'enfant à reprendre confiance, à son rythme."}}]}
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            colors: { space: { 900: '#0B0B1E', 800: '#141432', 700: '#1D1D4A' }, cosmic: { pink: '#FF2E93', purple: '#A12EFF', blue: '#2E93FF', cyan: '#00F0FF', green: '#00FF87' } },
+            fontFamily: { sans: ['Nunito','ui-sans-serif','system-ui','sans-serif'], display: ['Fredoka','Nunito','sans-serif'] }
+        } } }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #0B0B1E; overflow-x: hidden; }
+        .cosmic-glow { filter: blur(120px); opacity: 0.15; pointer-events: none; }
+        .glass-panel { background: rgba(20, 20, 50, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .article-body h2 { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.6rem; line-height: 1.3; margin-top: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .article-body p { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; }
+        .article-body ul { color: #d1d5db; line-height: 1.8; margin-bottom: 1.1rem; padding-left: 1.4rem; list-style: disc; }
+        .article-body li { margin-bottom: 0.4rem; }
+        .article-body strong { color: #fff; }
+        .article-body a { color: #00F0FF; text-decoration: underline; text-underline-offset: 3px; }
+        .shots { display:flex; gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:.5rem; }
+        .shots img { height: 18rem; width:auto; flex:none; border-radius:1.25rem; scroll-snap-align:start; border:1px solid rgba(255,255,255,.1); }
+    </style>
+    <!-- Umami Analytics (sans cookie, sans donnee personnelle) -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="89600733-b04f-492a-99ce-688a591b4dfc"></script>
+</head>
+<body class="text-white relative min-h-screen">
+
+    <canvas id="stars-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+    <div class="fixed top-1/4 left-1/4 w-[400px] h-[400px] bg-cosmic-purple rounded-full cosmic-glow -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cosmic-blue rounded-full cosmic-glow -z-10"></div>
+
+    {% include header.html %}
+
+    <main class="max-w-3xl mx-auto px-6 md:px-8 py-12">
+        <article class="glass-panel rounded-3xl p-6 md:p-10">
+            <span data-i18n="kicker" class="text-xs font-extrabold tracking-widest text-cosmic-pink uppercase font-display">Application de calcul mental</span>
+            <h1 data-i18n="h1" class="text-3xl md:text-4xl font-display font-bold leading-tight mt-3 mb-5">Application de calcul mental pour enfants dès 6 ans</h1>
+
+            <div class="flex flex-wrap gap-2 mb-5 text-xs font-bold font-display">
+                <span data-i18n="b0" class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-cosmic-cyan">Dès 6 ans</span>
+                <span data-i18n="b1" class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-cosmic-cyan">Sans publicité</span>
+                <span data-i18n="b2" class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-cosmic-cyan">Sans abonnement</span>
+                <span data-i18n="b3" class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-cosmic-cyan">iOS et Android</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center sm:justify-start gap-4 mb-8">
+                <a href="https://apps.apple.com/us/app/astrocalcul/id6760236661" data-umami-event="clic-app-store" target="_blank" rel="noopener noreferrer" class="w-48 h-14 bg-black border border-white/15 rounded-xl flex items-center justify-center px-4 hover:border-cosmic-cyan/50 hover:bg-space-800 transition-all duration-300 shadow-md">
+                        <svg class="w-7 h-7 text-white mr-3" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.1 16.67C20.08 16.74 19.67 18.11 18.71 19.5ZM15.97 4.17C16.63 3.37 17.07 2.28 16.95 1C15.96 1.04 14.76 1.66 14.05 2.49C13.44 3.19 12.91 4.29 13.06 5.54C14.16 5.63 15.3 4.98 15.97 4.17Z"/>
+                        </svg>
+                        <div class="text-left">
+                            <p data-i18n="appstore_sub" class="text-[9px] text-gray-400 uppercase font-bold leading-tight">Télécharger sur l'</p>
+                            <p class="text-sm font-black text-white leading-tight">App Store</p>
+                        </div>
+                    </a>
+                <a href="https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul" data-umami-event="clic-google-play" target="_blank" rel="noopener noreferrer" class="w-48 h-14 bg-black border border-white/15 rounded-xl flex items-center justify-center px-4 hover:border-cosmic-pink/50 hover:bg-space-800 transition-all duration-300 shadow-md">
+                        <svg class="w-7 h-7 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.25301 2.59367C3.06649 2.78443 2.96289 3.09033 2.96289 3.47701V20.523C2.96289 20.9097 3.06649 21.2156 3.25301 21.4063L3.32701 21.469L12.836 11.96V11.751L3.32701 2.24L3.25301 2.59367Z" fill="url(#gp_grad1_hero)"/>
+                            <path d="M16.002 15.131L12.836 11.96V11.751L16.003 8.58398L16.082 8.62998L19.828 10.758C20.9 11.366 20.9 12.356 19.828 12.966L16.082 15.093L16.002 15.131Z" fill="url(#gp_grad2_hero)"/>
+                            <path d="M16.083 15.094L12.836 11.847L3.25391 21.429C3.60691 21.783 4.18491 21.825 4.84891 21.448L16.083 15.094Z" fill="url(#gp_grad3_hero)"/>
+                            <path d="M16.083 8.62891L4.84891 2.27491C4.18491 1.89791 3.60691 1.93991 3.25391 2.29391L12.836 11.876L16.083 8.62891Z" fill="url(#gp_grad4_hero)"/>
+                            <defs>
+                                <linearGradient id="gp_grad1_hero" x1="12.0125" y1="2.96289" x2="2.96289" y2="12.0125" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00A0FF"/><stop offset="1" stop-color="#00EAFF"/></linearGradient>
+                                <linearGradient id="gp_grad2_hero" x1="20.7324" y1="12" x2="10.8359" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFBB00"/><stop offset="1" stop-color="#FFEC00"/></linearGradient>
+                                <linearGradient id="gp_grad3_hero" x1="13.1118" y1="14.8213" x2="2.96289" y2="24.9702" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF007F"/><stop offset="1" stop-color="#FF003B"/></linearGradient>
+                                <linearGradient id="gp_grad4_hero" x1="13.1118" y1="9.17871" x2="2.96289" y2="-0.970215" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00F076"/><stop offset="1" stop-color="#04B24B"/></linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="text-left">
+                            <p data-i18n="playstore_sub" class="text-[9px] text-gray-400 uppercase font-bold leading-tight">DISPONIBLE SUR</p>
+                            <p class="text-sm font-black text-white leading-tight">Google Play</p>
+                        </div>
+                    </a>
+            </div>
+
+            <div class="shots mb-2">
+                <img src="./assets/screen-planetes.png" alt="AstroCalcul" loading="lazy" onerror="this.style.display='none'">
+                <img src="./assets/screen-robi.png" alt="AstroCalcul" loading="lazy" onerror="this.style.display='none'">
+                <img src="./assets/screen-jeux.png" alt="AstroCalcul" loading="lazy" onerror="this.style.display='none'">
+                <img src="./assets/screen-revision.png" alt="AstroCalcul" loading="lazy" onerror="this.style.display='none'">
+                <img src="./assets/screen-galaxie.png" alt="AstroCalcul" loading="lazy" onerror="this.style.display='none'">
+            </div>
+
+            <div data-lang="fr" class="article-body">
+<p>AstroCalcul transforme les exercices de maths en aventure spatiale. L'enfant s'entraîne aux additions, soustractions, tables de multiplication et divisions, progresse à son rythme et gagne des récompenses en explorant la galaxie. Sans publicité, sans abonnement, conçue par un papa développeur.</p>
+<h2>Ce que fait votre enfant dans l'application</h2>
+<div class="grid sm:grid-cols-2 gap-4 not-prose">
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Les 4 opérations</h3><p style="margin:0;font-size:.95rem;line-height:1.6">Additions, soustractions, tables de multiplication et divisions, par niveaux progressifs qui s&#x27;adaptent à son rythme.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Robi, le professeur</h3><p style="margin:0;font-size:.95rem;line-height:1.6">Robi explique les calculs étape par étape, avec des méthodes visuelles claires. Avec « Explique-moi mon calcul » (Premium), il aide l&#x27;enfant sur le calcul précis où il bloque.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Révision intelligente</h3><p style="margin:0;font-size:.95rem;line-height:1.6">L&#x27;application repère les erreurs de l&#x27;enfant et lui propose des révisions ciblées pour progresser.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">5 mini-jeux</h3><p style="margin:0;font-size:.95rem;line-height:1.6">En s&#x27;entraînant, l&#x27;enfant gagne des AstroPièces pour débloquer 5 mini-jeux : Astro Target, Répare la fusée, Cache-cache avec Robi, Reconstitue le calcul et Le Marché Spatial.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Série quotidienne</h3><p style="margin:0;font-size:.95rem;line-height:1.6">Une flamme qui grandit à chaque jour de connexion, des avatars bonus à débloquer, et une série cassée récupérable avec des AstroPièces.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Exploration de la galaxie</h3><p style="margin:0;font-size:.95rem;line-height:1.6">Un voyage du Soleil jusqu&#x27;à Pluton, puis vers les lunes du système solaire, avec un fait à apprendre à chaque étape.</p></div>
+</div>
+<h2>Pour les parents</h2>
+<ul>
+<li><strong>Sans publicité</strong> et sans suivi de l'activité de votre enfant.</li>
+<li><strong>Sans abonnement</strong> : l'essentiel est gratuit, le Premium est un achat unique à vie.</li>
+<li>Un <strong>tableau de bord</strong> pour suivre les progrès de l'enfant.</li>
+<li><strong>3 à 5 minutes par jour</strong> suffisent, avec un rappel quotidien configurable.</li>
+<li>Les progrès peuvent être synchronisés entre vos appareils, uniquement pour vous.</li>
+</ul>
+<h3 class="font-display font-bold text-white text-lg mt-6 mb-2">Gratuit ou Premium ?</h3>
+<p>L&#x27;essentiel est gratuit : additions, soustractions et tables de multiplication, avec un profil enfant. Le Premium, en achat unique à vie, débloque les profils multiples (jusqu&#x27;à 4 enfants), des mini-jeux supplémentaires, les divisions, le mode avancé et « Explique-moi mon calcul ».</p>
+<h2>À quel âge utiliser l'application ?</h2>
+<p>AstroCalcul s'adresse aux enfants <strong>dès 6 ans</strong>. Les niveaux progressifs vont des premières additions aux tables complètes et aux divisions. Pour savoir quoi travailler selon l'âge, lisez <a href="blog/calcul-mental-selon-age.html">le calcul mental selon l'âge</a>, <a href="blog/apprendre-tables-multiplication.html">comment apprendre les tables de multiplication</a> ou <a href="blog/table-de-7.html">la table de 7</a>. Pour s'exercer sur papier, il y a aussi nos <a href="fiches-a-imprimer.html">fiches à imprimer</a>.</p>
+<h2>Questions fréquentes</h2>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">À partir de quel âge peut-on utiliser AstroCalcul ?</h3><p>AstroCalcul est conçue pour les enfants dès 6 ans, avec des niveaux progressifs qui s&#x27;adaptent au rythme de chacun.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">L&#x27;application est-elle gratuite ?</h3><p>Oui, l&#x27;essentiel est gratuit : additions, soustractions et tables de multiplication. Une option Premium, en achat unique à vie et sans abonnement, débloque des fonctionnalités avancées.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Y a-t-il de la publicité ?</h3><p>Non. AstroCalcul ne contient aucune publicité et aucun suivi de l&#x27;activité de votre enfant.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Sur quels appareils est-elle disponible ?</h3><p>Sur iOS via l&#x27;App Store et sur Android via Google Play.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Combien de temps par jour faut-il s&#x27;entraîner ?</h3><p>Mieux vaut 3 à 5 minutes par jour, régulièrement, qu&#x27;une longue séance de temps en temps.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Convient-elle à un enfant en difficulté en maths ?</h3><p>Oui. La progression par petits paliers, la révision qui cible les erreurs et le côté jeu aident l&#x27;enfant à reprendre confiance, à son rythme.</p>
+</div>
+<div data-lang="en" lang="en" data-nosnippet class="article-body" style="display:none">
+<p>AstroCalcul turns math exercises into a space adventure. Children practice addition, subtraction, multiplication tables and division, progress at their own pace and earn rewards while exploring the galaxy. No ads, no subscription, built by a developer dad.</p>
+<h2>What your child does in the app</h2>
+<div class="grid sm:grid-cols-2 gap-4 not-prose">
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">The 4 operations</h3><p style="margin:0;font-size:.95rem;line-height:1.6">Addition, subtraction, multiplication tables and division, in progressive levels that adapt to the child&#x27;s pace.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Robi, the teacher</h3><p style="margin:0;font-size:.95rem;line-height:1.6">Robi explains calculations step by step, with clear visual methods. With &quot;Explain my calculation&quot; (Premium), he helps the child with the exact calculation they are stuck on.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Smart review</h3><p style="margin:0;font-size:.95rem;line-height:1.6">The app spots the child&#x27;s mistakes and offers targeted review to help them improve.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">5 mini-games</h3><p style="margin:0;font-size:.95rem;line-height:1.6">By practicing, the child earns AstroCoins to unlock 5 mini-games: Astro Target, Fix the Rocket, Hide-and-Seek with Robi, Rebuild the Equation and The Space Market.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Daily streak</h3><p style="margin:0;font-size:.95rem;line-height:1.6">A flame that grows with every day of play, bonus avatars to unlock, and a broken streak that can be recovered with AstroCoins.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Exploring the galaxy</h3><p style="margin:0;font-size:.95rem;line-height:1.6">A journey from the Sun to Pluto, then on to the moons of the solar system, with a fact to learn at every stop.</p></div>
+</div>
+<h2>For parents</h2>
+<ul>
+<li><strong>No ads</strong> and no tracking of your child's activity.</li>
+<li><strong>No subscription</strong>: the essentials are free, Premium is a one-time lifetime purchase.</li>
+<li>A <strong>dashboard</strong> to follow your child's progress.</li>
+<li><strong>3 to 5 minutes a day</strong> is enough, with a configurable daily reminder.</li>
+<li>Progress can be synced between your devices, for you only.</li>
+</ul>
+<h3 class="font-display font-bold text-white text-lg mt-6 mb-2">Free or Premium?</h3>
+<p>The essentials are free: addition, subtraction and multiplication tables, with one child profile. Premium, a one-time lifetime purchase, unlocks multiple profiles (up to 4 children), extra mini-games, division, the advanced mode and &quot;Explain my calculation&quot;.</p>
+<h2>What age is the app for?</h2>
+<p>AstroCalcul is for children <strong>aged 6 and up</strong>. The progressive levels go from first additions to full multiplication tables and division. To see what to work on at each age, read <a href="blog/calcul-mental-selon-age.html">mental math by age</a>, <a href="blog/apprendre-tables-multiplication.html">how to learn multiplication tables</a> or <a href="blog/table-de-7.html">the 7 times table</a>. For paper practice, there are also our <a href="fiches-a-imprimer.html">printable sheets</a>.</p>
+<h2>Frequently asked questions</h2>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">What age can children start using AstroCalcul?</h3><p>AstroCalcul is designed for children aged 6 and up, with progressive levels that adapt to each child&#x27;s pace.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Is the app free?</h3><p>Yes, the essentials are free: addition, subtraction and multiplication tables. A Premium option, as a one-time lifetime purchase with no subscription, unlocks advanced features.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Are there ads?</h3><p>No. AstroCalcul contains no ads and no tracking of your child&#x27;s activity.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Which devices is it available on?</h3><p>On iOS through the App Store and on Android through Google Play.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">How long should my child practice each day?</h3><p>3 to 5 minutes a day, regularly, works better than one long session once in a while.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Is it suitable for a child who struggles with math?</h3><p>Yes. Small steps, review that targets mistakes and the game format help the child regain confidence at their own pace.</p>
+</div>
+<div data-lang="nl" lang="nl" data-nosnippet class="article-body" style="display:none">
+<p>AstroCalcul verandert rekenoefeningen in een ruimte-avontuur. Uw kind oefent optellen, aftrekken, tafels van vermenigvuldiging en delen, gaat vooruit in eigen tempo en verdient beloningen terwijl het de melkweg verkent. Zonder reclame, zonder abonnement, gemaakt door een developer-papa.</p>
+<h2>Wat uw kind in de app doet</h2>
+<div class="grid sm:grid-cols-2 gap-4 not-prose">
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">De 4 bewerkingen</h3><p style="margin:0;font-size:.95rem;line-height:1.6">Optellen, aftrekken, tafels van vermenigvuldiging en delen, in progressieve niveaus die zich aanpassen aan het tempo van uw kind.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Robi, de leraar</h3><p style="margin:0;font-size:.95rem;line-height:1.6">Robi legt de berekeningen stap voor stap uit, met duidelijke visuele methodes. Met &quot;Leg mijn berekening uit&quot; (Premium) helpt hij ook uw kind bij de exacte som waar het vastloopt.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Slim herhalen</h3><p style="margin:0;font-size:.95rem;line-height:1.6">De app merkt de fouten van uw kind op en stelt gerichte herhalingen voor om vooruit te gaan.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">5 minigames</h3><p style="margin:0;font-size:.95rem;line-height:1.6">Door te oefenen verdient uw kind AstroMunten om 5 minigames te ontgrendelen: Astro Target, Repareer de raket, Verstoppertje met Robi, Herbouw de som en De Ruimtemarkt.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">Dagelijkse reeks</h3><p style="margin:0;font-size:.95rem;line-height:1.6">Een vlam die elke dag groeit, bonusavatars om te ontgrendelen en een verbroken reeks die hersteld kan worden met AstroMunten.</p></div>
+<div class="rounded-2xl border border-white/10 bg-white/5 p-5"><h3 class="font-display font-bold text-white text-lg mb-2">De melkweg verkennen</h3><p style="margin:0;font-size:.95rem;line-height:1.6">Een reis van de Zon naar Pluto en daarna naar de manen van het zonnestelsel, met bij elke stop iets nieuws om te leren.</p></div>
+</div>
+<h2>Voor ouders</h2>
+<ul>
+<li><strong>Zonder reclame</strong> en zonder opvolging van de activiteit van uw kind.</li>
+<li><strong>Zonder abonnement</strong>: de basis is gratis, Premium is een eenmalige aankoop voor het leven.</li>
+<li>Een <strong>dashboard</strong> om de vooruitgang van uw kind te volgen.</li>
+<li><strong>3 tot 5 minuten per dag</strong> is genoeg, met een instelbare dagelijkse herinnering.</li>
+<li>De vooruitgang kan tussen uw toestellen worden gesynchroniseerd, enkel voor u.</li>
+</ul>
+<h3 class="font-display font-bold text-white text-lg mt-6 mb-2">Gratis of Premium?</h3>
+<p>De basis is gratis: optellen, aftrekken en tafels van vermenigvuldiging, met één kinderprofiel. Premium, een eenmalige aankoop voor het leven, ontgrendelt meerdere profielen (tot 4 kinderen), extra minigames, delen, de gevorderde modus en &quot;Leg mijn berekening uit&quot;.</p>
+<h2>Voor welke leeftijd is de app?</h2>
+<p>AstroCalcul is voor kinderen <strong>vanaf 6 jaar</strong>. De progressieve niveaus gaan van de eerste optellingen tot de volledige tafels en delen. Wilt u weten wat u op welke leeftijd kunt oefenen, lees dan <a href="blog/calcul-mental-selon-age.html">hoofdrekenen per leeftijd</a>, <a href="blog/apprendre-tables-multiplication.html">tafels van vermenigvuldiging leren</a> of <a href="blog/table-de-7.html">de tafel van 7</a>. Om op papier te oefenen zijn er ook onze <a href="fiches-a-imprimer.html">werkbladen om af te drukken</a>.</p>
+<h2>Veelgestelde vragen</h2>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Vanaf welke leeftijd kan een kind AstroCalcul gebruiken?</h3><p>AstroCalcul is ontworpen voor kinderen vanaf 6 jaar, met progressieve niveaus die zich aanpassen aan het tempo van elk kind.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Is de app gratis?</h3><p>Ja, de basis is gratis: optellen, aftrekken en tafels van vermenigvuldiging. Een Premium-optie, als eenmalige aankoop voor het leven en zonder abonnement, ontgrendelt geavanceerde functies.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Is er reclame?</h3><p>Nee. AstroCalcul bevat geen reclame en volgt de activiteit van uw kind niet op.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Op welke toestellen is ze beschikbaar?</h3><p>Op iOS via de App Store en op Android via Google Play.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Hoelang per dag moet mijn kind oefenen?</h3><p>Beter 3 tot 5 minuten per dag, regelmatig, dan af en toe één lange sessie.</p>
+<h3 class="font-display font-bold text-white text-lg mt-5 mb-1">Is ze geschikt voor een kind dat moeite heeft met rekenen?</h3><p>Ja. Kleine stapjes, herhaling die de fouten aanpakt en het spelelement helpen uw kind om vertrouwen terug te winnen, in eigen tempo.</p>
+</div>
+
+            <div class="mt-10 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden border border-white/10 bg-gradient-to-r from-cosmic-pink/10 via-transparent to-cosmic-blue/10">
+                <h3 data-i18n="cta_title" class="text-xl md:text-2xl font-display font-bold mb-3">Prêt à commencer l'aventure ?</h3>
+                <p data-i18n="cta_text" class="text-gray-300 text-sm max-w-xl mx-auto mb-5">Téléchargez AstroCalcul et transformez les devoirs de maths en un jeu d'exploration.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="https://apps.apple.com/us/app/astrocalcul/id6760236661" data-umami-event="clic-app-store" target="_blank" rel="noopener noreferrer" class="w-48 h-14 bg-black border border-white/15 rounded-xl flex items-center justify-center px-4 hover:border-cosmic-cyan/50 hover:bg-space-800 transition-all duration-300 shadow-md">
+                        <svg class="w-7 h-7 text-white mr-3" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.1 16.67C20.08 16.74 19.67 18.11 18.71 19.5ZM15.97 4.17C16.63 3.37 17.07 2.28 16.95 1C15.96 1.04 14.76 1.66 14.05 2.49C13.44 3.19 12.91 4.29 13.06 5.54C14.16 5.63 15.3 4.98 15.97 4.17Z"/>
+                        </svg>
+                        <div class="text-left">
+                            <p data-i18n="appstore_sub" class="text-[9px] text-gray-400 uppercase font-bold leading-tight">Télécharger sur l'</p>
+                            <p class="text-sm font-black text-white leading-tight">App Store</p>
+                        </div>
+                    </a>
+                <a href="https://play.google.com/store/apps/details?id=com.JeremProd.AstroCalcul" data-umami-event="clic-google-play" target="_blank" rel="noopener noreferrer" class="w-48 h-14 bg-black border border-white/15 rounded-xl flex items-center justify-center px-4 hover:border-cosmic-pink/50 hover:bg-space-800 transition-all duration-300 shadow-md">
+                        <svg class="w-7 h-7 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.25301 2.59367C3.06649 2.78443 2.96289 3.09033 2.96289 3.47701V20.523C2.96289 20.9097 3.06649 21.2156 3.25301 21.4063L3.32701 21.469L12.836 11.96V11.751L3.32701 2.24L3.25301 2.59367Z" fill="url(#gp_grad1_cta)"/>
+                            <path d="M16.002 15.131L12.836 11.96V11.751L16.003 8.58398L16.082 8.62998L19.828 10.758C20.9 11.366 20.9 12.356 19.828 12.966L16.082 15.093L16.002 15.131Z" fill="url(#gp_grad2_cta)"/>
+                            <path d="M16.083 15.094L12.836 11.847L3.25391 21.429C3.60691 21.783 4.18491 21.825 4.84891 21.448L16.083 15.094Z" fill="url(#gp_grad3_cta)"/>
+                            <path d="M16.083 8.62891L4.84891 2.27491C4.18491 1.89791 3.60691 1.93991 3.25391 2.29391L12.836 11.876L16.083 8.62891Z" fill="url(#gp_grad4_cta)"/>
+                            <defs>
+                                <linearGradient id="gp_grad1_cta" x1="12.0125" y1="2.96289" x2="2.96289" y2="12.0125" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00A0FF"/><stop offset="1" stop-color="#00EAFF"/></linearGradient>
+                                <linearGradient id="gp_grad2_cta" x1="20.7324" y1="12" x2="10.8359" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFBB00"/><stop offset="1" stop-color="#FFEC00"/></linearGradient>
+                                <linearGradient id="gp_grad3_cta" x1="13.1118" y1="14.8213" x2="2.96289" y2="24.9702" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF007F"/><stop offset="1" stop-color="#FF003B"/></linearGradient>
+                                <linearGradient id="gp_grad4_cta" x1="13.1118" y1="9.17871" x2="2.96289" y2="-0.970215" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00F076"/><stop offset="1" stop-color="#04B24B"/></linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="text-left">
+                            <p data-i18n="playstore_sub" class="text-[9px] text-gray-400 uppercase font-bold leading-tight">DISPONIBLE SUR</p>
+                            <p class="text-sm font-black text-white leading-tight">Google Play</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="border-t border-white/5 pt-10 pb-12 text-center space-y-4 max-w-5xl mx-auto px-6">
+        <p data-i18n="footer_desc" class="text-sm text-gray-400 max-w-md mx-auto">L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-gray-500">
+            <a href="./index.html" data-i18n="footer_home" class="hover:text-cosmic-cyan transition-colors">Accueil</a>
+            <span>•</span>
+            <a href="https://jejelefou23.github.io/astrocalcul-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="footer_privacy" class="hover:text-cosmic-cyan transition-colors">Confidentialité</a>
+            <span>•</span>
+            <a href="mailto:contact.astrolabs.be@gmail.com" data-i18n="footer_contact" class="hover:text-cosmic-cyan transition-colors">Contact</a>
+        </div>
+        <p class="text-xs text-gray-600">&copy; 2026 AstroCalcul. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+    </footer>
+
+    <script>
+        const T = {
+            fr: {"doc_title": "Application de calcul mental pour enfants dès 6 ans | AstroCalcul", "kicker": "Application de calcul mental", "h1": "Application de calcul mental pour enfants dès 6 ans", "cta_title": "Prêt à commencer l'aventure ?", "cta_text": "Téléchargez AstroCalcul et transformez les devoirs de maths en un jeu d'exploration.", "appstore_sub": "Télécharger sur l'", "playstore_sub": "DISPONIBLE SUR", "b0": "Dès 6 ans", "b1": "Sans publicité", "b2": "Sans abonnement", "b3": "iOS et Android", "footer_desc": "L'apprentissage ludique et sécurisé du calcul mental pour les jeunes explorateurs spatiaux.", "footer_home": "Accueil", "footer_privacy": "Confidentialité", "footer_contact": "Contact", "footer_rights": "Tous droits réservés."},
+            en: {"doc_title": "Mental math app for kids aged 6+ | AstroCalcul", "kicker": "Mental math app", "h1": "Mental math app for kids aged 6 and up", "cta_title": "Ready to start the adventure?", "cta_text": "Download AstroCalcul and turn math homework into an exploration game.", "appstore_sub": "Download on the", "playstore_sub": "AVAILABLE ON", "b0": "Ages 6+", "b1": "No ads", "b2": "No subscription", "b3": "iOS and Android", "footer_desc": "Playful and secure mental math learning for young space explorers.", "footer_home": "Home", "footer_privacy": "Privacy", "footer_contact": "Contact", "footer_rights": "All rights reserved."},
+            nl: {"doc_title": "Hoofdreken-app voor kinderen vanaf 6 jaar | AstroCalcul", "kicker": "Hoofdreken-app", "h1": "Hoofdreken-app voor kinderen vanaf 6 jaar", "cta_title": "Klaar voor het avontuur?", "cta_text": "Download AstroCalcul en maak van rekenhuiswerk een ontdekkingsspel.", "appstore_sub": "Download in de", "playstore_sub": "BESCHIKBAAR OP", "b0": "Vanaf 6 jaar", "b1": "Zonder reclame", "b2": "Zonder abonnement", "b3": "iOS en Android", "footer_desc": "Speels en veilig hoofdrekenen leren voor jonge ruimtevaarders.", "footer_home": "Home", "footer_privacy": "Privacy", "footer_contact": "Contact", "footer_rights": "Alle rechten voorbehouden."}
+        };
+        const LANGS = ['fr','en','nl'];
+        let lang = localStorage.getItem('astrocalcul_lang') || 'fr';
+        function applyLang(l) {
+            lang = l; localStorage.setItem('astrocalcul_lang', l);
+            document.documentElement.lang = l;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const k = e.getAttribute('data-i18n'); if (T[l] && T[l][k] != null) e.innerHTML = T[l][k]; });
+            document.querySelectorAll('[data-lang]').forEach(b => { b.style.display = (b.getAttribute('data-lang') === l) ? '' : 'none'; });
+            if (T[l].doc_title) document.title = T[l].doc_title;
+            LANGS.forEach(x => { const b = document.getElementById('lang-' + x); if (!b) return; b.className = (x === l) ? 'px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display' : 'px-2.5 py-1 rounded-full text-gray-400 transition-all font-display'; });
+        }
+        function changeLanguage(l) { applyLang(l); }
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); }
+        function init() { stars = []; for (let i=0;i<100;i++){ stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005,c:Math.random()>0.8?'#00F0FF':(Math.random()>0.8?'#FF2E93':'#FFFFFF')}); } }
+        function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(st=>{ st.a+=st.s; if(st.a>1||st.a<0)st.s=-st.s; ctx.save(); ctx.globalAlpha=Math.max(0.1,st.a); ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2); ctx.fillStyle=st.c; ctx.fill(); ctx.restore(); }); requestAnimationFrame(animate); }
+        window.addEventListener('resize', resize);
+        window.addEventListener('load', () => {
+            const p = new URLSearchParams(location.search).get('lang');
+            if (p && LANGS.includes(p)) lang = p;
+            applyLang(lang); resize(); animate();
+        });
+    </script>
+</body>
+</html>
