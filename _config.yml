@@ -1,0 +1,6 @@
+# Configuration Jekyll (GitHub Pages) — le header est dans _includes/header.html
+# Jekyll ne traite que les fichiers qui commencent par un front matter (---).
+exclude:
+  - optimiser-images.py
+  - pinterest
+  - README.md

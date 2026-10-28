@@ -1,0 +1,117 @@
+{%- comment -%}
+  HEADER UNIQUE DU SITE — à modifier ici uniquement.
+  Paramètres (front matter de chaque page) :
+    root         "" pour les pages à la racine, "../" pour celles de /blog/
+    is_home      true sur index.html (ancres internes, bouton « démo »)
+    section      "blog" ou "print" : met le lien correspondant en surbrillance
+    header_width largeur du conteneur (défaut max-w-5xl, index.html : max-w-7xl)
+    no_print     true : cache le header à l'impression
+    hide_lang    true : masque le sélecteur de langue
+  Pour ajouter une entrée de menu : ajouter un <a> dans #mobile-menu + sa clé
+  (fr/en/nl) dans NAV_T en bas de ce fichier.
+{%- endcomment -%}
+{%- assign root = page.root | default: "" -%}
+{%- assign w = page.header_width | default: "max-w-5xl" -%}
+{%- if page.is_home -%}
+  {%- assign idx = "" -%}
+  {%- assign logo_href = "#" -%}
+  {%- assign cta_href = "#simulator" -%}
+  {%- assign cta_key = "nav_cta_demo" -%}
+  {%- assign cta_txt = "ESSAYER LA DÉMO" -%}
+{%- else -%}
+  {%- assign idx = root | append: "index.html" -%}
+  {%- assign logo_href = idx -%}
+  {%- assign cta_href = idx | append: "#download-cta" -%}
+  {%- assign cta_key = "nav_cta_dl" -%}
+  {%- assign cta_txt = "TÉLÉCHARGER" -%}
+{%- endif -%}
+    <header id="site-header" class="{% if page.no_print %}no-print {% endif %}w-full py-4 px-6 md:px-12 border-b border-white/5 bg-space-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="{{ w }} mx-auto flex items-center justify-between">
+            <a href="{{ logo_href }}" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-cosmic-cyan/10 group-hover:scale-105 transition-transform duration-300">
+                    <img src="{{ root }}assets/logo.png" alt="AstroCalcul Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('header-logo-fallback').style.display='block';">
+                    <svg id="header-logo-fallback" style="display: none;" class="w-6 h-6 text-white m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <span class="text-2xl font-display font-bold tracking-normal bg-gradient-to-r from-white via-cosmic-cyan to-white bg-clip-text text-transparent">AstroCalcul</span>
+            </a>
+
+            <div class="flex items-center space-x-3">
+                <div class="flex bg-white/5 border border-white/10 rounded-full p-1 text-xs font-black font-display"{% if page.hide_lang %} style="display:none"{% endif %}>
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full transition-all bg-cosmic-cyan text-space-900 shadow font-display">FR</button>
+                    <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">EN</button>
+                    <button onclick="changeLanguage('nl')" id="lang-nl" class="px-2.5 py-1 rounded-full text-gray-400 transition-all font-display">NL</button>
+                </div>
+
+                <a href="{{ cta_href }}" data-i18n="{{ cta_key }}" class="hidden sm:inline-flex bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 text-sm font-black px-6 py-2.5 rounded-full shadow-lg shadow-cosmic-cyan/20 hover:shadow-cosmic-cyan/45 hover:scale-105 active:scale-95 transition-all duration-300 font-display">{{ cta_txt }}</a>
+
+                <button onclick="toggleMobileMenu()" id="burger-btn" class="p-2 rounded-lg border border-white/10 text-gray-200 hover:text-cosmic-cyan hover:border-cosmic-cyan/40 transition-colors" aria-label="Menu" aria-expanded="false">
+                    <svg id="burger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu déroulant -->
+        <div id="mobile-menu" class="hidden {{ w }} mx-auto mt-3 pt-3 border-t border-white/10 flex flex-col space-y-1 text-sm font-bold">
+            <div data-i18n="grp_app" class="px-2 pt-1 pb-0.5 text-[10px] font-extrabold tracking-widest text-gray-500 uppercase font-display">Découvrir</div>
+            <a href="{{ idx }}#preview" onclick="toggleMobileMenu()" data-i18n="nav_features" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan transition-colors">Fonctionnalités</a>
+            <a href="{{ idx }}#parents" onclick="toggleMobileMenu()" data-i18n="nav_parents" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-cosmic-pink transition-colors">Espace Parents</a>
+            <div data-i18n="grp_res" class="px-2 pt-2 pb-0.5 text-[10px] font-extrabold tracking-widest text-gray-500 uppercase font-display">Ressources</div>
+            <a href="{{ root }}blog/index.html" data-i18n="nav_blog" class="py-2.5 px-2 rounded-lg {% if page.section == 'blog' %}text-cosmic-green hover:bg-white/5{% else %}text-gray-200 hover:bg-white/5 hover:text-cosmic-green{% endif %} transition-colors">Conseils & articles</a>
+            <a href="{{ root }}fiches-a-imprimer.html" data-i18n="nav_print" class="py-2.5 px-2 rounded-lg {% if page.section == 'print' %}text-cosmic-cyan hover:bg-white/5{% else %}text-gray-200 hover:bg-white/5 hover:text-cosmic-cyan{% endif %} transition-colors">Fiches à imprimer</a>
+            <a href="https://www.facebook.com/AstroCalcul" target="_blank" rel="noopener noreferrer" data-umami-event="clic-facebook" class="py-2.5 px-2 rounded-lg text-gray-200 hover:bg-white/5 hover:text-[#1877F2] transition-colors inline-flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span data-i18n="nav_facebook">Rejoignez-nous sur Facebook</span></a>
+            <a href="{{ cta_href }}" onclick="toggleMobileMenu()" data-i18n="{{ cta_key }}" class="py-2.5 px-2 mt-1 rounded-lg bg-gradient-to-r from-cosmic-cyan to-cosmic-blue text-space-900 font-display font-black text-center">{{ cta_txt }}</a>
+        </div>
+    </header>
+{% raw %}
+    <script>
+    // Header commun : menu mobile + traductions du menu (FR/EN/NL).
+    // Ces clés ne doivent plus figurer dans les dictionnaires des pages.
+    (function () {
+        var NAV_T = {
+            fr: { grp_app: "Découvrir", nav_features: "Fonctionnalités", nav_parents: "Espace Parents", grp_res: "Ressources", nav_blog: "Conseils & articles", nav_print: "Fiches à imprimer", nav_facebook: "Rejoignez-nous sur Facebook", nav_cta_demo: "ESSAYER LA DÉMO", nav_cta_dl: "TÉLÉCHARGER" },
+            en: { grp_app: "Discover", nav_features: "Features", nav_parents: "Parents' Space", grp_res: "Resources", nav_blog: "Tips & articles", nav_print: "Printable sheets", nav_facebook: "Join us on Facebook", nav_cta_demo: "TRY THE DEMO", nav_cta_dl: "DOWNLOAD" },
+            nl: { grp_app: "Ontdekken", nav_features: "Kenmerken", nav_parents: "Oudersruimte", grp_res: "Bronnen", nav_blog: "Tips & artikels", nav_print: "Werkbladen printen", nav_facebook: "Volg ons op Facebook", nav_cta_demo: "PROBEER DE DEMO", nav_cta_dl: "DOWNLOADEN" }
+        };
+
+        window.toggleMobileMenu = function () {
+            var menu = document.getElementById('mobile-menu');
+            var open = menu.classList.toggle('hidden') === false;
+            document.getElementById('burger-icon').classList.toggle('hidden', open);
+            document.getElementById('close-icon').classList.toggle('hidden', !open);
+            document.getElementById('burger-btn').setAttribute('aria-expanded', open);
+        };
+
+        function applyNav(l) {
+            var d = NAV_T[l] || NAV_T.fr;
+            document.querySelectorAll('#site-header [data-i18n]').forEach(function (el) {
+                var k = el.getAttribute('data-i18n');
+                if (d[k] != null) el.innerHTML = d[k];
+            });
+        }
+
+        function currentLang() {
+            var p = null, s = null;
+            try { p = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+            try { s = localStorage.getItem('astrocalcul_lang'); } catch (e) {}
+            return NAV_T[p] ? p : (NAV_T[s] ? s : 'fr');
+        }
+
+        applyNav(currentLang());
+
+        // Après le chargement, on enveloppe la fonction de changement de langue de la page
+        // (changeLanguage) pour que le menu suive le sélecteur FR/EN/NL.
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                var orig = window.changeLanguage;
+                if (typeof orig === 'function') {
+                    window.changeLanguage = function (l) { var r = orig.apply(this, arguments); applyNav(l); return r; };
+                }
+                applyNav(currentLang());
+            }, 0);
+        });
+    })();
+    </script>
+{% endraw %}
